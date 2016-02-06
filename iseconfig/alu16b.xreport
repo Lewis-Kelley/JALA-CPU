@@ -1,11 +1,11 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <report-views version="2.0" >
  <header>
-  <DateModified>2016-01-25T19:12:25</DateModified>
+  <DateModified>2016-02-06T14:08:35</DateModified>
   <ModuleName>alu16b</ModuleName>
   <SummaryTimeStamp>Unknown</SummaryTimeStamp>
-  <SavedFilePath>/home/user/csse232/Project/Components/iseconfig/alu16b.xreport</SavedFilePath>
-  <ImplementationReportsDirectory>/home/user/csse232/Project/Components/work</ImplementationReportsDirectory>
+  <SavedFilePath>/home/user/csse232/JALA-CPU/iseconfig/alu16b.xreport</SavedFilePath>
+  <ImplementationReportsDirectory>/home/user/csse232/JALA-CPU/work/</ImplementationReportsDirectory>
   <DateInitialized>2016-01-25T19:11:25</DateInitialized>
   <EnableMessageFiltering>false</EnableMessageFiltering>
  </header>
