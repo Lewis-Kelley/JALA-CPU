@@ -11,8 +11,9 @@ module reg16_reg16_sch_tb();
 
 // Output
    wire [15:0] O;
-
-// Bidirs
+	
+// Variables
+	reg [3:0] CLKCount;
 
 // Instantiate the UUT
    reg16 UUT (
@@ -29,10 +30,10 @@ module reg16_reg16_sch_tb();
    
 	initial    // Clock process for CLK
 		begin
+		CLK = 0;
 			#OFFSET;
 			forever begin
-				CLK = 1'b0;
-				#(PERIOD-(PERIOD*DUTY_CYCLE)) CLK = 1'b1;
+				#(PERIOD-(PERIOD*DUTY_CYCLE)) CLK = ~CLK;
 				#(PERIOD*DUTY_CYCLE);
 			end
 		end
@@ -42,21 +43,30 @@ module reg16_reg16_sch_tb();
 		I = 0;
 		Write = 0;
 		
-		#100;
+		CLKCount = 0;
+		
+		#150;
 	end
 	
 	// Doesn't work, register takes more than 1 cycle to write
-	always @ (posedge CLK) begin		
+	always @ (posedge CLK) begin: TestCLK
+		// Give the system 4 cycles to initialize
+		if(CLKCount < 5) begin
+			CLKCount = CLKCount + 1;
+			disable TestCLK;
+		end
 		if(Write == 1) begin
-			if(O != I) begin
-				$display("Output %b does not equal input %b", O, I);
+			if(O != I-1) begin
+				$display("Output %b does not equal input %b", O, I-1);
 			end
 			Write = 0;
+			CLKCount = 4;
 		end else begin
 			Write = 1;
+			I = I+1;
 		end
 		
-		I = I+1;
+		CLKCount = CLKCount + 1;
 	end
 	
 endmodule
