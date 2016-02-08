@@ -28,15 +28,14 @@ module reg16_reg16_sch_tb();
    parameter   real DUTY_CYCLE = 0.5;
    parameter   OFFSET = 10;
    
-	initial    // Clock process for CLK
-		begin
+	initial begin   // Clock process for CLK
 		CLK = 0;
-			#OFFSET;
-			forever begin
-				#(PERIOD-(PERIOD*DUTY_CYCLE)) CLK = ~CLK;
-				#(PERIOD*DUTY_CYCLE);
-			end
+		#OFFSET;
+		forever begin
+			#(PERIOD-(PERIOD*DUTY_CYCLE)) CLK = ~CLK;
+			#(PERIOD*DUTY_CYCLE);
 		end
+	end
 	  
 // Initialize Inputs
    initial begin
@@ -48,7 +47,6 @@ module reg16_reg16_sch_tb();
 		#150;
 	end
 	
-	// Doesn't work, register takes more than 1 cycle to write
 	always @ (posedge CLK) begin: TestCLK
 		// Give the system 4 cycles to initialize
 		if(CLKCount < 5) begin

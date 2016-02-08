@@ -6,7 +6,6 @@
         <trait edittrait="all:0" />
     </attr>
     <netlist>
-        <signal name="XLXN_1(15:0)" />
         <signal name="XLXN_4(15:0)" />
         <signal name="PCSourceFromValA(15:0)" />
         <signal name="PCAddFromSE(15:0)" />
@@ -21,6 +20,7 @@
         <signal name="PC(15:0)" />
         <signal name="v" />
         <signal name="XLXN_10(15:0)" />
+        <signal name="XLXN_11(15:0)" />
         <port polarity="Input" name="PCSourceFromValA(15:0)" />
         <port polarity="Input" name="PCAddFromSE(15:0)" />
         <port polarity="Input" name="PCWrite" />
@@ -89,7 +89,7 @@
             <line x2="32" y1="-64" y2="-64" x1="96" />
         </blockdef>
         <block symbolname="reg16" name="XLXI_1">
-            <blockpin signalname="XLXN_1(15:0)" name="I(15:0)" />
+            <blockpin signalname="XLXN_11(15:0)" name="I(15:0)" />
             <blockpin signalname="PCWrite" name="Write" />
             <blockpin signalname="CLK" name="CLK" />
             <blockpin signalname="PC(15:0)" name="O(15:0)" />
@@ -104,7 +104,7 @@
             <blockpin name="G(15:0)" />
             <blockpin name="H(15:0)" />
             <blockpin signalname="g,g,PCSource" name="S(2:0)" />
-            <blockpin signalname="XLXN_1(15:0)" name="O(15:0)" />
+            <blockpin signalname="XLXN_11(15:0)" name="O(15:0)" />
         </block>
         <block symbolname="mux16b8" name="XLXI_4">
             <blockpin signalname="g,g,g,g,g,g,g,g,g,g,g,g,g,g,g,v" name="A(15:0)" />
@@ -136,9 +136,6 @@
         </instance>
         <instance x="384" y="1696" name="XLXI_2" orien="R0">
         </instance>
-        <branch name="XLXN_1(15:0)">
-            <wire x2="1088" y1="1152" y2="1152" x1="768" />
-        </branch>
         <instance x="384" y="1008" name="XLXI_4" orien="R0">
         </instance>
         <branch name="PCAddFromSE(15:0)">
@@ -244,6 +241,9 @@
             <wire x2="2080" y1="80" y2="80" x1="32" />
             <wire x2="2080" y1="80" y2="976" x1="2080" />
             <wire x2="2080" y1="976" y2="976" x1="2000" />
+        </branch>
+        <branch name="XLXN_11(15:0)">
+            <wire x2="1088" y1="1152" y2="1152" x1="768" />
         </branch>
     </sheet>
 </drawing>
