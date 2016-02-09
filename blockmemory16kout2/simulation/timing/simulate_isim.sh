@@ -46,6 +46,7 @@
 # PART OF THIS FILE AT ALL TIMES.
 #--------------------------------------------------------------------------------
 
+cp ../../../blockmemory16kout2.mif .
 
 
 vlogcomp -work work ../../implement/results/routed.v

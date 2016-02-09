@@ -35,6 +35,7 @@ blockmemory16kout2/simulation/timing/wave_mti.do
 blockmemory16kout2/simulation/timing/wave_ncsim.sv
 blockmemory16kout2.asy
 blockmemory16kout2.gise
+blockmemory16kout2.mif
 blockmemory16kout2.ngc
 blockmemory16kout2.sym
 blockmemory16kout2.v

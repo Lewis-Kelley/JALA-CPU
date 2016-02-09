@@ -2,7 +2,7 @@
 
 `timescale 1ns / 1ps
 
-module stage2MemoryAccess_stage2MemoryAccess_sch_tb();
+module stage2MemoryAccessTest();
 
 // Inputs
    reg [15:0] MemDst1FromPC;
@@ -33,8 +33,8 @@ module stage2MemoryAccess_stage2MemoryAccess_sch_tb();
 	wire [15:0] ValA;
    wire [15:0] ValB;
 
-
-	reg CLKCount;
+	reg [2:0] testStage;
+	reg [15:0] CLKCount;
 
 // Instantiate the UUT
    stage2MemoryAccess UUT (
@@ -64,6 +64,22 @@ module stage2MemoryAccess_stage2MemoryAccess_sch_tb();
 // Initialize Inputs
 	initial begin
 	
+		MemDst1 = 0;
+		MemDst2 = 0;
+		
+		MemRead1 = 1;
+		MemRead2 = 1;
+		MemWrite1 = 0;
+		MemWrite2 = 0;
+		
+		ValAWrite = 1;
+		ValBWrite = 0;
+		IRWrite = 1;
+		
+		MemDst1FromPC = 19;
+		MemDst2FromMSP = 5;
+	
+		testStage = 0;
 		CLKCount = 0;
 		
 		#150;
@@ -88,14 +104,32 @@ module stage2MemoryAccess_stage2MemoryAccess_sch_tb();
 	always @ (posedge CLK) begin: TestCLK
 		#1;
 		
-		/*CLKCount = CLKCount + 1;
+		CLKCount = CLKCount + 1;
 		
 		// Delay by two clock cycles
 		if(CLKCount < 3) begin
 			disable TestCLK;
 		end
 		
-		if(testStage == 0) begin
+		// Memory stage takes 2 cycles to read then write to register
+		if(testStage == 0 && CLKCount % 2) begin
+			if(ValA != MemDst2FromMSP % 10) begin
+				$display("Error: ValA was %d, but MemDst2FromMSP mod 10 was %d", ValA, (MemDst2FromMSP % 10));
+			end
+						
+			if(IR != MemDst1FromPC % 10) begin
+				$display("Error: IR was %d, but MemDst1FromPC mod 10 was %d", IR, (MemDst1FromPC % 10));
+			end
+			
+			MemDst2FromMSP = MemDst2FromMSP + 1;
+			MemDst1FromPC = MemDst1FromPC - 1;
+			
+			if(MemDst1FromPC < 0) begin
+				$finish;
+			end
+		end
+		
+		/*if(testStage == 0) begin
 			// Testing PC = PC + 1
 			if(PC != CLKCount-2) begin
 				$display("Error: PC was %d, but CLKCount was %d", PC, CLKCount-2);

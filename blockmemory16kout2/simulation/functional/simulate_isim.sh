@@ -46,6 +46,7 @@
 # PART OF THIS FILE AT ALL TIMES.
 #--------------------------------------------------------------------------------
 
+cp ../../../blockmemory16kout2.mif .
 
 
 echo "Compiling Core Verilog UNISIM/Behavioral model"
