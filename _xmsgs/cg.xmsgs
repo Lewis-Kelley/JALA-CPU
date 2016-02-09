@@ -8,5 +8,23 @@
 <msg type="info" file="sim" num="172" delta="old" >Generating IP...
 </msg>
 
+<msg type="error" file="sim" num="0" delta="new" ><arg fmt="%s" index="1">User configuration exceeds BRAM count in the selected deviceERROR:sim - User configuration exceeds BRAM count in the selected deviceERROR:sim - User configuration exceeds BRAM count in the selected deviceERROR:sim - User configuration exceeds BRAM count in the selected device</arg>
+</msg>
+
+<msg type="warning" file="sim" num="0" delta="new" ><arg fmt="%s" index="1">A core named &apos;blockmemory16kout2&apos; already exists in the project. Output products for this core may be overwritten.</arg>
+</msg>
+
+<msg type="warning" file="sim" num="0" delta="new" ><arg fmt="%s" index="1">A core named &apos;blockmemory16kout2&apos; already exists in the project. Output products for this core may be overwritten.</arg>
+</msg>
+
+<msg type="info" file="sim" num="0" delta="new" ><arg fmt="%s" index="1">Pre-processing HDL files for &apos;blockmemory16kout2&apos;...</arg>
+</msg>
+
+<msg type="info" file="sim" num="949" delta="old" >Finished generation of ASY schematic symbol.
+</msg>
+
+<msg type="info" file="sim" num="948" delta="old" >Finished FLIST file generation.
+</msg>
+
 </messages>
 

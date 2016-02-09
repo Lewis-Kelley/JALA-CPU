@@ -57,13 +57,15 @@
 //----------- Begin Cut here for INSTANTIATION Template ---// INST_TAG
 blockmemory16kout2 your_instance_name (
   .clka(clka), // input clka
+  .ena(ena), // input ena
   .wea(wea), // input [0 : 0] wea
-  .addra(addra), // input [9 : 0] addra
+  .addra(addra), // input [14 : 0] addra
   .dina(dina), // input [15 : 0] dina
   .douta(douta), // output [15 : 0] douta
   .clkb(clkb), // input clkb
+  .enb(enb), // input enb
   .web(web), // input [0 : 0] web
-  .addrb(addrb), // input [9 : 0] addrb
+  .addrb(addrb), // input [14 : 0] addrb
   .dinb(dinb), // input [15 : 0] dinb
   .doutb(doutb) // output [15 : 0] doutb
 );

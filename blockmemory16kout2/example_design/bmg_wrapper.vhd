@@ -87,30 +87,30 @@
 --    C_RST_PRIORITY_A            :  CE 
 --    C_RSTRAM_A                  :  0 
 --    C_INITA_VAL                 :  0 
---    C_HAS_ENA                   :  0 
+--    C_HAS_ENA                   :  1 
 --    C_HAS_REGCEA                :  0 
 --    C_USE_BYTE_WEA              :  0 
 --    C_WEA_WIDTH                 :  1 
 --    C_WRITE_MODE_A              :  WRITE_FIRST 
 --    C_WRITE_WIDTH_A             :  16 
 --    C_READ_WIDTH_A              :  16 
---    C_WRITE_DEPTH_A             :  1024 
---    C_READ_DEPTH_A              :  1024 
---    C_ADDRA_WIDTH               :  10 
+--    C_WRITE_DEPTH_A             :  20480 
+--    C_READ_DEPTH_A              :  20480 
+--    C_ADDRA_WIDTH               :  15 
 --    C_HAS_RSTB                  :  0 
 --    C_RST_PRIORITY_B            :  CE 
 --    C_RSTRAM_B                  :  0 
 --    C_INITB_VAL                 :  0 
---    C_HAS_ENB                   :  0 
+--    C_HAS_ENB                   :  1 
 --    C_HAS_REGCEB                :  0 
 --    C_USE_BYTE_WEB              :  0 
 --    C_WEB_WIDTH                 :  1 
 --    C_WRITE_MODE_B              :  WRITE_FIRST 
 --    C_WRITE_WIDTH_B             :  16 
 --    C_READ_WIDTH_B              :  16 
---    C_WRITE_DEPTH_B             :  1024 
---    C_READ_DEPTH_B              :  1024 
---    C_ADDRB_WIDTH               :  10 
+--    C_WRITE_DEPTH_B             :  20480 
+--    C_READ_DEPTH_B              :  20480 
+--    C_ADDRB_WIDTH               :  15 
 --    C_HAS_MEM_OUTPUT_REGS_A     :  0 
 --    C_HAS_MEM_OUTPUT_REGS_B     :  0 
 --    C_HAS_MUX_OUTPUT_REGS_A     :  0 
@@ -122,7 +122,7 @@
 --    C_USE_SOFTECC               :  0 
 --    C_HAS_INJECTERR             :  0 
 --    C_SIM_COLLISION_CHECK       :  ALL 
---    C_COMMON_CLK                :  0 
+--    C_COMMON_CLK                :  1 
 --    C_DISABLE_WARN_BHV_COLL     :  0 
 --    C_DISABLE_WARN_BHV_RANGE    :  0 
 
@@ -149,7 +149,7 @@ ENTITY bmg_wrapper IS
     ENA        : IN STD_LOGIC;  --optional port
     REGCEA     : IN STD_LOGIC;  --optional port
     WEA        : IN STD_LOGIC_VECTOR(0 DOWNTO 0);
-    ADDRA      : IN STD_LOGIC_VECTOR(9 DOWNTO 0);
+    ADDRA      : IN STD_LOGIC_VECTOR(14 DOWNTO 0);
     DINA       : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
     DOUTA      : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
 
@@ -159,7 +159,7 @@ ENTITY bmg_wrapper IS
     ENB        : IN STD_LOGIC;  --optional port
     REGCEB     : IN STD_LOGIC;  --optional port
     WEB        : IN STD_LOGIC_VECTOR(0 DOWNTO 0);
-    ADDRB      : IN STD_LOGIC_VECTOR(9 DOWNTO 0);
+    ADDRB      : IN STD_LOGIC_VECTOR(14 DOWNTO 0);
     DINB       : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
     DOUTB      : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
 
@@ -168,7 +168,7 @@ ENTITY bmg_wrapper IS
     INJECTDBITERR  : IN STD_LOGIC; --optional port
     SBITERR        : OUT STD_LOGIC; --optional port
     DBITERR        : OUT STD_LOGIC; --optional port
-    RDADDRECC      : OUT STD_LOGIC_VECTOR(9 DOWNTO 0); --optional port
+    RDADDRECC      : OUT STD_LOGIC_VECTOR(14 DOWNTO 0); --optional port
  -- AXI BMG Input and Output Port Declarations
 
     -- AXI Global Signals
@@ -210,7 +210,7 @@ ENTITY bmg_wrapper IS
     S_AXI_INJECTDBITERR            : IN  STD_LOGIC;
     S_AXI_SBITERR                  : OUT STD_LOGIC;
     S_AXI_DBITERR                  : OUT STD_LOGIC;
-    S_AXI_RDADDRECC                : OUT STD_LOGIC_VECTOR(9  DOWNTO 0);
+    S_AXI_RDADDRECC                : OUT STD_LOGIC_VECTOR(14  DOWNTO 0);
     S_ARESETN                      : IN  STD_LOGIC
 
 
@@ -224,9 +224,10 @@ ARCHITECTURE xilinx OF bmg_wrapper IS
   COMPONENT blockmemory16kout2_top IS
   PORT (
       --Port A
+    ENA            : IN STD_LOGIC;  --opt port
   
     WEA            : IN STD_LOGIC_VECTOR(0 DOWNTO 0);
-    ADDRA          : IN STD_LOGIC_VECTOR(9 DOWNTO 0);
+    ADDRA          : IN STD_LOGIC_VECTOR(14 DOWNTO 0);
   
     DINA           : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
   
@@ -237,9 +238,10 @@ ARCHITECTURE xilinx OF bmg_wrapper IS
 
   
       --Port B
+    ENB            : IN STD_LOGIC;  --opt port
   
     WEB            : IN STD_LOGIC_VECTOR(0 DOWNTO 0);
-    ADDRB          : IN STD_LOGIC_VECTOR(9 DOWNTO 0);
+    ADDRB          : IN STD_LOGIC_VECTOR(14 DOWNTO 0);
   
     DINB           : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
     DOUTB          : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
@@ -255,6 +257,7 @@ BEGIN
   bmg0 : blockmemory16kout2_top
     PORT MAP (
       --Port A
+      ENA        => ENA,
   
       WEA        => WEA,
       ADDRA      => ADDRA,
@@ -266,6 +269,7 @@ BEGIN
       CLKA       => CLKA,
   
       --Port B
+      ENB        => ENB, 
   
       WEB        => WEB,
       ADDRB      => ADDRB,

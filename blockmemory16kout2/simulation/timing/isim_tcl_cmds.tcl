@@ -50,9 +50,11 @@ wave add /bmg_tb_top/status
       wave add  /bmg_tb_top/BMG_TB_INST/BMG_PORT/ADDRA
       wave add  /bmg_tb_top/BMG_TB_INST/BMG_PORT/DINA
       wave add  /bmg_tb_top/BMG_TB_INST/BMG_PORT/WEA
+      wave add  /bmg_tb_top/BMG_TB_INST/BMG_PORT/ENA
       wave add  /bmg_tb_top/BMG_TB_INST/BMG_PORT/DOUTA
       wave add  /bmg_tb_top/BMG_TB_INST/BMG_PORT/CLKB
       wave add  /bmg_tb_top/BMG_TB_INST/BMG_PORT/ADDRB
+      wave add  /bmg_tb_top/BMG_TB_INST/BMG_PORT/ENB
       wave add  /bmg_tb_top/BMG_TB_INST/BMG_PORT/DINB
       wave add  /bmg_tb_top/BMG_TB_INST/BMG_PORT/WEB
       wave add  /bmg_tb_top/BMG_TB_INST/BMG_PORT/DOUTB

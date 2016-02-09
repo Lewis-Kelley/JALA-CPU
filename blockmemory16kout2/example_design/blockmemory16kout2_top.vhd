@@ -81,9 +81,10 @@ USE UNISIM.VCOMPONENTS.ALL;
 ENTITY blockmemory16kout2_top IS
   PORT (
       --Inputs - Port A
+    ENA            : IN STD_LOGIC;  --opt port
   
     WEA            : IN STD_LOGIC_VECTOR(0 DOWNTO 0);
-    ADDRA          : IN STD_LOGIC_VECTOR(9 DOWNTO 0);
+    ADDRA          : IN STD_LOGIC_VECTOR(14 DOWNTO 0);
   
     DINA           : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
   
@@ -93,9 +94,10 @@ ENTITY blockmemory16kout2_top IS
 
   
       --Inputs - Port B
+    ENB            : IN STD_LOGIC;  --opt port
   
     WEB            : IN STD_LOGIC_VECTOR(0 DOWNTO 0);
-    ADDRB          : IN STD_LOGIC_VECTOR(9 DOWNTO 0);
+    ADDRB          : IN STD_LOGIC_VECTOR(14 DOWNTO 0);
   
     DINB           : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
     DOUTB          : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
@@ -118,9 +120,10 @@ ARCHITECTURE xilinx OF blockmemory16kout2_top IS
   COMPONENT blockmemory16kout2 IS
   PORT (
       --Port A
+    ENA        : IN STD_LOGIC;  --opt port
   
     WEA        : IN STD_LOGIC_VECTOR(0 DOWNTO 0);
-    ADDRA      : IN STD_LOGIC_VECTOR(9 DOWNTO 0);
+    ADDRA      : IN STD_LOGIC_VECTOR(14 DOWNTO 0);
   
     DINA       : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
   
@@ -131,9 +134,10 @@ ARCHITECTURE xilinx OF blockmemory16kout2_top IS
 
   
       --Port B
+    ENB        : IN STD_LOGIC;  --opt port
   
     WEB        : IN STD_LOGIC_VECTOR(0 DOWNTO 0);
-    ADDRB      : IN STD_LOGIC_VECTOR(9 DOWNTO 0);
+    ADDRB      : IN STD_LOGIC_VECTOR(14 DOWNTO 0);
   
     DINB       : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
     DOUTB      : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
@@ -165,6 +169,7 @@ BEGIN
   bmg0 : blockmemory16kout2
     PORT MAP (
       --Port A
+      ENA        => ENA,
   
       WEA        => WEA,
       ADDRA      => ADDRA,
@@ -177,6 +182,7 @@ BEGIN
 
   
       --Port B
+      ENB        => ENB, 
   
       WEB        => WEB,
       ADDRB      => ADDRB,

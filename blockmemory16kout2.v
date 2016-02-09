@@ -38,11 +38,13 @@
 
 module blockmemory16kout2(
   clka,
+  ena,
   wea,
   addra,
   dina,
   douta,
   clkb,
+  enb,
   web,
   addrb,
   dinb,
@@ -50,35 +52,37 @@ module blockmemory16kout2(
 );
 
 input clka;
+input ena;
 input [0 : 0] wea;
-input [9 : 0] addra;
+input [14 : 0] addra;
 input [15 : 0] dina;
 output [15 : 0] douta;
 input clkb;
+input enb;
 input [0 : 0] web;
-input [9 : 0] addrb;
+input [14 : 0] addrb;
 input [15 : 0] dinb;
 output [15 : 0] doutb;
 
 // synthesis translate_off
 
   BLK_MEM_GEN_V6_3 #(
-    .C_ADDRA_WIDTH(10),
-    .C_ADDRB_WIDTH(10),
+    .C_ADDRA_WIDTH(15),
+    .C_ADDRB_WIDTH(15),
     .C_ALGORITHM(1),
     .C_AXI_ID_WIDTH(4),
     .C_AXI_SLAVE_TYPE(0),
     .C_AXI_TYPE(1),
     .C_BYTE_SIZE(9),
-    .C_COMMON_CLK(0),
+    .C_COMMON_CLK(1),
     .C_DEFAULT_DATA("0"),
     .C_DISABLE_WARN_BHV_COLL(0),
     .C_DISABLE_WARN_BHV_RANGE(0),
     .C_ENABLE_32BIT_ADDRESS(0),
     .C_FAMILY("spartan3"),
     .C_HAS_AXI_ID(0),
-    .C_HAS_ENA(0),
-    .C_HAS_ENB(0),
+    .C_HAS_ENA(1),
+    .C_HAS_ENB(1),
     .C_HAS_INJECTERR(0),
     .C_HAS_MEM_OUTPUT_REGS_A(0),
     .C_HAS_MEM_OUTPUT_REGS_B(0),
@@ -98,8 +102,8 @@ output [15 : 0] doutb;
     .C_MEM_TYPE(2),
     .C_MUX_PIPELINE_STAGES(0),
     .C_PRIM_TYPE(1),
-    .C_READ_DEPTH_A(1024),
-    .C_READ_DEPTH_B(1024),
+    .C_READ_DEPTH_A(20480),
+    .C_READ_DEPTH_B(20480),
     .C_READ_WIDTH_A(16),
     .C_READ_WIDTH_B(16),
     .C_RST_PRIORITY_A("CE"),
@@ -115,8 +119,8 @@ output [15 : 0] doutb;
     .C_USE_SOFTECC(0),
     .C_WEA_WIDTH(1),
     .C_WEB_WIDTH(1),
-    .C_WRITE_DEPTH_A(1024),
-    .C_WRITE_DEPTH_B(1024),
+    .C_WRITE_DEPTH_A(20480),
+    .C_WRITE_DEPTH_B(20480),
     .C_WRITE_MODE_A("WRITE_FIRST"),
     .C_WRITE_MODE_B("WRITE_FIRST"),
     .C_WRITE_WIDTH_A(16),
@@ -125,20 +129,20 @@ output [15 : 0] doutb;
   )
   inst (
     .CLKA(clka),
+    .ENA(ena),
     .WEA(wea),
     .ADDRA(addra),
     .DINA(dina),
     .DOUTA(douta),
     .CLKB(clkb),
+    .ENB(enb),
     .WEB(web),
     .ADDRB(addrb),
     .DINB(dinb),
     .DOUTB(doutb),
     .RSTA(),
-    .ENA(),
     .REGCEA(),
     .RSTB(),
-    .ENB(),
     .REGCEB(),
     .INJECTSBITERR(),
     .INJECTDBITERR(),
