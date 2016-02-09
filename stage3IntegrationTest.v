@@ -37,9 +37,12 @@ module stage3IntegrationTest;
 	wire [15:0] ResOut;
 	wire isZero;
 
-   reg [7:0] i;
+   //Variables
    reg [15:0] trials;
    reg [15:0] errors;
+   reg [15:0] i;
+   reg [15:0] expected;
+   reg [15:0]  CLKCount;
 
 	// Instantiate the Unit Under Test (UUT)
 	stage3Integration uut (
@@ -54,46 +57,188 @@ module stage3IntegrationTest;
 		.isZero(isZero)
 	);
 
-	initial begin
-	   // Initialize Inputs
-	   ShifterOut = 0;
-	   CLK = 0;
-	   ALUInA = 0;
-	   ALUInB = 0;
-	   ALUop = 0;
-	   ResSource = 0;
-	   ResWrite = 1;
-	   i = 0;
-	   errors = 0;
-	   trials = 0;
+   parameter   PERIOD = 20;
+   parameter   real DUTY_CYCLE = 0.5;
+   parameter   OFFSET = 10;
+   
+   initial begin   // Clock process for CLK
+	  CLK = 0;
+	  #OFFSET;
+	  forever begin
+		 #(PERIOD-(PERIOD*DUTY_CYCLE)) CLK = ~CLK;
+		 #(PERIOD*DUTY_CYCLE);
+	  end
+   end
+   
+   // Initialize Inputs
+   initial begin
+	  ShifterOut = 0;
+	  CLK = 0;
+	  ALUInA = 0;
+	  ALUInB = 0;
+	  ALUop = 0;
+	  ResSource = 0;
+      ResWrite = 1;
+	  i = 0;
+      errors = 0;
+      trials = 0;
+	  CLKCount = 0;
+	  expected = 0;
+   end
+   
+   always @ (posedge CLK) begin: TestCLK
+	  // Give the system 4 cycles to initialize
+	  if(CLKCount < 5) begin
+		 CLKCount = CLKCount + 1;
+		 disable TestCLK;
+	  end else if(CLKCount < 105) begin //and
 
-	   // Wait 100 ns for global reset to finish
-	   #100;
+		 if(ResOut != expected) begin
+   			$display("ERROR at CLK %d: %x != %x", CLKCount, ResOut, expected);
+			$finish;
+		 
+   			errors = errors + 1;
+   		 end
 
-	   // Add stimulus here
-	   
-	   repeat(100) begin //test and-ing
-		  trials = trials + 1;
-		  ALUInA = i * 5;
-		  ALUInB = 16'h FFFF - i * 3;
+		 CLKCount = CLKCount + 1;
+		 trials = trials + 1;
+		 i = i + 1;
 
-		  #2;
+		 expected = ALUInA & ALUInB;
+   		 ALUInA = i * 5;
+   		 ALUInB = 16'h FFFF - i * 3;
+	  end else if(CLKCount == 105) begin //init or
+		 ALUop = 1;
 
-		  CLK = 1;
-		  
-		  #3;
-		  
-		  if(ResOut != ALUInA & ALUInB) begin
-			 $display("ERROR: %x != %x & %x", ResOut, ALUInA, ALUInB);
-			 errors = errors + 1;
-		  end
+		 if(ResOut != expected) begin
+   			$display("ERROR CLK %d: %x != %x", CLKCount, ResOut, expected);
+			$finish;
+		 
+   			errors = errors + 1;
+   		 end
 
-		  CLK = 0;
-		  i = i + 1;
-	   end
+		 CLKCount = CLKCount + 1;
+		 trials = trials + 1;
+		 i = i + 1;
 
-	   $display("Finished with %d/%d errors.", errors, trials);
-	   $finish;
-	end
+		 expected = ALUInA & ALUInB;
+   		 ALUInA = i * 5;
+   		 ALUInB = 16'h FFFF - i * 3;
+	  end else if(CLKCount < 205) begin //or
+		 if(ResOut != expected) begin
+   			$display("ERROR CLK %d: %x != %x", CLKCount, ResOut, expected);
+			$finish;
+		 
+   			errors = errors + 1;
+   		 end
+
+		 CLKCount = CLKCount + 1;
+		 trials = trials + 1;
+		 i = i + 1;
+
+		 expected = ALUInA | ALUInB;
+   		 ALUInA = i * 5;
+   		 ALUInB = 16'h FFFF - i * 3;
+	  end else if(CLKCount == 205) begin //init add
+		 ALUop = 2;
+
+		 if(ResOut != expected) begin
+   			$display("ERROR CLK %d: %x != %x", CLKCount, ResOut, expected);
+			$finish;
+		 
+   			errors = errors + 1;
+   		 end
+
+		 CLKCount = CLKCount + 1;
+		 trials = trials + 1;
+		 i = i + 1;
+
+		 expected = ALUInA | ALUInB;
+   		 ALUInA = i * 5;
+   		 ALUInB = 16'h FFFF - i * 3;
+	  end else if(CLKCount < 305) begin //add
+		 if(ResOut != expected) begin
+   			$display("ERROR CLK %d: %x != %x", CLKCount, ResOut, expected);
+			$finish;
+		 
+   			errors = errors + 1;
+   		 end
+
+		 CLKCount = CLKCount + 1;
+		 trials = trials + 1;
+		 i = i + 1;
+
+		 expected = ALUInA + ALUInB;
+   		 ALUInA = i * 5;
+   		 ALUInB = 16'h FFFF - i * 3;
+	  end else if(CLKCount == 305) begin //init sub
+		 ALUop = 6;
+
+		 if(ResOut != expected) begin
+   			$display("ERROR CLK %d: %x != %x", CLKCount, ResOut, expected);
+			$finish;
+		 
+   			errors = errors + 1;
+   		 end
+
+		 CLKCount = CLKCount + 1;
+		 trials = trials + 1;
+		 i = i + 1;
+
+		 expected = ALUInA + ALUInB;
+   		 ALUInA = i * 5;
+   		 ALUInB = 16'h FFFF - i * 3;
+	  end else if(CLKCount < 405) begin //sub
+		 if(ResOut != expected) begin
+   			$display("ERROR CLK %d: %x != %x", CLKCount, ResOut, expected);
+			$finish;
+		 
+   			errors = errors + 1;
+   		 end
+
+		 CLKCount = CLKCount + 1;
+		 trials = trials + 1;
+		 i = i + 1;
+
+		 expected = ALUInA - ALUInB;
+   		 ALUInA = i * 5;
+   		 ALUInB = 16'h FFFF - i * 3;
+	  end else if(CLKCount == 405) begin //init slt
+		 ALUop = 4;
+
+		 if(ResOut != expected) begin
+   			$display("ERROR CLK %d: %x != %x", CLKCount, ResOut, expected);
+			$finish;
+		 
+   			errors = errors + 1;
+   		 end
+
+		 CLKCount = CLKCount + 1;
+		 trials = trials + 1;
+		 i = i + 1;
+
+		 expected = ALUInA - ALUInB;
+   		 ALUInA = i * 5;
+   		 ALUInB = 16'h FFFF - i * 3;
+	  end else if(CLKCount < 505) begin //slt
+		 if(ResOut != expected) begin
+   			$display("ERROR CLK %d: %x != %x", CLKCount, ResOut, expected);
+			$finish;
+		 
+   			errors = errors + 1;
+   		 end
+
+		 CLKCount = CLKCount + 1;
+		 trials = trials + 1;
+		 i = i + 1;
+
+		 expected = ALUInA < ALUInB;
+   		 ALUInA = i * 5;
+   		 ALUInB = 16'h FFFF - i * 3;
+	  end else begin
+		 $display("Finished with %d/%d errors.", errors, trials);
+		 $finish;
+	  end
+   end
 
 endmodule

@@ -19,7 +19,7 @@
 //
 //////////////////////////////////////////////////////////////////////////////////
 module stage3Integration(
-						 input [15:0]  ShifterOut, 
+						 input [15:0]  ShifterOut,
 						 input 		   CLK,
 
 						 //ALU inputs
@@ -29,8 +29,8 @@ module stage3Integration(
 
 						 //Res Control
 						 input 		   ResSource,
-						 input 		   ResWrite, 
-						 
+						 input 		   ResWrite,
+
 						 //Outputs
 						 output [15:0] ResOut,
 						 output 	   isZero
@@ -51,12 +51,11 @@ module stage3Integration(
 		 .r(ALUOut),
 		 .isZero(isZero)
 		 );
-   
+
    always @ (ALUInA, ALUInB, ALUop, CLK, ShifterOut, ResWrite, ResSource) begin
 	  if(ResSource == 0)
 		ResSourceOut = ALUOut;
 	  else
 		ResSourceOut = ShifterOut;
-	  $display("ResOut = %x", ResOut);
    end
 endmodule

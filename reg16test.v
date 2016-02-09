@@ -63,7 +63,7 @@ module reg16_reg16_sch_tb();
 			Write = 1;
 			I = I+1;
 		end
-		
+
 		CLKCount = CLKCount + 1;
 	end
 	
