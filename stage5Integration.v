@@ -32,16 +32,16 @@ module stage5Integration(
 						 input [1:0]   MemDst2,
 						 input [2:0]   MemData,
 
-						 //Register Outputs
+						 // Register Outputs
 						 output [15:0] ValAOut,
 						 output [15:0] ValBOut,
-						 output [15:0] IROut
+						 output [15:0] IROut,
+
+						 // Optional Register Outputs
+						 output [15:0] PCOut, 
+						 output [15:0] MSPOut,
+						 output [15:0] RSPOut 
     );
-
-   wire [15:0] 						   PCOut;
-   wire [15:0] 						   MSPOut;
-   wire [15:0] 						   RSPOut;
-
 
    stage1PCIncrementerSch pc(
 							 .PCAddFromSE(SignExtOut),

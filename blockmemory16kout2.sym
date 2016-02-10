@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <symbol version="7" name="blockmemory16kout2">
     <symboltype>BLOCK</symboltype>
-    <timestamp>2016-2-9T19:58:5</timestamp>
+    <timestamp>2016-2-10T20:41:32</timestamp>
     <pin polarity="Input" x="0" y="80" name="addra[14:0]" />
     <pin polarity="Input" x="0" y="112" name="dina[15:0]" />
     <pin polarity="Input" x="0" y="144" name="ena" />

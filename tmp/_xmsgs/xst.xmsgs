@@ -128,19 +128,19 @@
 <msg type="info" file="ip" num="0" delta="new" ><arg fmt="%d" index="1">19</arg>: (<arg fmt="%d" index="2">15</arg>,<arg fmt="%d" index="3">0</arg>) 	: <arg fmt="%d" index="4">1</arg>x<arg fmt="%d" index="5">16384</arg> 	u:<arg fmt="%d" index="6">1</arg>
 </msg>
 
-<msg type="warning" file="Xst" num="795" delta="old" >&quot;<arg fmt="%s" index="1">/home/user/csse232/JALA-CPU/tmp/./_cg/_dbg/./blk_mem_gen_v6_3/blk_mem_input_block.vhd</arg>&quot; line <arg fmt="%d" index="2">88</arg>: Size of operands are different : result is &lt;false&gt;.
+<msg type="warning" file="Xst" num="795" delta="new" >&quot;<arg fmt="%s" index="1">C:/Users/kelleyld/XiLinx Projects/JALA-CPU/tmp/./_cg/_dbg/./blk_mem_gen_v6_3/blk_mem_input_block.vhd</arg>&quot; line <arg fmt="%d" index="2">88</arg>: Size of operands are different : result is &lt;false&gt;.
 </msg>
 
-<msg type="warning" file="Xst" num="795" delta="old" >&quot;<arg fmt="%s" index="1">/home/user/csse232/JALA-CPU/tmp/./_cg/_dbg/./blk_mem_gen_v6_3/blk_mem_input_block.vhd</arg>&quot; line <arg fmt="%d" index="2">88</arg>: Size of operands are different : result is &lt;false&gt;.
+<msg type="warning" file="Xst" num="795" delta="new" >&quot;<arg fmt="%s" index="1">C:/Users/kelleyld/XiLinx Projects/JALA-CPU/tmp/./_cg/_dbg/./blk_mem_gen_v6_3/blk_mem_input_block.vhd</arg>&quot; line <arg fmt="%d" index="2">88</arg>: Size of operands are different : result is &lt;false&gt;.
 </msg>
 
-<msg type="warning" file="Xst" num="795" delta="old" >&quot;<arg fmt="%s" index="1">/home/user/csse232/JALA-CPU/tmp/./_cg/_dbg/./blk_mem_gen_v6_3/blk_mem_gen_generic_cstr.vhd</arg>&quot; line <arg fmt="%d" index="2">783</arg>: Size of operands are different : result is &lt;false&gt;.
+<msg type="warning" file="Xst" num="795" delta="new" >&quot;<arg fmt="%s" index="1">C:/Users/kelleyld/XiLinx Projects/JALA-CPU/tmp/./_cg/_dbg/./blk_mem_gen_v6_3/blk_mem_gen_generic_cstr.vhd</arg>&quot; line <arg fmt="%d" index="2">783</arg>: Size of operands are different : result is &lt;false&gt;.
 </msg>
 
 <msg type="info" file="ip" num="0" delta="new" ><arg fmt="%s" index="1">$Id: get_init_bmg_v6_3.c,v 1.3 2011/07/25 06:20:41 muruga Exp $</arg>
 </msg>
 
-<msg type="info" file="ip" num="0" delta="new" >Reading MIF file at <arg fmt="%s" index="1">/home/user/csse232/JALA-CPU/tmp/_cg/blockmemory16kout2.mif</arg>
+<msg type="info" file="ip" num="0" delta="new" >Reading MIF file at <arg fmt="%s" index="1">C:/Users/kelleyld/XiLinx Projects/JALA-CPU/tmp/_cg/blockmemory16kout2.mif</arg>
 </msg>
 
 <msg type="warning" file="ip" num="0" delta="new" >Memory initialization file (<arg fmt="%s" index="1">blockmemory16kout2.mif</arg>) depth is smaller than memory depth.
@@ -155,7 +155,7 @@
 <msg type="info" file="ip" num="0" delta="new" ><arg fmt="%s" index="1">$Id: get_init_bmg_v6_3.c,v 1.3 2011/07/25 06:20:41 muruga Exp $</arg>
 </msg>
 
-<msg type="info" file="ip" num="0" delta="new" >Reading MIF file at <arg fmt="%s" index="1">/home/user/csse232/JALA-CPU/tmp/_cg/blockmemory16kout2.mif</arg>
+<msg type="info" file="ip" num="0" delta="new" >Reading MIF file at <arg fmt="%s" index="1">C:/Users/kelleyld/XiLinx Projects/JALA-CPU/tmp/_cg/blockmemory16kout2.mif</arg>
 </msg>
 
 <msg type="warning" file="ip" num="0" delta="new" >Memory initialization file (<arg fmt="%s" index="1">blockmemory16kout2.mif</arg>) depth is smaller than memory depth.
@@ -170,7 +170,7 @@
 <msg type="info" file="ip" num="0" delta="new" ><arg fmt="%s" index="1">$Id: get_init_bmg_v6_3.c,v 1.3 2011/07/25 06:20:41 muruga Exp $</arg>
 </msg>
 
-<msg type="info" file="ip" num="0" delta="new" >Reading MIF file at <arg fmt="%s" index="1">/home/user/csse232/JALA-CPU/tmp/_cg/blockmemory16kout2.mif</arg>
+<msg type="info" file="ip" num="0" delta="new" >Reading MIF file at <arg fmt="%s" index="1">C:/Users/kelleyld/XiLinx Projects/JALA-CPU/tmp/_cg/blockmemory16kout2.mif</arg>
 </msg>
 
 <msg type="warning" file="ip" num="0" delta="new" >Memory initialization file (<arg fmt="%s" index="1">blockmemory16kout2.mif</arg>) depth is smaller than memory depth.
@@ -185,7 +185,7 @@
 <msg type="info" file="ip" num="0" delta="new" ><arg fmt="%s" index="1">$Id: get_init_bmg_v6_3.c,v 1.3 2011/07/25 06:20:41 muruga Exp $</arg>
 </msg>
 
-<msg type="info" file="ip" num="0" delta="new" >Reading MIF file at <arg fmt="%s" index="1">/home/user/csse232/JALA-CPU/tmp/_cg/blockmemory16kout2.mif</arg>
+<msg type="info" file="ip" num="0" delta="new" >Reading MIF file at <arg fmt="%s" index="1">C:/Users/kelleyld/XiLinx Projects/JALA-CPU/tmp/_cg/blockmemory16kout2.mif</arg>
 </msg>
 
 <msg type="warning" file="ip" num="0" delta="new" >Memory initialization file (<arg fmt="%s" index="1">blockmemory16kout2.mif</arg>) depth is smaller than memory depth.
@@ -200,7 +200,7 @@
 <msg type="info" file="ip" num="0" delta="new" ><arg fmt="%s" index="1">$Id: get_init_bmg_v6_3.c,v 1.3 2011/07/25 06:20:41 muruga Exp $</arg>
 </msg>
 
-<msg type="info" file="ip" num="0" delta="new" >Reading MIF file at <arg fmt="%s" index="1">/home/user/csse232/JALA-CPU/tmp/_cg/blockmemory16kout2.mif</arg>
+<msg type="info" file="ip" num="0" delta="new" >Reading MIF file at <arg fmt="%s" index="1">C:/Users/kelleyld/XiLinx Projects/JALA-CPU/tmp/_cg/blockmemory16kout2.mif</arg>
 </msg>
 
 <msg type="warning" file="ip" num="0" delta="new" >Memory initialization file (<arg fmt="%s" index="1">blockmemory16kout2.mif</arg>) depth is smaller than memory depth.
@@ -215,7 +215,7 @@
 <msg type="info" file="ip" num="0" delta="new" ><arg fmt="%s" index="1">$Id: get_init_bmg_v6_3.c,v 1.3 2011/07/25 06:20:41 muruga Exp $</arg>
 </msg>
 
-<msg type="info" file="ip" num="0" delta="new" >Reading MIF file at <arg fmt="%s" index="1">/home/user/csse232/JALA-CPU/tmp/_cg/blockmemory16kout2.mif</arg>
+<msg type="info" file="ip" num="0" delta="new" >Reading MIF file at <arg fmt="%s" index="1">C:/Users/kelleyld/XiLinx Projects/JALA-CPU/tmp/_cg/blockmemory16kout2.mif</arg>
 </msg>
 
 <msg type="warning" file="ip" num="0" delta="new" >Memory initialization file (<arg fmt="%s" index="1">blockmemory16kout2.mif</arg>) depth is smaller than memory depth.
@@ -230,7 +230,7 @@
 <msg type="info" file="ip" num="0" delta="new" ><arg fmt="%s" index="1">$Id: get_init_bmg_v6_3.c,v 1.3 2011/07/25 06:20:41 muruga Exp $</arg>
 </msg>
 
-<msg type="info" file="ip" num="0" delta="new" >Reading MIF file at <arg fmt="%s" index="1">/home/user/csse232/JALA-CPU/tmp/_cg/blockmemory16kout2.mif</arg>
+<msg type="info" file="ip" num="0" delta="new" >Reading MIF file at <arg fmt="%s" index="1">C:/Users/kelleyld/XiLinx Projects/JALA-CPU/tmp/_cg/blockmemory16kout2.mif</arg>
 </msg>
 
 <msg type="warning" file="ip" num="0" delta="new" >Memory initialization file (<arg fmt="%s" index="1">blockmemory16kout2.mif</arg>) depth is smaller than memory depth.
@@ -245,7 +245,7 @@
 <msg type="info" file="ip" num="0" delta="new" ><arg fmt="%s" index="1">$Id: get_init_bmg_v6_3.c,v 1.3 2011/07/25 06:20:41 muruga Exp $</arg>
 </msg>
 
-<msg type="info" file="ip" num="0" delta="new" >Reading MIF file at <arg fmt="%s" index="1">/home/user/csse232/JALA-CPU/tmp/_cg/blockmemory16kout2.mif</arg>
+<msg type="info" file="ip" num="0" delta="new" >Reading MIF file at <arg fmt="%s" index="1">C:/Users/kelleyld/XiLinx Projects/JALA-CPU/tmp/_cg/blockmemory16kout2.mif</arg>
 </msg>
 
 <msg type="warning" file="ip" num="0" delta="new" >Memory initialization file (<arg fmt="%s" index="1">blockmemory16kout2.mif</arg>) depth is smaller than memory depth.
@@ -260,7 +260,7 @@
 <msg type="info" file="ip" num="0" delta="new" ><arg fmt="%s" index="1">$Id: get_init_bmg_v6_3.c,v 1.3 2011/07/25 06:20:41 muruga Exp $</arg>
 </msg>
 
-<msg type="info" file="ip" num="0" delta="new" >Reading MIF file at <arg fmt="%s" index="1">/home/user/csse232/JALA-CPU/tmp/_cg/blockmemory16kout2.mif</arg>
+<msg type="info" file="ip" num="0" delta="new" >Reading MIF file at <arg fmt="%s" index="1">C:/Users/kelleyld/XiLinx Projects/JALA-CPU/tmp/_cg/blockmemory16kout2.mif</arg>
 </msg>
 
 <msg type="warning" file="ip" num="0" delta="new" >Memory initialization file (<arg fmt="%s" index="1">blockmemory16kout2.mif</arg>) depth is smaller than memory depth.
@@ -275,7 +275,7 @@
 <msg type="info" file="ip" num="0" delta="new" ><arg fmt="%s" index="1">$Id: get_init_bmg_v6_3.c,v 1.3 2011/07/25 06:20:41 muruga Exp $</arg>
 </msg>
 
-<msg type="info" file="ip" num="0" delta="new" >Reading MIF file at <arg fmt="%s" index="1">/home/user/csse232/JALA-CPU/tmp/_cg/blockmemory16kout2.mif</arg>
+<msg type="info" file="ip" num="0" delta="new" >Reading MIF file at <arg fmt="%s" index="1">C:/Users/kelleyld/XiLinx Projects/JALA-CPU/tmp/_cg/blockmemory16kout2.mif</arg>
 </msg>
 
 <msg type="warning" file="ip" num="0" delta="new" >Memory initialization file (<arg fmt="%s" index="1">blockmemory16kout2.mif</arg>) depth is smaller than memory depth.
@@ -290,7 +290,7 @@
 <msg type="info" file="ip" num="0" delta="new" ><arg fmt="%s" index="1">$Id: get_init_bmg_v6_3.c,v 1.3 2011/07/25 06:20:41 muruga Exp $</arg>
 </msg>
 
-<msg type="info" file="ip" num="0" delta="new" >Reading MIF file at <arg fmt="%s" index="1">/home/user/csse232/JALA-CPU/tmp/_cg/blockmemory16kout2.mif</arg>
+<msg type="info" file="ip" num="0" delta="new" >Reading MIF file at <arg fmt="%s" index="1">C:/Users/kelleyld/XiLinx Projects/JALA-CPU/tmp/_cg/blockmemory16kout2.mif</arg>
 </msg>
 
 <msg type="warning" file="ip" num="0" delta="new" >Memory initialization file (<arg fmt="%s" index="1">blockmemory16kout2.mif</arg>) depth is smaller than memory depth.
@@ -305,7 +305,7 @@
 <msg type="info" file="ip" num="0" delta="new" ><arg fmt="%s" index="1">$Id: get_init_bmg_v6_3.c,v 1.3 2011/07/25 06:20:41 muruga Exp $</arg>
 </msg>
 
-<msg type="info" file="ip" num="0" delta="new" >Reading MIF file at <arg fmt="%s" index="1">/home/user/csse232/JALA-CPU/tmp/_cg/blockmemory16kout2.mif</arg>
+<msg type="info" file="ip" num="0" delta="new" >Reading MIF file at <arg fmt="%s" index="1">C:/Users/kelleyld/XiLinx Projects/JALA-CPU/tmp/_cg/blockmemory16kout2.mif</arg>
 </msg>
 
 <msg type="warning" file="ip" num="0" delta="new" >Memory initialization file (<arg fmt="%s" index="1">blockmemory16kout2.mif</arg>) depth is smaller than memory depth.
@@ -320,7 +320,7 @@
 <msg type="info" file="ip" num="0" delta="new" ><arg fmt="%s" index="1">$Id: get_init_bmg_v6_3.c,v 1.3 2011/07/25 06:20:41 muruga Exp $</arg>
 </msg>
 
-<msg type="info" file="ip" num="0" delta="new" >Reading MIF file at <arg fmt="%s" index="1">/home/user/csse232/JALA-CPU/tmp/_cg/blockmemory16kout2.mif</arg>
+<msg type="info" file="ip" num="0" delta="new" >Reading MIF file at <arg fmt="%s" index="1">C:/Users/kelleyld/XiLinx Projects/JALA-CPU/tmp/_cg/blockmemory16kout2.mif</arg>
 </msg>
 
 <msg type="warning" file="ip" num="0" delta="new" >Memory initialization file (<arg fmt="%s" index="1">blockmemory16kout2.mif</arg>) depth is smaller than memory depth.
@@ -335,7 +335,7 @@
 <msg type="info" file="ip" num="0" delta="new" ><arg fmt="%s" index="1">$Id: get_init_bmg_v6_3.c,v 1.3 2011/07/25 06:20:41 muruga Exp $</arg>
 </msg>
 
-<msg type="info" file="ip" num="0" delta="new" >Reading MIF file at <arg fmt="%s" index="1">/home/user/csse232/JALA-CPU/tmp/_cg/blockmemory16kout2.mif</arg>
+<msg type="info" file="ip" num="0" delta="new" >Reading MIF file at <arg fmt="%s" index="1">C:/Users/kelleyld/XiLinx Projects/JALA-CPU/tmp/_cg/blockmemory16kout2.mif</arg>
 </msg>
 
 <msg type="warning" file="ip" num="0" delta="new" >Memory initialization file (<arg fmt="%s" index="1">blockmemory16kout2.mif</arg>) depth is smaller than memory depth.
@@ -350,7 +350,7 @@
 <msg type="info" file="ip" num="0" delta="new" ><arg fmt="%s" index="1">$Id: get_init_bmg_v6_3.c,v 1.3 2011/07/25 06:20:41 muruga Exp $</arg>
 </msg>
 
-<msg type="info" file="ip" num="0" delta="new" >Reading MIF file at <arg fmt="%s" index="1">/home/user/csse232/JALA-CPU/tmp/_cg/blockmemory16kout2.mif</arg>
+<msg type="info" file="ip" num="0" delta="new" >Reading MIF file at <arg fmt="%s" index="1">C:/Users/kelleyld/XiLinx Projects/JALA-CPU/tmp/_cg/blockmemory16kout2.mif</arg>
 </msg>
 
 <msg type="warning" file="ip" num="0" delta="new" >Memory initialization file (<arg fmt="%s" index="1">blockmemory16kout2.mif</arg>) depth is smaller than memory depth.
@@ -365,7 +365,7 @@
 <msg type="info" file="ip" num="0" delta="new" ><arg fmt="%s" index="1">$Id: get_init_bmg_v6_3.c,v 1.3 2011/07/25 06:20:41 muruga Exp $</arg>
 </msg>
 
-<msg type="info" file="ip" num="0" delta="new" >Reading MIF file at <arg fmt="%s" index="1">/home/user/csse232/JALA-CPU/tmp/_cg/blockmemory16kout2.mif</arg>
+<msg type="info" file="ip" num="0" delta="new" >Reading MIF file at <arg fmt="%s" index="1">C:/Users/kelleyld/XiLinx Projects/JALA-CPU/tmp/_cg/blockmemory16kout2.mif</arg>
 </msg>
 
 <msg type="warning" file="ip" num="0" delta="new" >Memory initialization file (<arg fmt="%s" index="1">blockmemory16kout2.mif</arg>) depth is smaller than memory depth.
@@ -380,7 +380,7 @@
 <msg type="info" file="ip" num="0" delta="new" ><arg fmt="%s" index="1">$Id: get_init_bmg_v6_3.c,v 1.3 2011/07/25 06:20:41 muruga Exp $</arg>
 </msg>
 
-<msg type="info" file="ip" num="0" delta="new" >Reading MIF file at <arg fmt="%s" index="1">/home/user/csse232/JALA-CPU/tmp/_cg/blockmemory16kout2.mif</arg>
+<msg type="info" file="ip" num="0" delta="new" >Reading MIF file at <arg fmt="%s" index="1">C:/Users/kelleyld/XiLinx Projects/JALA-CPU/tmp/_cg/blockmemory16kout2.mif</arg>
 </msg>
 
 <msg type="warning" file="ip" num="0" delta="new" >Memory initialization file (<arg fmt="%s" index="1">blockmemory16kout2.mif</arg>) depth is smaller than memory depth.
@@ -395,7 +395,7 @@
 <msg type="info" file="ip" num="0" delta="new" ><arg fmt="%s" index="1">$Id: get_init_bmg_v6_3.c,v 1.3 2011/07/25 06:20:41 muruga Exp $</arg>
 </msg>
 
-<msg type="info" file="ip" num="0" delta="new" >Reading MIF file at <arg fmt="%s" index="1">/home/user/csse232/JALA-CPU/tmp/_cg/blockmemory16kout2.mif</arg>
+<msg type="info" file="ip" num="0" delta="new" >Reading MIF file at <arg fmt="%s" index="1">C:/Users/kelleyld/XiLinx Projects/JALA-CPU/tmp/_cg/blockmemory16kout2.mif</arg>
 </msg>
 
 <msg type="warning" file="ip" num="0" delta="new" >Memory initialization file (<arg fmt="%s" index="1">blockmemory16kout2.mif</arg>) depth is smaller than memory depth.
@@ -410,7 +410,7 @@
 <msg type="info" file="ip" num="0" delta="new" ><arg fmt="%s" index="1">$Id: get_init_bmg_v6_3.c,v 1.3 2011/07/25 06:20:41 muruga Exp $</arg>
 </msg>
 
-<msg type="info" file="ip" num="0" delta="new" >Reading MIF file at <arg fmt="%s" index="1">/home/user/csse232/JALA-CPU/tmp/_cg/blockmemory16kout2.mif</arg>
+<msg type="info" file="ip" num="0" delta="new" >Reading MIF file at <arg fmt="%s" index="1">C:/Users/kelleyld/XiLinx Projects/JALA-CPU/tmp/_cg/blockmemory16kout2.mif</arg>
 </msg>
 
 <msg type="warning" file="ip" num="0" delta="new" >Memory initialization file (<arg fmt="%s" index="1">blockmemory16kout2.mif</arg>) depth is smaller than memory depth.
@@ -425,7 +425,7 @@
 <msg type="info" file="ip" num="0" delta="new" ><arg fmt="%s" index="1">$Id: get_init_bmg_v6_3.c,v 1.3 2011/07/25 06:20:41 muruga Exp $</arg>
 </msg>
 
-<msg type="info" file="ip" num="0" delta="new" >Reading MIF file at <arg fmt="%s" index="1">/home/user/csse232/JALA-CPU/tmp/_cg/blockmemory16kout2.mif</arg>
+<msg type="info" file="ip" num="0" delta="new" >Reading MIF file at <arg fmt="%s" index="1">C:/Users/kelleyld/XiLinx Projects/JALA-CPU/tmp/_cg/blockmemory16kout2.mif</arg>
 </msg>
 
 <msg type="warning" file="ip" num="0" delta="new" >Memory initialization file (<arg fmt="%s" index="1">blockmemory16kout2.mif</arg>) depth is smaller than memory depth.
@@ -437,139 +437,139 @@
 <msg type="info" file="ip" num="0" delta="new" >Default data (<arg fmt="%s" index="1">0</arg> hex) will persist where not overwritten by MIF file.
 </msg>
 
-<msg type="warning" file="Xst" num="752" delta="old" >&quot;<arg fmt="%s" index="1">/home/user/csse232/JALA-CPU/tmp/./_cg/_dbg/blockmemory16kout2.vhd</arg>&quot; line <arg fmt="%d" index="2">171</arg>: Unconnected input port &apos;<arg fmt="%s" index="3">rsta</arg>&apos; of component &apos;<arg fmt="%s" index="4">blk_mem_gen_v6_3</arg>&apos; is tied to default value.
+<msg type="warning" file="Xst" num="752" delta="new" >&quot;<arg fmt="%s" index="1">C:/Users/kelleyld/XiLinx Projects/JALA-CPU/tmp/./_cg/_dbg/blockmemory16kout2.vhd</arg>&quot; line <arg fmt="%d" index="2">171</arg>: Unconnected input port &apos;<arg fmt="%s" index="3">rsta</arg>&apos; of component &apos;<arg fmt="%s" index="4">blk_mem_gen_v6_3</arg>&apos; is tied to default value.
 </msg>
 
-<msg type="warning" file="Xst" num="752" delta="old" >&quot;<arg fmt="%s" index="1">/home/user/csse232/JALA-CPU/tmp/./_cg/_dbg/blockmemory16kout2.vhd</arg>&quot; line <arg fmt="%d" index="2">171</arg>: Unconnected input port &apos;<arg fmt="%s" index="3">regcea</arg>&apos; of component &apos;<arg fmt="%s" index="4">blk_mem_gen_v6_3</arg>&apos; is tied to default value.
+<msg type="warning" file="Xst" num="752" delta="new" >&quot;<arg fmt="%s" index="1">C:/Users/kelleyld/XiLinx Projects/JALA-CPU/tmp/./_cg/_dbg/blockmemory16kout2.vhd</arg>&quot; line <arg fmt="%d" index="2">171</arg>: Unconnected input port &apos;<arg fmt="%s" index="3">regcea</arg>&apos; of component &apos;<arg fmt="%s" index="4">blk_mem_gen_v6_3</arg>&apos; is tied to default value.
 </msg>
 
-<msg type="warning" file="Xst" num="752" delta="old" >&quot;<arg fmt="%s" index="1">/home/user/csse232/JALA-CPU/tmp/./_cg/_dbg/blockmemory16kout2.vhd</arg>&quot; line <arg fmt="%d" index="2">171</arg>: Unconnected input port &apos;<arg fmt="%s" index="3">rstb</arg>&apos; of component &apos;<arg fmt="%s" index="4">blk_mem_gen_v6_3</arg>&apos; is tied to default value.
+<msg type="warning" file="Xst" num="752" delta="new" >&quot;<arg fmt="%s" index="1">C:/Users/kelleyld/XiLinx Projects/JALA-CPU/tmp/./_cg/_dbg/blockmemory16kout2.vhd</arg>&quot; line <arg fmt="%d" index="2">171</arg>: Unconnected input port &apos;<arg fmt="%s" index="3">rstb</arg>&apos; of component &apos;<arg fmt="%s" index="4">blk_mem_gen_v6_3</arg>&apos; is tied to default value.
 </msg>
 
-<msg type="warning" file="Xst" num="752" delta="old" >&quot;<arg fmt="%s" index="1">/home/user/csse232/JALA-CPU/tmp/./_cg/_dbg/blockmemory16kout2.vhd</arg>&quot; line <arg fmt="%d" index="2">171</arg>: Unconnected input port &apos;<arg fmt="%s" index="3">regceb</arg>&apos; of component &apos;<arg fmt="%s" index="4">blk_mem_gen_v6_3</arg>&apos; is tied to default value.
+<msg type="warning" file="Xst" num="752" delta="new" >&quot;<arg fmt="%s" index="1">C:/Users/kelleyld/XiLinx Projects/JALA-CPU/tmp/./_cg/_dbg/blockmemory16kout2.vhd</arg>&quot; line <arg fmt="%d" index="2">171</arg>: Unconnected input port &apos;<arg fmt="%s" index="3">regceb</arg>&apos; of component &apos;<arg fmt="%s" index="4">blk_mem_gen_v6_3</arg>&apos; is tied to default value.
 </msg>
 
-<msg type="warning" file="Xst" num="752" delta="old" >&quot;<arg fmt="%s" index="1">/home/user/csse232/JALA-CPU/tmp/./_cg/_dbg/blockmemory16kout2.vhd</arg>&quot; line <arg fmt="%d" index="2">171</arg>: Unconnected input port &apos;<arg fmt="%s" index="3">injectsbiterr</arg>&apos; of component &apos;<arg fmt="%s" index="4">blk_mem_gen_v6_3</arg>&apos; is tied to default value.
+<msg type="warning" file="Xst" num="752" delta="new" >&quot;<arg fmt="%s" index="1">C:/Users/kelleyld/XiLinx Projects/JALA-CPU/tmp/./_cg/_dbg/blockmemory16kout2.vhd</arg>&quot; line <arg fmt="%d" index="2">171</arg>: Unconnected input port &apos;<arg fmt="%s" index="3">injectsbiterr</arg>&apos; of component &apos;<arg fmt="%s" index="4">blk_mem_gen_v6_3</arg>&apos; is tied to default value.
 </msg>
 
-<msg type="warning" file="Xst" num="752" delta="old" >&quot;<arg fmt="%s" index="1">/home/user/csse232/JALA-CPU/tmp/./_cg/_dbg/blockmemory16kout2.vhd</arg>&quot; line <arg fmt="%d" index="2">171</arg>: Unconnected input port &apos;<arg fmt="%s" index="3">injectdbiterr</arg>&apos; of component &apos;<arg fmt="%s" index="4">blk_mem_gen_v6_3</arg>&apos; is tied to default value.
+<msg type="warning" file="Xst" num="752" delta="new" >&quot;<arg fmt="%s" index="1">C:/Users/kelleyld/XiLinx Projects/JALA-CPU/tmp/./_cg/_dbg/blockmemory16kout2.vhd</arg>&quot; line <arg fmt="%d" index="2">171</arg>: Unconnected input port &apos;<arg fmt="%s" index="3">injectdbiterr</arg>&apos; of component &apos;<arg fmt="%s" index="4">blk_mem_gen_v6_3</arg>&apos; is tied to default value.
 </msg>
 
-<msg type="warning" file="Xst" num="753" delta="old" >&quot;<arg fmt="%s" index="1">/home/user/csse232/JALA-CPU/tmp/./_cg/_dbg/blockmemory16kout2.vhd</arg>&quot; line <arg fmt="%d" index="2">171</arg>: Unconnected output port &apos;<arg fmt="%s" index="3">sbiterr</arg>&apos; of component &apos;<arg fmt="%s" index="4">blk_mem_gen_v6_3</arg>&apos;.
+<msg type="warning" file="Xst" num="753" delta="new" >&quot;<arg fmt="%s" index="1">C:/Users/kelleyld/XiLinx Projects/JALA-CPU/tmp/./_cg/_dbg/blockmemory16kout2.vhd</arg>&quot; line <arg fmt="%d" index="2">171</arg>: Unconnected output port &apos;<arg fmt="%s" index="3">sbiterr</arg>&apos; of component &apos;<arg fmt="%s" index="4">blk_mem_gen_v6_3</arg>&apos;.
 </msg>
 
-<msg type="warning" file="Xst" num="753" delta="old" >&quot;<arg fmt="%s" index="1">/home/user/csse232/JALA-CPU/tmp/./_cg/_dbg/blockmemory16kout2.vhd</arg>&quot; line <arg fmt="%d" index="2">171</arg>: Unconnected output port &apos;<arg fmt="%s" index="3">dbiterr</arg>&apos; of component &apos;<arg fmt="%s" index="4">blk_mem_gen_v6_3</arg>&apos;.
+<msg type="warning" file="Xst" num="753" delta="new" >&quot;<arg fmt="%s" index="1">C:/Users/kelleyld/XiLinx Projects/JALA-CPU/tmp/./_cg/_dbg/blockmemory16kout2.vhd</arg>&quot; line <arg fmt="%d" index="2">171</arg>: Unconnected output port &apos;<arg fmt="%s" index="3">dbiterr</arg>&apos; of component &apos;<arg fmt="%s" index="4">blk_mem_gen_v6_3</arg>&apos;.
 </msg>
 
-<msg type="warning" file="Xst" num="753" delta="old" >&quot;<arg fmt="%s" index="1">/home/user/csse232/JALA-CPU/tmp/./_cg/_dbg/blockmemory16kout2.vhd</arg>&quot; line <arg fmt="%d" index="2">171</arg>: Unconnected output port &apos;<arg fmt="%s" index="3">rdaddrecc</arg>&apos; of component &apos;<arg fmt="%s" index="4">blk_mem_gen_v6_3</arg>&apos;.
+<msg type="warning" file="Xst" num="753" delta="new" >&quot;<arg fmt="%s" index="1">C:/Users/kelleyld/XiLinx Projects/JALA-CPU/tmp/./_cg/_dbg/blockmemory16kout2.vhd</arg>&quot; line <arg fmt="%d" index="2">171</arg>: Unconnected output port &apos;<arg fmt="%s" index="3">rdaddrecc</arg>&apos; of component &apos;<arg fmt="%s" index="4">blk_mem_gen_v6_3</arg>&apos;.
 </msg>
 
-<msg type="warning" file="Xst" num="752" delta="old" >&quot;<arg fmt="%s" index="1">/home/user/csse232/JALA-CPU/tmp/./_cg/_dbg/blockmemory16kout2.vhd</arg>&quot; line <arg fmt="%d" index="2">171</arg>: Unconnected input port &apos;<arg fmt="%s" index="3">s_aclk</arg>&apos; of component &apos;<arg fmt="%s" index="4">blk_mem_gen_v6_3</arg>&apos; is tied to default value.
+<msg type="warning" file="Xst" num="752" delta="new" >&quot;<arg fmt="%s" index="1">C:/Users/kelleyld/XiLinx Projects/JALA-CPU/tmp/./_cg/_dbg/blockmemory16kout2.vhd</arg>&quot; line <arg fmt="%d" index="2">171</arg>: Unconnected input port &apos;<arg fmt="%s" index="3">s_aclk</arg>&apos; of component &apos;<arg fmt="%s" index="4">blk_mem_gen_v6_3</arg>&apos; is tied to default value.
 </msg>
 
-<msg type="warning" file="Xst" num="752" delta="old" >&quot;<arg fmt="%s" index="1">/home/user/csse232/JALA-CPU/tmp/./_cg/_dbg/blockmemory16kout2.vhd</arg>&quot; line <arg fmt="%d" index="2">171</arg>: Unconnected input port &apos;<arg fmt="%s" index="3">s_aresetn</arg>&apos; of component &apos;<arg fmt="%s" index="4">blk_mem_gen_v6_3</arg>&apos; is tied to default value.
+<msg type="warning" file="Xst" num="752" delta="new" >&quot;<arg fmt="%s" index="1">C:/Users/kelleyld/XiLinx Projects/JALA-CPU/tmp/./_cg/_dbg/blockmemory16kout2.vhd</arg>&quot; line <arg fmt="%d" index="2">171</arg>: Unconnected input port &apos;<arg fmt="%s" index="3">s_aresetn</arg>&apos; of component &apos;<arg fmt="%s" index="4">blk_mem_gen_v6_3</arg>&apos; is tied to default value.
 </msg>
 
-<msg type="warning" file="Xst" num="752" delta="old" >&quot;<arg fmt="%s" index="1">/home/user/csse232/JALA-CPU/tmp/./_cg/_dbg/blockmemory16kout2.vhd</arg>&quot; line <arg fmt="%d" index="2">171</arg>: Unconnected input port &apos;<arg fmt="%s" index="3">s_axi_awid</arg>&apos; of component &apos;<arg fmt="%s" index="4">blk_mem_gen_v6_3</arg>&apos; is tied to default value.
+<msg type="warning" file="Xst" num="752" delta="new" >&quot;<arg fmt="%s" index="1">C:/Users/kelleyld/XiLinx Projects/JALA-CPU/tmp/./_cg/_dbg/blockmemory16kout2.vhd</arg>&quot; line <arg fmt="%d" index="2">171</arg>: Unconnected input port &apos;<arg fmt="%s" index="3">s_axi_awid</arg>&apos; of component &apos;<arg fmt="%s" index="4">blk_mem_gen_v6_3</arg>&apos; is tied to default value.
 </msg>
 
-<msg type="warning" file="Xst" num="752" delta="old" >&quot;<arg fmt="%s" index="1">/home/user/csse232/JALA-CPU/tmp/./_cg/_dbg/blockmemory16kout2.vhd</arg>&quot; line <arg fmt="%d" index="2">171</arg>: Unconnected input port &apos;<arg fmt="%s" index="3">s_axi_awaddr</arg>&apos; of component &apos;<arg fmt="%s" index="4">blk_mem_gen_v6_3</arg>&apos; is tied to default value.
+<msg type="warning" file="Xst" num="752" delta="new" >&quot;<arg fmt="%s" index="1">C:/Users/kelleyld/XiLinx Projects/JALA-CPU/tmp/./_cg/_dbg/blockmemory16kout2.vhd</arg>&quot; line <arg fmt="%d" index="2">171</arg>: Unconnected input port &apos;<arg fmt="%s" index="3">s_axi_awaddr</arg>&apos; of component &apos;<arg fmt="%s" index="4">blk_mem_gen_v6_3</arg>&apos; is tied to default value.
 </msg>
 
-<msg type="warning" file="Xst" num="752" delta="old" >&quot;<arg fmt="%s" index="1">/home/user/csse232/JALA-CPU/tmp/./_cg/_dbg/blockmemory16kout2.vhd</arg>&quot; line <arg fmt="%d" index="2">171</arg>: Unconnected input port &apos;<arg fmt="%s" index="3">s_axi_awlen</arg>&apos; of component &apos;<arg fmt="%s" index="4">blk_mem_gen_v6_3</arg>&apos; is tied to default value.
+<msg type="warning" file="Xst" num="752" delta="new" >&quot;<arg fmt="%s" index="1">C:/Users/kelleyld/XiLinx Projects/JALA-CPU/tmp/./_cg/_dbg/blockmemory16kout2.vhd</arg>&quot; line <arg fmt="%d" index="2">171</arg>: Unconnected input port &apos;<arg fmt="%s" index="3">s_axi_awlen</arg>&apos; of component &apos;<arg fmt="%s" index="4">blk_mem_gen_v6_3</arg>&apos; is tied to default value.
 </msg>
 
-<msg type="warning" file="Xst" num="752" delta="old" >&quot;<arg fmt="%s" index="1">/home/user/csse232/JALA-CPU/tmp/./_cg/_dbg/blockmemory16kout2.vhd</arg>&quot; line <arg fmt="%d" index="2">171</arg>: Unconnected input port &apos;<arg fmt="%s" index="3">s_axi_awsize</arg>&apos; of component &apos;<arg fmt="%s" index="4">blk_mem_gen_v6_3</arg>&apos; is tied to default value.
+<msg type="warning" file="Xst" num="752" delta="new" >&quot;<arg fmt="%s" index="1">C:/Users/kelleyld/XiLinx Projects/JALA-CPU/tmp/./_cg/_dbg/blockmemory16kout2.vhd</arg>&quot; line <arg fmt="%d" index="2">171</arg>: Unconnected input port &apos;<arg fmt="%s" index="3">s_axi_awsize</arg>&apos; of component &apos;<arg fmt="%s" index="4">blk_mem_gen_v6_3</arg>&apos; is tied to default value.
 </msg>
 
-<msg type="warning" file="Xst" num="752" delta="old" >&quot;<arg fmt="%s" index="1">/home/user/csse232/JALA-CPU/tmp/./_cg/_dbg/blockmemory16kout2.vhd</arg>&quot; line <arg fmt="%d" index="2">171</arg>: Unconnected input port &apos;<arg fmt="%s" index="3">s_axi_awburst</arg>&apos; of component &apos;<arg fmt="%s" index="4">blk_mem_gen_v6_3</arg>&apos; is tied to default value.
+<msg type="warning" file="Xst" num="752" delta="new" >&quot;<arg fmt="%s" index="1">C:/Users/kelleyld/XiLinx Projects/JALA-CPU/tmp/./_cg/_dbg/blockmemory16kout2.vhd</arg>&quot; line <arg fmt="%d" index="2">171</arg>: Unconnected input port &apos;<arg fmt="%s" index="3">s_axi_awburst</arg>&apos; of component &apos;<arg fmt="%s" index="4">blk_mem_gen_v6_3</arg>&apos; is tied to default value.
 </msg>
 
-<msg type="warning" file="Xst" num="752" delta="old" >&quot;<arg fmt="%s" index="1">/home/user/csse232/JALA-CPU/tmp/./_cg/_dbg/blockmemory16kout2.vhd</arg>&quot; line <arg fmt="%d" index="2">171</arg>: Unconnected input port &apos;<arg fmt="%s" index="3">s_axi_awvalid</arg>&apos; of component &apos;<arg fmt="%s" index="4">blk_mem_gen_v6_3</arg>&apos; is tied to default value.
+<msg type="warning" file="Xst" num="752" delta="new" >&quot;<arg fmt="%s" index="1">C:/Users/kelleyld/XiLinx Projects/JALA-CPU/tmp/./_cg/_dbg/blockmemory16kout2.vhd</arg>&quot; line <arg fmt="%d" index="2">171</arg>: Unconnected input port &apos;<arg fmt="%s" index="3">s_axi_awvalid</arg>&apos; of component &apos;<arg fmt="%s" index="4">blk_mem_gen_v6_3</arg>&apos; is tied to default value.
 </msg>
 
-<msg type="warning" file="Xst" num="753" delta="old" >&quot;<arg fmt="%s" index="1">/home/user/csse232/JALA-CPU/tmp/./_cg/_dbg/blockmemory16kout2.vhd</arg>&quot; line <arg fmt="%d" index="2">171</arg>: Unconnected output port &apos;<arg fmt="%s" index="3">s_axi_awready</arg>&apos; of component &apos;<arg fmt="%s" index="4">blk_mem_gen_v6_3</arg>&apos;.
+<msg type="warning" file="Xst" num="753" delta="new" >&quot;<arg fmt="%s" index="1">C:/Users/kelleyld/XiLinx Projects/JALA-CPU/tmp/./_cg/_dbg/blockmemory16kout2.vhd</arg>&quot; line <arg fmt="%d" index="2">171</arg>: Unconnected output port &apos;<arg fmt="%s" index="3">s_axi_awready</arg>&apos; of component &apos;<arg fmt="%s" index="4">blk_mem_gen_v6_3</arg>&apos;.
 </msg>
 
-<msg type="warning" file="Xst" num="752" delta="old" >&quot;<arg fmt="%s" index="1">/home/user/csse232/JALA-CPU/tmp/./_cg/_dbg/blockmemory16kout2.vhd</arg>&quot; line <arg fmt="%d" index="2">171</arg>: Unconnected input port &apos;<arg fmt="%s" index="3">s_axi_wdata</arg>&apos; of component &apos;<arg fmt="%s" index="4">blk_mem_gen_v6_3</arg>&apos; is tied to default value.
+<msg type="warning" file="Xst" num="752" delta="new" >&quot;<arg fmt="%s" index="1">C:/Users/kelleyld/XiLinx Projects/JALA-CPU/tmp/./_cg/_dbg/blockmemory16kout2.vhd</arg>&quot; line <arg fmt="%d" index="2">171</arg>: Unconnected input port &apos;<arg fmt="%s" index="3">s_axi_wdata</arg>&apos; of component &apos;<arg fmt="%s" index="4">blk_mem_gen_v6_3</arg>&apos; is tied to default value.
 </msg>
 
-<msg type="warning" file="Xst" num="752" delta="old" >&quot;<arg fmt="%s" index="1">/home/user/csse232/JALA-CPU/tmp/./_cg/_dbg/blockmemory16kout2.vhd</arg>&quot; line <arg fmt="%d" index="2">171</arg>: Unconnected input port &apos;<arg fmt="%s" index="3">s_axi_wstrb</arg>&apos; of component &apos;<arg fmt="%s" index="4">blk_mem_gen_v6_3</arg>&apos; is tied to default value.
+<msg type="warning" file="Xst" num="752" delta="new" >&quot;<arg fmt="%s" index="1">C:/Users/kelleyld/XiLinx Projects/JALA-CPU/tmp/./_cg/_dbg/blockmemory16kout2.vhd</arg>&quot; line <arg fmt="%d" index="2">171</arg>: Unconnected input port &apos;<arg fmt="%s" index="3">s_axi_wstrb</arg>&apos; of component &apos;<arg fmt="%s" index="4">blk_mem_gen_v6_3</arg>&apos; is tied to default value.
 </msg>
 
-<msg type="warning" file="Xst" num="752" delta="old" >&quot;<arg fmt="%s" index="1">/home/user/csse232/JALA-CPU/tmp/./_cg/_dbg/blockmemory16kout2.vhd</arg>&quot; line <arg fmt="%d" index="2">171</arg>: Unconnected input port &apos;<arg fmt="%s" index="3">s_axi_wlast</arg>&apos; of component &apos;<arg fmt="%s" index="4">blk_mem_gen_v6_3</arg>&apos; is tied to default value.
+<msg type="warning" file="Xst" num="752" delta="new" >&quot;<arg fmt="%s" index="1">C:/Users/kelleyld/XiLinx Projects/JALA-CPU/tmp/./_cg/_dbg/blockmemory16kout2.vhd</arg>&quot; line <arg fmt="%d" index="2">171</arg>: Unconnected input port &apos;<arg fmt="%s" index="3">s_axi_wlast</arg>&apos; of component &apos;<arg fmt="%s" index="4">blk_mem_gen_v6_3</arg>&apos; is tied to default value.
 </msg>
 
-<msg type="warning" file="Xst" num="752" delta="old" >&quot;<arg fmt="%s" index="1">/home/user/csse232/JALA-CPU/tmp/./_cg/_dbg/blockmemory16kout2.vhd</arg>&quot; line <arg fmt="%d" index="2">171</arg>: Unconnected input port &apos;<arg fmt="%s" index="3">s_axi_wvalid</arg>&apos; of component &apos;<arg fmt="%s" index="4">blk_mem_gen_v6_3</arg>&apos; is tied to default value.
+<msg type="warning" file="Xst" num="752" delta="new" >&quot;<arg fmt="%s" index="1">C:/Users/kelleyld/XiLinx Projects/JALA-CPU/tmp/./_cg/_dbg/blockmemory16kout2.vhd</arg>&quot; line <arg fmt="%d" index="2">171</arg>: Unconnected input port &apos;<arg fmt="%s" index="3">s_axi_wvalid</arg>&apos; of component &apos;<arg fmt="%s" index="4">blk_mem_gen_v6_3</arg>&apos; is tied to default value.
 </msg>
 
-<msg type="warning" file="Xst" num="753" delta="old" >&quot;<arg fmt="%s" index="1">/home/user/csse232/JALA-CPU/tmp/./_cg/_dbg/blockmemory16kout2.vhd</arg>&quot; line <arg fmt="%d" index="2">171</arg>: Unconnected output port &apos;<arg fmt="%s" index="3">s_axi_wready</arg>&apos; of component &apos;<arg fmt="%s" index="4">blk_mem_gen_v6_3</arg>&apos;.
+<msg type="warning" file="Xst" num="753" delta="new" >&quot;<arg fmt="%s" index="1">C:/Users/kelleyld/XiLinx Projects/JALA-CPU/tmp/./_cg/_dbg/blockmemory16kout2.vhd</arg>&quot; line <arg fmt="%d" index="2">171</arg>: Unconnected output port &apos;<arg fmt="%s" index="3">s_axi_wready</arg>&apos; of component &apos;<arg fmt="%s" index="4">blk_mem_gen_v6_3</arg>&apos;.
 </msg>
 
-<msg type="warning" file="Xst" num="753" delta="old" >&quot;<arg fmt="%s" index="1">/home/user/csse232/JALA-CPU/tmp/./_cg/_dbg/blockmemory16kout2.vhd</arg>&quot; line <arg fmt="%d" index="2">171</arg>: Unconnected output port &apos;<arg fmt="%s" index="3">s_axi_bid</arg>&apos; of component &apos;<arg fmt="%s" index="4">blk_mem_gen_v6_3</arg>&apos;.
+<msg type="warning" file="Xst" num="753" delta="new" >&quot;<arg fmt="%s" index="1">C:/Users/kelleyld/XiLinx Projects/JALA-CPU/tmp/./_cg/_dbg/blockmemory16kout2.vhd</arg>&quot; line <arg fmt="%d" index="2">171</arg>: Unconnected output port &apos;<arg fmt="%s" index="3">s_axi_bid</arg>&apos; of component &apos;<arg fmt="%s" index="4">blk_mem_gen_v6_3</arg>&apos;.
 </msg>
 
-<msg type="warning" file="Xst" num="753" delta="old" >&quot;<arg fmt="%s" index="1">/home/user/csse232/JALA-CPU/tmp/./_cg/_dbg/blockmemory16kout2.vhd</arg>&quot; line <arg fmt="%d" index="2">171</arg>: Unconnected output port &apos;<arg fmt="%s" index="3">s_axi_bresp</arg>&apos; of component &apos;<arg fmt="%s" index="4">blk_mem_gen_v6_3</arg>&apos;.
+<msg type="warning" file="Xst" num="753" delta="new" >&quot;<arg fmt="%s" index="1">C:/Users/kelleyld/XiLinx Projects/JALA-CPU/tmp/./_cg/_dbg/blockmemory16kout2.vhd</arg>&quot; line <arg fmt="%d" index="2">171</arg>: Unconnected output port &apos;<arg fmt="%s" index="3">s_axi_bresp</arg>&apos; of component &apos;<arg fmt="%s" index="4">blk_mem_gen_v6_3</arg>&apos;.
 </msg>
 
-<msg type="warning" file="Xst" num="753" delta="old" >&quot;<arg fmt="%s" index="1">/home/user/csse232/JALA-CPU/tmp/./_cg/_dbg/blockmemory16kout2.vhd</arg>&quot; line <arg fmt="%d" index="2">171</arg>: Unconnected output port &apos;<arg fmt="%s" index="3">s_axi_bvalid</arg>&apos; of component &apos;<arg fmt="%s" index="4">blk_mem_gen_v6_3</arg>&apos;.
+<msg type="warning" file="Xst" num="753" delta="new" >&quot;<arg fmt="%s" index="1">C:/Users/kelleyld/XiLinx Projects/JALA-CPU/tmp/./_cg/_dbg/blockmemory16kout2.vhd</arg>&quot; line <arg fmt="%d" index="2">171</arg>: Unconnected output port &apos;<arg fmt="%s" index="3">s_axi_bvalid</arg>&apos; of component &apos;<arg fmt="%s" index="4">blk_mem_gen_v6_3</arg>&apos;.
 </msg>
 
-<msg type="warning" file="Xst" num="752" delta="old" >&quot;<arg fmt="%s" index="1">/home/user/csse232/JALA-CPU/tmp/./_cg/_dbg/blockmemory16kout2.vhd</arg>&quot; line <arg fmt="%d" index="2">171</arg>: Unconnected input port &apos;<arg fmt="%s" index="3">s_axi_bready</arg>&apos; of component &apos;<arg fmt="%s" index="4">blk_mem_gen_v6_3</arg>&apos; is tied to default value.
+<msg type="warning" file="Xst" num="752" delta="new" >&quot;<arg fmt="%s" index="1">C:/Users/kelleyld/XiLinx Projects/JALA-CPU/tmp/./_cg/_dbg/blockmemory16kout2.vhd</arg>&quot; line <arg fmt="%d" index="2">171</arg>: Unconnected input port &apos;<arg fmt="%s" index="3">s_axi_bready</arg>&apos; of component &apos;<arg fmt="%s" index="4">blk_mem_gen_v6_3</arg>&apos; is tied to default value.
 </msg>
 
-<msg type="warning" file="Xst" num="752" delta="old" >&quot;<arg fmt="%s" index="1">/home/user/csse232/JALA-CPU/tmp/./_cg/_dbg/blockmemory16kout2.vhd</arg>&quot; line <arg fmt="%d" index="2">171</arg>: Unconnected input port &apos;<arg fmt="%s" index="3">s_axi_arid</arg>&apos; of component &apos;<arg fmt="%s" index="4">blk_mem_gen_v6_3</arg>&apos; is tied to default value.
+<msg type="warning" file="Xst" num="752" delta="new" >&quot;<arg fmt="%s" index="1">C:/Users/kelleyld/XiLinx Projects/JALA-CPU/tmp/./_cg/_dbg/blockmemory16kout2.vhd</arg>&quot; line <arg fmt="%d" index="2">171</arg>: Unconnected input port &apos;<arg fmt="%s" index="3">s_axi_arid</arg>&apos; of component &apos;<arg fmt="%s" index="4">blk_mem_gen_v6_3</arg>&apos; is tied to default value.
 </msg>
 
-<msg type="warning" file="Xst" num="752" delta="old" >&quot;<arg fmt="%s" index="1">/home/user/csse232/JALA-CPU/tmp/./_cg/_dbg/blockmemory16kout2.vhd</arg>&quot; line <arg fmt="%d" index="2">171</arg>: Unconnected input port &apos;<arg fmt="%s" index="3">s_axi_araddr</arg>&apos; of component &apos;<arg fmt="%s" index="4">blk_mem_gen_v6_3</arg>&apos; is tied to default value.
+<msg type="warning" file="Xst" num="752" delta="new" >&quot;<arg fmt="%s" index="1">C:/Users/kelleyld/XiLinx Projects/JALA-CPU/tmp/./_cg/_dbg/blockmemory16kout2.vhd</arg>&quot; line <arg fmt="%d" index="2">171</arg>: Unconnected input port &apos;<arg fmt="%s" index="3">s_axi_araddr</arg>&apos; of component &apos;<arg fmt="%s" index="4">blk_mem_gen_v6_3</arg>&apos; is tied to default value.
 </msg>
 
-<msg type="warning" file="Xst" num="752" delta="old" >&quot;<arg fmt="%s" index="1">/home/user/csse232/JALA-CPU/tmp/./_cg/_dbg/blockmemory16kout2.vhd</arg>&quot; line <arg fmt="%d" index="2">171</arg>: Unconnected input port &apos;<arg fmt="%s" index="3">s_axi_arlen</arg>&apos; of component &apos;<arg fmt="%s" index="4">blk_mem_gen_v6_3</arg>&apos; is tied to default value.
+<msg type="warning" file="Xst" num="752" delta="new" >&quot;<arg fmt="%s" index="1">C:/Users/kelleyld/XiLinx Projects/JALA-CPU/tmp/./_cg/_dbg/blockmemory16kout2.vhd</arg>&quot; line <arg fmt="%d" index="2">171</arg>: Unconnected input port &apos;<arg fmt="%s" index="3">s_axi_arlen</arg>&apos; of component &apos;<arg fmt="%s" index="4">blk_mem_gen_v6_3</arg>&apos; is tied to default value.
 </msg>
 
-<msg type="warning" file="Xst" num="752" delta="old" >&quot;<arg fmt="%s" index="1">/home/user/csse232/JALA-CPU/tmp/./_cg/_dbg/blockmemory16kout2.vhd</arg>&quot; line <arg fmt="%d" index="2">171</arg>: Unconnected input port &apos;<arg fmt="%s" index="3">s_axi_arsize</arg>&apos; of component &apos;<arg fmt="%s" index="4">blk_mem_gen_v6_3</arg>&apos; is tied to default value.
+<msg type="warning" file="Xst" num="752" delta="new" >&quot;<arg fmt="%s" index="1">C:/Users/kelleyld/XiLinx Projects/JALA-CPU/tmp/./_cg/_dbg/blockmemory16kout2.vhd</arg>&quot; line <arg fmt="%d" index="2">171</arg>: Unconnected input port &apos;<arg fmt="%s" index="3">s_axi_arsize</arg>&apos; of component &apos;<arg fmt="%s" index="4">blk_mem_gen_v6_3</arg>&apos; is tied to default value.
 </msg>
 
-<msg type="warning" file="Xst" num="752" delta="old" >&quot;<arg fmt="%s" index="1">/home/user/csse232/JALA-CPU/tmp/./_cg/_dbg/blockmemory16kout2.vhd</arg>&quot; line <arg fmt="%d" index="2">171</arg>: Unconnected input port &apos;<arg fmt="%s" index="3">s_axi_arburst</arg>&apos; of component &apos;<arg fmt="%s" index="4">blk_mem_gen_v6_3</arg>&apos; is tied to default value.
+<msg type="warning" file="Xst" num="752" delta="new" >&quot;<arg fmt="%s" index="1">C:/Users/kelleyld/XiLinx Projects/JALA-CPU/tmp/./_cg/_dbg/blockmemory16kout2.vhd</arg>&quot; line <arg fmt="%d" index="2">171</arg>: Unconnected input port &apos;<arg fmt="%s" index="3">s_axi_arburst</arg>&apos; of component &apos;<arg fmt="%s" index="4">blk_mem_gen_v6_3</arg>&apos; is tied to default value.
 </msg>
 
-<msg type="warning" file="Xst" num="752" delta="old" >&quot;<arg fmt="%s" index="1">/home/user/csse232/JALA-CPU/tmp/./_cg/_dbg/blockmemory16kout2.vhd</arg>&quot; line <arg fmt="%d" index="2">171</arg>: Unconnected input port &apos;<arg fmt="%s" index="3">s_axi_arvalid</arg>&apos; of component &apos;<arg fmt="%s" index="4">blk_mem_gen_v6_3</arg>&apos; is tied to default value.
+<msg type="warning" file="Xst" num="752" delta="new" >&quot;<arg fmt="%s" index="1">C:/Users/kelleyld/XiLinx Projects/JALA-CPU/tmp/./_cg/_dbg/blockmemory16kout2.vhd</arg>&quot; line <arg fmt="%d" index="2">171</arg>: Unconnected input port &apos;<arg fmt="%s" index="3">s_axi_arvalid</arg>&apos; of component &apos;<arg fmt="%s" index="4">blk_mem_gen_v6_3</arg>&apos; is tied to default value.
 </msg>
 
-<msg type="warning" file="Xst" num="753" delta="old" >&quot;<arg fmt="%s" index="1">/home/user/csse232/JALA-CPU/tmp/./_cg/_dbg/blockmemory16kout2.vhd</arg>&quot; line <arg fmt="%d" index="2">171</arg>: Unconnected output port &apos;<arg fmt="%s" index="3">s_axi_arready</arg>&apos; of component &apos;<arg fmt="%s" index="4">blk_mem_gen_v6_3</arg>&apos;.
+<msg type="warning" file="Xst" num="753" delta="new" >&quot;<arg fmt="%s" index="1">C:/Users/kelleyld/XiLinx Projects/JALA-CPU/tmp/./_cg/_dbg/blockmemory16kout2.vhd</arg>&quot; line <arg fmt="%d" index="2">171</arg>: Unconnected output port &apos;<arg fmt="%s" index="3">s_axi_arready</arg>&apos; of component &apos;<arg fmt="%s" index="4">blk_mem_gen_v6_3</arg>&apos;.
 </msg>
 
-<msg type="warning" file="Xst" num="753" delta="old" >&quot;<arg fmt="%s" index="1">/home/user/csse232/JALA-CPU/tmp/./_cg/_dbg/blockmemory16kout2.vhd</arg>&quot; line <arg fmt="%d" index="2">171</arg>: Unconnected output port &apos;<arg fmt="%s" index="3">s_axi_rid</arg>&apos; of component &apos;<arg fmt="%s" index="4">blk_mem_gen_v6_3</arg>&apos;.
+<msg type="warning" file="Xst" num="753" delta="new" >&quot;<arg fmt="%s" index="1">C:/Users/kelleyld/XiLinx Projects/JALA-CPU/tmp/./_cg/_dbg/blockmemory16kout2.vhd</arg>&quot; line <arg fmt="%d" index="2">171</arg>: Unconnected output port &apos;<arg fmt="%s" index="3">s_axi_rid</arg>&apos; of component &apos;<arg fmt="%s" index="4">blk_mem_gen_v6_3</arg>&apos;.
 </msg>
 
-<msg type="warning" file="Xst" num="753" delta="old" >&quot;<arg fmt="%s" index="1">/home/user/csse232/JALA-CPU/tmp/./_cg/_dbg/blockmemory16kout2.vhd</arg>&quot; line <arg fmt="%d" index="2">171</arg>: Unconnected output port &apos;<arg fmt="%s" index="3">s_axi_rdata</arg>&apos; of component &apos;<arg fmt="%s" index="4">blk_mem_gen_v6_3</arg>&apos;.
+<msg type="warning" file="Xst" num="753" delta="new" >&quot;<arg fmt="%s" index="1">C:/Users/kelleyld/XiLinx Projects/JALA-CPU/tmp/./_cg/_dbg/blockmemory16kout2.vhd</arg>&quot; line <arg fmt="%d" index="2">171</arg>: Unconnected output port &apos;<arg fmt="%s" index="3">s_axi_rdata</arg>&apos; of component &apos;<arg fmt="%s" index="4">blk_mem_gen_v6_3</arg>&apos;.
 </msg>
 
-<msg type="warning" file="Xst" num="753" delta="old" >&quot;<arg fmt="%s" index="1">/home/user/csse232/JALA-CPU/tmp/./_cg/_dbg/blockmemory16kout2.vhd</arg>&quot; line <arg fmt="%d" index="2">171</arg>: Unconnected output port &apos;<arg fmt="%s" index="3">s_axi_rresp</arg>&apos; of component &apos;<arg fmt="%s" index="4">blk_mem_gen_v6_3</arg>&apos;.
+<msg type="warning" file="Xst" num="753" delta="new" >&quot;<arg fmt="%s" index="1">C:/Users/kelleyld/XiLinx Projects/JALA-CPU/tmp/./_cg/_dbg/blockmemory16kout2.vhd</arg>&quot; line <arg fmt="%d" index="2">171</arg>: Unconnected output port &apos;<arg fmt="%s" index="3">s_axi_rresp</arg>&apos; of component &apos;<arg fmt="%s" index="4">blk_mem_gen_v6_3</arg>&apos;.
 </msg>
 
-<msg type="warning" file="Xst" num="753" delta="old" >&quot;<arg fmt="%s" index="1">/home/user/csse232/JALA-CPU/tmp/./_cg/_dbg/blockmemory16kout2.vhd</arg>&quot; line <arg fmt="%d" index="2">171</arg>: Unconnected output port &apos;<arg fmt="%s" index="3">s_axi_rlast</arg>&apos; of component &apos;<arg fmt="%s" index="4">blk_mem_gen_v6_3</arg>&apos;.
+<msg type="warning" file="Xst" num="753" delta="new" >&quot;<arg fmt="%s" index="1">C:/Users/kelleyld/XiLinx Projects/JALA-CPU/tmp/./_cg/_dbg/blockmemory16kout2.vhd</arg>&quot; line <arg fmt="%d" index="2">171</arg>: Unconnected output port &apos;<arg fmt="%s" index="3">s_axi_rlast</arg>&apos; of component &apos;<arg fmt="%s" index="4">blk_mem_gen_v6_3</arg>&apos;.
 </msg>
 
-<msg type="warning" file="Xst" num="753" delta="old" >&quot;<arg fmt="%s" index="1">/home/user/csse232/JALA-CPU/tmp/./_cg/_dbg/blockmemory16kout2.vhd</arg>&quot; line <arg fmt="%d" index="2">171</arg>: Unconnected output port &apos;<arg fmt="%s" index="3">s_axi_rvalid</arg>&apos; of component &apos;<arg fmt="%s" index="4">blk_mem_gen_v6_3</arg>&apos;.
+<msg type="warning" file="Xst" num="753" delta="new" >&quot;<arg fmt="%s" index="1">C:/Users/kelleyld/XiLinx Projects/JALA-CPU/tmp/./_cg/_dbg/blockmemory16kout2.vhd</arg>&quot; line <arg fmt="%d" index="2">171</arg>: Unconnected output port &apos;<arg fmt="%s" index="3">s_axi_rvalid</arg>&apos; of component &apos;<arg fmt="%s" index="4">blk_mem_gen_v6_3</arg>&apos;.
 </msg>
 
-<msg type="warning" file="Xst" num="752" delta="old" >&quot;<arg fmt="%s" index="1">/home/user/csse232/JALA-CPU/tmp/./_cg/_dbg/blockmemory16kout2.vhd</arg>&quot; line <arg fmt="%d" index="2">171</arg>: Unconnected input port &apos;<arg fmt="%s" index="3">s_axi_rready</arg>&apos; of component &apos;<arg fmt="%s" index="4">blk_mem_gen_v6_3</arg>&apos; is tied to default value.
+<msg type="warning" file="Xst" num="752" delta="new" >&quot;<arg fmt="%s" index="1">C:/Users/kelleyld/XiLinx Projects/JALA-CPU/tmp/./_cg/_dbg/blockmemory16kout2.vhd</arg>&quot; line <arg fmt="%d" index="2">171</arg>: Unconnected input port &apos;<arg fmt="%s" index="3">s_axi_rready</arg>&apos; of component &apos;<arg fmt="%s" index="4">blk_mem_gen_v6_3</arg>&apos; is tied to default value.
 </msg>
 
-<msg type="warning" file="Xst" num="752" delta="old" >&quot;<arg fmt="%s" index="1">/home/user/csse232/JALA-CPU/tmp/./_cg/_dbg/blockmemory16kout2.vhd</arg>&quot; line <arg fmt="%d" index="2">171</arg>: Unconnected input port &apos;<arg fmt="%s" index="3">s_axi_injectsbiterr</arg>&apos; of component &apos;<arg fmt="%s" index="4">blk_mem_gen_v6_3</arg>&apos; is tied to default value.
+<msg type="warning" file="Xst" num="752" delta="new" >&quot;<arg fmt="%s" index="1">C:/Users/kelleyld/XiLinx Projects/JALA-CPU/tmp/./_cg/_dbg/blockmemory16kout2.vhd</arg>&quot; line <arg fmt="%d" index="2">171</arg>: Unconnected input port &apos;<arg fmt="%s" index="3">s_axi_injectsbiterr</arg>&apos; of component &apos;<arg fmt="%s" index="4">blk_mem_gen_v6_3</arg>&apos; is tied to default value.
 </msg>
 
-<msg type="warning" file="Xst" num="752" delta="old" >&quot;<arg fmt="%s" index="1">/home/user/csse232/JALA-CPU/tmp/./_cg/_dbg/blockmemory16kout2.vhd</arg>&quot; line <arg fmt="%d" index="2">171</arg>: Unconnected input port &apos;<arg fmt="%s" index="3">s_axi_injectdbiterr</arg>&apos; of component &apos;<arg fmt="%s" index="4">blk_mem_gen_v6_3</arg>&apos; is tied to default value.
+<msg type="warning" file="Xst" num="752" delta="new" >&quot;<arg fmt="%s" index="1">C:/Users/kelleyld/XiLinx Projects/JALA-CPU/tmp/./_cg/_dbg/blockmemory16kout2.vhd</arg>&quot; line <arg fmt="%d" index="2">171</arg>: Unconnected input port &apos;<arg fmt="%s" index="3">s_axi_injectdbiterr</arg>&apos; of component &apos;<arg fmt="%s" index="4">blk_mem_gen_v6_3</arg>&apos; is tied to default value.
 </msg>
 
-<msg type="warning" file="Xst" num="753" delta="old" >&quot;<arg fmt="%s" index="1">/home/user/csse232/JALA-CPU/tmp/./_cg/_dbg/blockmemory16kout2.vhd</arg>&quot; line <arg fmt="%d" index="2">171</arg>: Unconnected output port &apos;<arg fmt="%s" index="3">s_axi_sbiterr</arg>&apos; of component &apos;<arg fmt="%s" index="4">blk_mem_gen_v6_3</arg>&apos;.
+<msg type="warning" file="Xst" num="753" delta="new" >&quot;<arg fmt="%s" index="1">C:/Users/kelleyld/XiLinx Projects/JALA-CPU/tmp/./_cg/_dbg/blockmemory16kout2.vhd</arg>&quot; line <arg fmt="%d" index="2">171</arg>: Unconnected output port &apos;<arg fmt="%s" index="3">s_axi_sbiterr</arg>&apos; of component &apos;<arg fmt="%s" index="4">blk_mem_gen_v6_3</arg>&apos;.
 </msg>
 
-<msg type="warning" file="Xst" num="753" delta="old" >&quot;<arg fmt="%s" index="1">/home/user/csse232/JALA-CPU/tmp/./_cg/_dbg/blockmemory16kout2.vhd</arg>&quot; line <arg fmt="%d" index="2">171</arg>: Unconnected output port &apos;<arg fmt="%s" index="3">s_axi_dbiterr</arg>&apos; of component &apos;<arg fmt="%s" index="4">blk_mem_gen_v6_3</arg>&apos;.
+<msg type="warning" file="Xst" num="753" delta="new" >&quot;<arg fmt="%s" index="1">C:/Users/kelleyld/XiLinx Projects/JALA-CPU/tmp/./_cg/_dbg/blockmemory16kout2.vhd</arg>&quot; line <arg fmt="%d" index="2">171</arg>: Unconnected output port &apos;<arg fmt="%s" index="3">s_axi_dbiterr</arg>&apos; of component &apos;<arg fmt="%s" index="4">blk_mem_gen_v6_3</arg>&apos;.
 </msg>
 
-<msg type="warning" file="Xst" num="753" delta="old" >&quot;<arg fmt="%s" index="1">/home/user/csse232/JALA-CPU/tmp/./_cg/_dbg/blockmemory16kout2.vhd</arg>&quot; line <arg fmt="%d" index="2">171</arg>: Unconnected output port &apos;<arg fmt="%s" index="3">s_axi_rdaddrecc</arg>&apos; of component &apos;<arg fmt="%s" index="4">blk_mem_gen_v6_3</arg>&apos;.
+<msg type="warning" file="Xst" num="753" delta="new" >&quot;<arg fmt="%s" index="1">C:/Users/kelleyld/XiLinx Projects/JALA-CPU/tmp/./_cg/_dbg/blockmemory16kout2.vhd</arg>&quot; line <arg fmt="%d" index="2">171</arg>: Unconnected output port &apos;<arg fmt="%s" index="3">s_axi_rdaddrecc</arg>&apos; of component &apos;<arg fmt="%s" index="4">blk_mem_gen_v6_3</arg>&apos;.
 </msg>
 
 <msg type="info" file="ip" num="0" delta="new" ><arg fmt="%d" index="1">0</arg>: (<arg fmt="%d" index="2">0</arg>,<arg fmt="%d" index="3">0</arg>) 	: <arg fmt="%d" index="4">1</arg>x<arg fmt="%d" index="5">16384</arg> 	u:<arg fmt="%d" index="6">1</arg>
@@ -692,175 +692,175 @@
 <msg type="info" file="ip" num="0" delta="new" ><arg fmt="%d" index="1">19</arg>: (<arg fmt="%d" index="2">15</arg>,<arg fmt="%d" index="3">0</arg>) 	: <arg fmt="%d" index="4">1</arg>x<arg fmt="%d" index="5">16384</arg> 	u:<arg fmt="%d" index="6">1</arg>
 </msg>
 
-<msg type="warning" file="Xst" num="795" delta="old" >&quot;<arg fmt="%s" index="1">/home/user/csse232/JALA-CPU/tmp/./_cg/_dbg/./blk_mem_gen_v6_3/blk_mem_input_block.vhd</arg>&quot; line <arg fmt="%d" index="2">691</arg>: Size of operands are different : result is &lt;false&gt;.
+<msg type="warning" file="Xst" num="795" delta="new" >&quot;<arg fmt="%s" index="1">C:/Users/kelleyld/XiLinx Projects/JALA-CPU/tmp/./_cg/_dbg/./blk_mem_gen_v6_3/blk_mem_input_block.vhd</arg>&quot; line <arg fmt="%d" index="2">691</arg>: Size of operands are different : result is &lt;false&gt;.
 </msg>
 
-<msg type="warning" file="Xst" num="795" delta="old" >&quot;<arg fmt="%s" index="1">/home/user/csse232/JALA-CPU/tmp/./_cg/_dbg/./blk_mem_gen_v6_3/blk_mem_input_block.vhd</arg>&quot; line <arg fmt="%d" index="2">707</arg>: Size of operands are different : result is &lt;false&gt;.
+<msg type="warning" file="Xst" num="795" delta="new" >&quot;<arg fmt="%s" index="1">C:/Users/kelleyld/XiLinx Projects/JALA-CPU/tmp/./_cg/_dbg/./blk_mem_gen_v6_3/blk_mem_input_block.vhd</arg>&quot; line <arg fmt="%d" index="2">707</arg>: Size of operands are different : result is &lt;false&gt;.
 </msg>
 
-<msg type="warning" file="Xst" num="795" delta="old" >&quot;<arg fmt="%s" index="1">/home/user/csse232/JALA-CPU/tmp/./_cg/_dbg/./blk_mem_gen_v6_3/blk_mem_gen_generic_cstr.vhd</arg>&quot; line <arg fmt="%d" index="2">1546</arg>: Size of operands are different : result is &lt;false&gt;.
+<msg type="warning" file="Xst" num="795" delta="new" >&quot;<arg fmt="%s" index="1">C:/Users/kelleyld/XiLinx Projects/JALA-CPU/tmp/./_cg/_dbg/./blk_mem_gen_v6_3/blk_mem_gen_generic_cstr.vhd</arg>&quot; line <arg fmt="%d" index="2">1546</arg>: Size of operands are different : result is &lt;false&gt;.
 </msg>
 
-<msg type="warning" file="Xst" num="795" delta="old" >&quot;<arg fmt="%s" index="1">/home/user/csse232/JALA-CPU/tmp/./_cg/_dbg/./blk_mem_gen_v6_3/blk_mem_gen_generic_cstr.vhd</arg>&quot; line <arg fmt="%d" index="2">1559</arg>: Size of operands are different : result is &lt;false&gt;.
+<msg type="warning" file="Xst" num="795" delta="new" >&quot;<arg fmt="%s" index="1">C:/Users/kelleyld/XiLinx Projects/JALA-CPU/tmp/./_cg/_dbg/./blk_mem_gen_v6_3/blk_mem_gen_generic_cstr.vhd</arg>&quot; line <arg fmt="%d" index="2">1559</arg>: Size of operands are different : result is &lt;false&gt;.
 </msg>
 
-<msg type="warning" file="Xst" num="752" delta="old" >&quot;<arg fmt="%s" index="1">/home/user/csse232/JALA-CPU/tmp/./_cg/_dbg/./blk_mem_gen_v6_3/blk_mem_gen_generic_cstr.vhd</arg>&quot; line <arg fmt="%d" index="2">1606</arg>: Unconnected input port &apos;<arg fmt="%s" index="3">ADDR_IN</arg>&apos; of component &apos;<arg fmt="%s" index="4">blk_mem_gen_mux</arg>&apos; is tied to default value.
+<msg type="warning" file="Xst" num="752" delta="new" >&quot;<arg fmt="%s" index="1">C:/Users/kelleyld/XiLinx Projects/JALA-CPU/tmp/./_cg/_dbg/./blk_mem_gen_v6_3/blk_mem_gen_generic_cstr.vhd</arg>&quot; line <arg fmt="%d" index="2">1606</arg>: Unconnected input port &apos;<arg fmt="%s" index="3">ADDR_IN</arg>&apos; of component &apos;<arg fmt="%s" index="4">blk_mem_gen_mux</arg>&apos; is tied to default value.
 </msg>
 
-<msg type="warning" file="Xst" num="752" delta="old" >&quot;<arg fmt="%s" index="1">/home/user/csse232/JALA-CPU/tmp/./_cg/_dbg/./blk_mem_gen_v6_3/blk_mem_gen_generic_cstr.vhd</arg>&quot; line <arg fmt="%d" index="2">1606</arg>: Unconnected input port &apos;<arg fmt="%s" index="3">SBITERRIN</arg>&apos; of component &apos;<arg fmt="%s" index="4">blk_mem_gen_mux</arg>&apos; is tied to default value.
+<msg type="warning" file="Xst" num="752" delta="new" >&quot;<arg fmt="%s" index="1">C:/Users/kelleyld/XiLinx Projects/JALA-CPU/tmp/./_cg/_dbg/./blk_mem_gen_v6_3/blk_mem_gen_generic_cstr.vhd</arg>&quot; line <arg fmt="%d" index="2">1606</arg>: Unconnected input port &apos;<arg fmt="%s" index="3">SBITERRIN</arg>&apos; of component &apos;<arg fmt="%s" index="4">blk_mem_gen_mux</arg>&apos; is tied to default value.
 </msg>
 
-<msg type="warning" file="Xst" num="752" delta="old" >&quot;<arg fmt="%s" index="1">/home/user/csse232/JALA-CPU/tmp/./_cg/_dbg/./blk_mem_gen_v6_3/blk_mem_gen_generic_cstr.vhd</arg>&quot; line <arg fmt="%d" index="2">1606</arg>: Unconnected input port &apos;<arg fmt="%s" index="3">DBITERRIN</arg>&apos; of component &apos;<arg fmt="%s" index="4">blk_mem_gen_mux</arg>&apos; is tied to default value.
+<msg type="warning" file="Xst" num="752" delta="new" >&quot;<arg fmt="%s" index="1">C:/Users/kelleyld/XiLinx Projects/JALA-CPU/tmp/./_cg/_dbg/./blk_mem_gen_v6_3/blk_mem_gen_generic_cstr.vhd</arg>&quot; line <arg fmt="%d" index="2">1606</arg>: Unconnected input port &apos;<arg fmt="%s" index="3">DBITERRIN</arg>&apos; of component &apos;<arg fmt="%s" index="4">blk_mem_gen_mux</arg>&apos; is tied to default value.
 </msg>
 
-<msg type="warning" file="Xst" num="753" delta="old" >&quot;<arg fmt="%s" index="1">/home/user/csse232/JALA-CPU/tmp/./_cg/_dbg/./blk_mem_gen_v6_3/blk_mem_gen_generic_cstr.vhd</arg>&quot; line <arg fmt="%d" index="2">1606</arg>: Unconnected output port &apos;<arg fmt="%s" index="3">SBITERR</arg>&apos; of component &apos;<arg fmt="%s" index="4">blk_mem_gen_mux</arg>&apos;.
+<msg type="warning" file="Xst" num="753" delta="new" >&quot;<arg fmt="%s" index="1">C:/Users/kelleyld/XiLinx Projects/JALA-CPU/tmp/./_cg/_dbg/./blk_mem_gen_v6_3/blk_mem_gen_generic_cstr.vhd</arg>&quot; line <arg fmt="%d" index="2">1606</arg>: Unconnected output port &apos;<arg fmt="%s" index="3">SBITERR</arg>&apos; of component &apos;<arg fmt="%s" index="4">blk_mem_gen_mux</arg>&apos;.
 </msg>
 
-<msg type="warning" file="Xst" num="753" delta="old" >&quot;<arg fmt="%s" index="1">/home/user/csse232/JALA-CPU/tmp/./_cg/_dbg/./blk_mem_gen_v6_3/blk_mem_gen_generic_cstr.vhd</arg>&quot; line <arg fmt="%d" index="2">1606</arg>: Unconnected output port &apos;<arg fmt="%s" index="3">DBITERR</arg>&apos; of component &apos;<arg fmt="%s" index="4">blk_mem_gen_mux</arg>&apos;.
+<msg type="warning" file="Xst" num="753" delta="new" >&quot;<arg fmt="%s" index="1">C:/Users/kelleyld/XiLinx Projects/JALA-CPU/tmp/./_cg/_dbg/./blk_mem_gen_v6_3/blk_mem_gen_generic_cstr.vhd</arg>&quot; line <arg fmt="%d" index="2">1606</arg>: Unconnected output port &apos;<arg fmt="%s" index="3">DBITERR</arg>&apos; of component &apos;<arg fmt="%s" index="4">blk_mem_gen_mux</arg>&apos;.
 </msg>
 
-<msg type="warning" file="Xst" num="753" delta="old" >&quot;<arg fmt="%s" index="1">/home/user/csse232/JALA-CPU/tmp/./_cg/_dbg/./blk_mem_gen_v6_3/blk_mem_gen_generic_cstr.vhd</arg>&quot; line <arg fmt="%d" index="2">1606</arg>: Unconnected output port &apos;<arg fmt="%s" index="3">RDADDRECC</arg>&apos; of component &apos;<arg fmt="%s" index="4">blk_mem_gen_mux</arg>&apos;.
+<msg type="warning" file="Xst" num="753" delta="new" >&quot;<arg fmt="%s" index="1">C:/Users/kelleyld/XiLinx Projects/JALA-CPU/tmp/./_cg/_dbg/./blk_mem_gen_v6_3/blk_mem_gen_generic_cstr.vhd</arg>&quot; line <arg fmt="%d" index="2">1606</arg>: Unconnected output port &apos;<arg fmt="%s" index="3">RDADDRECC</arg>&apos; of component &apos;<arg fmt="%s" index="4">blk_mem_gen_mux</arg>&apos;.
 </msg>
 
-<msg type="warning" file="Xst" num="2096" delta="old" >&quot;<arg fmt="%s" index="1">/home/user/csse232/JALA-CPU/tmp/./_cg/_dbg/./blk_mem_gen_v6_3/blk_mem_gen_prim_width.vhd</arg>&quot; line <arg fmt="%d" index="2">977</arg>: Use of null array slice on signal &lt;<arg fmt="%s" index="3">addra_pad</arg>&gt; is not supported.
+<msg type="warning" file="Xst" num="2096" delta="new" >&quot;<arg fmt="%s" index="1">C:/Users/kelleyld/XiLinx Projects/JALA-CPU/tmp/./_cg/_dbg/./blk_mem_gen_v6_3/blk_mem_gen_prim_width.vhd</arg>&quot; line <arg fmt="%d" index="2">977</arg>: Use of null array slice on signal &lt;<arg fmt="%s" index="3">addra_pad</arg>&gt; is not supported.
 </msg>
 
-<msg type="warning" file="Xst" num="2096" delta="old" >&quot;<arg fmt="%s" index="1">/home/user/csse232/JALA-CPU/tmp/./_cg/_dbg/./blk_mem_gen_v6_3/blk_mem_gen_prim_width.vhd</arg>&quot; line <arg fmt="%d" index="2">978</arg>: Use of null array slice on signal &lt;<arg fmt="%s" index="3">addrb_pad</arg>&gt; is not supported.
+<msg type="warning" file="Xst" num="2096" delta="new" >&quot;<arg fmt="%s" index="1">C:/Users/kelleyld/XiLinx Projects/JALA-CPU/tmp/./_cg/_dbg/./blk_mem_gen_v6_3/blk_mem_gen_prim_width.vhd</arg>&quot; line <arg fmt="%d" index="2">978</arg>: Use of null array slice on signal &lt;<arg fmt="%s" index="3">addrb_pad</arg>&gt; is not supported.
 </msg>
 
-<msg type="warning" file="Xst" num="2096" delta="old" >&quot;<arg fmt="%s" index="1">/home/user/csse232/JALA-CPU/tmp/./_cg/_dbg/./blk_mem_gen_v6_3/blk_mem_gen_prim_width.vhd</arg>&quot; line <arg fmt="%d" index="2">977</arg>: Use of null array slice on signal &lt;<arg fmt="%s" index="3">addra_pad</arg>&gt; is not supported.
+<msg type="warning" file="Xst" num="2096" delta="new" >&quot;<arg fmt="%s" index="1">C:/Users/kelleyld/XiLinx Projects/JALA-CPU/tmp/./_cg/_dbg/./blk_mem_gen_v6_3/blk_mem_gen_prim_width.vhd</arg>&quot; line <arg fmt="%d" index="2">977</arg>: Use of null array slice on signal &lt;<arg fmt="%s" index="3">addra_pad</arg>&gt; is not supported.
 </msg>
 
-<msg type="warning" file="Xst" num="2096" delta="old" >&quot;<arg fmt="%s" index="1">/home/user/csse232/JALA-CPU/tmp/./_cg/_dbg/./blk_mem_gen_v6_3/blk_mem_gen_prim_width.vhd</arg>&quot; line <arg fmt="%d" index="2">978</arg>: Use of null array slice on signal &lt;<arg fmt="%s" index="3">addrb_pad</arg>&gt; is not supported.
+<msg type="warning" file="Xst" num="2096" delta="new" >&quot;<arg fmt="%s" index="1">C:/Users/kelleyld/XiLinx Projects/JALA-CPU/tmp/./_cg/_dbg/./blk_mem_gen_v6_3/blk_mem_gen_prim_width.vhd</arg>&quot; line <arg fmt="%d" index="2">978</arg>: Use of null array slice on signal &lt;<arg fmt="%s" index="3">addrb_pad</arg>&gt; is not supported.
 </msg>
 
-<msg type="warning" file="Xst" num="2096" delta="old" >&quot;<arg fmt="%s" index="1">/home/user/csse232/JALA-CPU/tmp/./_cg/_dbg/./blk_mem_gen_v6_3/blk_mem_gen_prim_width.vhd</arg>&quot; line <arg fmt="%d" index="2">977</arg>: Use of null array slice on signal &lt;<arg fmt="%s" index="3">addra_pad</arg>&gt; is not supported.
+<msg type="warning" file="Xst" num="2096" delta="new" >&quot;<arg fmt="%s" index="1">C:/Users/kelleyld/XiLinx Projects/JALA-CPU/tmp/./_cg/_dbg/./blk_mem_gen_v6_3/blk_mem_gen_prim_width.vhd</arg>&quot; line <arg fmt="%d" index="2">977</arg>: Use of null array slice on signal &lt;<arg fmt="%s" index="3">addra_pad</arg>&gt; is not supported.
 </msg>
 
-<msg type="warning" file="Xst" num="2096" delta="old" >&quot;<arg fmt="%s" index="1">/home/user/csse232/JALA-CPU/tmp/./_cg/_dbg/./blk_mem_gen_v6_3/blk_mem_gen_prim_width.vhd</arg>&quot; line <arg fmt="%d" index="2">978</arg>: Use of null array slice on signal &lt;<arg fmt="%s" index="3">addrb_pad</arg>&gt; is not supported.
+<msg type="warning" file="Xst" num="2096" delta="new" >&quot;<arg fmt="%s" index="1">C:/Users/kelleyld/XiLinx Projects/JALA-CPU/tmp/./_cg/_dbg/./blk_mem_gen_v6_3/blk_mem_gen_prim_width.vhd</arg>&quot; line <arg fmt="%d" index="2">978</arg>: Use of null array slice on signal &lt;<arg fmt="%s" index="3">addrb_pad</arg>&gt; is not supported.
 </msg>
 
-<msg type="warning" file="Xst" num="2096" delta="old" >&quot;<arg fmt="%s" index="1">/home/user/csse232/JALA-CPU/tmp/./_cg/_dbg/./blk_mem_gen_v6_3/blk_mem_gen_prim_width.vhd</arg>&quot; line <arg fmt="%d" index="2">977</arg>: Use of null array slice on signal &lt;<arg fmt="%s" index="3">addra_pad</arg>&gt; is not supported.
+<msg type="warning" file="Xst" num="2096" delta="new" >&quot;<arg fmt="%s" index="1">C:/Users/kelleyld/XiLinx Projects/JALA-CPU/tmp/./_cg/_dbg/./blk_mem_gen_v6_3/blk_mem_gen_prim_width.vhd</arg>&quot; line <arg fmt="%d" index="2">977</arg>: Use of null array slice on signal &lt;<arg fmt="%s" index="3">addra_pad</arg>&gt; is not supported.
 </msg>
 
-<msg type="warning" file="Xst" num="2096" delta="old" >&quot;<arg fmt="%s" index="1">/home/user/csse232/JALA-CPU/tmp/./_cg/_dbg/./blk_mem_gen_v6_3/blk_mem_gen_prim_width.vhd</arg>&quot; line <arg fmt="%d" index="2">978</arg>: Use of null array slice on signal &lt;<arg fmt="%s" index="3">addrb_pad</arg>&gt; is not supported.
+<msg type="warning" file="Xst" num="2096" delta="new" >&quot;<arg fmt="%s" index="1">C:/Users/kelleyld/XiLinx Projects/JALA-CPU/tmp/./_cg/_dbg/./blk_mem_gen_v6_3/blk_mem_gen_prim_width.vhd</arg>&quot; line <arg fmt="%d" index="2">978</arg>: Use of null array slice on signal &lt;<arg fmt="%s" index="3">addrb_pad</arg>&gt; is not supported.
 </msg>
 
-<msg type="warning" file="Xst" num="2096" delta="old" >&quot;<arg fmt="%s" index="1">/home/user/csse232/JALA-CPU/tmp/./_cg/_dbg/./blk_mem_gen_v6_3/blk_mem_gen_prim_width.vhd</arg>&quot; line <arg fmt="%d" index="2">977</arg>: Use of null array slice on signal &lt;<arg fmt="%s" index="3">addra_pad</arg>&gt; is not supported.
+<msg type="warning" file="Xst" num="2096" delta="new" >&quot;<arg fmt="%s" index="1">C:/Users/kelleyld/XiLinx Projects/JALA-CPU/tmp/./_cg/_dbg/./blk_mem_gen_v6_3/blk_mem_gen_prim_width.vhd</arg>&quot; line <arg fmt="%d" index="2">977</arg>: Use of null array slice on signal &lt;<arg fmt="%s" index="3">addra_pad</arg>&gt; is not supported.
 </msg>
 
-<msg type="warning" file="Xst" num="2096" delta="old" >&quot;<arg fmt="%s" index="1">/home/user/csse232/JALA-CPU/tmp/./_cg/_dbg/./blk_mem_gen_v6_3/blk_mem_gen_prim_width.vhd</arg>&quot; line <arg fmt="%d" index="2">978</arg>: Use of null array slice on signal &lt;<arg fmt="%s" index="3">addrb_pad</arg>&gt; is not supported.
+<msg type="warning" file="Xst" num="2096" delta="new" >&quot;<arg fmt="%s" index="1">C:/Users/kelleyld/XiLinx Projects/JALA-CPU/tmp/./_cg/_dbg/./blk_mem_gen_v6_3/blk_mem_gen_prim_width.vhd</arg>&quot; line <arg fmt="%d" index="2">978</arg>: Use of null array slice on signal &lt;<arg fmt="%s" index="3">addrb_pad</arg>&gt; is not supported.
 </msg>
 
-<msg type="warning" file="Xst" num="2096" delta="old" >&quot;<arg fmt="%s" index="1">/home/user/csse232/JALA-CPU/tmp/./_cg/_dbg/./blk_mem_gen_v6_3/blk_mem_gen_prim_width.vhd</arg>&quot; line <arg fmt="%d" index="2">977</arg>: Use of null array slice on signal &lt;<arg fmt="%s" index="3">addra_pad</arg>&gt; is not supported.
+<msg type="warning" file="Xst" num="2096" delta="new" >&quot;<arg fmt="%s" index="1">C:/Users/kelleyld/XiLinx Projects/JALA-CPU/tmp/./_cg/_dbg/./blk_mem_gen_v6_3/blk_mem_gen_prim_width.vhd</arg>&quot; line <arg fmt="%d" index="2">977</arg>: Use of null array slice on signal &lt;<arg fmt="%s" index="3">addra_pad</arg>&gt; is not supported.
 </msg>
 
-<msg type="warning" file="Xst" num="2096" delta="old" >&quot;<arg fmt="%s" index="1">/home/user/csse232/JALA-CPU/tmp/./_cg/_dbg/./blk_mem_gen_v6_3/blk_mem_gen_prim_width.vhd</arg>&quot; line <arg fmt="%d" index="2">978</arg>: Use of null array slice on signal &lt;<arg fmt="%s" index="3">addrb_pad</arg>&gt; is not supported.
+<msg type="warning" file="Xst" num="2096" delta="new" >&quot;<arg fmt="%s" index="1">C:/Users/kelleyld/XiLinx Projects/JALA-CPU/tmp/./_cg/_dbg/./blk_mem_gen_v6_3/blk_mem_gen_prim_width.vhd</arg>&quot; line <arg fmt="%d" index="2">978</arg>: Use of null array slice on signal &lt;<arg fmt="%s" index="3">addrb_pad</arg>&gt; is not supported.
 </msg>
 
-<msg type="warning" file="Xst" num="2096" delta="old" >&quot;<arg fmt="%s" index="1">/home/user/csse232/JALA-CPU/tmp/./_cg/_dbg/./blk_mem_gen_v6_3/blk_mem_gen_prim_width.vhd</arg>&quot; line <arg fmt="%d" index="2">977</arg>: Use of null array slice on signal &lt;<arg fmt="%s" index="3">addra_pad</arg>&gt; is not supported.
+<msg type="warning" file="Xst" num="2096" delta="new" >&quot;<arg fmt="%s" index="1">C:/Users/kelleyld/XiLinx Projects/JALA-CPU/tmp/./_cg/_dbg/./blk_mem_gen_v6_3/blk_mem_gen_prim_width.vhd</arg>&quot; line <arg fmt="%d" index="2">977</arg>: Use of null array slice on signal &lt;<arg fmt="%s" index="3">addra_pad</arg>&gt; is not supported.
 </msg>
 
-<msg type="warning" file="Xst" num="2096" delta="old" >&quot;<arg fmt="%s" index="1">/home/user/csse232/JALA-CPU/tmp/./_cg/_dbg/./blk_mem_gen_v6_3/blk_mem_gen_prim_width.vhd</arg>&quot; line <arg fmt="%d" index="2">978</arg>: Use of null array slice on signal &lt;<arg fmt="%s" index="3">addrb_pad</arg>&gt; is not supported.
+<msg type="warning" file="Xst" num="2096" delta="new" >&quot;<arg fmt="%s" index="1">C:/Users/kelleyld/XiLinx Projects/JALA-CPU/tmp/./_cg/_dbg/./blk_mem_gen_v6_3/blk_mem_gen_prim_width.vhd</arg>&quot; line <arg fmt="%d" index="2">978</arg>: Use of null array slice on signal &lt;<arg fmt="%s" index="3">addrb_pad</arg>&gt; is not supported.
 </msg>
 
-<msg type="warning" file="Xst" num="2096" delta="old" >&quot;<arg fmt="%s" index="1">/home/user/csse232/JALA-CPU/tmp/./_cg/_dbg/./blk_mem_gen_v6_3/blk_mem_gen_prim_width.vhd</arg>&quot; line <arg fmt="%d" index="2">977</arg>: Use of null array slice on signal &lt;<arg fmt="%s" index="3">addra_pad</arg>&gt; is not supported.
+<msg type="warning" file="Xst" num="2096" delta="new" >&quot;<arg fmt="%s" index="1">C:/Users/kelleyld/XiLinx Projects/JALA-CPU/tmp/./_cg/_dbg/./blk_mem_gen_v6_3/blk_mem_gen_prim_width.vhd</arg>&quot; line <arg fmt="%d" index="2">977</arg>: Use of null array slice on signal &lt;<arg fmt="%s" index="3">addra_pad</arg>&gt; is not supported.
 </msg>
 
-<msg type="warning" file="Xst" num="2096" delta="old" >&quot;<arg fmt="%s" index="1">/home/user/csse232/JALA-CPU/tmp/./_cg/_dbg/./blk_mem_gen_v6_3/blk_mem_gen_prim_width.vhd</arg>&quot; line <arg fmt="%d" index="2">978</arg>: Use of null array slice on signal &lt;<arg fmt="%s" index="3">addrb_pad</arg>&gt; is not supported.
+<msg type="warning" file="Xst" num="2096" delta="new" >&quot;<arg fmt="%s" index="1">C:/Users/kelleyld/XiLinx Projects/JALA-CPU/tmp/./_cg/_dbg/./blk_mem_gen_v6_3/blk_mem_gen_prim_width.vhd</arg>&quot; line <arg fmt="%d" index="2">978</arg>: Use of null array slice on signal &lt;<arg fmt="%s" index="3">addrb_pad</arg>&gt; is not supported.
 </msg>
 
-<msg type="warning" file="Xst" num="2096" delta="old" >&quot;<arg fmt="%s" index="1">/home/user/csse232/JALA-CPU/tmp/./_cg/_dbg/./blk_mem_gen_v6_3/blk_mem_gen_prim_width.vhd</arg>&quot; line <arg fmt="%d" index="2">977</arg>: Use of null array slice on signal &lt;<arg fmt="%s" index="3">addra_pad</arg>&gt; is not supported.
+<msg type="warning" file="Xst" num="2096" delta="new" >&quot;<arg fmt="%s" index="1">C:/Users/kelleyld/XiLinx Projects/JALA-CPU/tmp/./_cg/_dbg/./blk_mem_gen_v6_3/blk_mem_gen_prim_width.vhd</arg>&quot; line <arg fmt="%d" index="2">977</arg>: Use of null array slice on signal &lt;<arg fmt="%s" index="3">addra_pad</arg>&gt; is not supported.
 </msg>
 
-<msg type="warning" file="Xst" num="2096" delta="old" >&quot;<arg fmt="%s" index="1">/home/user/csse232/JALA-CPU/tmp/./_cg/_dbg/./blk_mem_gen_v6_3/blk_mem_gen_prim_width.vhd</arg>&quot; line <arg fmt="%d" index="2">978</arg>: Use of null array slice on signal &lt;<arg fmt="%s" index="3">addrb_pad</arg>&gt; is not supported.
+<msg type="warning" file="Xst" num="2096" delta="new" >&quot;<arg fmt="%s" index="1">C:/Users/kelleyld/XiLinx Projects/JALA-CPU/tmp/./_cg/_dbg/./blk_mem_gen_v6_3/blk_mem_gen_prim_width.vhd</arg>&quot; line <arg fmt="%d" index="2">978</arg>: Use of null array slice on signal &lt;<arg fmt="%s" index="3">addrb_pad</arg>&gt; is not supported.
 </msg>
 
-<msg type="warning" file="Xst" num="2096" delta="old" >&quot;<arg fmt="%s" index="1">/home/user/csse232/JALA-CPU/tmp/./_cg/_dbg/./blk_mem_gen_v6_3/blk_mem_gen_prim_width.vhd</arg>&quot; line <arg fmt="%d" index="2">977</arg>: Use of null array slice on signal &lt;<arg fmt="%s" index="3">addra_pad</arg>&gt; is not supported.
+<msg type="warning" file="Xst" num="2096" delta="new" >&quot;<arg fmt="%s" index="1">C:/Users/kelleyld/XiLinx Projects/JALA-CPU/tmp/./_cg/_dbg/./blk_mem_gen_v6_3/blk_mem_gen_prim_width.vhd</arg>&quot; line <arg fmt="%d" index="2">977</arg>: Use of null array slice on signal &lt;<arg fmt="%s" index="3">addra_pad</arg>&gt; is not supported.
 </msg>
 
-<msg type="warning" file="Xst" num="2096" delta="old" >&quot;<arg fmt="%s" index="1">/home/user/csse232/JALA-CPU/tmp/./_cg/_dbg/./blk_mem_gen_v6_3/blk_mem_gen_prim_width.vhd</arg>&quot; line <arg fmt="%d" index="2">978</arg>: Use of null array slice on signal &lt;<arg fmt="%s" index="3">addrb_pad</arg>&gt; is not supported.
+<msg type="warning" file="Xst" num="2096" delta="new" >&quot;<arg fmt="%s" index="1">C:/Users/kelleyld/XiLinx Projects/JALA-CPU/tmp/./_cg/_dbg/./blk_mem_gen_v6_3/blk_mem_gen_prim_width.vhd</arg>&quot; line <arg fmt="%d" index="2">978</arg>: Use of null array slice on signal &lt;<arg fmt="%s" index="3">addrb_pad</arg>&gt; is not supported.
 </msg>
 
-<msg type="warning" file="Xst" num="2096" delta="old" >&quot;<arg fmt="%s" index="1">/home/user/csse232/JALA-CPU/tmp/./_cg/_dbg/./blk_mem_gen_v6_3/blk_mem_gen_prim_width.vhd</arg>&quot; line <arg fmt="%d" index="2">977</arg>: Use of null array slice on signal &lt;<arg fmt="%s" index="3">addra_pad</arg>&gt; is not supported.
+<msg type="warning" file="Xst" num="2096" delta="new" >&quot;<arg fmt="%s" index="1">C:/Users/kelleyld/XiLinx Projects/JALA-CPU/tmp/./_cg/_dbg/./blk_mem_gen_v6_3/blk_mem_gen_prim_width.vhd</arg>&quot; line <arg fmt="%d" index="2">977</arg>: Use of null array slice on signal &lt;<arg fmt="%s" index="3">addra_pad</arg>&gt; is not supported.
 </msg>
 
-<msg type="warning" file="Xst" num="2096" delta="old" >&quot;<arg fmt="%s" index="1">/home/user/csse232/JALA-CPU/tmp/./_cg/_dbg/./blk_mem_gen_v6_3/blk_mem_gen_prim_width.vhd</arg>&quot; line <arg fmt="%d" index="2">978</arg>: Use of null array slice on signal &lt;<arg fmt="%s" index="3">addrb_pad</arg>&gt; is not supported.
+<msg type="warning" file="Xst" num="2096" delta="new" >&quot;<arg fmt="%s" index="1">C:/Users/kelleyld/XiLinx Projects/JALA-CPU/tmp/./_cg/_dbg/./blk_mem_gen_v6_3/blk_mem_gen_prim_width.vhd</arg>&quot; line <arg fmt="%d" index="2">978</arg>: Use of null array slice on signal &lt;<arg fmt="%s" index="3">addrb_pad</arg>&gt; is not supported.
 </msg>
 
-<msg type="warning" file="Xst" num="2096" delta="old" >&quot;<arg fmt="%s" index="1">/home/user/csse232/JALA-CPU/tmp/./_cg/_dbg/./blk_mem_gen_v6_3/blk_mem_gen_prim_width.vhd</arg>&quot; line <arg fmt="%d" index="2">977</arg>: Use of null array slice on signal &lt;<arg fmt="%s" index="3">addra_pad</arg>&gt; is not supported.
+<msg type="warning" file="Xst" num="2096" delta="new" >&quot;<arg fmt="%s" index="1">C:/Users/kelleyld/XiLinx Projects/JALA-CPU/tmp/./_cg/_dbg/./blk_mem_gen_v6_3/blk_mem_gen_prim_width.vhd</arg>&quot; line <arg fmt="%d" index="2">977</arg>: Use of null array slice on signal &lt;<arg fmt="%s" index="3">addra_pad</arg>&gt; is not supported.
 </msg>
 
-<msg type="warning" file="Xst" num="2096" delta="old" >&quot;<arg fmt="%s" index="1">/home/user/csse232/JALA-CPU/tmp/./_cg/_dbg/./blk_mem_gen_v6_3/blk_mem_gen_prim_width.vhd</arg>&quot; line <arg fmt="%d" index="2">978</arg>: Use of null array slice on signal &lt;<arg fmt="%s" index="3">addrb_pad</arg>&gt; is not supported.
+<msg type="warning" file="Xst" num="2096" delta="new" >&quot;<arg fmt="%s" index="1">C:/Users/kelleyld/XiLinx Projects/JALA-CPU/tmp/./_cg/_dbg/./blk_mem_gen_v6_3/blk_mem_gen_prim_width.vhd</arg>&quot; line <arg fmt="%d" index="2">978</arg>: Use of null array slice on signal &lt;<arg fmt="%s" index="3">addrb_pad</arg>&gt; is not supported.
 </msg>
 
-<msg type="warning" file="Xst" num="2096" delta="old" >&quot;<arg fmt="%s" index="1">/home/user/csse232/JALA-CPU/tmp/./_cg/_dbg/./blk_mem_gen_v6_3/blk_mem_gen_prim_width.vhd</arg>&quot; line <arg fmt="%d" index="2">977</arg>: Use of null array slice on signal &lt;<arg fmt="%s" index="3">addra_pad</arg>&gt; is not supported.
+<msg type="warning" file="Xst" num="2096" delta="new" >&quot;<arg fmt="%s" index="1">C:/Users/kelleyld/XiLinx Projects/JALA-CPU/tmp/./_cg/_dbg/./blk_mem_gen_v6_3/blk_mem_gen_prim_width.vhd</arg>&quot; line <arg fmt="%d" index="2">977</arg>: Use of null array slice on signal &lt;<arg fmt="%s" index="3">addra_pad</arg>&gt; is not supported.
 </msg>
 
-<msg type="warning" file="Xst" num="2096" delta="old" >&quot;<arg fmt="%s" index="1">/home/user/csse232/JALA-CPU/tmp/./_cg/_dbg/./blk_mem_gen_v6_3/blk_mem_gen_prim_width.vhd</arg>&quot; line <arg fmt="%d" index="2">978</arg>: Use of null array slice on signal &lt;<arg fmt="%s" index="3">addrb_pad</arg>&gt; is not supported.
+<msg type="warning" file="Xst" num="2096" delta="new" >&quot;<arg fmt="%s" index="1">C:/Users/kelleyld/XiLinx Projects/JALA-CPU/tmp/./_cg/_dbg/./blk_mem_gen_v6_3/blk_mem_gen_prim_width.vhd</arg>&quot; line <arg fmt="%d" index="2">978</arg>: Use of null array slice on signal &lt;<arg fmt="%s" index="3">addrb_pad</arg>&gt; is not supported.
 </msg>
 
-<msg type="warning" file="Xst" num="2096" delta="old" >&quot;<arg fmt="%s" index="1">/home/user/csse232/JALA-CPU/tmp/./_cg/_dbg/./blk_mem_gen_v6_3/blk_mem_gen_prim_width.vhd</arg>&quot; line <arg fmt="%d" index="2">977</arg>: Use of null array slice on signal &lt;<arg fmt="%s" index="3">addra_pad</arg>&gt; is not supported.
+<msg type="warning" file="Xst" num="2096" delta="new" >&quot;<arg fmt="%s" index="1">C:/Users/kelleyld/XiLinx Projects/JALA-CPU/tmp/./_cg/_dbg/./blk_mem_gen_v6_3/blk_mem_gen_prim_width.vhd</arg>&quot; line <arg fmt="%d" index="2">977</arg>: Use of null array slice on signal &lt;<arg fmt="%s" index="3">addra_pad</arg>&gt; is not supported.
 </msg>
 
-<msg type="warning" file="Xst" num="2096" delta="old" >&quot;<arg fmt="%s" index="1">/home/user/csse232/JALA-CPU/tmp/./_cg/_dbg/./blk_mem_gen_v6_3/blk_mem_gen_prim_width.vhd</arg>&quot; line <arg fmt="%d" index="2">978</arg>: Use of null array slice on signal &lt;<arg fmt="%s" index="3">addrb_pad</arg>&gt; is not supported.
+<msg type="warning" file="Xst" num="2096" delta="new" >&quot;<arg fmt="%s" index="1">C:/Users/kelleyld/XiLinx Projects/JALA-CPU/tmp/./_cg/_dbg/./blk_mem_gen_v6_3/blk_mem_gen_prim_width.vhd</arg>&quot; line <arg fmt="%d" index="2">978</arg>: Use of null array slice on signal &lt;<arg fmt="%s" index="3">addrb_pad</arg>&gt; is not supported.
 </msg>
 
-<msg type="warning" file="Xst" num="2096" delta="old" >&quot;<arg fmt="%s" index="1">/home/user/csse232/JALA-CPU/tmp/./_cg/_dbg/./blk_mem_gen_v6_3/blk_mem_gen_prim_width.vhd</arg>&quot; line <arg fmt="%d" index="2">977</arg>: Use of null array slice on signal &lt;<arg fmt="%s" index="3">addra_pad</arg>&gt; is not supported.
+<msg type="warning" file="Xst" num="2096" delta="new" >&quot;<arg fmt="%s" index="1">C:/Users/kelleyld/XiLinx Projects/JALA-CPU/tmp/./_cg/_dbg/./blk_mem_gen_v6_3/blk_mem_gen_prim_width.vhd</arg>&quot; line <arg fmt="%d" index="2">977</arg>: Use of null array slice on signal &lt;<arg fmt="%s" index="3">addra_pad</arg>&gt; is not supported.
 </msg>
 
-<msg type="warning" file="Xst" num="2096" delta="old" >&quot;<arg fmt="%s" index="1">/home/user/csse232/JALA-CPU/tmp/./_cg/_dbg/./blk_mem_gen_v6_3/blk_mem_gen_prim_width.vhd</arg>&quot; line <arg fmt="%d" index="2">978</arg>: Use of null array slice on signal &lt;<arg fmt="%s" index="3">addrb_pad</arg>&gt; is not supported.
+<msg type="warning" file="Xst" num="2096" delta="new" >&quot;<arg fmt="%s" index="1">C:/Users/kelleyld/XiLinx Projects/JALA-CPU/tmp/./_cg/_dbg/./blk_mem_gen_v6_3/blk_mem_gen_prim_width.vhd</arg>&quot; line <arg fmt="%d" index="2">978</arg>: Use of null array slice on signal &lt;<arg fmt="%s" index="3">addrb_pad</arg>&gt; is not supported.
 </msg>
 
-<msg type="warning" file="Xst" num="2096" delta="old" >&quot;<arg fmt="%s" index="1">/home/user/csse232/JALA-CPU/tmp/./_cg/_dbg/./blk_mem_gen_v6_3/blk_mem_gen_prim_width.vhd</arg>&quot; line <arg fmt="%d" index="2">977</arg>: Use of null array slice on signal &lt;<arg fmt="%s" index="3">addra_pad</arg>&gt; is not supported.
+<msg type="warning" file="Xst" num="2096" delta="new" >&quot;<arg fmt="%s" index="1">C:/Users/kelleyld/XiLinx Projects/JALA-CPU/tmp/./_cg/_dbg/./blk_mem_gen_v6_3/blk_mem_gen_prim_width.vhd</arg>&quot; line <arg fmt="%d" index="2">977</arg>: Use of null array slice on signal &lt;<arg fmt="%s" index="3">addra_pad</arg>&gt; is not supported.
 </msg>
 
-<msg type="warning" file="Xst" num="2096" delta="old" >&quot;<arg fmt="%s" index="1">/home/user/csse232/JALA-CPU/tmp/./_cg/_dbg/./blk_mem_gen_v6_3/blk_mem_gen_prim_width.vhd</arg>&quot; line <arg fmt="%d" index="2">978</arg>: Use of null array slice on signal &lt;<arg fmt="%s" index="3">addrb_pad</arg>&gt; is not supported.
+<msg type="warning" file="Xst" num="2096" delta="new" >&quot;<arg fmt="%s" index="1">C:/Users/kelleyld/XiLinx Projects/JALA-CPU/tmp/./_cg/_dbg/./blk_mem_gen_v6_3/blk_mem_gen_prim_width.vhd</arg>&quot; line <arg fmt="%d" index="2">978</arg>: Use of null array slice on signal &lt;<arg fmt="%s" index="3">addrb_pad</arg>&gt; is not supported.
 </msg>
 
-<msg type="warning" file="Xst" num="2096" delta="old" >&quot;<arg fmt="%s" index="1">/home/user/csse232/JALA-CPU/tmp/./_cg/_dbg/./blk_mem_gen_v6_3/blk_mem_gen_prim_width.vhd</arg>&quot; line <arg fmt="%d" index="2">977</arg>: Use of null array slice on signal &lt;<arg fmt="%s" index="3">addra_pad</arg>&gt; is not supported.
+<msg type="warning" file="Xst" num="2096" delta="new" >&quot;<arg fmt="%s" index="1">C:/Users/kelleyld/XiLinx Projects/JALA-CPU/tmp/./_cg/_dbg/./blk_mem_gen_v6_3/blk_mem_gen_prim_width.vhd</arg>&quot; line <arg fmt="%d" index="2">977</arg>: Use of null array slice on signal &lt;<arg fmt="%s" index="3">addra_pad</arg>&gt; is not supported.
 </msg>
 
-<msg type="warning" file="Xst" num="2096" delta="old" >&quot;<arg fmt="%s" index="1">/home/user/csse232/JALA-CPU/tmp/./_cg/_dbg/./blk_mem_gen_v6_3/blk_mem_gen_prim_width.vhd</arg>&quot; line <arg fmt="%d" index="2">978</arg>: Use of null array slice on signal &lt;<arg fmt="%s" index="3">addrb_pad</arg>&gt; is not supported.
+<msg type="warning" file="Xst" num="2096" delta="new" >&quot;<arg fmt="%s" index="1">C:/Users/kelleyld/XiLinx Projects/JALA-CPU/tmp/./_cg/_dbg/./blk_mem_gen_v6_3/blk_mem_gen_prim_width.vhd</arg>&quot; line <arg fmt="%d" index="2">978</arg>: Use of null array slice on signal &lt;<arg fmt="%s" index="3">addrb_pad</arg>&gt; is not supported.
 </msg>
 
-<msg type="warning" file="Xst" num="2096" delta="old" >&quot;<arg fmt="%s" index="1">/home/user/csse232/JALA-CPU/tmp/./_cg/_dbg/./blk_mem_gen_v6_3/blk_mem_gen_prim_width.vhd</arg>&quot; line <arg fmt="%d" index="2">977</arg>: Use of null array slice on signal &lt;<arg fmt="%s" index="3">addra_pad</arg>&gt; is not supported.
+<msg type="warning" file="Xst" num="2096" delta="new" >&quot;<arg fmt="%s" index="1">C:/Users/kelleyld/XiLinx Projects/JALA-CPU/tmp/./_cg/_dbg/./blk_mem_gen_v6_3/blk_mem_gen_prim_width.vhd</arg>&quot; line <arg fmt="%d" index="2">977</arg>: Use of null array slice on signal &lt;<arg fmt="%s" index="3">addra_pad</arg>&gt; is not supported.
 </msg>
 
-<msg type="warning" file="Xst" num="2096" delta="old" >&quot;<arg fmt="%s" index="1">/home/user/csse232/JALA-CPU/tmp/./_cg/_dbg/./blk_mem_gen_v6_3/blk_mem_gen_prim_width.vhd</arg>&quot; line <arg fmt="%d" index="2">978</arg>: Use of null array slice on signal &lt;<arg fmt="%s" index="3">addrb_pad</arg>&gt; is not supported.
+<msg type="warning" file="Xst" num="2096" delta="new" >&quot;<arg fmt="%s" index="1">C:/Users/kelleyld/XiLinx Projects/JALA-CPU/tmp/./_cg/_dbg/./blk_mem_gen_v6_3/blk_mem_gen_prim_width.vhd</arg>&quot; line <arg fmt="%d" index="2">978</arg>: Use of null array slice on signal &lt;<arg fmt="%s" index="3">addrb_pad</arg>&gt; is not supported.
 </msg>
 
-<msg type="warning" file="Xst" num="2096" delta="old" >&quot;<arg fmt="%s" index="1">/home/user/csse232/JALA-CPU/tmp/./_cg/_dbg/./blk_mem_gen_v6_3/blk_mem_gen_prim_width.vhd</arg>&quot; line <arg fmt="%d" index="2">977</arg>: Use of null array slice on signal &lt;<arg fmt="%s" index="3">addra_pad</arg>&gt; is not supported.
+<msg type="warning" file="Xst" num="2096" delta="new" >&quot;<arg fmt="%s" index="1">C:/Users/kelleyld/XiLinx Projects/JALA-CPU/tmp/./_cg/_dbg/./blk_mem_gen_v6_3/blk_mem_gen_prim_width.vhd</arg>&quot; line <arg fmt="%d" index="2">977</arg>: Use of null array slice on signal &lt;<arg fmt="%s" index="3">addra_pad</arg>&gt; is not supported.
 </msg>
 
-<msg type="warning" file="Xst" num="2096" delta="old" >&quot;<arg fmt="%s" index="1">/home/user/csse232/JALA-CPU/tmp/./_cg/_dbg/./blk_mem_gen_v6_3/blk_mem_gen_prim_width.vhd</arg>&quot; line <arg fmt="%d" index="2">978</arg>: Use of null array slice on signal &lt;<arg fmt="%s" index="3">addrb_pad</arg>&gt; is not supported.
+<msg type="warning" file="Xst" num="2096" delta="new" >&quot;<arg fmt="%s" index="1">C:/Users/kelleyld/XiLinx Projects/JALA-CPU/tmp/./_cg/_dbg/./blk_mem_gen_v6_3/blk_mem_gen_prim_width.vhd</arg>&quot; line <arg fmt="%d" index="2">978</arg>: Use of null array slice on signal &lt;<arg fmt="%s" index="3">addrb_pad</arg>&gt; is not supported.
 </msg>
 
-<msg type="warning" file="Xst" num="2096" delta="old" >&quot;<arg fmt="%s" index="1">/home/user/csse232/JALA-CPU/tmp/./_cg/_dbg/./blk_mem_gen_v6_3/blk_mem_gen_prim_width.vhd</arg>&quot; line <arg fmt="%d" index="2">977</arg>: Use of null array slice on signal &lt;<arg fmt="%s" index="3">addra_pad</arg>&gt; is not supported.
+<msg type="warning" file="Xst" num="2096" delta="new" >&quot;<arg fmt="%s" index="1">C:/Users/kelleyld/XiLinx Projects/JALA-CPU/tmp/./_cg/_dbg/./blk_mem_gen_v6_3/blk_mem_gen_prim_width.vhd</arg>&quot; line <arg fmt="%d" index="2">977</arg>: Use of null array slice on signal &lt;<arg fmt="%s" index="3">addra_pad</arg>&gt; is not supported.
 </msg>
 
-<msg type="warning" file="Xst" num="2096" delta="old" >&quot;<arg fmt="%s" index="1">/home/user/csse232/JALA-CPU/tmp/./_cg/_dbg/./blk_mem_gen_v6_3/blk_mem_gen_prim_width.vhd</arg>&quot; line <arg fmt="%d" index="2">978</arg>: Use of null array slice on signal &lt;<arg fmt="%s" index="3">addrb_pad</arg>&gt; is not supported.
+<msg type="warning" file="Xst" num="2096" delta="new" >&quot;<arg fmt="%s" index="1">C:/Users/kelleyld/XiLinx Projects/JALA-CPU/tmp/./_cg/_dbg/./blk_mem_gen_v6_3/blk_mem_gen_prim_width.vhd</arg>&quot; line <arg fmt="%d" index="2">978</arg>: Use of null array slice on signal &lt;<arg fmt="%s" index="3">addrb_pad</arg>&gt; is not supported.
 </msg>
 
-<msg type="warning" file="Xst" num="795" delta="old" >&quot;<arg fmt="%s" index="1">/home/user/csse232/JALA-CPU/tmp/./_cg/_dbg/./blk_mem_gen_v6_3/blk_mem_gen_mux.vhd</arg>&quot; line <arg fmt="%d" index="2">470</arg>: Size of operands are different : result is &lt;false&gt;.
+<msg type="warning" file="Xst" num="795" delta="new" >&quot;<arg fmt="%s" index="1">C:/Users/kelleyld/XiLinx Projects/JALA-CPU/tmp/./_cg/_dbg/./blk_mem_gen_v6_3/blk_mem_gen_mux.vhd</arg>&quot; line <arg fmt="%d" index="2">470</arg>: Size of operands are different : result is &lt;false&gt;.
 </msg>
 
-<msg type="warning" file="Xst" num="795" delta="old" >&quot;<arg fmt="%s" index="1">/home/user/csse232/JALA-CPU/tmp/./_cg/_dbg/./blk_mem_gen_v6_3/blk_mem_gen_mux.vhd</arg>&quot; line <arg fmt="%d" index="2">472</arg>: Size of operands are different : result is &lt;false&gt;.
+<msg type="warning" file="Xst" num="795" delta="new" >&quot;<arg fmt="%s" index="1">C:/Users/kelleyld/XiLinx Projects/JALA-CPU/tmp/./_cg/_dbg/./blk_mem_gen_v6_3/blk_mem_gen_mux.vhd</arg>&quot; line <arg fmt="%d" index="2">472</arg>: Size of operands are different : result is &lt;false&gt;.
 </msg>
 
-<msg type="warning" file="Xst" num="795" delta="old" >&quot;<arg fmt="%s" index="1">/home/user/csse232/JALA-CPU/tmp/./_cg/_dbg/./blk_mem_gen_v6_3/blk_mem_gen_mux.vhd</arg>&quot; line <arg fmt="%d" index="2">872</arg>: Size of operands are different : result is &lt;false&gt;.
+<msg type="warning" file="Xst" num="795" delta="new" >&quot;<arg fmt="%s" index="1">C:/Users/kelleyld/XiLinx Projects/JALA-CPU/tmp/./_cg/_dbg/./blk_mem_gen_v6_3/blk_mem_gen_mux.vhd</arg>&quot; line <arg fmt="%d" index="2">872</arg>: Size of operands are different : result is &lt;false&gt;.
 </msg>
 
 <msg type="info" file="Xst" num="2679" delta="old" >Register &lt;<arg fmt="%s" index="1">rdaddrecc_lat</arg>&gt; in unit &lt;<arg fmt="%s" index="2">blk_mem_gen_mux.1</arg>&gt; has a constant value of <arg fmt="%s" index="3">000000000000000</arg> during circuit operation. The register is replaced by logic.
 </msg>
 
-<msg type="warning" file="Xst" num="795" delta="old" >&quot;<arg fmt="%s" index="1">/home/user/csse232/JALA-CPU/tmp/./_cg/_dbg/./blk_mem_gen_v6_3/blk_mem_gen_mux.vhd</arg>&quot; line <arg fmt="%d" index="2">470</arg>: Size of operands are different : result is &lt;false&gt;.
+<msg type="warning" file="Xst" num="795" delta="new" >&quot;<arg fmt="%s" index="1">C:/Users/kelleyld/XiLinx Projects/JALA-CPU/tmp/./_cg/_dbg/./blk_mem_gen_v6_3/blk_mem_gen_mux.vhd</arg>&quot; line <arg fmt="%d" index="2">470</arg>: Size of operands are different : result is &lt;false&gt;.
 </msg>
 
-<msg type="warning" file="Xst" num="795" delta="old" >&quot;<arg fmt="%s" index="1">/home/user/csse232/JALA-CPU/tmp/./_cg/_dbg/./blk_mem_gen_v6_3/blk_mem_gen_mux.vhd</arg>&quot; line <arg fmt="%d" index="2">472</arg>: Size of operands are different : result is &lt;false&gt;.
+<msg type="warning" file="Xst" num="795" delta="new" >&quot;<arg fmt="%s" index="1">C:/Users/kelleyld/XiLinx Projects/JALA-CPU/tmp/./_cg/_dbg/./blk_mem_gen_v6_3/blk_mem_gen_mux.vhd</arg>&quot; line <arg fmt="%d" index="2">472</arg>: Size of operands are different : result is &lt;false&gt;.
 </msg>
 
-<msg type="warning" file="Xst" num="795" delta="old" >&quot;<arg fmt="%s" index="1">/home/user/csse232/JALA-CPU/tmp/./_cg/_dbg/./blk_mem_gen_v6_3/blk_mem_gen_mux.vhd</arg>&quot; line <arg fmt="%d" index="2">872</arg>: Size of operands are different : result is &lt;false&gt;.
+<msg type="warning" file="Xst" num="795" delta="new" >&quot;<arg fmt="%s" index="1">C:/Users/kelleyld/XiLinx Projects/JALA-CPU/tmp/./_cg/_dbg/./blk_mem_gen_v6_3/blk_mem_gen_mux.vhd</arg>&quot; line <arg fmt="%d" index="2">872</arg>: Size of operands are different : result is &lt;false&gt;.
 </msg>
 
 <msg type="info" file="Xst" num="2679" delta="old" >Register &lt;<arg fmt="%s" index="1">rdaddrecc_lat</arg>&gt; in unit &lt;<arg fmt="%s" index="2">blk_mem_gen_mux.2</arg>&gt; has a constant value of <arg fmt="%s" index="3">000000000000000</arg> during circuit operation. The register is replaced by logic.

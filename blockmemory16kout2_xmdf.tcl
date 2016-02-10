@@ -119,7 +119,7 @@ utilities_xmdf::xmdfSetData $instance FileSet $fcount relative_path blockmemory1
 utilities_xmdf::xmdfSetData $instance FileSet $fcount type Ignore
 incr fcount
 
-utilities_xmdf::xmdfSetData $instance FileSet $fcount relative_path blockmemory16kout2/simulation/functional/simulate_isim.sh
+utilities_xmdf::xmdfSetData $instance FileSet $fcount relative_path blockmemory16kout2/simulation/functional/simulate_isim.bat
 utilities_xmdf::xmdfSetData $instance FileSet $fcount type Ignore
 incr fcount
 
@@ -147,7 +147,7 @@ utilities_xmdf::xmdfSetData $instance FileSet $fcount relative_path blockmemory1
 utilities_xmdf::xmdfSetData $instance FileSet $fcount type Ignore
 incr fcount
 
-utilities_xmdf::xmdfSetData $instance FileSet $fcount relative_path blockmemory16kout2/simulation/timing/simulate_isim.sh
+utilities_xmdf::xmdfSetData $instance FileSet $fcount relative_path blockmemory16kout2/simulation/timing/simulate_isim.bat
 utilities_xmdf::xmdfSetData $instance FileSet $fcount type Ignore
 incr fcount
 
