@@ -33,10 +33,12 @@ module stage4IntegrationTest;
    wire 	   MemRead2;
    wire [2:0]  ALUop;
 
-   //Variables
+   // Variables
    reg [15:0]  trials;
    reg [15:0]  errors;
    reg [15:0]  CLKCount;
+
+   // Expected Values
    reg [15:0]  eShifterOut;
    reg [15:0]  eZeroExtOut;
    reg [15:0]  eSignExtOut;
@@ -117,7 +119,7 @@ module stage4IntegrationTest;
 		 ////////////////////
          //  Error Check   //
          ////////////////////
-		 
+
 		 if(ShifterOut != eShifterOut) begin
    			$display("ERROR at CLK %d: ShifterOut %x != %x", CLKCount, ShifterOut, eShifterOut);
    			errors = errors + 1;
@@ -144,7 +146,7 @@ module stage4IntegrationTest;
 		 //////////////
          //  Tests	 //
          //////////////
-		 
+
 		 if(CLKCount <= 105) begin
 			IROut = {4'b 1000, (CLKCount[11:0]) % 16};
 
