@@ -120,6 +120,10 @@
       <association xil_pn:name="PostRouteSimulation" xil_pn:seqID="41"/>
       <association xil_pn:name="PostTranslateSimulation" xil_pn:seqID="41"/>
     </file>
+    <file xil_pn:name="Control.v" xil_pn:type="FILE_VERILOG">
+      <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="29"/>
+      <association xil_pn:name="Implementation" xil_pn:seqID="29"/>
+    </file>
     <file xil_pn:name="blockmemory16kout2.xise" xil_pn:type="FILE_COREGENISE">
       <association xil_pn:name="Implementation" xil_pn:seqID="0"/>
     </file>
