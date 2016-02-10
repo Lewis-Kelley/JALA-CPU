@@ -4,6 +4,7 @@ module stage4Integration(
 						 input [15:0] 	   IROut,
 						 input 			   isZero,
 						 input 			   CLK,
+						 input 			   CtrlRst,
 
 						 //Shifter inputs
 						 input [15:0] 	   ShifterIn,
@@ -42,7 +43,10 @@ module stage4Integration(
 						 output 		   MemRead1,
 						 output 		   MemRead2,
 
-						 output [2:0] 	   ALUop
+						 output [2:0] 	   ALUop,
+
+						 output [4:0] CurrentState,
+						 output [4:0] NextState
 						 );
 
    wire 							   ShifterDir,
@@ -56,7 +60,45 @@ module stage4Integration(
 					.out(ShifterOut)
 					);
 
-   //TODO Instantiate control
+   Control ctrl(
+				.op(IROut[15:12]),
+				.clk(CLK),
+				.rst(CtrlRst),
+
+				.PCSource(PCSource),
+				.PCWrite(PCWrite),
+				.PCAdd(PCAdd),
+
+				.MSPop(MSPPop),
+				.MSPWrite(MSPWrite),
+
+				.RSPop(RSPPop),
+				.RSPWrite(RSWrite),
+
+				.IRWrite(IRWrite),
+				.ValAWrite(ValAWrite),
+				.ValBWrite(ValBWrite),
+
+				.ResSource(ResSource),
+				.ResWrite(ResWrite),
+
+				.MemDst1(MemDst1),
+				.MemDst2(MemDst2),
+				.MemData(MemData),
+
+				.MemWrite1(MemWrite1),
+				.MemWrite2(MemWrite2),
+				.MemRead1(MemRead1),
+				.MemRead2(MemRead2),
+
+				.dir(ShifterDir),
+				.mode(ShifterMode),
+
+				.ALUop(ALUop),
+
+				.CurrentState(CurrentState),
+				.NextState(NextState)
+				);
 
    always @ (*) begin
 	  ZeroExtOut = {4'b0000, IROut[11:0]};

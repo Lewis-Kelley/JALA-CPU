@@ -6,48 +6,53 @@ module stage4IntegrationTest;
    reg [15:0] IROut;
    reg 		  isZero;
    reg 		  CLK;
+   reg 		  CtrlRst;
    reg [15:0] ShifterIn;
 
    // Outputs
-   wire [15:0] ShifterOut;
-   wire [15:0] ZeroExtOut;
-   wire [15:0] SignExtOut;
-   wire 	   PCSource;
-   wire 	   PCWrite;
-   wire 	   PCAdd;
-   wire 	   MSPPop;
-   wire 	   MSPWrite;
-   wire 	   RSPPop;
-   wire 	   RSPWrite;
-   wire 	   IRWrite;
-   wire 	   ValAWrite;
-   wire 	   ValBWrite;
-   wire 	   ResSource;
-   wire 	   ResWrite;
-   wire [1:0]  MemDst1;
-   wire [1:0]  MemDst2;
-   wire [2:0]  MemData;
-   wire 	   MemWrite1;
-   wire 	   MemWrite2;
-   wire 	   MemRead1;
-   wire 	   MemRead2;
-   wire [2:0]  ALUop;
+   wire [15:0] 			 ShifterOut;
+   wire [15:0] 			 ZeroExtOut;
+   wire [15:0] 			 SignExtOut;
+   wire 				 PCSource;
+   wire 				 PCWrite;
+   wire 				 PCAdd;
+   wire 				 MSPPop;
+   wire 				 MSPWrite;
+   wire 				 RSPPop;
+   wire 				 RSPWrite;
+   wire 				 IRWrite;
+   wire 				 ValAWrite;
+   wire 				 ValBWrite;
+   wire 				 ResSource;
+   wire 				 ResWrite;
+   wire [1:0] 			 MemDst1;
+   wire [1:0] 			 MemDst2;
+   wire [2:0] 			 MemData;
+   wire 				 MemWrite1;
+   wire 				 MemWrite2;
+   wire 				 MemRead1;
+   wire 				 MemRead2;
+   wire [2:0] 			 ALUop;
+
+   wire [4:0] 			 CurrentState;
+   wire [4:0] 			 NextState;
 
    // Variables
-   reg [15:0]  trials;
-   reg [15:0]  errors;
-   reg [15:0]  CLKCount;
+   reg [15:0] 			 trials;
+   reg [15:0] 			 errors;
+   reg [15:0] 			 CLKCount;
 
    // Expected Values
-   reg [15:0]  eShifterOut;
-   reg [15:0]  eZeroExtOut;
-   reg [15:0]  eSignExtOut;
+   reg [15:0] 			 eShifterOut;
+   reg [15:0] 			 eZeroExtOut;
+   reg [15:0] 			 eSignExtOut;
 
    // Instantiate the Unit Under Test (UUT)
    stage4Integration uut (
 						  .IROut(IROut),
 						  .isZero(isZero),
 						  .CLK(CLK),
+						  .CtrlRst(CtrlRst),
 						  .ShifterIn(ShifterIn),
 						  .ShifterOut(ShifterOut),
 						  .ZeroExtOut(ZeroExtOut),
@@ -75,7 +80,7 @@ module stage4IntegrationTest;
 						  );
 
    parameter   PERIOD = 20;
-   parameter   real DUTY_CYCLE = 0.5;
+   parameter   real 	 DUTY_CYCLE = 0.5;
    parameter   OFFSET = 10;
 
    initial begin
@@ -171,5 +176,4 @@ module stage4IntegrationTest;
 		 end
 	  end
    end
-
 endmodule

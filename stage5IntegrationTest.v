@@ -140,24 +140,24 @@ module stage5IntegrationTest;
 	  #1;
 
 	  CLKCount = CLKCount + 1;
-	  
+
 	  // Give the system 5 cycles to initialize
 	  if(CLKCount <= 5) begin
 		 disable TestCLK;
 	  end else begin
-		 if(CLKCount <= 60) begin // Increment up MSP
+		 if(CLKCount <= 59) begin // Increment up MSP
 			PCWrite = 0;
 
 			MemRead1 = 0;
 			MemRead2 = 0;
-			
+
 			MemWrite1 = 0;
 			MemWrite2 = 0;
 
 			IRWrite = 0;
 			ValAWrite = 0;
 			ValBWrite = 0;
-			
+
 			MSPWrite = 1;
 			MSPPop = 0;
 
@@ -167,27 +167,51 @@ module stage5IntegrationTest;
 			   PCWrite = 1;
 			   PCAdd = 0;
 			   PCSource = 0;
-			
+
 			   MemRead1 = 1;
 			   MemRead2 = 1;
 			   MemWrite1 = 0;
 			   MemWrite2 = 0;
-			
+
 			   MemDst1 = 2'b 00;
 			   MemDst2 = 2'b 00;
-			
+
 			   IRWrite = 0;
 			   ValAWrite = 0;
 			   ValBWrite = 0;
-			
+
 			   MSPWrite = 1;
 			   MSPPop = 1;
-			
+
 			   RSPWrite = 0;
-			   
+
 			   eValA = MSPOut % 10;
 			   eValB = ValBOut;
 			   eIR = PCOut % 10;
+			end else if(CLKCount <= 359) begin // Load ValB
+			   PCWrite = 0;
+
+			   MemRead1 = 1;
+			   MemRead2 = 0;
+			   MemWrite1 = 0;
+			   MemWrite2 = 0;
+
+			   MemDst1 = 2'b 01;
+
+			   IRWrite = 0;
+			   ValAWrite = 0;
+			   ValBWrite = 0;
+
+			   MSPWrite = 1;
+			   MSPPop = 0;
+
+			   RSPWrite = 0;
+
+			   $display("Updating expected values: CLK = %d; eValB = %h", CLKCount, MSPOut);
+
+			   eValA = ValAOut;
+			   eValB = MSPOut % 10;
+			   eIR = IROut;
 			end else begin
 			   $display("Finished with %d/%d errors.", errors, trials);
 			   $finish;
@@ -200,7 +224,7 @@ module stage5IntegrationTest;
 			   MemRead2 = 0;
 			   MemWrite1 = 0;
 			   MemWrite2 = 0;
-			   
+
 			   IRWrite = 1;
 			   ValAWrite = 1;
 			   ValBWrite = 0;
@@ -208,24 +232,41 @@ module stage5IntegrationTest;
 			   MSPWrite = 0;
 
 			   RSPWrite = 0;
-			end
-		 end else begin
-			if(CLKCount <= 209) begin // Standard Instruction Fetch
+			end else if(CLKCount <= 359) begin // Load ValB
 			   PCWrite = 0;
 
 			   MemRead1 = 0;
 			   MemRead2 = 0;
 			   MemWrite1 = 0;
 			   MemWrite2 = 0;
-			   
+			
 			   IRWrite = 0;
 			   ValAWrite = 0;
-			   ValBWrite = 0;
-
+			   ValBWrite = 1;
+			
 			   MSPWrite = 0;
-
+			
 			   RSPWrite = 0;
+			
+			   eValA = ValAOut;
+			   eValB = MSPOut % 10;
+			   eIR = IROut;
 			end
+		 end else begin
+			PCWrite = 0;
+		 
+			MemRead1 = 0;
+			MemRead2 = 0;
+			MemWrite1 = 0;
+			MemWrite2 = 0;
+		 
+			IRWrite = 0;
+			ValAWrite = 0;
+			ValBWrite = 0;
+		 
+			MSPWrite = 0;
+		 
+			RSPWrite = 0;
 
 			if(ValAOut != eValA) begin
 			   $display("ERROR with ValAOut at CLK %d: %x != %x",
@@ -238,7 +279,7 @@ module stage5IntegrationTest;
 						CLKCount, ValBOut, eValB);
 			   errors = errors + 1;
 			end
-
+			
 			if(IROut != eIR) begin
 			   $display("ERROR with IROut at CLK %d: %x != %x",
 						CLKCount, IROut, eIR);
