@@ -81,9 +81,9 @@ module stage5IntegrationTest;
 
    initial begin
 	  // Initialize Inputs
-	  SignExtOut = 0;
-	  ZeroExtOut = 0;
-	  ResOut = 0;
+	  SignExtOut = 16'h 0000;
+	  ZeroExtOut = 16'h 0000;
+	  ResOut = 16'h 0000;
 
 	  CLK = 0;
 
@@ -113,7 +113,7 @@ module stage5IntegrationTest;
 	  trials = 0;
 	  errors = 0;
 	  CLKCount = 0;
-	  
+
 	  eValA = 0;
 	  eValB = 0;
 	  eIR = 0;
@@ -129,38 +129,59 @@ module stage5IntegrationTest;
    end
 
    always @ (posedge CLK) begin: TestCLK
+	  #1;
+
+	  CLKCount = CLKCount + 1;
+	  
 	  // Give the system 5 cycles to initialize
-	  if(CLKCount < 5) begin
-		 CLKCount = CLKCount + 1;
+	  // Only execute on odd CLK cycles
+	  if(CLKCount <= 5 || (CLKCount % 2 == 0)) begin
 		 disable TestCLK;
 	  end else begin
-		if(CLKCount <= 10) begin //Standard Instruction Fetch
-		   PCAdd = 1;
-		   PCSource = 0;
-		   PCWrite = 1;
+		 if(CLKCount <= 10) begin // Increment up MSP and RSP
+			PCWrite = 0;
 
-		   MemDst1 = 00;
-		   MemDst2 = 00;
-		   
-		   MemRead1 = 1;
-		   MemRead2 = 1;
-		   MemWrite1 = 0;
-		   MemWrite2 = 0;
+			MemRead1 = 0;
+			MemRead2 = 0;
+			
+			MemWrite1 = 0;
+			MemWrite2 = 0;
 
-		   IRWrite = 1;
-		   ValAWrite = 1;
-		   ValBWrite = 0;
+			IRWrite = 0;
+			ValAWrite = 0;
+			ValBWrite = 0;
+			
+			MSPWrite = 1;
+			MSPPop = 0;
 
-		   MSPWrite = 1;
-		   MSPPop = 1;
-
-		   RSPWrite = 0;
-		end else begin
+			RSPWrite = 1;
+			RSPPop = 1;
+		 end else if(CLKCount <= 20) begin // Standard Instruction Fetch
+			PCAdd = 1;
+			PCSource = 0;
+			PCWrite = 1;
+			
+			MemDst1 = 2'b 00;
+			MemDst2 = 2'b 00;
+			
+			MemRead1 = 1;
+			MemRead2 = 1;
+			MemWrite1 = 0;
+			MemWrite2 = 0;
+			
+			IRWrite = 1;
+			ValAWrite = 1;
+			ValBWrite = 0;
+			
+			MSPWrite = 1;
+			MSPPop = 0;
+			
+			RSPWrite = 0;
+		 end else begin
 			$display("Finished with %d/%d errors.", errors, trials);
 			$finish;
-		end 
-
-		 CLKCount = CLKCount + 1;
+		 end
+		 
 		 trials = trials + 1;
 	  end
    end

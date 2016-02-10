@@ -3,7 +3,7 @@
 module stage5Integration(
 						 //Valued Inputs
 						 input [15:0]  SignExtOut,
-						 input [15:0]  ZeroExtOut, 
+						 input [15:0]  ZeroExtOut,
 						 input [15:0]  ResOut,
 
 						 //Control Inputs
@@ -31,17 +31,17 @@ module stage5Integration(
 						 input [1:0]   MemDst1,
 						 input [1:0]   MemDst2,
 						 input [2:0]   MemData,
-						 
+
 						 //Register Outputs
 						 output [15:0] ValAOut,
 						 output [15:0] ValBOut,
 						 output [15:0] IROut
     );
 
-   wire 							   PCOut,
-									   MSPOut,
-									   RSPOut;
-   
+   wire [15:0] 						   PCOut;
+   wire [15:0] 						   MSPOut;
+   wire [15:0] 						   RSPOut;
+
 
    stage1PCIncrementerSch pc(
 							 .PCAddFromSE(SignExtOut),
@@ -101,6 +101,6 @@ module stage5Integration(
 
 						  .CLK(CLK)
 						  );
-   
+
 
 endmodule
