@@ -6,14 +6,8 @@
         <trait edittrait="all:0" />
     </attr>
     <netlist>
-        <signal name="XLXN_3(15:0)" />
         <signal name="XLXN_2(15:0)" />
-        <signal name="XLXN_5(15:0)" />
         <signal name="XLXN_1(15:0)" />
-        <signal name="XLXN_9(15:0)" />
-        <signal name="XLXN_12(15:0)" />
-        <signal name="XLXN_25(15:0)" />
-        <signal name="XLXN_28(15:0)" />
         <signal name="XLXN_35(15:0)" />
         <signal name="MemRead2" />
         <signal name="ValB(15:0)" />
@@ -65,7 +59,7 @@
         <port polarity="Input" name="MemDst1(1:0)" />
         <port polarity="Input" name="MemDst2(1:0)" />
         <blockdef name="blockmemory16kout2">
-            <timestamp>2016-2-9T1:18:21</timestamp>
+            <timestamp>2016-2-9T19:58:5</timestamp>
             <rect width="512" x="32" y="32" height="1344" />
             <line x2="32" y1="80" y2="80" style="linewidth:W" x1="0" />
             <line x2="32" y1="112" y2="112" style="linewidth:W" x1="0" />
