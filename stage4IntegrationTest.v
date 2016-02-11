@@ -16,9 +16,9 @@ module stage4IntegrationTest;
    wire 				 PCSource;
    wire 				 PCWrite;
    wire 				 PCAdd;
-   wire 				 MSPPop;
+   wire 				 MSPop;
    wire 				 MSPWrite;
-   wire 				 RSPPop;
+   wire 				 RSPop;
    wire 				 RSPWrite;
    wire 				 IRWrite;
    wire 				 ValAWrite;
@@ -60,9 +60,9 @@ module stage4IntegrationTest;
 						  .PCSource(PCSource),
 						  .PCWrite(PCWrite),
 						  .PCAdd(PCAdd),
-						  .MSPPop(MSPPop),
+						  .MSPop(MSPop),
 						  .MSPWrite(MSPWrite),
-						  .RSPPop(RSPPop),
+						  .RSPop(RSPop),
 						  .RSPWrite(RSPWrite),
 						  .IRWrite(IRWrite),
 						  .ValAWrite(ValAWrite),

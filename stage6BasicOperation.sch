@@ -11,9 +11,9 @@
         <signal name="XLXN_3(15:0)" />
         <signal name="CLK" />
         <signal name="MSPWrite" />
-        <signal name="MSPOp" />
+        <signal name="MSPop" />
         <signal name="RSPWrite" />
-        <signal name="RSPOp" />
+        <signal name="RSPop" />
         <signal name="PCWrite" />
         <signal name="PCSource" />
         <signal name="PCAdd" />
@@ -38,13 +38,13 @@
         <signal name="IROut(15:0)" />
         <signal name="PCOut(15:0)" />
         <signal name="MSPOut(15:0)" />
-        <signal name="XLXN_66" />
-        <signal name="XLXN_67" />
+        <port polarity="Output" name="ValAOut(15:0)" />
+        <port polarity="Output" name="ValBOut(15:0)" />
         <port polarity="Input" name="CLK" />
         <port polarity="Input" name="MSPWrite" />
-        <port polarity="Input" name="MSPOp" />
+        <port polarity="Input" name="MSPop" />
         <port polarity="Input" name="RSPWrite" />
-        <port polarity="Input" name="RSPOp" />
+        <port polarity="Input" name="RSPop" />
         <port polarity="Input" name="PCWrite" />
         <port polarity="Input" name="PCSource" />
         <port polarity="Input" name="PCAdd" />
@@ -69,8 +69,6 @@
         <port polarity="Output" name="IROut(15:0)" />
         <port polarity="Output" name="PCOut(15:0)" />
         <port polarity="Output" name="MSPOut(15:0)" />
-        <port polarity="Output" name="XLXN_66" />
-        <port polarity="Output" name="XLXN_67" />
         <blockdef name="stage3Integration">
             <timestamp>2016-2-11T0:45:57</timestamp>
             <rect width="320" x="64" y="-448" height="448" />
@@ -146,9 +144,9 @@
         <block symbolname="stage5Integration" name="XLXI_2">
             <blockpin signalname="CLK" name="CLK" />
             <blockpin signalname="MSPWrite" name="MSPWrite" />
-            <blockpin signalname="MSPOp" name="MSPPop" />
+            <blockpin signalname="MSPop" name="MSPPop" />
             <blockpin signalname="RSPWrite" name="RSPWrite" />
-            <blockpin signalname="RSPOp" name="RSPPop" />
+            <blockpin signalname="RSPop" name="RSPPop" />
             <blockpin signalname="PCWrite" name="PCWrite" />
             <blockpin signalname="PCSource" name="PCSource" />
             <blockpin signalname="PCAdd" name="PCAdd" />
@@ -209,13 +207,13 @@
         <branch name="MSPWrite">
             <wire x2="384" y1="160" y2="160" x1="208" />
         </branch>
-        <branch name="MSPOp">
+        <branch name="MSPop">
             <wire x2="384" y1="224" y2="224" x1="208" />
         </branch>
         <branch name="RSPWrite">
             <wire x2="384" y1="288" y2="288" x1="208" />
         </branch>
-        <branch name="RSPOp">
+        <branch name="RSPop">
             <wire x2="384" y1="352" y2="352" x1="208" />
         </branch>
         <branch name="PCWrite">
@@ -243,7 +241,7 @@
             <wire x2="816" y1="624" y2="624" x1="704" />
             <wire x2="864" y1="624" y2="624" x1="816" />
         </branch>
-        <branch name="MSPOp">
+        <branch name="MSPop">
             <attrtext style="alignment:SOFT-BCENTER;fontsize:28;fontname:Arial" attrname="Name" x="816" y="688" type="branch" />
             <wire x2="816" y1="688" y2="688" x1="704" />
             <wire x2="864" y1="688" y2="688" x1="816" />
@@ -253,7 +251,7 @@
             <wire x2="832" y1="752" y2="752" x1="704" />
             <wire x2="864" y1="752" y2="752" x1="832" />
         </branch>
-        <branch name="RSPOp">
+        <branch name="RSPop">
             <attrtext style="alignment:SOFT-BCENTER;fontsize:28;fontname:Arial" attrname="Name" x="816" y="816" type="branch" />
             <wire x2="816" y1="816" y2="816" x1="704" />
             <wire x2="864" y1="816" y2="816" x1="816" />
@@ -385,9 +383,9 @@
         </branch>
         <iomarker fontsize="28" x="208" y="112" name="CLK" orien="R180" />
         <iomarker fontsize="28" x="208" y="160" name="MSPWrite" orien="R180" />
-        <iomarker fontsize="28" x="208" y="224" name="MSPOp" orien="R180" />
+        <iomarker fontsize="28" x="208" y="224" name="MSPop" orien="R180" />
         <iomarker fontsize="28" x="208" y="288" name="RSPWrite" orien="R180" />
-        <iomarker fontsize="28" x="208" y="352" name="RSPOp" orien="R180" />
+        <iomarker fontsize="28" x="208" y="352" name="RSPop" orien="R180" />
         <iomarker fontsize="28" x="208" y="416" name="PCWrite" orien="R180" />
         <iomarker fontsize="28" x="208" y="480" name="PCSource" orien="R180" />
         <iomarker fontsize="28" x="208" y="544" name="PCAdd" orien="R180" />
@@ -469,13 +467,13 @@
         <iomarker fontsize="28" x="2160" y="112" name="PCOut(15:0)" orien="R0" />
         <iomarker fontsize="28" x="2160" y="192" name="MSPOut(15:0)" orien="R0" />
         <iomarker fontsize="28" x="2160" y="256" name="RSPOut(15:0)" orien="R0" />
-        <branch name="XLXN_66">
+        <branch name="ValAOut(15:0)">
             <wire x2="2176" y1="336" y2="336" x1="1872" />
         </branch>
-        <branch name="XLXN_67">
+        <branch name="ValBOut(15:0)">
             <wire x2="2176" y1="400" y2="400" x1="1872" />
         </branch>
-        <iomarker fontsize="28" x="2176" y="336" name="XLXN_66" orien="R0" />
-        <iomarker fontsize="28" x="2176" y="400" name="XLXN_67" orien="R0" />
+        <iomarker fontsize="28" x="2176" y="336" name="ValAOut(15:0)" orien="R0" />
+        <iomarker fontsize="28" x="2176" y="400" name="ValBOut(15:0)" orien="R0" />
     </sheet>
 </drawing>
