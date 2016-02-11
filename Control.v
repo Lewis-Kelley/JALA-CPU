@@ -98,7 +98,7 @@ module Control (
 					NextState <= State21;
 					
 				//pushi
-				else if (op[3]&&op[2]&&op[1]&&!op[0])
+				else if (op[3]&&op[2]&&op[1]&&op[0])
 					NextState <= State23;
 				end
 				
@@ -112,7 +112,7 @@ module Control (
 					NextState <= State6;
 					
 				//pop
-				else if (op[3]&&op[2]&&!op[1]&&!op[0])
+				else if (op[3]&&op[2]&&!op[1]&&op[0])
 					NextState <= State9;
 				end
 				
@@ -128,11 +128,11 @@ module Control (
 				
 			State6:	begin
 				//beq
-				if (op[3]&&!op[2]&&op[1]&&op[0])
+				if (op[3]&&op[2]&&!op[1]&&!op[0])
 					NextState <= State7;
 					
 				//bne
-				else if(op[3]&&op[2]&&!op[1]&&!op[0])
+				else if(op[3]&&!op[2]&&op[1]&&op[0])
 					NextState <= State8;
 				end
 			
