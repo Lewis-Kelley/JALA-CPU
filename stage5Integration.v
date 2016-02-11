@@ -38,9 +38,9 @@ module stage5Integration(
 						 output [15:0] IROut,
 
 						 // Optional Register Outputs
-						 output [15:0] PCOut, 
+						 output [15:0] PCOut,
 						 output [15:0] MSPOut,
-						 output [15:0] RSPOut 
+						 output [15:0] RSPOut
     );
 
    stage1PCIncrementerSch pc(

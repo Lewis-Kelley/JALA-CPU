@@ -56,36 +56,36 @@ module stage6BasicOperationTest();
 
 // Instantiate the UUT
    stage6BasicOperation UUT (
-		.CLK(CLK), 
-		.MSPWrite(MSPWrite), 
-		.MSPop(MSPop), 
-		.RSPWrite(RSPWrite), 
-		.RSPop(RSPop), 
-		.PCWrite(PCWrite), 
-		.PCSource(PCSource), 
-		.PCAdd(PCAdd), 
-		.ValAWrite(ValAWrite), 
-		.ValBWrite(ValBWrite), 
-		.MemWrite2(MemWrite2), 
-		.SignExtOut(SignExtOut), 
-		.ZeroExtOut(ZeroExtOut), 
-		.MemDst1(MemDst1), 
-		.RSPOut(RSPOut), 
-		.ShifterOut(ShifterOut), 
-		.IRWrite(IRWrite), 
-		.MemRead1(MemRead1), 
-		.MemRead2(MemRead2), 
-		.MemWrite1(MemWrite1), 
-		.ResSource(ResSource), 
-		.ResWrite(ResWrite), 
-		.MemDst2(MemDst2), 
-		.MemData(MemData), 
-		.ALUop(ALUop), 
-		.isZero(isZero), 
-		.IROut(IROut), 
-		.PCOut(PCOut), 
-		.MSPOut(MSPOut), 
-		.ValAOut(ValAOut), 
+		.CLK(CLK),
+		.MSPWrite(MSPWrite),
+		.MSPop(MSPop),
+		.RSPWrite(RSPWrite),
+		.RSPop(RSPop),
+		.PCWrite(PCWrite),
+		.PCSource(PCSource),
+		.PCAdd(PCAdd),
+		.ValAWrite(ValAWrite),
+		.ValBWrite(ValBWrite),
+		.MemWrite2(MemWrite2),
+		.SignExtOut(SignExtOut),
+		.ZeroExtOut(ZeroExtOut),
+		.MemDst1(MemDst1),
+		.RSPOut(RSPOut),
+		.ShifterOut(ShifterOut),
+		.IRWrite(IRWrite),
+		.MemRead1(MemRead1),
+		.MemRead2(MemRead2),
+		.MemWrite1(MemWrite1),
+		.ResSource(ResSource),
+		.ResWrite(ResWrite),
+		.MemDst2(MemDst2),
+		.MemData(MemData),
+		.ALUop(ALUop),
+		.isZero(isZero),
+		.IROut(IROut),
+		.PCOut(PCOut),
+		.MSPOut(MSPOut),
+		.ValAOut(ValAOut),
 		.ValBOut(ValBOut)
    );
 // Initialize Inputs
@@ -93,7 +93,7 @@ module stage6BasicOperationTest();
 	  // Initialize Inputs
 	  SignExtOut = 16'h 0000;
 	  ZeroExtOut = 16'h 0000;
-	  
+
 	  CLK = 0;
 
 	  MSPWrite = 0;
@@ -131,7 +131,7 @@ module stage6BasicOperationTest();
 	  eMSP = 0;
 	  eRSP = 0;
    end
-	
+
 	parameter   PERIOD = 20;
    parameter   real DUTY_CYCLE = 0.5;
    parameter   OFFSET = 10;
@@ -149,7 +149,7 @@ module stage6BasicOperationTest();
 	  #1;
 
 	  CLKCount = CLKCount + 1;
-	  
+
 	  // Duplicate Stage 5 tests
 
 	  // Give the system 5 cycles to initialize
@@ -265,7 +265,7 @@ module stage6BasicOperationTest();
 			   MemWrite2 = 0;
 
 			   MemDst2 = 2'b 00;
-			   
+
 			   IRWrite = 0;
 			   ValAWrite = 0;
 			   ValBWrite = 0;
@@ -411,7 +411,7 @@ module stage6BasicOperationTest();
 			   IRWrite = 0;
 			   ValAWrite = 1;
 			   ValBWrite = 0;
-			   
+
 			   MSPWrite = 0;
 
 			   RSPWrite = 0;
@@ -426,7 +426,7 @@ module stage6BasicOperationTest();
 			   IRWrite = 0;
 			   ValAWrite = 1;
 			   ValBWrite = 0;
-			   
+
 			   MSPWrite = 0;
 
 			   RSPWrite = 0;
@@ -441,7 +441,7 @@ module stage6BasicOperationTest();
 			   IRWrite = 0;
 			   ValAWrite = 1;
 			   ValBWrite = 1;
-			   
+
 			   MSPWrite = 0;
 
 			   RSPWrite = 0;
@@ -456,7 +456,7 @@ module stage6BasicOperationTest();
 			   IRWrite = 0;
 			   ValAWrite = 0;
 			   ValBWrite = 0;
-			   
+
 			   MSPWrite = 0;
 
 			   RSPWrite = 0;
@@ -471,7 +471,7 @@ module stage6BasicOperationTest();
 			   IRWrite = 0;
 			   ValAWrite = 0;
 			   ValBWrite = 0;
-			   
+
 			   MSPWrite = 0;
 
 			   RSPWrite = 0;

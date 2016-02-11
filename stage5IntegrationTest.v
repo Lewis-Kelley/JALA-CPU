@@ -262,7 +262,7 @@ module stage5IntegrationTest;
 			   MemWrite2 = 0;
 
 			   MemDst2 = 2'b 00;
-			   
+
 			   IRWrite = 0;
 			   ValAWrite = 0;
 			   ValBWrite = 0;
@@ -408,7 +408,7 @@ module stage5IntegrationTest;
 			   IRWrite = 0;
 			   ValAWrite = 1;
 			   ValBWrite = 0;
-			   
+
 			   MSPWrite = 0;
 
 			   RSPWrite = 0;
@@ -423,7 +423,7 @@ module stage5IntegrationTest;
 			   IRWrite = 0;
 			   ValAWrite = 1;
 			   ValBWrite = 0;
-			   
+
 			   MSPWrite = 0;
 
 			   RSPWrite = 0;
@@ -438,7 +438,7 @@ module stage5IntegrationTest;
 			   IRWrite = 0;
 			   ValAWrite = 1;
 			   ValBWrite = 1;
-			   
+
 			   MSPWrite = 0;
 
 			   RSPWrite = 0;
@@ -453,7 +453,7 @@ module stage5IntegrationTest;
 			   IRWrite = 0;
 			   ValAWrite = 0;
 			   ValBWrite = 0;
-			   
+
 			   MSPWrite = 0;
 
 			   RSPWrite = 0;
@@ -468,7 +468,7 @@ module stage5IntegrationTest;
 			   IRWrite = 0;
 			   ValAWrite = 0;
 			   ValBWrite = 0;
-			   
+
 			   MSPWrite = 0;
 
 			   RSPWrite = 0;

@@ -7,6 +7,7 @@
    <ItemView engineview="SynthesisOnly" guiview="Source" compilemode="AutoCompile" >
       <ClosedNodes>
          <ClosedNodesVersion>2</ClosedNodesVersion>
+         <ClosedNode>/alu16b C:|Users|kelleyld|XiLinx Projects|JALA-CPU|alu16b.sch</ClosedNode>
          <ClosedNode>/alu16b |home|user|csse232|JALA-CPU|alu16b.sch</ClosedNode>
          <ClosedNode>/alu16b |home|user|csse232|Project|Components|alu16b.sch</ClosedNode>
          <ClosedNode>/alu16b |home|user|csse232|Project|Components|alu16b.sch/XLXI_1 - alu1b</ClosedNode>
@@ -25,23 +26,28 @@
          <ClosedNode>/alu16b |home|user|csse232|Project|Components|alu16b.sch/XLXI_25 - alu1b</ClosedNode>
          <ClosedNode>/alu16b |home|user|csse232|Project|Components|alu16b.sch/XLXI_3 - alu1b</ClosedNode>
          <ClosedNode>/alu16b |home|user|csse232|Project|Components|alu16b.sch/XLXI_4 - alu1b</ClosedNode>
+         <ClosedNode>/reg16_reg16_sch_tb C:|Users|kelleyld|XiLinx Projects|JALA-CPU|reg16test.v</ClosedNode>
          <ClosedNode>/reg16_reg16_sch_tb |home|user|csse232|JALA-CPU|reg16test.v</ClosedNode>
          <ClosedNode>/stage1MSPIncrementer |home|user|csse232|JALA-CPU|stage1MSPIncrementer.sch</ClosedNode>
+         <ClosedNode>/stage1PCIcrementer C:|Users|kelleyld|XiLinx Projects|JALA-CPU|stage1PCIcrementer.v</ClosedNode>
          <ClosedNode>/stage1PCIcrementer |home|user|csse232|JALA-CPU|stage1PCIcrementer.v</ClosedNode>
          <ClosedNode>/stage1PCIncrementerSch |home|user|csse232|JALA-CPU|stage1PCIncrementerSch.sch</ClosedNode>
+         <ClosedNode>/stage3IntegrationTest C:|Users|kelleyld|XiLinx Projects|JALA-CPU|stage3IntegrationTest.v</ClosedNode>
          <ClosedNode>/stage3IntegrationTest |home|user|csse232|JALA-CPU|stage3IntegrationTest.v/uut - stage3Integration</ClosedNode>
+         <ClosedNode>/stage4Integration C:|Users|kelleyld|XiLinx Projects|JALA-CPU|stage4Integration.v</ClosedNode>
+         <ClosedNode>/stage5IntegrationTest C:|Users|kelleyld|XiLinx Projects|JALA-CPU|stage5IntegrationTest.v</ClosedNode>
          <ClosedNode>/stage5IntegrationTest |home|user|csse232|JALA-CPU|stage5IntegrationTest.v/uut - stage5Integration</ClosedNode>
          <ClosedNode>/stage6BasicOperation |home|user|csse232|JALA-CPU|stage6BasicOperation.sch</ClosedNode>
          <ClosedNode>/stage7FullIntegration |home|user|csse232|JALA-CPU|stage7FullIntegration.sch</ClosedNode>
       </ClosedNodes>
       <SelectedItems>
-         <SelectedItem>stage4Integration (/home/user/csse232/JALA-CPU/stage4Integration.v)</SelectedItem>
+         <SelectedItem>stage7FullIntegration (C:/Users/kelleyld/XiLinx Projects/JALA-CPU/stage7FullIntegration.v)</SelectedItem>
       </SelectedItems>
-      <ScrollbarPosition orientation="vertical" >2</ScrollbarPosition>
+      <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
-      <ViewHeaderState orientation="horizontal" >000000ff0000000000000001000000010000000000000000000000000000000002020000000100000001000000640000018a000000020000000000000000000000000200000064ffffffff0000008100000003000000020000018a0000000100000003000000000000000100000003</ViewHeaderState>
+      <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000100000000000000000000000000000000020200000001000000010000006400000217000000020000000000000000000000000200000064ffffffff000000810000000300000002000002170000000100000003000000000000000100000003</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >true</UserChangedColumnWidths>
-      <CurrentItem>stage4Integration (/home/user/csse232/JALA-CPU/stage4Integration.v)</CurrentItem>
+      <CurrentItem>stage7FullIntegration (C:/Users/kelleyld/XiLinx Projects/JALA-CPU/stage7FullIntegration.v)</CurrentItem>
    </ItemView>
    <ItemView engineview="SynthesisOnly" sourcetype="" guiview="Process" >
       <ClosedNodes>
@@ -64,7 +70,7 @@
       <SelectedItems/>
       <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
-      <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000000000000010000000000000000000000000000000000000168000000040101000100000000000000000000000064ffffffff0000008100000000000000040000005100000001000000000000002900000001000000000000008400000001000000000000006a0000000100000000</ViewHeaderState>
+      <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000000000000010000000000000000000000000000000000000204000000040101000100000000000000000000000064ffffffff000000810000000000000004000000510000000100000000000000290000000100000000000000840000000100000000000001060000000100000000</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
       <CurrentItem>mux16b8.sch</CurrentItem>
    </ItemView>
@@ -76,7 +82,7 @@
       <SelectedItems/>
       <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
-      <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000000000000010000000000000000000000000000000000000128000000010001000100000000000000000000000064ffffffff000000810000000000000001000001280000000100000000</ViewHeaderState>
+      <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000000000000010000000000000000000000000000000000000118000000010001000100000000000000000000000064ffffffff000000810000000000000001000001180000000100000000</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
       <CurrentItem>work</CurrentItem>
    </ItemView>
@@ -93,7 +99,7 @@
       </SelectedItems>
       <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
-      <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000100000000000000000000000000000000000000000000000168000000010000000100000000000000000000000064ffffffff000000810000000000000001000001680000000100000000</ViewHeaderState>
+      <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000001000000000000000000000000000000000000000000000001ef000000010000000100000000000000000000000064ffffffff000000810000000000000001000001ef0000000100000000</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
       <CurrentItem></CurrentItem>
    </ItemView>
@@ -136,13 +142,13 @@
          <ClosedNode>Design Utilities</ClosedNode>
       </ClosedNodes>
       <SelectedItems>
-         <SelectedItem></SelectedItem>
+         <SelectedItem/>
       </SelectedItems>
       <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
       <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000100000000000000000000000000000000000000000000000177000000010000000100000000000000000000000064ffffffff000000810000000000000001000001770000000100000000</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
-      <CurrentItem></CurrentItem>
+      <CurrentItem/>
    </ItemView>
    <ItemView engineview="BehavioralSim" sourcetype="DESUT_SCHEMATIC" guiview="Process" >
       <ClosedNodes>
@@ -177,26 +183,26 @@
          <ClosedNodesVersion>1</ClosedNodesVersion>
       </ClosedNodes>
       <SelectedItems>
-         <SelectedItem></SelectedItem>
+         <SelectedItem/>
       </SelectedItems>
       <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
       <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000100000000000000000000000000000000000000000000000177000000010000000100000000000000000000000064ffffffff000000810000000000000001000001770000000100000000</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
-      <CurrentItem></CurrentItem>
+      <CurrentItem/>
    </ItemView>
    <ItemView engineview="SynthesisOnly" sourcetype="DESUT_VERILOG" guiview="Process" >
       <ClosedNodes>
          <ClosedNodesVersion>1</ClosedNodesVersion>
       </ClosedNodes>
       <SelectedItems>
-         <SelectedItem></SelectedItem>
+         <SelectedItem>View RTL Schematic</SelectedItem>
       </SelectedItems>
-      <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
+      <ScrollbarPosition orientation="vertical" >6</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
-      <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000100000000000000000000000000000000000000000000000177000000010000000100000000000000000000000064ffffffff000000810000000000000001000001770000000100000000</ViewHeaderState>
+      <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000001000000000000000000000000000000000000000000000001ef000000010000000100000000000000000000000064ffffffff000000810000000000000001000001ef0000000100000000</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
-      <CurrentItem></CurrentItem>
+      <CurrentItem>View RTL Schematic</CurrentItem>
    </ItemView>
    <ItemView engineview="BehavioralSim" sourcetype="DESUT_XCO" guiview="Process" >
       <ClosedNodes>
