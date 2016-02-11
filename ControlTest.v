@@ -35,8 +35,8 @@ module ControlTest;
 	wire [4:0] CurrentState;
 	wire [4:0] NextState;
 	
-	reg [15:0] TestStage;
-	reg [15:0] CLKCount;
+	reg TestStage;
+	reg CLKCount;
 
 	// Instantiate the Unit Under Test (UUT)
 	Control uut (
@@ -111,13 +111,13 @@ module ControlTest;
 			if (CLKCount > 3) begin
 				op = 0;
 				rst = 1;
-				$display("Test Stage 2: Add");
+				$display("Test Stage 2: add");
 				TestStage = 1;
 				CLKCount = 0;
 				end
 			end
 			
-		//Test add op code
+		//Test add op code (0)
 		if (TestStage == 1) begin
 			case (CLKCount)
 			0: begin
@@ -295,13 +295,752 @@ module ControlTest;
 				$display("State 5 -> State 1");
 			
 				op = 1;
-				$display("Test Stage 3: Sub");
+				$display("Test Stage 3: sub");
 				TestStage = 2;
 				CLKCount = 0;
 				end
 			endcase
 		end
 		
+		//Test sub op code (1)
+		if (TestStage == 2) begin
+			case (CLKCount)
+			0: begin
+				if (PCWrite != 1)
+					$display("Error: PCWrite was %d, but should have been %d", PCWrite, 1);
+				if (MSPWrite != 0)
+					$display("Error: MSPWrite was %d, but should have been %d", MSPWrite, 0);
+				if (RSPWrite != 0)
+					$display("Error: RSPWrite was %d, but should have been %d", RSPWrite, 0);
+				if (IRWrite != 1)
+					$display("Error: IRWrite was %d, but should have been %d", IRWrite, 1);
+				if (ValAWrite != 1)
+					$display("Error: ValAWrite was %d, but should have been %d", ValAWrite, 1);
+				if (ValBWrite != 0)
+					$display("Error: ValBWrite was %d, but should have been %d", ValBWrite, 0);
+				if (ResWrite != 0)
+					$display("Error: ResWrite was %d, but should have been %d", ResWrite, 0);
+				if (MemWrite1 != 0)
+					$display("Error: MemWrite1 was %d, but should have been %d", MemWrite1, 0);
+				if (MemWrite2 != 0)
+					$display("Error: MemWrite2 was %d, but should have been %d", MemWrite2, 0);
+				if (MemRead1 != 1)
+					$display("Error: MemRead1 was %d, but should have been %d", MemRead1, 1);
+				if (MemRead2 != 1)
+					$display("Error: MemRead2 was %d, but should have been %d", MemRead2, 1);
+					
+				if (MemDst1 != 2'b00)
+					$display("Error: MemDst1 was %d, but should have been %d", MemDst1, 0);
+				if (MemDst2 != 2'b00)
+					$display("Error: MemDst2 was %d, but should have been %d", MemDst2, 0);
+					
+				if (CurrentState != 0)
+					$display("Error: Incorrect State. CurrentState was %d, but should have been %d", CurrentState, 0);
+				
+				$display("State 1 -> State 2");
+				CLKCount = CLKCount + 1;
+				end
+				
+			1: begin
+				if (PCWrite != 0)
+					$display("Error: PCWrite was %d, but should have been %d", PCWrite, 0);
+				if (MSPWrite != 1)
+					$display("Error: MSPWrite was %d, but should have been %d", MSPWrite, 1);
+				if (RSPWrite != 0)
+					$display("Error: RSPWrite was %d, but should have been %d", RSPWrite, 0);
+				if (IRWrite != 0)
+					$display("Error: IRWrite was %d, but should have been %d", IRWrite, 0);
+				if (ValAWrite != 0)
+					$display("Error: ValAWrite was %d, but should have been %d", ValAWrite, 0);
+				if (ValBWrite != 0)
+					$display("Error: ValBWrite was %d, but should have been %d", ValBWrite, 0);
+				if (ResWrite != 0)
+					$display("Error: ResWrite was %d, but should have been %d", ResWrite, 0);
+				if (MemWrite1 != 0)
+					$display("Error: MemWrite1 was %d, but should have been %d", MemWrite1, 0);
+				if (MemWrite2 != 0)
+					$display("Error: MemWrite2 was %d, but should have been %d", MemWrite2, 0);
+				if (MemRead1 != 0)
+					$display("Error: MemRead1 was %d, but should have been %d", MemRead1, 0);
+				if (MemRead2 != 0)
+					$display("Error: MemRead2 was %d, but should have been %d", MemRead2, 0);
+					
+				if (MSPop != 1)
+					$display("Error: MSPop was %d, but should have been %d", MSPop, 1);
+					
+				if (CurrentState != 1)
+					$display("Error: Incorrect State. CurrentState was %d, but should have been %d", CurrentState, 1);
+					
+				$display("State 2 -> State 3");
+				CLKCount = CLKCount + 1;	
+				end
+				
+			2: begin
+				if (PCWrite != 0)
+					$display("Error: PCWrite was %d, but should have been %d", PCWrite, 0);
+				if (MSPWrite != 0)
+					$display("Error: MSPWrite was %d, but should have been %d", MSPWrite, 0);
+				if (RSPWrite != 0)
+					$display("Error: RSPWrite was %d, but should have been %d", RSPWrite, 0);
+				if (IRWrite != 0)
+					$display("Error: IRWrite was %d, but should have been %d", IRWrite, 0);
+				if (ValAWrite != 0)
+					$display("Error: ValAWrite was %d, but should have been %d", ValAWrite, 0);
+				if (ValBWrite != 1)
+					$display("Error: ValBWrite was %d, but should have been %d", ValBWrite, 1);
+				if (ResWrite != 0)
+					$display("Error: ResWrite was %d, but should have been %d", ResWrite, 0);
+				if (MemWrite1 != 0)
+					$display("Error: MemWrite1 was %d, but should have been %d", MemWrite1, 0);
+				if (MemWrite2 != 0)
+					$display("Error: MemWrite2 was %d, but should have been %d", MemWrite2, 0);
+				if (MemRead1 != 1)
+					$display("Error: MemRead1 was %d, but should have been %d", MemRead1, 1);
+				if (MemRead2 != 0)
+					$display("Error: MemRead2 was %d, but should have been %d", MemRead2, 0);
+					
+				if (MemDst1 != 2'b01)
+					$display("Error: MemDst1 was %d, but should have been %d", MemDst1, 1);
+					
+				if (CurrentState != 2)
+					$display("Error: Incorrect State. CurrentState was %d, but should have been %d", CurrentState, 2);
+					
+				$display("State 3 -> State 4");
+				CLKCount = CLKCount + 1;	
+				end
+				
+			3: begin
+				if (PCWrite != 0)
+					$display("Error: PCWrite was %d, but should have been %d", PCWrite, 0);
+				if (MSPWrite != 0)
+					$display("Error: MSPWrite was %d, but should have been %d", MSPWrite, 0);
+				if (RSPWrite != 0)
+					$display("Error: RSPWrite was %d, but should have been %d", RSPWrite, 0);
+				if (IRWrite != 0)
+					$display("Error: IRWrite was %d, but should have been %d", IRWrite, 0);
+				if (ValAWrite != 0)
+					$display("Error: ValAWrite was %d, but should have been %d", ValAWrite, 0);
+				if (ValBWrite != 0)
+					$display("Error: ValBWrite was %d, but should have been %d", ValBWrite, 0);
+				if (ResWrite != 1)
+					$display("Error: ResWrite was %d, but should have been %d", ResWrite, 1);
+				if (MemWrite1 != 0)
+					$display("Error: MemWrite1 was %d, but should have been %d", MemWrite1, 0);
+				if (MemWrite2 != 0)
+					$display("Error: MemWrite2 was %d, but should have been %d", MemWrite2, 0);
+				if (MemRead1 != 0)
+					$display("Error: MemRead1 was %d, but should have been %d", MemRead1, 0);
+				if (MemRead2 != 0)
+					$display("Error: MemRead2 was %d, but should have been %d", MemRead2, 0);
+					
+				if (ALUop != 3'b100)
+					$display("Error: ALUop was %d, but should have been %d", ALUop, 4);
+				if (ResSource != 0)
+					$display("Error: ResSource was %d, but should have been %d", ResSource, 0);
+					
+				if (CurrentState != 3)
+					$display("Error: Incorrect State. CurrentState was %d, but should have been %d", CurrentState, 3);
+					
+				$display("State 4 -> State 5");
+				CLKCount = CLKCount + 1;	
+				end
+				
+			4: begin
+				if (PCWrite != 0)
+					$display("Error: PCWrite was %d, but should have been %d", PCWrite, 0);
+				if (MSPWrite != 0)
+					$display("Error: MSPWrite was %d, but should have been %d", MSPWrite, 0);
+				if (RSPWrite != 0)
+					$display("Error: RSPWrite was %d, but should have been %d", RSPWrite, 0);
+				if (IRWrite != 0)
+					$display("Error: IRWrite was %d, but should have been %d", IRWrite, 0);
+				if (ValAWrite != 0)
+					$display("Error: ValAWrite was %d, but should have been %d", ValAWrite, 0);
+				if (ValBWrite != 0)
+					$display("Error: ValBWrite was %d, but should have been %d", ValBWrite, 0);
+				if (ResWrite != 0)
+					$display("Error: ResWrite was %d, but should have been %d", ResWrite, 0);
+				if (MemWrite1 != 0)
+					$display("Error: MemWrite1 was %d, but should have been %d", MemWrite1, 0);
+				if (MemWrite2 != 1)
+					$display("Error: MemWrite2 was %d, but should have been %d", MemWrite2, 1);
+				if (MemRead1 != 0)
+					$display("Error: MemRead1 was %d, but should have been %d", MemRead1, 0);
+				if (MemRead2 != 0)
+					$display("Error: MemRead2 was %d, but should have been %d", MemRead2, 0);
+					
+				if (MemDst2 != 2'b00)
+					$display("Error: MemDst2 was %d, but should have been %d", MemDst2, 0);
+				if (MemData != 2'b01)
+					$display("Error: MemData was %d, but should have been %d", MemData, 1);
+					
+				if (CurrentState != 4)
+					$display("Error: Incorrect State. CurrentState was %d, but should have been %d", CurrentState, 4);
+					
+				$display("State 5 -> State 1");
+			
+				op = 2;
+				$display("Test Stage 4: and");
+				TestStage = 3;
+				CLKCount = 0;
+				end
+			endcase
+		end
+		
+		//Test and op code (2)
+		if (TestStage == 3) begin
+			case (CLKCount)
+			0: begin
+				if (PCWrite != 1)
+					$display("Error: PCWrite was %d, but should have been %d", PCWrite, 1);
+				if (MSPWrite != 0)
+					$display("Error: MSPWrite was %d, but should have been %d", MSPWrite, 0);
+				if (RSPWrite != 0)
+					$display("Error: RSPWrite was %d, but should have been %d", RSPWrite, 0);
+				if (IRWrite != 1)
+					$display("Error: IRWrite was %d, but should have been %d", IRWrite, 1);
+				if (ValAWrite != 1)
+					$display("Error: ValAWrite was %d, but should have been %d", ValAWrite, 1);
+				if (ValBWrite != 0)
+					$display("Error: ValBWrite was %d, but should have been %d", ValBWrite, 0);
+				if (ResWrite != 0)
+					$display("Error: ResWrite was %d, but should have been %d", ResWrite, 0);
+				if (MemWrite1 != 0)
+					$display("Error: MemWrite1 was %d, but should have been %d", MemWrite1, 0);
+				if (MemWrite2 != 0)
+					$display("Error: MemWrite2 was %d, but should have been %d", MemWrite2, 0);
+				if (MemRead1 != 1)
+					$display("Error: MemRead1 was %d, but should have been %d", MemRead1, 1);
+				if (MemRead2 != 1)
+					$display("Error: MemRead2 was %d, but should have been %d", MemRead2, 1);
+					
+				if (MemDst1 != 2'b00)
+					$display("Error: MemDst1 was %d, but should have been %d", MemDst1, 0);
+				if (MemDst2 != 2'b00)
+					$display("Error: MemDst2 was %d, but should have been %d", MemDst2, 0);
+					
+				if (CurrentState != 0)
+					$display("Error: Incorrect State. CurrentState was %d, but should have been %d", CurrentState, 0);
+				
+				$display("State 1 -> State 2");
+				CLKCount = CLKCount + 1;
+				end
+				
+			1: begin
+				if (PCWrite != 0)
+					$display("Error: PCWrite was %d, but should have been %d", PCWrite, 0);
+				if (MSPWrite != 1)
+					$display("Error: MSPWrite was %d, but should have been %d", MSPWrite, 1);
+				if (RSPWrite != 0)
+					$display("Error: RSPWrite was %d, but should have been %d", RSPWrite, 0);
+				if (IRWrite != 0)
+					$display("Error: IRWrite was %d, but should have been %d", IRWrite, 0);
+				if (ValAWrite != 0)
+					$display("Error: ValAWrite was %d, but should have been %d", ValAWrite, 0);
+				if (ValBWrite != 0)
+					$display("Error: ValBWrite was %d, but should have been %d", ValBWrite, 0);
+				if (ResWrite != 0)
+					$display("Error: ResWrite was %d, but should have been %d", ResWrite, 0);
+				if (MemWrite1 != 0)
+					$display("Error: MemWrite1 was %d, but should have been %d", MemWrite1, 0);
+				if (MemWrite2 != 0)
+					$display("Error: MemWrite2 was %d, but should have been %d", MemWrite2, 0);
+				if (MemRead1 != 0)
+					$display("Error: MemRead1 was %d, but should have been %d", MemRead1, 0);
+				if (MemRead2 != 0)
+					$display("Error: MemRead2 was %d, but should have been %d", MemRead2, 0);
+					
+				if (MSPop != 1)
+					$display("Error: MSPop was %d, but should have been %d", MSPop, 1);
+					
+				if (CurrentState != 1)
+					$display("Error: Incorrect State. CurrentState was %d, but should have been %d", CurrentState, 1);
+					
+				$display("State 2 -> State 3");
+				CLKCount = CLKCount + 1;	
+				end
+				
+			2: begin
+				if (PCWrite != 0)
+					$display("Error: PCWrite was %d, but should have been %d", PCWrite, 0);
+				if (MSPWrite != 0)
+					$display("Error: MSPWrite was %d, but should have been %d", MSPWrite, 0);
+				if (RSPWrite != 0)
+					$display("Error: RSPWrite was %d, but should have been %d", RSPWrite, 0);
+				if (IRWrite != 0)
+					$display("Error: IRWrite was %d, but should have been %d", IRWrite, 0);
+				if (ValAWrite != 0)
+					$display("Error: ValAWrite was %d, but should have been %d", ValAWrite, 0);
+				if (ValBWrite != 1)
+					$display("Error: ValBWrite was %d, but should have been %d", ValBWrite, 1);
+				if (ResWrite != 0)
+					$display("Error: ResWrite was %d, but should have been %d", ResWrite, 0);
+				if (MemWrite1 != 0)
+					$display("Error: MemWrite1 was %d, but should have been %d", MemWrite1, 0);
+				if (MemWrite2 != 0)
+					$display("Error: MemWrite2 was %d, but should have been %d", MemWrite2, 0);
+				if (MemRead1 != 1)
+					$display("Error: MemRead1 was %d, but should have been %d", MemRead1, 1);
+				if (MemRead2 != 0)
+					$display("Error: MemRead2 was %d, but should have been %d", MemRead2, 0);
+					
+				if (MemDst1 != 2'b01)
+					$display("Error: MemDst1 was %d, but should have been %d", MemDst1, 1);
+					
+				if (CurrentState != 2)
+					$display("Error: Incorrect State. CurrentState was %d, but should have been %d", CurrentState, 2);
+					
+				$display("State 3 -> State 4");
+				CLKCount = CLKCount + 1;	
+				end
+				
+			3: begin
+				if (PCWrite != 0)
+					$display("Error: PCWrite was %d, but should have been %d", PCWrite, 0);
+				if (MSPWrite != 0)
+					$display("Error: MSPWrite was %d, but should have been %d", MSPWrite, 0);
+				if (RSPWrite != 0)
+					$display("Error: RSPWrite was %d, but should have been %d", RSPWrite, 0);
+				if (IRWrite != 0)
+					$display("Error: IRWrite was %d, but should have been %d", IRWrite, 0);
+				if (ValAWrite != 0)
+					$display("Error: ValAWrite was %d, but should have been %d", ValAWrite, 0);
+				if (ValBWrite != 0)
+					$display("Error: ValBWrite was %d, but should have been %d", ValBWrite, 0);
+				if (ResWrite != 1)
+					$display("Error: ResWrite was %d, but should have been %d", ResWrite, 1);
+				if (MemWrite1 != 0)
+					$display("Error: MemWrite1 was %d, but should have been %d", MemWrite1, 0);
+				if (MemWrite2 != 0)
+					$display("Error: MemWrite2 was %d, but should have been %d", MemWrite2, 0);
+				if (MemRead1 != 0)
+					$display("Error: MemRead1 was %d, but should have been %d", MemRead1, 0);
+				if (MemRead2 != 0)
+					$display("Error: MemRead2 was %d, but should have been %d", MemRead2, 0);
+					
+				if (ALUop != 3'b000)
+					$display("Error: ALUop was %d, but should have been %d", ALUop, 0);
+				if (ResSource != 0)
+					$display("Error: ResSource was %d, but should have been %d", ResSource, 0);
+					
+				if (CurrentState != 3)
+					$display("Error: Incorrect State. CurrentState was %d, but should have been %d", CurrentState, 3);
+					
+				$display("State 4 -> State 5");
+				CLKCount = CLKCount + 1;	
+				end
+				
+			4: begin
+				if (PCWrite != 0)
+					$display("Error: PCWrite was %d, but should have been %d", PCWrite, 0);
+				if (MSPWrite != 0)
+					$display("Error: MSPWrite was %d, but should have been %d", MSPWrite, 0);
+				if (RSPWrite != 0)
+					$display("Error: RSPWrite was %d, but should have been %d", RSPWrite, 0);
+				if (IRWrite != 0)
+					$display("Error: IRWrite was %d, but should have been %d", IRWrite, 0);
+				if (ValAWrite != 0)
+					$display("Error: ValAWrite was %d, but should have been %d", ValAWrite, 0);
+				if (ValBWrite != 0)
+					$display("Error: ValBWrite was %d, but should have been %d", ValBWrite, 0);
+				if (ResWrite != 0)
+					$display("Error: ResWrite was %d, but should have been %d", ResWrite, 0);
+				if (MemWrite1 != 0)
+					$display("Error: MemWrite1 was %d, but should have been %d", MemWrite1, 0);
+				if (MemWrite2 != 1)
+					$display("Error: MemWrite2 was %d, but should have been %d", MemWrite2, 1);
+				if (MemRead1 != 0)
+					$display("Error: MemRead1 was %d, but should have been %d", MemRead1, 0);
+				if (MemRead2 != 0)
+					$display("Error: MemRead2 was %d, but should have been %d", MemRead2, 0);
+					
+				if (MemDst2 != 2'b00)
+					$display("Error: MemDst2 was %d, but should have been %d", MemDst2, 0);
+				if (MemData != 2'b01)
+					$display("Error: MemData was %d, but should have been %d", MemData, 1);
+					
+				if (CurrentState != 4)
+					$display("Error: Incorrect State. CurrentState was %d, but should have been %d", CurrentState, 4);
+					
+				$display("State 5 -> State 1");
+			
+				op = 3;
+				$display("Test Stage 5: or");
+				TestStage = 4;
+				CLKCount = 0;
+				end
+			endcase
+		end
+		
+		//Test or op code
+		if (TestStage == 4) begin
+			case (CLKCount)
+			0: begin
+				if (PCWrite != 1)
+					$display("Error: PCWrite was %d, but should have been %d", PCWrite, 1);
+				if (MSPWrite != 0)
+					$display("Error: MSPWrite was %d, but should have been %d", MSPWrite, 0);
+				if (RSPWrite != 0)
+					$display("Error: RSPWrite was %d, but should have been %d", RSPWrite, 0);
+				if (IRWrite != 1)
+					$display("Error: IRWrite was %d, but should have been %d", IRWrite, 1);
+				if (ValAWrite != 1)
+					$display("Error: ValAWrite was %d, but should have been %d", ValAWrite, 1);
+				if (ValBWrite != 0)
+					$display("Error: ValBWrite was %d, but should have been %d", ValBWrite, 0);
+				if (ResWrite != 0)
+					$display("Error: ResWrite was %d, but should have been %d", ResWrite, 0);
+				if (MemWrite1 != 0)
+					$display("Error: MemWrite1 was %d, but should have been %d", MemWrite1, 0);
+				if (MemWrite2 != 0)
+					$display("Error: MemWrite2 was %d, but should have been %d", MemWrite2, 0);
+				if (MemRead1 != 1)
+					$display("Error: MemRead1 was %d, but should have been %d", MemRead1, 1);
+				if (MemRead2 != 1)
+					$display("Error: MemRead2 was %d, but should have been %d", MemRead2, 1);
+					
+				if (MemDst1 != 2'b00)
+					$display("Error: MemDst1 was %d, but should have been %d", MemDst1, 0);
+				if (MemDst2 != 2'b00)
+					$display("Error: MemDst2 was %d, but should have been %d", MemDst2, 0);
+					
+				if (CurrentState != 0)
+					$display("Error: Incorrect State. CurrentState was %d, but should have been %d", CurrentState, 0);
+				
+				$display("State 1 -> State 2");
+				CLKCount = CLKCount + 1;
+				end
+				
+			1: begin
+				if (PCWrite != 0)
+					$display("Error: PCWrite was %d, but should have been %d", PCWrite, 0);
+				if (MSPWrite != 1)
+					$display("Error: MSPWrite was %d, but should have been %d", MSPWrite, 1);
+				if (RSPWrite != 0)
+					$display("Error: RSPWrite was %d, but should have been %d", RSPWrite, 0);
+				if (IRWrite != 0)
+					$display("Error: IRWrite was %d, but should have been %d", IRWrite, 0);
+				if (ValAWrite != 0)
+					$display("Error: ValAWrite was %d, but should have been %d", ValAWrite, 0);
+				if (ValBWrite != 0)
+					$display("Error: ValBWrite was %d, but should have been %d", ValBWrite, 0);
+				if (ResWrite != 0)
+					$display("Error: ResWrite was %d, but should have been %d", ResWrite, 0);
+				if (MemWrite1 != 0)
+					$display("Error: MemWrite1 was %d, but should have been %d", MemWrite1, 0);
+				if (MemWrite2 != 0)
+					$display("Error: MemWrite2 was %d, but should have been %d", MemWrite2, 0);
+				if (MemRead1 != 0)
+					$display("Error: MemRead1 was %d, but should have been %d", MemRead1, 0);
+				if (MemRead2 != 0)
+					$display("Error: MemRead2 was %d, but should have been %d", MemRead2, 0);
+					
+				if (MSPop != 1)
+					$display("Error: MSPop was %d, but should have been %d", MSPop, 1);
+					
+				if (CurrentState != 1)
+					$display("Error: Incorrect State. CurrentState was %d, but should have been %d", CurrentState, 1);
+					
+				$display("State 2 -> State 3");
+				CLKCount = CLKCount + 1;	
+				end
+				
+			2: begin
+				if (PCWrite != 0)
+					$display("Error: PCWrite was %d, but should have been %d", PCWrite, 0);
+				if (MSPWrite != 0)
+					$display("Error: MSPWrite was %d, but should have been %d", MSPWrite, 0);
+				if (RSPWrite != 0)
+					$display("Error: RSPWrite was %d, but should have been %d", RSPWrite, 0);
+				if (IRWrite != 0)
+					$display("Error: IRWrite was %d, but should have been %d", IRWrite, 0);
+				if (ValAWrite != 0)
+					$display("Error: ValAWrite was %d, but should have been %d", ValAWrite, 0);
+				if (ValBWrite != 1)
+					$display("Error: ValBWrite was %d, but should have been %d", ValBWrite, 1);
+				if (ResWrite != 0)
+					$display("Error: ResWrite was %d, but should have been %d", ResWrite, 0);
+				if (MemWrite1 != 0)
+					$display("Error: MemWrite1 was %d, but should have been %d", MemWrite1, 0);
+				if (MemWrite2 != 0)
+					$display("Error: MemWrite2 was %d, but should have been %d", MemWrite2, 0);
+				if (MemRead1 != 1)
+					$display("Error: MemRead1 was %d, but should have been %d", MemRead1, 1);
+				if (MemRead2 != 0)
+					$display("Error: MemRead2 was %d, but should have been %d", MemRead2, 0);
+					
+				if (MemDst1 != 2'b01)
+					$display("Error: MemDst1 was %d, but should have been %d", MemDst1, 1);
+					
+				if (CurrentState != 2)
+					$display("Error: Incorrect State. CurrentState was %d, but should have been %d", CurrentState, 2);
+					
+				$display("State 3 -> State 4");
+				CLKCount = CLKCount + 1;	
+				end
+				
+			3: begin
+				if (PCWrite != 0)
+					$display("Error: PCWrite was %d, but should have been %d", PCWrite, 0);
+				if (MSPWrite != 0)
+					$display("Error: MSPWrite was %d, but should have been %d", MSPWrite, 0);
+				if (RSPWrite != 0)
+					$display("Error: RSPWrite was %d, but should have been %d", RSPWrite, 0);
+				if (IRWrite != 0)
+					$display("Error: IRWrite was %d, but should have been %d", IRWrite, 0);
+				if (ValAWrite != 0)
+					$display("Error: ValAWrite was %d, but should have been %d", ValAWrite, 0);
+				if (ValBWrite != 0)
+					$display("Error: ValBWrite was %d, but should have been %d", ValBWrite, 0);
+				if (ResWrite != 1)
+					$display("Error: ResWrite was %d, but should have been %d", ResWrite, 1);
+				if (MemWrite1 != 0)
+					$display("Error: MemWrite1 was %d, but should have been %d", MemWrite1, 0);
+				if (MemWrite2 != 0)
+					$display("Error: MemWrite2 was %d, but should have been %d", MemWrite2, 0);
+				if (MemRead1 != 0)
+					$display("Error: MemRead1 was %d, but should have been %d", MemRead1, 0);
+				if (MemRead2 != 0)
+					$display("Error: MemRead2 was %d, but should have been %d", MemRead2, 0);
+					
+				if (ALUop != 3'b001)
+					$display("Error: ALUop was %d, but should have been %d", ALUop, 1);
+				if (ResSource != 0)
+					$display("Error: ResSource was %d, but should have been %d", ResSource, 0);
+					
+				if (CurrentState != 3)
+					$display("Error: Incorrect State. CurrentState was %d, but should have been %d", CurrentState, 3);
+					
+				$display("State 4 -> State 5");
+				CLKCount = CLKCount + 1;	
+				end
+				
+			4: begin
+				if (PCWrite != 0)
+					$display("Error: PCWrite was %d, but should have been %d", PCWrite, 0);
+				if (MSPWrite != 0)
+					$display("Error: MSPWrite was %d, but should have been %d", MSPWrite, 0);
+				if (RSPWrite != 0)
+					$display("Error: RSPWrite was %d, but should have been %d", RSPWrite, 0);
+				if (IRWrite != 0)
+					$display("Error: IRWrite was %d, but should have been %d", IRWrite, 0);
+				if (ValAWrite != 0)
+					$display("Error: ValAWrite was %d, but should have been %d", ValAWrite, 0);
+				if (ValBWrite != 0)
+					$display("Error: ValBWrite was %d, but should have been %d", ValBWrite, 0);
+				if (ResWrite != 0)
+					$display("Error: ResWrite was %d, but should have been %d", ResWrite, 0);
+				if (MemWrite1 != 0)
+					$display("Error: MemWrite1 was %d, but should have been %d", MemWrite1, 0);
+				if (MemWrite2 != 1)
+					$display("Error: MemWrite2 was %d, but should have been %d", MemWrite2, 1);
+				if (MemRead1 != 0)
+					$display("Error: MemRead1 was %d, but should have been %d", MemRead1, 0);
+				if (MemRead2 != 0)
+					$display("Error: MemRead2 was %d, but should have been %d", MemRead2, 0);
+					
+				if (MemDst2 != 2'b00)
+					$display("Error: MemDst2 was %d, but should have been %d", MemDst2, 0);
+				if (MemData != 2'b01)
+					$display("Error: MemData was %d, but should have been %d", MemData, 1);
+					
+				if (CurrentState != 4)
+					$display("Error: Incorrect State. CurrentState was %d, but should have been %d", CurrentState, 4);
+					
+				$display("State 5 -> State 1");
+			
+				op = 4;
+				$display("Test Stage 3: slt");
+				TestStage = 5;
+				CLKCount = 0;
+				end
+			endcase
+		end
+		
+		//Test slt op code
+		if (TestStage == 1) begin
+			case (CLKCount)
+			0: begin
+				if (PCWrite != 1)
+					$display("Error: PCWrite was %d, but should have been %d", PCWrite, 1);
+				if (MSPWrite != 0)
+					$display("Error: MSPWrite was %d, but should have been %d", MSPWrite, 0);
+				if (RSPWrite != 0)
+					$display("Error: RSPWrite was %d, but should have been %d", RSPWrite, 0);
+				if (IRWrite != 1)
+					$display("Error: IRWrite was %d, but should have been %d", IRWrite, 1);
+				if (ValAWrite != 1)
+					$display("Error: ValAWrite was %d, but should have been %d", ValAWrite, 1);
+				if (ValBWrite != 0)
+					$display("Error: ValBWrite was %d, but should have been %d", ValBWrite, 0);
+				if (ResWrite != 0)
+					$display("Error: ResWrite was %d, but should have been %d", ResWrite, 0);
+				if (MemWrite1 != 0)
+					$display("Error: MemWrite1 was %d, but should have been %d", MemWrite1, 0);
+				if (MemWrite2 != 0)
+					$display("Error: MemWrite2 was %d, but should have been %d", MemWrite2, 0);
+				if (MemRead1 != 1)
+					$display("Error: MemRead1 was %d, but should have been %d", MemRead1, 1);
+				if (MemRead2 != 1)
+					$display("Error: MemRead2 was %d, but should have been %d", MemRead2, 1);
+					
+				if (MemDst1 != 2'b00)
+					$display("Error: MemDst1 was %d, but should have been %d", MemDst1, 0);
+				if (MemDst2 != 2'b00)
+					$display("Error: MemDst2 was %d, but should have been %d", MemDst2, 0);
+					
+				if (CurrentState != 0)
+					$display("Error: Incorrect State. CurrentState was %d, but should have been %d", CurrentState, 0);
+				
+				$display("State 1 -> State 2");
+				CLKCount = CLKCount + 1;
+				end
+				
+			1: begin
+				if (PCWrite != 0)
+					$display("Error: PCWrite was %d, but should have been %d", PCWrite, 0);
+				if (MSPWrite != 1)
+					$display("Error: MSPWrite was %d, but should have been %d", MSPWrite, 1);
+				if (RSPWrite != 0)
+					$display("Error: RSPWrite was %d, but should have been %d", RSPWrite, 0);
+				if (IRWrite != 0)
+					$display("Error: IRWrite was %d, but should have been %d", IRWrite, 0);
+				if (ValAWrite != 0)
+					$display("Error: ValAWrite was %d, but should have been %d", ValAWrite, 0);
+				if (ValBWrite != 0)
+					$display("Error: ValBWrite was %d, but should have been %d", ValBWrite, 0);
+				if (ResWrite != 0)
+					$display("Error: ResWrite was %d, but should have been %d", ResWrite, 0);
+				if (MemWrite1 != 0)
+					$display("Error: MemWrite1 was %d, but should have been %d", MemWrite1, 0);
+				if (MemWrite2 != 0)
+					$display("Error: MemWrite2 was %d, but should have been %d", MemWrite2, 0);
+				if (MemRead1 != 0)
+					$display("Error: MemRead1 was %d, but should have been %d", MemRead1, 0);
+				if (MemRead2 != 0)
+					$display("Error: MemRead2 was %d, but should have been %d", MemRead2, 0);
+					
+				if (MSPop != 1)
+					$display("Error: MSPop was %d, but should have been %d", MSPop, 1);
+					
+				if (CurrentState != 1)
+					$display("Error: Incorrect State. CurrentState was %d, but should have been %d", CurrentState, 1);
+					
+				$display("State 2 -> State 3");
+				CLKCount = CLKCount + 1;	
+				end
+				
+			2: begin
+				if (PCWrite != 0)
+					$display("Error: PCWrite was %d, but should have been %d", PCWrite, 0);
+				if (MSPWrite != 0)
+					$display("Error: MSPWrite was %d, but should have been %d", MSPWrite, 0);
+				if (RSPWrite != 0)
+					$display("Error: RSPWrite was %d, but should have been %d", RSPWrite, 0);
+				if (IRWrite != 0)
+					$display("Error: IRWrite was %d, but should have been %d", IRWrite, 0);
+				if (ValAWrite != 0)
+					$display("Error: ValAWrite was %d, but should have been %d", ValAWrite, 0);
+				if (ValBWrite != 1)
+					$display("Error: ValBWrite was %d, but should have been %d", ValBWrite, 1);
+				if (ResWrite != 0)
+					$display("Error: ResWrite was %d, but should have been %d", ResWrite, 0);
+				if (MemWrite1 != 0)
+					$display("Error: MemWrite1 was %d, but should have been %d", MemWrite1, 0);
+				if (MemWrite2 != 0)
+					$display("Error: MemWrite2 was %d, but should have been %d", MemWrite2, 0);
+				if (MemRead1 != 1)
+					$display("Error: MemRead1 was %d, but should have been %d", MemRead1, 1);
+				if (MemRead2 != 0)
+					$display("Error: MemRead2 was %d, but should have been %d", MemRead2, 0);
+					
+				if (MemDst1 != 2'b01)
+					$display("Error: MemDst1 was %d, but should have been %d", MemDst1, 1);
+					
+				if (CurrentState != 2)
+					$display("Error: Incorrect State. CurrentState was %d, but should have been %d", CurrentState, 2);
+					
+				$display("State 3 -> State 4");
+				CLKCount = CLKCount + 1;	
+				end
+				
+			3: begin
+				if (PCWrite != 0)
+					$display("Error: PCWrite was %d, but should have been %d", PCWrite, 0);
+				if (MSPWrite != 0)
+					$display("Error: MSPWrite was %d, but should have been %d", MSPWrite, 0);
+				if (RSPWrite != 0)
+					$display("Error: RSPWrite was %d, but should have been %d", RSPWrite, 0);
+				if (IRWrite != 0)
+					$display("Error: IRWrite was %d, but should have been %d", IRWrite, 0);
+				if (ValAWrite != 0)
+					$display("Error: ValAWrite was %d, but should have been %d", ValAWrite, 0);
+				if (ValBWrite != 0)
+					$display("Error: ValBWrite was %d, but should have been %d", ValBWrite, 0);
+				if (ResWrite != 1)
+					$display("Error: ResWrite was %d, but should have been %d", ResWrite, 1);
+				if (MemWrite1 != 0)
+					$display("Error: MemWrite1 was %d, but should have been %d", MemWrite1, 0);
+				if (MemWrite2 != 0)
+					$display("Error: MemWrite2 was %d, but should have been %d", MemWrite2, 0);
+				if (MemRead1 != 0)
+					$display("Error: MemRead1 was %d, but should have been %d", MemRead1, 0);
+				if (MemRead2 != 0)
+					$display("Error: MemRead2 was %d, but should have been %d", MemRead2, 0);
+					
+				if (ALUop != 3'b011)
+					$display("Error: ALUop was %d, but should have been %d", ALUop, 3);
+				if (ResSource != 0)
+					$display("Error: ResSource was %d, but should have been %d", ResSource, 0);
+					
+				if (CurrentState != 3)
+					$display("Error: Incorrect State. CurrentState was %d, but should have been %d", CurrentState, 3);
+					
+				$display("State 4 -> State 5");
+				CLKCount = CLKCount + 1;	
+				end
+				
+			4: begin
+				if (PCWrite != 0)
+					$display("Error: PCWrite was %d, but should have been %d", PCWrite, 0);
+				if (MSPWrite != 0)
+					$display("Error: MSPWrite was %d, but should have been %d", MSPWrite, 0);
+				if (RSPWrite != 0)
+					$display("Error: RSPWrite was %d, but should have been %d", RSPWrite, 0);
+				if (IRWrite != 0)
+					$display("Error: IRWrite was %d, but should have been %d", IRWrite, 0);
+				if (ValAWrite != 0)
+					$display("Error: ValAWrite was %d, but should have been %d", ValAWrite, 0);
+				if (ValBWrite != 0)
+					$display("Error: ValBWrite was %d, but should have been %d", ValBWrite, 0);
+				if (ResWrite != 0)
+					$display("Error: ResWrite was %d, but should have been %d", ResWrite, 0);
+				if (MemWrite1 != 0)
+					$display("Error: MemWrite1 was %d, but should have been %d", MemWrite1, 0);
+				if (MemWrite2 != 1)
+					$display("Error: MemWrite2 was %d, but should have been %d", MemWrite2, 1);
+				if (MemRead1 != 0)
+					$display("Error: MemRead1 was %d, but should have been %d", MemRead1, 0);
+				if (MemRead2 != 0)
+					$display("Error: MemRead2 was %d, but should have been %d", MemRead2, 0);
+					
+				if (MemDst2 != 2'b00)
+					$display("Error: MemDst2 was %d, but should have been %d", MemDst2, 0);
+				if (MemData != 2'b01)
+					$display("Error: MemData was %d, but should have been %d", MemData, 1);
+					
+				if (CurrentState != 4)
+					$display("Error: Incorrect State. CurrentState was %d, but should have been %d", CurrentState, 4);
+					
+				$display("State 5 -> State 1");
+			
+				op = 5;
+				$display("Test Stage 6: jpop");
+				TestStage = 6;
+				CLKCount = 0;
+				end
+			endcase
+		end
 		
 	end  
 endmodule
