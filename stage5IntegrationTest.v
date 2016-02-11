@@ -43,6 +43,10 @@ module stage5IntegrationTest;
    reg [15:0]  eValB;
    reg [15:0]  eIR;
 
+   reg [15:0]  ePC;
+   reg [15:0]  eMSP;
+   reg [15:0]  eRSP;
+
    // Instantiate the Unit Under Test (UUT)
    stage5Integration uut (
 						  .SignExtOut(SignExtOut),
@@ -125,6 +129,10 @@ module stage5IntegrationTest;
 	  eValA = 0;
 	  eValB = 0;
 	  eIR = 0;
+
+	  ePC = 0;
+	  eMSP = 0;
+	  eRSP = 0;
    end
 
    initial begin   // Clock process for CLK
@@ -188,6 +196,10 @@ module stage5IntegrationTest;
 			   eValA = MSPOut % 10;
 			   eValB = ValBOut;
 			   eIR = PCOut % 10;
+
+			   ePC = PCOut + 1;
+			   eMSP = MSPOut - 1;
+			   eRSP = RSPOut;
 			end else if(CLKCount <= 359) begin // Load ValB
 			   PCWrite = 0;
 
@@ -207,11 +219,149 @@ module stage5IntegrationTest;
 
 			   RSPWrite = 0;
 
-			   $display("Updating expected values: CLK = %d; eValB = %h", CLKCount, MSPOut);
-
 			   eValA = ValAOut;
 			   eValB = MSPOut % 10;
 			   eIR = IROut;
+
+			   ePC = PCOut;
+			   eMSP = MSPOut + 1;
+			   eRSP = RSPOut;
+			end else if(CLKCount <= 509) begin // Store top of RS into ValA
+			   PCWrite = 0;
+
+			   MemRead1 = 0;
+			   MemRead2 = 1;
+			   MemWrite1 = 0;
+			   MemWrite2 = 0;
+
+			   MemDst2 = 2'b 01;
+
+			   IRWrite = 0;
+			   ValAWrite = 0;
+			   ValBWrite = 0;
+
+			   MSPWrite = 0;
+
+			   RSPWrite = 1;
+			   RSPPop = 1;
+
+			   eValA = RSPOut % 10;
+			   eValB = ValBOut;
+			   eIR = IROut;
+
+			   ePC = PCOut;
+			   eMSP = MSPOut;
+			   eRSP = RSPOut + 1;
+			end else if(CLKCount <= 659) begin // jpop
+			   PCWrite = 1;
+			   PCSource = 1;
+
+			   MemRead1 = 0;
+			   MemRead2 = 1;
+			   MemWrite1 = 0;
+			   MemWrite2 = 0;
+
+			   MemDst2 = 2'b 00;
+			   
+			   IRWrite = 0;
+			   ValAWrite = 0;
+			   ValBWrite = 0;
+
+			   MSPWrite = 1;
+			   MSPPop = 1;
+
+			   RSPWrite = 0;
+
+			   eValA = MSPOut % 10;
+			   eValB = ValBOut;
+			   eIR = IROut;
+
+			   ePC = ValAOut;
+			   eMSP = MSPOut - 1;
+			   eRSP = RSPOut;
+			end else if(CLKCount <= 809) begin // Load Mem[ValA] into ValB
+			   PCWrite = 0;
+
+			   MemRead1 = 1;
+			   MemRead2 = 1;
+			   MemWrite1 = 0;
+			   MemWrite2 = 0;
+
+			   MemDst1 = 2'b 10;
+			   MemDst2 = 2'b 00;
+
+			   IRWrite = 0;
+			   ValAWrite = 0;
+			   ValBWrite = 0;
+
+			   MSPWrite = 1;
+			   MSPPop = 0;
+
+			   RSPWrite = 0;
+
+			   eValA = MSPOut % 10;
+			   eValB = ValAOut % 10;
+			   eIR = IROut;
+
+			   ePC = PCOut;
+			   eMSP = MSPOut + 1;
+			   eRSP = RSPOut;
+			end else if(CLKCount <= 959) begin // Add some positive immediate to PC
+			   PCWrite = 1;
+			   PCAdd = 1;
+			   PCSource = 0;
+
+			   MemRead1 = 0;
+			   MemRead2 = 0;
+			   MemWrite1 = 0;
+			   MemWrite2 = 0;
+
+			   IRWrite = 0;
+			   ValAWrite = 0;
+			   ValBWrite = 0;
+
+			   MSPWrite = 0;
+			   MSPPop = 0;
+
+			   RSPWrite = 0;
+
+			   SignExtOut = CLKCount % 20;
+
+			   eValA = ValAOut;
+			   eValB = ValBOut;
+			   eIR = IROut;
+
+			   ePC = PCOut + SignExtOut;
+			   eMSP = MSPOut;
+			   eRSP = RSPOut;
+			end else if(CLKCount <= 1109) begin // Add some negative immediate to PC
+			   PCWrite = 1;
+			   PCAdd = 1;
+			   PCSource = 0;
+
+			   MemRead1 = 0;
+			   MemRead2 = 0;
+			   MemWrite1 = 0;
+			   MemWrite2 = 0;
+
+			   IRWrite = 0;
+			   ValAWrite = 0;
+			   ValBWrite = 0;
+
+			   MSPWrite = 0;
+			   MSPPop = 0;
+
+			   RSPWrite = 0;
+
+			   SignExtOut = -(CLKCount % 20);
+
+			   eValA = ValAOut;
+			   eValB = ValBOut;
+			   eIR = IROut;
+
+			   ePC = PCOut + SignExtOut;
+			   eMSP = MSPOut;
+			   eRSP = RSPOut;
 			end else begin
 			   $display("Finished with %d/%d errors.", errors, trials);
 			   $finish;
@@ -239,33 +389,104 @@ module stage5IntegrationTest;
 			   MemRead2 = 0;
 			   MemWrite1 = 0;
 			   MemWrite2 = 0;
-			
+
 			   IRWrite = 0;
 			   ValAWrite = 0;
 			   ValBWrite = 1;
-			
+
 			   MSPWrite = 0;
-			
+
 			   RSPWrite = 0;
-			
-			   eValA = ValAOut;
-			   eValB = MSPOut % 10;
-			   eIR = IROut;
+			end else if(CLKCount <= 509) begin // Store top of RS into ValA
+			   PCWrite = 0;
+
+			   MemRead1 = 0;
+			   MemRead2 = 0;
+			   MemWrite1 = 0;
+			   MemWrite2 = 0;
+
+			   IRWrite = 0;
+			   ValAWrite = 1;
+			   ValBWrite = 0;
+			   
+			   MSPWrite = 0;
+
+			   RSPWrite = 0;
+			end else if(CLKCount <= 659) begin // jpop
+			   PCWrite = 0;
+
+			   MemRead1 = 0;
+			   MemRead2 = 0;
+			   MemWrite1 = 0;
+			   MemWrite2 = 0;
+
+			   IRWrite = 0;
+			   ValAWrite = 1;
+			   ValBWrite = 0;
+			   
+			   MSPWrite = 0;
+
+			   RSPWrite = 0;
+			end else if(CLKCount <= 809) begin // Load Mem[ValA] into ValB
+			   PCWrite = 0;
+
+			   MemRead1 = 0;
+			   MemRead2 = 0;
+			   MemWrite1 = 0;
+			   MemWrite2 = 0;
+
+			   IRWrite = 0;
+			   ValAWrite = 1;
+			   ValBWrite = 1;
+			   
+			   MSPWrite = 0;
+
+			   RSPWrite = 0;
+			end else if(CLKCount <= 959) begin // Add some positive immediate to PC
+			   PCWrite = 0;
+
+			   MemRead1 = 0;
+			   MemRead2 = 0;
+			   MemWrite1 = 0;
+			   MemWrite2 = 0;
+
+			   IRWrite = 0;
+			   ValAWrite = 0;
+			   ValBWrite = 0;
+			   
+			   MSPWrite = 0;
+
+			   RSPWrite = 0;
+			end else if(CLKCount <= 1109) begin // Add some negative immediate to PC
+			   PCWrite = 0;
+
+			   MemRead1 = 0;
+			   MemRead2 = 0;
+			   MemWrite1 = 0;
+			   MemWrite2 = 0;
+
+			   IRWrite = 0;
+			   ValAWrite = 0;
+			   ValBWrite = 0;
+			   
+			   MSPWrite = 0;
+
+			   RSPWrite = 0;
 			end
 		 end else begin
 			PCWrite = 0;
-		 
+
 			MemRead1 = 0;
 			MemRead2 = 0;
 			MemWrite1 = 0;
 			MemWrite2 = 0;
-		 
+
 			IRWrite = 0;
 			ValAWrite = 0;
 			ValBWrite = 0;
-		 
+
 			MSPWrite = 0;
-		 
+
 			RSPWrite = 0;
 
 			if(ValAOut != eValA) begin
@@ -279,10 +500,28 @@ module stage5IntegrationTest;
 						CLKCount, ValBOut, eValB);
 			   errors = errors + 1;
 			end
-			
+
 			if(IROut != eIR) begin
 			   $display("ERROR with IROut at CLK %d: %x != %x",
 						CLKCount, IROut, eIR);
+			   errors = errors + 1;
+			end
+
+			if(PCOut != ePC) begin
+			   $display("ERROR with PCOut at CLK %d: %x != %x",
+						CLKCount, PCOut, ePC);
+			   errors = errors + 1;
+			end
+
+			if(MSPOut != eMSP) begin
+			   $display("ERROR with MSPOut at CLK %d: %x != %x",
+						CLKCount, MSPOut, eMSP);
+			   errors = errors + 1;
+			end
+
+			if(RSPOut != eRSP) begin
+			   $display("ERROR with RSPOut at CLK %d: %x != %x",
+						CLKCount, RSPOut, eRSP);
 			   errors = errors + 1;
 			end
 
