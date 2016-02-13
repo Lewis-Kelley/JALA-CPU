@@ -44,6 +44,7 @@
         <signal name="MemCLK" />
         <signal name="MemBOut(15:0)" />
         <signal name="MemAOut(15:0)" />
+        <signal name="MemBIn(15:0)" />
         <port polarity="Output" name="ValAOut(15:0)" />
         <port polarity="Output" name="ValBOut(15:0)" />
         <port polarity="Output" name="ResOut(15:0)" />
@@ -82,6 +83,7 @@
         <port polarity="Input" name="MemCLK" />
         <port polarity="Output" name="MemBOut(15:0)" />
         <port polarity="Output" name="MemAOut(15:0)" />
+        <port polarity="Output" name="MemBIn(15:0)" />
         <blockdef name="stage3Integration">
             <timestamp>2016-2-13T17:18:37</timestamp>
             <rect width="320" x="64" y="-448" height="448" />
@@ -101,7 +103,7 @@
             <line x2="448" y1="-32" y2="-32" x1="384" />
         </blockdef>
         <blockdef name="stage5Integration">
-            <timestamp>2016-2-13T22:11:2</timestamp>
+            <timestamp>2016-2-13T22:55:57</timestamp>
             <rect width="64" x="416" y="404" height="24" />
             <line x2="480" y1="416" y2="416" x1="416" />
             <rect width="64" x="416" y="468" height="24" />
@@ -149,7 +151,7 @@
             <line x2="480" y1="-288" y2="-288" x1="416" />
             <rect width="64" x="416" y="-44" height="24" />
             <line x2="480" y1="-32" y2="-32" x1="416" />
-            <rect width="352" x="64" y="-1344" height="1856" />
+            <rect width="352" x="64" y="-1344" height="1920" />
         </blockdef>
         <block symbolname="stage3Integration" name="XLXI_1">
             <blockpin signalname="CLK" name="CLK" />
@@ -563,5 +565,9 @@
             <wire x2="1440" y1="2288" y2="2288" x1="1344" />
             <wire x2="1552" y1="2288" y2="2288" x1="1440" />
         </branch>
+        <branch name="MemBIn(15:0)">
+            <wire x2="2896" y1="256" y2="256" x1="2608" />
+        </branch>
+        <iomarker fontsize="28" x="2896" y="256" name="MemBIn(15:0)" orien="R0" />
     </sheet>
 </drawing>

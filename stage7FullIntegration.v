@@ -20,8 +20,6 @@ module stage7FullIntegration(
 							 
 							 output [15:0] MemAOut,
 							 output [15:0] MemBOut
-
-
 );
    // Control
    wire 		 MSPWrite;

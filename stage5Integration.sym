@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <symbol version="7" name="stage5Integration">
     <symboltype>BLOCK</symboltype>
-    <timestamp>2016-2-13T22:11:2</timestamp>
+    <timestamp>2016-2-13T22:55:57</timestamp>
     <attr value="stage5Integration" name="VeriModel" />
     <pin polarity="Input" x="0" y="-1312" name="CLK" />
     <pin polarity="Input" x="0" y="352" name="MemCLK" />
@@ -70,9 +70,9 @@
         <attrtext style="alignment:RIGHT;fontsize:24;fontname:Arial" attrname="PinName" x="408" y="-288" type="pin MSPOut(15:0)" />
         <attrtext style="alignment:RIGHT;fontsize:24;fontname:Arial" attrname="PinName" x="408" y="-32" type="pin RSPOut(15:0)" />
         <attrtext style="alignment:RIGHT;fontsize:24;fontname:Arial" attrname="PinName" x="408" y="416" type="pin MemAOut(15:0)" />
+        <attrtext style="alignment:RIGHT;fontsize:24;fontname:Arial" attrname="PinName" x="408" y="480" type="pin MemBOut(15:0)" />
         <rect width="64" x="416" y="404" height="24" />
         <line x2="480" y1="416" y2="416" x1="416" />
-        <attrtext style="alignment:RIGHT;fontsize:24;fontname:Arial" attrname="PinName" x="408" y="480" type="pin MemBOut(15:0)" />
         <rect width="64" x="416" y="468" height="24" />
         <line x2="480" y1="480" y2="480" x1="416" />
         <line x2="0" y1="352" y2="352" x1="64" />
@@ -118,6 +118,6 @@
         <line x2="480" y1="-288" y2="-288" x1="416" />
         <rect width="64" x="416" y="-44" height="24" />
         <line x2="480" y1="-32" y2="-32" x1="416" />
-        <rect width="352" x="64" y="-1344" height="1856" />
+        <rect width="352" x="64" y="-1344" height="1920" />
     </graph>
 </symbol>

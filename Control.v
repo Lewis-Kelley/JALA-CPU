@@ -55,7 +55,8 @@ module Control (
 					State21 = 5'b10101,
 					State22 = 5'b10110,
 					State23 = 5'b10111,
-					State24 = 5'b11000;
+					State24 = 5'b11000,
+					StateLoad = 5'b11111;
 
 	// Current State Assignment
 	always @(posedge clk) begin
@@ -74,6 +75,10 @@ module Control (
 	always @(CurrentState or op or posedge clk) begin
 		case (CurrentState)
 			State0:	begin
+				NextState <= StateLoad;
+			end
+			
+			StateLoad: begin
 				NextState <= State1;
 			end
 		
@@ -136,7 +141,7 @@ module Control (
 				NextState <= State5;
 				end
 			State5:	begin
-				NextState <= State1;
+				NextState <= StateLoad;
 				end
 				
 			State6:	begin
@@ -150,18 +155,18 @@ module Control (
 				end
 			
 			State7:	begin
-				NextState <= State1;
+				NextState <= StateLoad;
 				end
 			
 			State8:	begin
-				NextState <= State1;
+				NextState <= StateLoad;
 				end
 			
 			State9:	begin
 				NextState <= State10;
 				end
 			State10:	begin
-				NextState <= State1;
+				NextState <= StateLoad;
 				end
 			
 			State11:	begin
@@ -174,7 +179,7 @@ module Control (
 				NextState <= State14;
 				end
 			State14:	begin
-				NextState <= State1;
+				NextState <= StateLoad;
 				end
 			
 			State15:	begin
@@ -192,25 +197,25 @@ module Control (
 				end
 				
 			State19:	begin
-				NextState <= State1;
+				NextState <= StateLoad;
 				end
 				
 			State20:	begin
-				NextState <= State1;
+				NextState <= StateLoad;
 				end
 				
 			State21:	begin
 				NextState <= State22;
 				end
 			State22:	begin
-				NextState <= State1;
+				NextState <= StateLoad;
 				end
 				
 			State23:	begin
 				NextState <= State24;
 				end
 			State24:	begin
-				NextState <= State1;
+				NextState <= StateLoad;
 				end
 				
 			default:
@@ -239,7 +244,7 @@ module Control (
 				PCRegReset <= 1;
 			end
 			
-			State1: begin
+			StateLoad: begin
 				PCWrite <= 1;
 				MSPWrite <= 0;
 				RSPWrite <= 0;
@@ -251,6 +256,29 @@ module Control (
 				MemWrite2 <= 0;
 				MemRead1 <= 1;
 				MemRead2 <= 1;
+				
+				MSPRegReset <= 0;
+				RSPRegReset <= 0;
+				PCRegReset <= 0;
+				
+				MemDst1 <= 2'b00;
+				MemDst2 <= 2'b00;
+				PCAdd <= 0;
+				PCSource <= 0;
+				end
+			
+			State1: begin
+				PCWrite <= 0;
+				MSPWrite <= 0;
+				RSPWrite <= 0;
+				IRWrite <= 0;
+				ValAWrite <= 0;
+				ValBWrite <= 0;
+				ResWrite <= 0;
+				MemWrite1 <= 0;
+				MemWrite2 <= 0;
+				MemRead1 <= 0;
+				MemRead2 <= 0;
 				
 				MSPRegReset <= 0;
 				RSPRegReset <= 0;
@@ -348,7 +376,7 @@ module Control (
 				MemWrite1 <= 0;
 				MemWrite2 <= 1;
 				MemRead1 <= 0;
-				MemRead2 <= 0;
+				MemRead2 <= 1;
 				
 				MSPRegReset <= 0;
 				RSPRegReset <= 0;
@@ -455,7 +483,7 @@ module Control (
 				MemWrite1 <= 0;
 				MemWrite2 <= 1;
 				MemRead1 <= 0;
-				MemRead2 <= 0;
+				MemRead2 <= 1;
 				
 				MSPRegReset <= 0;
 				RSPRegReset <= 0;
@@ -543,7 +571,7 @@ module Control (
 				MemWrite1 <= 0;
 				MemWrite2 <= 1;
 				MemRead1 <= 0;
-				MemRead2 <= 0;
+				MemRead2 <= 1;
 				
 				MSPRegReset <= 0;
 				RSPRegReset <= 0;
@@ -585,7 +613,7 @@ module Control (
 				MemWrite1 <= 0;
 				MemWrite2 <= 1;
 				MemRead1 <= 0;
-				MemRead2 <= 0;
+				MemRead2 <= 1;
 				
 				MSPRegReset <= 0;
 				RSPRegReset <= 0;
@@ -707,7 +735,7 @@ module Control (
 				MemWrite1 <= 0;
 				MemWrite2 <= 1;
 				MemRead1 <= 0;
-				MemRead2 <= 0;
+				MemRead2 <= 1;
 				
 				MSPRegReset <= 0;
 				RSPRegReset <= 0;
@@ -748,7 +776,7 @@ module Control (
 				MemWrite1 <= 0;
 				MemWrite2 <= 1;
 				MemRead1 <= 0;
-				MemRead2 <= 0;
+				MemRead2 <= 1;
 				
 				MSPRegReset <= 0;
 				RSPRegReset <= 0;

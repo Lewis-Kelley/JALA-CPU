@@ -6,7 +6,6 @@
         <trait edittrait="all:0" />
     </attr>
     <netlist>
-        <signal name="XLXN_35(15:0)" />
         <signal name="MemRead2" />
         <signal name="ValB(15:0)" />
         <signal name="ValA(15:0)" />
@@ -39,6 +38,9 @@
         <signal name="MemDst2(1:0)" />
         <signal name="MemData(1:0)" />
         <signal name="MemCLK" />
+        <signal name="MemBIn(15:0)">
+        </signal>
+        <signal name="XLXN_37" />
         <port polarity="Input" name="MemRead2" />
         <port polarity="Output" name="ValB(15:0)" />
         <port polarity="Output" name="ValA(15:0)" />
@@ -156,7 +158,7 @@
             <blockpin name="G(15:0)" />
             <blockpin name="H(15:0)" />
             <blockpin signalname="g,MemData(1:0)" name="S(2:0)" />
-            <blockpin signalname="XLXN_35(15:0)" name="O(15:0)" />
+            <blockpin signalname="MemBIn(15:0)" name="O(15:0)" />
         </block>
         <block symbolname="reg16" name="XLXI_2">
             <blockpin signalname="MemAOut(15:0)" name="I(15:0)" />
@@ -189,7 +191,7 @@
             <blockpin signalname="MemWrite1" name="wea(0:0)" />
             <blockpin signalname="MemCLK" name="clka" />
             <blockpin signalname="MemDst2Out(14:0)" name="addrb(14:0)" />
-            <blockpin signalname="XLXN_35(15:0)" name="dinb(15:0)" />
+            <blockpin signalname="MemBIn(15:0)" name="dinb(15:0)" />
             <blockpin signalname="MemRead2" name="enb" />
             <blockpin signalname="MemWrite2" name="web(0:0)" />
             <blockpin signalname="MemCLK" name="clkb" />
@@ -234,12 +236,6 @@
             <wire x2="784" y1="1776" y2="1776" x1="720" />
             <wire x2="864" y1="1776" y2="1776" x1="784" />
         </branch>
-        <branch name="XLXN_35(15:0)">
-            <wire x2="1264" y1="1712" y2="1712" x1="1248" />
-            <wire x2="1456" y1="1712" y2="1712" x1="1264" />
-            <wire x2="1456" y1="976" y2="1712" x1="1456" />
-            <wire x2="1632" y1="976" y2="976" x1="1456" />
-        </branch>
         <branch name="MemAOut(15:0)">
             <attrtext style="alignment:SOFT-BCENTER;fontsize:28;fontname:Arial" attrname="Name" x="2400" y="736" type="branch" />
             <wire x2="2288" y1="592" y2="592" x1="2208" />
@@ -255,11 +251,10 @@
         <branch name="MemBOut(15:0)">
             <attrtext style="alignment:SOFT-BCENTER;fontsize:28;fontname:Arial" attrname="Name" x="2368" y="1136" type="branch" />
             <wire x2="2304" y1="880" y2="880" x1="2208" />
-            <wire x2="2512" y1="880" y2="880" x1="2304" />
-            <wire x2="2528" y1="880" y2="880" x1="2512" />
             <wire x2="2304" y1="880" y2="1136" x1="2304" />
             <wire x2="2368" y1="1136" y2="1136" x1="2304" />
             <wire x2="2496" y1="1136" y2="1136" x1="2368" />
+            <wire x2="2528" y1="880" y2="880" x1="2304" />
         </branch>
         <instance x="2528" y="384" name="XLXI_2" orien="R0">
         </instance>
@@ -506,5 +501,11 @@
             <wire x2="1968" y1="496" y2="496" x1="1776" />
         </branch>
         <iomarker fontsize="28" x="1776" y="496" name="MemCLK" orien="R180" />
+        <branch name="MemBIn(15:0)">
+            <wire x2="1344" y1="1712" y2="1712" x1="1248" />
+            <wire x2="1456" y1="1712" y2="1712" x1="1344" />
+            <wire x2="1632" y1="976" y2="976" x1="1456" />
+            <wire x2="1456" y1="976" y2="1712" x1="1456" />
+        </branch>
     </sheet>
 </drawing>
