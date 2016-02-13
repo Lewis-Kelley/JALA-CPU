@@ -34,6 +34,9 @@ module ControlTest;
 	wire [2:0] ALUop;
 	wire [4:0] CurrentState;
 	wire [4:0] NextState;
+	wire MSPRegReset;
+	wire RSPRegReset;
+	wire PCRegReset;
 	
 	reg [4:0] TestStage;
 	reg [3:0] CLKCount;
@@ -67,7 +70,10 @@ module ControlTest;
 		.mode(mode), 
 		.ALUop(ALUop), 
 		.CurrentState(CurrentState), 
-		.NextState(NextState)
+		.NextState(NextState),
+		.MSPRegReset(MSPRegReset),
+		.RSPRegReset(RSPRegReset),
+		.PCRegReset(PCRegReset)
 	);
 
 	initial begin
@@ -102,11 +108,46 @@ module ControlTest;
 		always @ (posedge CLK) begin
 		//Test rst function
 		if (TestStage == 0) begin
-			op = op + 1;
-			CLKCount = CLKCount + 1;
-			if (CurrentState != 0)
-				$display("Error: CurrentState was %d, but should have been %d", CurrentState, 0);
+			op = op + 3;
+			if (PCWrite != 1)
+					$display("Error: PCWrite was %d, but should have been %d", PCWrite, 1);
+				if (MSPWrite != 1)
+					$display("Error: MSPWrite was %d, but should have been %d", MSPWrite, 1);
+				if (RSPWrite != 1)
+					$display("Error: RSPWrite was %d, but should have been %d", RSPWrite, 1);
+				if (IRWrite != 0)
+					$display("Error: IRWrite was %d, but should have been %d", IRWrite, 0);
+				if (ValAWrite != 0)
+					$display("Error: ValAWrite was %d, but should have been %d", ValAWrite, 0);
+				if (ValBWrite != 0)
+					$display("Error: ValBWrite was %d, but should have been %d", ValBWrite, 0);
+				if (ResWrite != 0)
+					$display("Error: ResWrite was %d, but should have been %d", ResWrite, 0);
+				if (MemWrite1 != 0)
+					$display("Error: MemWrite1 was %d, but should have been %d", MemWrite1, 0);
+				if (MemWrite2 != 0)
+					$display("Error: MemWrite2 was %d, but should have been %d", MemWrite2, 0);
+				if (MemRead1 != 0)
+					$display("Error: MemRead1 was %d, but should have been %d", MemRead1, 0);
+				if (MemRead2 != 0)
+					$display("Error: MemRead2 was %d, but should have been %d", MemRead2, 0);
+					
+				if (MSPRegReset != 1)
+					$display("Error: MSPRegReset was %d, but should have been %d", MSPRegReset, 1);
+				if (RSPRegReset != 1)
+					$display("Error: RSPRegReset was %d, but should have been %d", RSPRegReset, 1);
+				if (PCRegReset != 1)
+					$display("Error: PCRegReset was %d, but should have been %d", PCRegReset, 1);
+					
+				if (CurrentState != 0)
+					$display("Error: Incorrect State. CurrentState was %d, but should have been %d", CurrentState, 0);
+
+				CLKCount = CLKCount + 1;
 			
+				
+			if (CLKCount == 3) begin
+				rst = 1;
+				end
 				
 			if (CLKCount > 3) begin
 				op = 0;
@@ -149,8 +190,15 @@ module ControlTest;
 				if (MemDst2 != 2'b00)
 					$display("Error: MemDst2 was %d, but should have been %d", MemDst2, 0);
 					
-				if (CurrentState != 0)
-					$display("Error: Incorrect State. CurrentState was %d, but should have been %d", CurrentState, 0);
+				if (MSPRegReset != 0)
+					$display("Error: MSPRegReset was %d, but should have been %d", MSPRegReset, 0);
+				if (RSPRegReset != 0)
+					$display("Error: RSPRegReset was %d, but should have been %d", RSPRegReset, 0);
+				if (PCRegReset != 0)
+					$display("Error: PCRegReset was %d, but should have been %d", PCRegReset, 0);
+					
+				if (CurrentState != 1)
+					$display("Error: Incorrect State. CurrentState was %d, but should have been %d", CurrentState, 1);
 				
 				$display("State 1 -> State 2");
 				CLKCount = CLKCount + 1;
@@ -183,8 +231,15 @@ module ControlTest;
 				if (MSPop != 1)
 					$display("Error: MSPop was %d, but should have been %d", MSPop, 1);
 					
-				if (CurrentState != 1)
-					$display("Error: Incorrect State. CurrentState was %d, but should have been %d", CurrentState, 1);
+				if (MSPRegReset != 0)
+					$display("Error: MSPRegReset was %d, but should have been %d", MSPRegReset, 0);
+				if (RSPRegReset != 0)
+					$display("Error: RSPRegReset was %d, but should have been %d", RSPRegReset, 0);
+				if (PCRegReset != 0)
+					$display("Error: PCRegReset was %d, but should have been %d", PCRegReset, 0);
+					
+				if (CurrentState != 2)
+					$display("Error: Incorrect State. CurrentState was %d, but should have been %d", CurrentState, 2);
 					
 				$display("State 2 -> State 3");
 				CLKCount = CLKCount + 1;	
@@ -217,8 +272,15 @@ module ControlTest;
 				if (MemDst1 != 2'b01)
 					$display("Error: MemDst1 was %d, but should have been %d", MemDst1, 1);
 					
-				if (CurrentState != 2)
-					$display("Error: Incorrect State. CurrentState was %d, but should have been %d", CurrentState, 2);
+				if (MSPRegReset != 0)
+					$display("Error: MSPRegReset was %d, but should have been %d", MSPRegReset, 0);
+				if (RSPRegReset != 0)
+					$display("Error: RSPRegReset was %d, but should have been %d", RSPRegReset, 0);
+				if (PCRegReset != 0)
+					$display("Error: PCRegReset was %d, but should have been %d", PCRegReset, 0);
+					
+				if (CurrentState != 3)
+					$display("Error: Incorrect State. CurrentState was %d, but should have been %d", CurrentState, 3);
 					
 				$display("State 3 -> State 4");
 				CLKCount = CLKCount + 1;	
@@ -253,8 +315,15 @@ module ControlTest;
 				if (ResSource != 0)
 					$display("Error: ResSource was %d, but should have been %d", ResSource, 0);
 					
-				if (CurrentState != 3)
-					$display("Error: Incorrect State. CurrentState was %d, but should have been %d", CurrentState, 3);
+				if (MSPRegReset != 0)
+					$display("Error: MSPRegReset was %d, but should have been %d", MSPRegReset, 0);
+				if (RSPRegReset != 0)
+					$display("Error: RSPRegReset was %d, but should have been %d", RSPRegReset, 0);
+				if (PCRegReset != 0)
+					$display("Error: PCRegReset was %d, but should have been %d", PCRegReset, 0);
+					
+				if (CurrentState != 4)
+					$display("Error: Incorrect State. CurrentState was %d, but should have been %d", CurrentState, 4);
 					
 				$display("State 4 -> State 5");
 				CLKCount = CLKCount + 1;	
@@ -289,8 +358,15 @@ module ControlTest;
 				if (MemData != 2'b01)
 					$display("Error: MemData was %d, but should have been %d", MemData, 1);
 					
-				if (CurrentState != 4)
-					$display("Error: Incorrect State. CurrentState was %d, but should have been %d", CurrentState, 4);
+				if (MSPRegReset != 0)
+					$display("Error: MSPRegReset was %d, but should have been %d", MSPRegReset, 0);
+				if (RSPRegReset != 0)
+					$display("Error: RSPRegReset was %d, but should have been %d", RSPRegReset, 0);
+				if (PCRegReset != 0)
+					$display("Error: PCRegReset was %d, but should have been %d", PCRegReset, 0);
+					
+				if (CurrentState != 5)
+					$display("Error: Incorrect State. CurrentState was %d, but should have been %d", CurrentState, 5);
 					
 				$display("State 5 -> State 1");
 				op = 1;
@@ -333,8 +409,15 @@ module ControlTest;
 				if (MemDst2 != 2'b00)
 					$display("Error: MemDst2 was %d, but should have been %d", MemDst2, 0);
 					
-				if (CurrentState != 0)
-					$display("Error: Incorrect State. CurrentState was %d, but should have been %d", CurrentState, 0);
+				if (MSPRegReset != 0)
+					$display("Error: MSPRegReset was %d, but should have been %d", MSPRegReset, 0);
+				if (RSPRegReset != 0)
+					$display("Error: RSPRegReset was %d, but should have been %d", RSPRegReset, 0);
+				if (PCRegReset != 0)
+					$display("Error: PCRegReset was %d, but should have been %d", PCRegReset, 0);
+					
+				if (CurrentState != 1)
+					$display("Error: Incorrect State. CurrentState was %d, but should have been %d", CurrentState, 1);
 				
 				$display("State 1 -> State 2");
 				CLKCount = CLKCount + 1;
@@ -367,8 +450,15 @@ module ControlTest;
 				if (MSPop != 1)
 					$display("Error: MSPop was %d, but should have been %d", MSPop, 1);
 					
-				if (CurrentState != 1)
-					$display("Error: Incorrect State. CurrentState was %d, but should have been %d", CurrentState, 1);
+				if (MSPRegReset != 0)
+					$display("Error: MSPRegReset was %d, but should have been %d", MSPRegReset, 0);
+				if (RSPRegReset != 0)
+					$display("Error: RSPRegReset was %d, but should have been %d", RSPRegReset, 0);
+				if (PCRegReset != 0)
+					$display("Error: PCRegReset was %d, but should have been %d", PCRegReset, 0);
+					
+				if (CurrentState != 2)
+					$display("Error: Incorrect State. CurrentState was %d, but should have been %d", CurrentState, 2);
 					
 				$display("State 2 -> State 3");
 				CLKCount = CLKCount + 1;	
@@ -401,8 +491,15 @@ module ControlTest;
 				if (MemDst1 != 2'b01)
 					$display("Error: MemDst1 was %d, but should have been %d", MemDst1, 1);
 					
-				if (CurrentState != 2)
-					$display("Error: Incorrect State. CurrentState was %d, but should have been %d", CurrentState, 2);
+				if (MSPRegReset != 0)
+					$display("Error: MSPRegReset was %d, but should have been %d", MSPRegReset, 0);
+				if (RSPRegReset != 0)
+					$display("Error: RSPRegReset was %d, but should have been %d", RSPRegReset, 0);
+				if (PCRegReset != 0)
+					$display("Error: PCRegReset was %d, but should have been %d", PCRegReset, 0);
+					
+				if (CurrentState != 3)
+					$display("Error: Incorrect State. CurrentState was %d, but should have been %d", CurrentState, 3);
 					
 				$display("State 3 -> State 4");
 				CLKCount = CLKCount + 1;	
@@ -437,8 +534,15 @@ module ControlTest;
 				if (ResSource != 0)
 					$display("Error: ResSource was %d, but should have been %d", ResSource, 0);
 					
-				if (CurrentState != 3)
-					$display("Error: Incorrect State. CurrentState was %d, but should have been %d", CurrentState, 3);
+				if (MSPRegReset != 0)
+					$display("Error: MSPRegReset was %d, but should have been %d", MSPRegReset, 0);
+				if (RSPRegReset != 0)
+					$display("Error: RSPRegReset was %d, but should have been %d", RSPRegReset, 0);
+				if (PCRegReset != 0)
+					$display("Error: PCRegReset was %d, but should have been %d", PCRegReset, 0);
+					
+				if (CurrentState != 4)
+					$display("Error: Incorrect State. CurrentState was %d, but should have been %d", CurrentState, 4);
 					
 				$display("State 4 -> State 5");
 				CLKCount = CLKCount + 1;	
@@ -473,8 +577,15 @@ module ControlTest;
 				if (MemData != 2'b01)
 					$display("Error: MemData was %d, but should have been %d", MemData, 1);
 					
-				if (CurrentState != 4)
-					$display("Error: Incorrect State. CurrentState was %d, but should have been %d", CurrentState, 4);
+				if (MSPRegReset != 0)
+					$display("Error: MSPRegReset was %d, but should have been %d", MSPRegReset, 0);
+				if (RSPRegReset != 0)
+					$display("Error: RSPRegReset was %d, but should have been %d", RSPRegReset, 0);
+				if (PCRegReset != 0)
+					$display("Error: PCRegReset was %d, but should have been %d", PCRegReset, 0);
+					
+				if (CurrentState != 5)
+					$display("Error: Incorrect State. CurrentState was %d, but should have been %d", CurrentState, 5);
 					
 				$display("State 5 -> State 1");
 				op = 2;
@@ -517,8 +628,15 @@ module ControlTest;
 				if (MemDst2 != 2'b00)
 					$display("Error: MemDst2 was %d, but should have been %d", MemDst2, 0);
 					
-				if (CurrentState != 0)
-					$display("Error: Incorrect State. CurrentState was %d, but should have been %d", CurrentState, 0);
+				if (MSPRegReset != 0)
+					$display("Error: MSPRegReset was %d, but should have been %d", MSPRegReset, 0);
+				if (RSPRegReset != 0)
+					$display("Error: RSPRegReset was %d, but should have been %d", RSPRegReset, 0);
+				if (PCRegReset != 0)
+					$display("Error: PCRegReset was %d, but should have been %d", PCRegReset, 0);
+					
+				if (CurrentState != 1)
+					$display("Error: Incorrect State. CurrentState was %d, but should have been %d", CurrentState, 1);
 				
 				$display("State 1 -> State 2");
 				CLKCount = CLKCount + 1;
@@ -551,8 +669,15 @@ module ControlTest;
 				if (MSPop != 1)
 					$display("Error: MSPop was %d, but should have been %d", MSPop, 1);
 					
-				if (CurrentState != 1)
-					$display("Error: Incorrect State. CurrentState was %d, but should have been %d", CurrentState, 1);
+				if (MSPRegReset != 0)
+					$display("Error: MSPRegReset was %d, but should have been %d", MSPRegReset, 0);
+				if (RSPRegReset != 0)
+					$display("Error: RSPRegReset was %d, but should have been %d", RSPRegReset, 0);
+				if (PCRegReset != 0)
+					$display("Error: PCRegReset was %d, but should have been %d", PCRegReset, 0);
+					
+				if (CurrentState != 2)
+					$display("Error: Incorrect State. CurrentState was %d, but should have been %d", CurrentState, 2);
 					
 				$display("State 2 -> State 3");
 				CLKCount = CLKCount + 1;	
@@ -585,8 +710,15 @@ module ControlTest;
 				if (MemDst1 != 2'b01)
 					$display("Error: MemDst1 was %d, but should have been %d", MemDst1, 1);
 					
-				if (CurrentState != 2)
-					$display("Error: Incorrect State. CurrentState was %d, but should have been %d", CurrentState, 2);
+				if (MSPRegReset != 0)
+					$display("Error: MSPRegReset was %d, but should have been %d", MSPRegReset, 0);
+				if (RSPRegReset != 0)
+					$display("Error: RSPRegReset was %d, but should have been %d", RSPRegReset, 0);
+				if (PCRegReset != 0)
+					$display("Error: PCRegReset was %d, but should have been %d", PCRegReset, 0);
+					
+				if (CurrentState != 3)
+					$display("Error: Incorrect State. CurrentState was %d, but should have been %d", CurrentState, 3);
 					
 				$display("State 3 -> State 4");
 				CLKCount = CLKCount + 1;	
@@ -621,8 +753,15 @@ module ControlTest;
 				if (ResSource != 0)
 					$display("Error: ResSource was %d, but should have been %d", ResSource, 0);
 					
-				if (CurrentState != 3)
-					$display("Error: Incorrect State. CurrentState was %d, but should have been %d", CurrentState, 3);
+				if (MSPRegReset != 0)
+					$display("Error: MSPRegReset was %d, but should have been %d", MSPRegReset, 0);
+				if (RSPRegReset != 0)
+					$display("Error: RSPRegReset was %d, but should have been %d", RSPRegReset, 0);
+				if (PCRegReset != 0)
+					$display("Error: PCRegReset was %d, but should have been %d", PCRegReset, 0);
+					
+				if (CurrentState != 4)
+					$display("Error: Incorrect State. CurrentState was %d, but should have been %d", CurrentState, 4);
 					
 				$display("State 4 -> State 5");
 				CLKCount = CLKCount + 1;	
@@ -657,8 +796,15 @@ module ControlTest;
 				if (MemData != 2'b01)
 					$display("Error: MemData was %d, but should have been %d", MemData, 1);
 					
-				if (CurrentState != 4)
-					$display("Error: Incorrect State. CurrentState was %d, but should have been %d", CurrentState, 4);
+				if (MSPRegReset != 0)
+					$display("Error: MSPRegReset was %d, but should have been %d", MSPRegReset, 0);
+				if (RSPRegReset != 0)
+					$display("Error: RSPRegReset was %d, but should have been %d", RSPRegReset, 0);
+				if (PCRegReset != 0)
+					$display("Error: PCRegReset was %d, but should have been %d", PCRegReset, 0);
+					
+				if (CurrentState != 5)
+					$display("Error: Incorrect State. CurrentState was %d, but should have been %d", CurrentState, 5);
 					
 				$display("State 5 -> State 1");
 			
@@ -702,8 +848,15 @@ module ControlTest;
 				if (MemDst2 != 2'b00)
 					$display("Error: MemDst2 was %d, but should have been %d", MemDst2, 0);
 					
-				if (CurrentState != 0)
-					$display("Error: Incorrect State. CurrentState was %d, but should have been %d", CurrentState, 0);
+				if (MSPRegReset != 0)
+					$display("Error: MSPRegReset was %d, but should have been %d", MSPRegReset, 0);
+				if (RSPRegReset != 0)
+					$display("Error: RSPRegReset was %d, but should have been %d", RSPRegReset, 0);
+				if (PCRegReset != 0)
+					$display("Error: PCRegReset was %d, but should have been %d", PCRegReset, 0);
+					
+				if (CurrentState != 1)
+					$display("Error: Incorrect State. CurrentState was %d, but should have been %d", CurrentState, 1);
 				
 				$display("State 1 -> State 2");
 				CLKCount = CLKCount + 1;
@@ -736,8 +889,15 @@ module ControlTest;
 				if (MSPop != 1)
 					$display("Error: MSPop was %d, but should have been %d", MSPop, 1);
 					
-				if (CurrentState != 1)
-					$display("Error: Incorrect State. CurrentState was %d, but should have been %d", CurrentState, 1);
+				if (MSPRegReset != 0)
+					$display("Error: MSPRegReset was %d, but should have been %d", MSPRegReset, 0);
+				if (RSPRegReset != 0)
+					$display("Error: RSPRegReset was %d, but should have been %d", RSPRegReset, 0);
+				if (PCRegReset != 0)
+					$display("Error: PCRegReset was %d, but should have been %d", PCRegReset, 0);
+					
+				if (CurrentState != 2)
+					$display("Error: Incorrect State. CurrentState was %d, but should have been %d", CurrentState, 2);
 					
 				$display("State 2 -> State 3");
 				CLKCount = CLKCount + 1;	
@@ -770,8 +930,15 @@ module ControlTest;
 				if (MemDst1 != 2'b01)
 					$display("Error: MemDst1 was %d, but should have been %d", MemDst1, 1);
 					
-				if (CurrentState != 2)
-					$display("Error: Incorrect State. CurrentState was %d, but should have been %d", CurrentState, 2);
+				if (MSPRegReset != 0)
+					$display("Error: MSPRegReset was %d, but should have been %d", MSPRegReset, 0);
+				if (RSPRegReset != 0)
+					$display("Error: RSPRegReset was %d, but should have been %d", RSPRegReset, 0);
+				if (PCRegReset != 0)
+					$display("Error: PCRegReset was %d, but should have been %d", PCRegReset, 0);
+					
+				if (CurrentState != 3)
+					$display("Error: Incorrect State. CurrentState was %d, but should have been %d", CurrentState, 3);
 					
 				$display("State 3 -> State 4");
 				CLKCount = CLKCount + 1;	
@@ -806,8 +973,15 @@ module ControlTest;
 				if (ResSource != 0)
 					$display("Error: ResSource was %d, but should have been %d", ResSource, 0);
 					
-				if (CurrentState != 3)
-					$display("Error: Incorrect State. CurrentState was %d, but should have been %d", CurrentState, 3);
+				if (MSPRegReset != 0)
+					$display("Error: MSPRegReset was %d, but should have been %d", MSPRegReset, 0);
+				if (RSPRegReset != 0)
+					$display("Error: RSPRegReset was %d, but should have been %d", RSPRegReset, 0);
+				if (PCRegReset != 0)
+					$display("Error: PCRegReset was %d, but should have been %d", PCRegReset, 0);
+					
+				if (CurrentState != 4)
+					$display("Error: Incorrect State. CurrentState was %d, but should have been %d", CurrentState, 4);
 					
 				$display("State 4 -> State 5");
 				CLKCount = CLKCount + 1;	
@@ -842,8 +1016,15 @@ module ControlTest;
 				if (MemData != 2'b01)
 					$display("Error: MemData was %d, but should have been %d", MemData, 1);
 					
-				if (CurrentState != 4)
-					$display("Error: Incorrect State. CurrentState was %d, but should have been %d", CurrentState, 4);
+				if (MSPRegReset != 0)
+					$display("Error: MSPRegReset was %d, but should have been %d", MSPRegReset, 0);
+				if (RSPRegReset != 0)
+					$display("Error: RSPRegReset was %d, but should have been %d", RSPRegReset, 0);
+				if (PCRegReset != 0)
+					$display("Error: PCRegReset was %d, but should have been %d", PCRegReset, 0);
+					
+				if (CurrentState != 5)
+					$display("Error: Incorrect State. CurrentState was %d, but should have been %d", CurrentState, 5);
 					
 				$display("State 5 -> State 1");
 			
@@ -887,8 +1068,15 @@ module ControlTest;
 				if (MemDst2 != 2'b00)
 					$display("Error: MemDst2 was %d, but should have been %d", MemDst2, 0);
 					
-				if (CurrentState != 0)
-					$display("Error: Incorrect State. CurrentState was %d, but should have been %d", CurrentState, 0);
+				if (MSPRegReset != 0)
+					$display("Error: MSPRegReset was %d, but should have been %d", MSPRegReset, 0);
+				if (RSPRegReset != 0)
+					$display("Error: RSPRegReset was %d, but should have been %d", RSPRegReset, 0);
+				if (PCRegReset != 0)
+					$display("Error: PCRegReset was %d, but should have been %d", PCRegReset, 0);
+					
+				if (CurrentState != 1)
+					$display("Error: Incorrect State. CurrentState was %d, but should have been %d", CurrentState, 1);
 				
 				$display("State 1 -> State 2");
 				CLKCount = CLKCount + 1;
@@ -921,8 +1109,15 @@ module ControlTest;
 				if (MSPop != 1)
 					$display("Error: MSPop was %d, but should have been %d", MSPop, 1);
 					
-				if (CurrentState != 1)
-					$display("Error: Incorrect State. CurrentState was %d, but should have been %d", CurrentState, 1);
+				if (MSPRegReset != 0)
+					$display("Error: MSPRegReset was %d, but should have been %d", MSPRegReset, 0);
+				if (RSPRegReset != 0)
+					$display("Error: RSPRegReset was %d, but should have been %d", RSPRegReset, 0);
+				if (PCRegReset != 0)
+					$display("Error: PCRegReset was %d, but should have been %d", PCRegReset, 0);
+					
+				if (CurrentState != 2)
+					$display("Error: Incorrect State. CurrentState was %d, but should have been %d", CurrentState, 2);
 					
 				$display("State 2 -> State 3");
 				CLKCount = CLKCount + 1;	
@@ -955,8 +1150,15 @@ module ControlTest;
 				if (MemDst1 != 2'b01)
 					$display("Error: MemDst1 was %d, but should have been %d", MemDst1, 1);
 					
-				if (CurrentState != 2)
-					$display("Error: Incorrect State. CurrentState was %d, but should have been %d", CurrentState, 2);
+				if (MSPRegReset != 0)
+					$display("Error: MSPRegReset was %d, but should have been %d", MSPRegReset, 0);
+				if (RSPRegReset != 0)
+					$display("Error: RSPRegReset was %d, but should have been %d", RSPRegReset, 0);
+				if (PCRegReset != 0)
+					$display("Error: PCRegReset was %d, but should have been %d", PCRegReset, 0);
+					
+				if (CurrentState != 3)
+					$display("Error: Incorrect State. CurrentState was %d, but should have been %d", CurrentState, 3);
 					
 				$display("State 3 -> State 4");
 				CLKCount = CLKCount + 1;	
@@ -991,8 +1193,15 @@ module ControlTest;
 				if (ResSource != 0)
 					$display("Error: ResSource was %d, but should have been %d", ResSource, 0);
 					
-				if (CurrentState != 3)
-					$display("Error: Incorrect State. CurrentState was %d, but should have been %d", CurrentState, 3);
+				if (MSPRegReset != 0)
+					$display("Error: MSPRegReset was %d, but should have been %d", MSPRegReset, 0);
+				if (RSPRegReset != 0)
+					$display("Error: RSPRegReset was %d, but should have been %d", RSPRegReset, 0);
+				if (PCRegReset != 0)
+					$display("Error: PCRegReset was %d, but should have been %d", PCRegReset, 0);
+					
+				if (CurrentState != 4)
+					$display("Error: Incorrect State. CurrentState was %d, but should have been %d", CurrentState, 4);
 					
 				$display("State 4 -> State 5");
 				CLKCount = CLKCount + 1;	
@@ -1027,8 +1236,15 @@ module ControlTest;
 				if (MemData != 2'b01)
 					$display("Error: MemData was %d, but should have been %d", MemData, 1);
 					
-				if (CurrentState != 4)
-					$display("Error: Incorrect State. CurrentState was %d, but should have been %d", CurrentState, 4);
+				if (MSPRegReset != 0)
+					$display("Error: MSPRegReset was %d, but should have been %d", MSPRegReset, 0);
+				if (RSPRegReset != 0)
+					$display("Error: RSPRegReset was %d, but should have been %d", RSPRegReset, 0);
+				if (PCRegReset != 0)
+					$display("Error: PCRegReset was %d, but should have been %d", PCRegReset, 0);
+					
+				if (CurrentState != 5)
+					$display("Error: Incorrect State. CurrentState was %d, but should have been %d", CurrentState, 5);
 					
 				$display("State 5 -> State 1");
 			
@@ -1072,8 +1288,15 @@ module ControlTest;
 				if (MemDst2 != 2'b00)
 					$display("Error: MemDst2 was %d, but should have been %d", MemDst2, 0);
 					
-				if (CurrentState != 0)
-					$display("Error: Incorrect State. CurrentState was %d, but should have been %d", CurrentState, 0);
+				if (MSPRegReset != 0)
+					$display("Error: MSPRegReset was %d, but should have been %d", MSPRegReset, 0);
+				if (RSPRegReset != 0)
+					$display("Error: RSPRegReset was %d, but should have been %d", RSPRegReset, 0);
+				if (PCRegReset != 0)
+					$display("Error: PCRegReset was %d, but should have been %d", PCRegReset, 0);
+					
+				if (CurrentState != 1)
+					$display("Error: Incorrect State. CurrentState was %d, but should have been %d", CurrentState, 1);
 				
 				$display("State 1 -> State 20");
 				CLKCount = CLKCount + 1;
@@ -1108,8 +1331,15 @@ module ControlTest;
 				if (MSPWrite != 1)
 					$display("Error: MSPWrite was %d, but should have been %d", MSPWrite, 1);
 					
-				if (CurrentState != 19)
-					$display("Error: Incorrect State. CurrentState was %d, but should have been %d", CurrentState, 19);
+				if (MSPRegReset != 0)
+					$display("Error: MSPRegReset was %d, but should have been %d", MSPRegReset, 0);
+				if (RSPRegReset != 0)
+					$display("Error: RSPRegReset was %d, but should have been %d", RSPRegReset, 0);
+				if (PCRegReset != 0)
+					$display("Error: PCRegReset was %d, but should have been %d", PCRegReset, 0);
+					
+				if (CurrentState != 20)
+					$display("Error: Incorrect State. CurrentState was %d, but should have been %d", CurrentState, 20);
 					
 				$display("State 20 -> State 1");
 				
@@ -1153,8 +1383,15 @@ module ControlTest;
 				if (MemDst2 != 2'b00)
 					$display("Error: MemDst2 was %d, but should have been %d", MemDst2, 0);
 					
-				if (CurrentState != 0)
-					$display("Error: Incorrect State. CurrentState was %d, but should have been %d", CurrentState, 0);
+				if (MSPRegReset != 0)
+					$display("Error: MSPRegReset was %d, but should have been %d", MSPRegReset, 0);
+				if (RSPRegReset != 0)
+					$display("Error: RSPRegReset was %d, but should have been %d", RSPRegReset, 0);
+				if (PCRegReset != 0)
+					$display("Error: PCRegReset was %d, but should have been %d", PCRegReset, 0);
+					
+				if (CurrentState != 1)
+					$display("Error: Incorrect State. CurrentState was %d, but should have been %d", CurrentState, 1);
 				
 				$display("State 1 -> State 15");
 				CLKCount = CLKCount + 1;
@@ -1189,8 +1426,15 @@ module ControlTest;
 				if (RSPop != 1)
 					$display("Error: RSPop was %d, but should have been %d", RSPop, 1);
 					
-				if (CurrentState != 14)
-					$display("Error: Incorrect State. CurrentState was %d, but should have been %d", CurrentState, 14);
+				if (MSPRegReset != 0)
+					$display("Error: MSPRegReset was %d, but should have been %d", MSPRegReset, 0);
+				if (RSPRegReset != 0)
+					$display("Error: RSPRegReset was %d, but should have been %d", RSPRegReset, 0);
+				if (PCRegReset != 0)
+					$display("Error: PCRegReset was %d, but should have been %d", PCRegReset, 0);
+					
+				if (CurrentState != 15)
+					$display("Error: Incorrect State. CurrentState was %d, but should have been %d", CurrentState, 15);
 					
 				$display("State 15 -> State 16");
 				CLKCount = CLKCount + 1;	
@@ -1225,8 +1469,15 @@ module ControlTest;
 				if (MemData != 2'b00)
 					$display("Error: MemData was %d, but should have been %d", MemData, 0);
 					
-				if (CurrentState != 15)
-					$display("Error: Incorrect State. CurrentState was %d, but should have been %d", CurrentState, 15);
+				if (MSPRegReset != 0)
+					$display("Error: MSPRegReset was %d, but should have been %d", MSPRegReset, 0);
+				if (RSPRegReset != 0)
+					$display("Error: RSPRegReset was %d, but should have been %d", RSPRegReset, 0);
+				if (PCRegReset != 0)
+					$display("Error: PCRegReset was %d, but should have been %d", PCRegReset, 0);
+					
+				if (CurrentState != 16)
+					$display("Error: Incorrect State. CurrentState was %d, but should have been %d", CurrentState, 16);
 					
 				$display("State 16 -> State 19");
 				CLKCount = CLKCount + 1;	
@@ -1259,8 +1510,15 @@ module ControlTest;
 				if (PCSource != 1)
 					$display("Error: PCSource was %d, but should have been %d", PCSource, 1);
 					
-				if (CurrentState != 18)
-					$display("Error: Incorrect State. CurrentState was %d, but should have been %d", CurrentState, 18);
+				if (MSPRegReset != 0)
+					$display("Error: MSPRegReset was %d, but should have been %d", MSPRegReset, 0);
+				if (RSPRegReset != 0)
+					$display("Error: RSPRegReset was %d, but should have been %d", RSPRegReset, 0);
+				if (PCRegReset != 0)
+					$display("Error: PCRegReset was %d, but should have been %d", PCRegReset, 0);
+					
+				if (CurrentState != 19)
+					$display("Error: Incorrect State. CurrentState was %d, but should have been %d", CurrentState, 19);
 					
 				$display("State 19 -> State 1");
 				op = 7;
@@ -1303,8 +1561,15 @@ module ControlTest;
 				if (MemDst2 != 2'b00)
 					$display("Error: MemDst2 was %d, but should have been %d", MemDst2, 0);
 					
-				if (CurrentState != 0)
-					$display("Error: Incorrect State. CurrentState was %d, but should have been %d", CurrentState, 0);
+				if (MSPRegReset != 0)
+					$display("Error: MSPRegReset was %d, but should have been %d", MSPRegReset, 0);
+				if (RSPRegReset != 0)
+					$display("Error: RSPRegReset was %d, but should have been %d", RSPRegReset, 0);
+				if (PCRegReset != 0)
+					$display("Error: PCRegReset was %d, but should have been %d", PCRegReset, 0);
+					
+				if (CurrentState != 1)
+					$display("Error: Incorrect State. CurrentState was %d, but should have been %d", CurrentState, 1);
 				
 				$display("State 1 -> State 17");
 				CLKCount = CLKCount + 1;
@@ -1337,8 +1602,15 @@ module ControlTest;
 				if (MemDst2 != 2'b01)
 					$display("Error: MemDst2 was %d, but should have been %d", MemDst2, 1);
 				
-				if (CurrentState != 16)
-					$display("Error: Incorrect State. CurrentState was %d, but should have been %d", CurrentState, 16);
+				if (MSPRegReset != 0)
+					$display("Error: MSPRegReset was %d, but should have been %d", MSPRegReset, 0);
+				if (RSPRegReset != 0)
+					$display("Error: RSPRegReset was %d, but should have been %d", RSPRegReset, 0);
+				if (PCRegReset != 0)
+					$display("Error: PCRegReset was %d, but should have been %d", PCRegReset, 0);
+					
+				if (CurrentState != 17)
+					$display("Error: Incorrect State. CurrentState was %d, but should have been %d", CurrentState, 17);
 					
 				$display("State 17 -> State 18");
 				CLKCount = CLKCount + 1;	
@@ -1371,8 +1643,15 @@ module ControlTest;
 				if (RSPop != 0)
 					$display("Error: RSPop was %d, but should have been %d", RSPop, 0);
 					
-				if (CurrentState != 17)
-					$display("Error: Incorrect State. CurrentState was %d, but should have been %d", CurrentState, 17);
+				if (MSPRegReset != 0)
+					$display("Error: MSPRegReset was %d, but should have been %d", MSPRegReset, 0);
+				if (RSPRegReset != 0)
+					$display("Error: RSPRegReset was %d, but should have been %d", RSPRegReset, 0);
+				if (PCRegReset != 0)
+					$display("Error: PCRegReset was %d, but should have been %d", PCRegReset, 0);
+					
+				if (CurrentState != 18)
+					$display("Error: Incorrect State. CurrentState was %d, but should have been %d", CurrentState, 18);
 					
 				$display("State 18 -> State 19");
 				CLKCount = CLKCount + 1;	
@@ -1405,8 +1684,15 @@ module ControlTest;
 				if (PCSource != 1)
 					$display("Error: PCSource was %d, but should have been %d", PCSource, 1);
 					
-				if (CurrentState != 18)
-					$display("Error: Incorrect State. CurrentState was %d, but should have been %d", CurrentState, 18);
+				if (MSPRegReset != 0)
+					$display("Error: MSPRegReset was %d, but should have been %d", MSPRegReset, 0);
+				if (RSPRegReset != 0)
+					$display("Error: RSPRegReset was %d, but should have been %d", RSPRegReset, 0);
+				if (PCRegReset != 0)
+					$display("Error: PCRegReset was %d, but should have been %d", PCRegReset, 0);
+					
+				if (CurrentState != 19)
+					$display("Error: Incorrect State. CurrentState was %d, but should have been %d", CurrentState, 19);
 					
 				$display("State 19 -> State 1");
 				op = 8;
@@ -1449,8 +1735,15 @@ module ControlTest;
 				if (MemDst2 != 2'b00)
 					$display("Error: MemDst2 was %d, but should have been %d", MemDst2, 0);
 					
-				if (CurrentState != 0)
-					$display("Error: Incorrect State. CurrentState was %d, but should have been %d", CurrentState, 0);
+				if (MSPRegReset != 0)
+					$display("Error: MSPRegReset was %d, but should have been %d", MSPRegReset, 0);
+				if (RSPRegReset != 0)
+					$display("Error: RSPRegReset was %d, but should have been %d", RSPRegReset, 0);
+				if (PCRegReset != 0)
+					$display("Error: PCRegReset was %d, but should have been %d", PCRegReset, 0);
+					
+				if (CurrentState != 1)
+					$display("Error: Incorrect State. CurrentState was %d, but should have been %d", CurrentState, 1);
 				
 				$display("State 1 -> State 11");
 				CLKCount = CLKCount + 1;
@@ -1487,8 +1780,15 @@ module ControlTest;
 				if (mode != 0)
 					$display("Error: mode was %d, but should have been %d", mode, 0);
 				
-				if (CurrentState != 10)
-					$display("Error: Incorrect State. CurrentState was %d, but should have been %d", CurrentState, 10);
+				if (MSPRegReset != 0)
+					$display("Error: MSPRegReset was %d, but should have been %d", MSPRegReset, 0);
+				if (RSPRegReset != 0)
+					$display("Error: RSPRegReset was %d, but should have been %d", RSPRegReset, 0);
+				if (PCRegReset != 0)
+					$display("Error: PCRegReset was %d, but should have been %d", PCRegReset, 0);
+					
+				if (CurrentState != 11)
+					$display("Error: Incorrect State. CurrentState was %d, but should have been %d", CurrentState, 11);
 					
 				$display("State 11 -> State 14");
 				CLKCount = CLKCount + 1;	
@@ -1523,8 +1823,15 @@ module ControlTest;
 				if (MemData != 2'b01)
 					$display("Error: MemData was %d, but should have been %d", MemData, 1);
 					
-				if (CurrentState != 13)
-					$display("Error: Incorrect State. CurrentState was %d, but should have been %d", CurrentState, 13);
+				if (MSPRegReset != 0)
+					$display("Error: MSPRegReset was %d, but should have been %d", MSPRegReset, 0);
+				if (RSPRegReset != 0)
+					$display("Error: RSPRegReset was %d, but should have been %d", RSPRegReset, 0);
+				if (PCRegReset != 0)
+					$display("Error: PCRegReset was %d, but should have been %d", PCRegReset, 0);
+					
+				if (CurrentState != 14)
+					$display("Error: Incorrect State. CurrentState was %d, but should have been %d", CurrentState, 14);
 					
 				$display("State 14 -> State 1");
 				op = 9;
@@ -1567,8 +1874,15 @@ module ControlTest;
 				if (MemDst2 != 2'b00)
 					$display("Error: MemDst2 was %d, but should have been %d", MemDst2, 0);
 					
-				if (CurrentState != 0)
-					$display("Error: Incorrect State. CurrentState was %d, but should have been %d", CurrentState, 0);
+				if (MSPRegReset != 0)
+					$display("Error: MSPRegReset was %d, but should have been %d", MSPRegReset, 0);
+				if (RSPRegReset != 0)
+					$display("Error: RSPRegReset was %d, but should have been %d", RSPRegReset, 0);
+				if (PCRegReset != 0)
+					$display("Error: PCRegReset was %d, but should have been %d", PCRegReset, 0);
+					
+				if (CurrentState != 1)
+					$display("Error: Incorrect State. CurrentState was %d, but should have been %d", CurrentState, 1);
 				
 				$display("State 1 -> State 12");
 				CLKCount = CLKCount + 1;
@@ -1605,8 +1919,15 @@ module ControlTest;
 				if (mode != 0)
 					$display("Error: mode was %d, but should have been %d", mode, 0);
 				
-				if (CurrentState != 11)
-					$display("Error: Incorrect State. CurrentState was %d, but should have been %d", CurrentState, 11);
+				if (MSPRegReset != 0)
+					$display("Error: MSPRegReset was %d, but should have been %d", MSPRegReset, 0);
+				if (RSPRegReset != 0)
+					$display("Error: RSPRegReset was %d, but should have been %d", RSPRegReset, 0);
+				if (PCRegReset != 0)
+					$display("Error: PCRegReset was %d, but should have been %d", PCRegReset, 0);
+					
+				if (CurrentState != 12)
+					$display("Error: Incorrect State. CurrentState was %d, but should have been %d", CurrentState, 12);
 					
 				$display("State 12 -> State 14");
 				CLKCount = CLKCount + 1;	
@@ -1641,8 +1962,15 @@ module ControlTest;
 				if (MemData != 2'b01)
 					$display("Error: MemData was %d, but should have been %d", MemData, 1);
 					
-				if (CurrentState != 13)
-					$display("Error: Incorrect State. CurrentState was %d, but should have been %d", CurrentState, 13);
+				if (MSPRegReset != 0)
+					$display("Error: MSPRegReset was %d, but should have been %d", MSPRegReset, 0);
+				if (RSPRegReset != 0)
+					$display("Error: RSPRegReset was %d, but should have been %d", RSPRegReset, 0);
+				if (PCRegReset != 0)
+					$display("Error: PCRegReset was %d, but should have been %d", PCRegReset, 0);
+					
+				if (CurrentState != 14)
+					$display("Error: Incorrect State. CurrentState was %d, but should have been %d", CurrentState, 14);
 					
 				$display("State 14 -> State 1");
 				op = 10;
@@ -1685,8 +2013,15 @@ module ControlTest;
 				if (MemDst2 != 2'b00)
 					$display("Error: MemDst2 was %d, but should have been %d", MemDst2, 0);
 					
-				if (CurrentState != 0)
-					$display("Error: Incorrect State. CurrentState was %d, but should have been %d", CurrentState, 0);
+				if (MSPRegReset != 0)
+					$display("Error: MSPRegReset was %d, but should have been %d", MSPRegReset, 0);
+				if (RSPRegReset != 0)
+					$display("Error: RSPRegReset was %d, but should have been %d", RSPRegReset, 0);
+				if (PCRegReset != 0)
+					$display("Error: PCRegReset was %d, but should have been %d", PCRegReset, 0);
+					
+				if (CurrentState != 1)
+					$display("Error: Incorrect State. CurrentState was %d, but should have been %d", CurrentState, 1);
 				
 				$display("State 1 -> State 13");
 				CLKCount = CLKCount + 1;
@@ -1723,8 +2058,15 @@ module ControlTest;
 				if (mode != 1)
 					$display("Error: mode was %d, but should have been %d", mode, 1);
 				
-				if (CurrentState != 12)
-					$display("Error: Incorrect State. CurrentState was %d, but should have been %d", CurrentState, 12);
+				if (MSPRegReset != 0)
+					$display("Error: MSPRegReset was %d, but should have been %d", MSPRegReset, 0);
+				if (RSPRegReset != 0)
+					$display("Error: RSPRegReset was %d, but should have been %d", RSPRegReset, 0);
+				if (PCRegReset != 0)
+					$display("Error: PCRegReset was %d, but should have been %d", PCRegReset, 0);
+					
+				if (CurrentState != 13)
+					$display("Error: Incorrect State. CurrentState was %d, but should have been %d", CurrentState, 13);
 					
 				$display("State 13 -> State 14");
 				CLKCount = CLKCount + 1;	
@@ -1759,8 +2101,15 @@ module ControlTest;
 				if (MemData != 2'b01)
 					$display("Error: MemData was %d, but should have been %d", MemData, 1);
 					
-				if (CurrentState != 13)
-					$display("Error: Incorrect State. CurrentState was %d, but should have been %d", CurrentState, 13);
+				if (MSPRegReset != 0)
+					$display("Error: MSPRegReset was %d, but should have been %d", MSPRegReset, 0);
+				if (RSPRegReset != 0)
+					$display("Error: RSPRegReset was %d, but should have been %d", RSPRegReset, 0);
+				if (PCRegReset != 0)
+					$display("Error: PCRegReset was %d, but should have been %d", PCRegReset, 0);
+					
+				if (CurrentState != 14)
+					$display("Error: Incorrect State. CurrentState was %d, but should have been %d", CurrentState, 14);
 					
 				$display("State 14 -> State 1");
 				op = 11;
@@ -1803,8 +2152,15 @@ module ControlTest;
 				if (MemDst2 != 2'b00)
 					$display("Error: MemDst2 was %d, but should have been %d", MemDst2, 0);
 					
-				if (CurrentState != 0)
-					$display("Error: Incorrect State. CurrentState was %d, but should have been %d", CurrentState, 0);
+				if (MSPRegReset != 0)
+					$display("Error: MSPRegReset was %d, but should have been %d", MSPRegReset, 0);
+				if (RSPRegReset != 0)
+					$display("Error: RSPRegReset was %d, but should have been %d", RSPRegReset, 0);
+				if (PCRegReset != 0)
+					$display("Error: PCRegReset was %d, but should have been %d", PCRegReset, 0);
+					
+				if (CurrentState != 1)
+					$display("Error: Incorrect State. CurrentState was %d, but should have been %d", CurrentState, 1);
 				
 				$display("State 1 -> State 2");
 				CLKCount = CLKCount + 1;
@@ -1837,8 +2193,15 @@ module ControlTest;
 				if (MSPop != 1)
 					$display("Error: MSPop was %d, but should have been %d", MSPop, 1);
 					
-				if (CurrentState != 1)
-					$display("Error: Incorrect State. CurrentState was %d, but should have been %d", CurrentState, 1);
+				if (MSPRegReset != 0)
+					$display("Error: MSPRegReset was %d, but should have been %d", MSPRegReset, 0);
+				if (RSPRegReset != 0)
+					$display("Error: RSPRegReset was %d, but should have been %d", RSPRegReset, 0);
+				if (PCRegReset != 0)
+					$display("Error: PCRegReset was %d, but should have been %d", PCRegReset, 0);
+					
+				if (CurrentState != 2)
+					$display("Error: Incorrect State. CurrentState was %d, but should have been %d", CurrentState, 2);
 					
 				$display("State 2 -> State 6");
 				CLKCount = CLKCount + 1;	
@@ -1871,8 +2234,15 @@ module ControlTest;
 				if (MemDst1 != 2'b01)
 					$display("Error: MemDst1 was %d, but should have been %d", MemDst1, 1);
 					
-				if (CurrentState != 5)
-					$display("Error: Incorrect State. CurrentState was %d, but should have been %d", CurrentState, 5);
+				if (MSPRegReset != 0)
+					$display("Error: MSPRegReset was %d, but should have been %d", MSPRegReset, 0);
+				if (RSPRegReset != 0)
+					$display("Error: RSPRegReset was %d, but should have been %d", RSPRegReset, 0);
+				if (PCRegReset != 0)
+					$display("Error: PCRegReset was %d, but should have been %d", PCRegReset, 0);
+					
+				if (CurrentState != 6)
+					$display("Error: Incorrect State. CurrentState was %d, but should have been %d", CurrentState, 6);
 					
 				$display("State 6 -> State 8");
 				CLKCount = CLKCount + 1;	
@@ -1911,8 +2281,15 @@ module ControlTest;
 				if (PCSource != 0)
 					$display("Error: PCSource was %d, but should have been %d", PCSource, 0);
 				
-				if (CurrentState != 7)
-					$display("Error: Incorrect State. CurrentState was %d, but should have been %d", CurrentState, 7);
+				if (MSPRegReset != 0)
+					$display("Error: MSPRegReset was %d, but should have been %d", MSPRegReset, 0);
+				if (RSPRegReset != 0)
+					$display("Error: RSPRegReset was %d, but should have been %d", RSPRegReset, 0);
+				if (PCRegReset != 0)
+					$display("Error: PCRegReset was %d, but should have been %d", PCRegReset, 0);
+					
+				if (CurrentState != 8)
+					$display("Error: Incorrect State. CurrentState was %d, but should have been %d", CurrentState, 8);
 				
 				$display("State 8  -> State 1");
 				op = 12;
@@ -1955,8 +2332,15 @@ module ControlTest;
 				if (MemDst2 != 2'b00)
 					$display("Error: MemDst2 was %d, but should have been %d", MemDst2, 0);
 					
-				if (CurrentState != 0)
-					$display("Error: Incorrect State. CurrentState was %d, but should have been %d", CurrentState, 0);
+				if (MSPRegReset != 0)
+					$display("Error: MSPRegReset was %d, but should have been %d", MSPRegReset, 0);
+				if (RSPRegReset != 0)
+					$display("Error: RSPRegReset was %d, but should have been %d", RSPRegReset, 0);
+				if (PCRegReset != 0)
+					$display("Error: PCRegReset was %d, but should have been %d", PCRegReset, 0);
+					
+				if (CurrentState != 1)
+					$display("Error: Incorrect State. CurrentState was %d, but should have been %d", CurrentState, 1);
 				
 				$display("State 1 -> State 2");
 				CLKCount = CLKCount + 1;
@@ -1989,8 +2373,15 @@ module ControlTest;
 				if (MSPop != 1)
 					$display("Error: MSPop was %d, but should have been %d", MSPop, 1);
 					
-				if (CurrentState != 1)
-					$display("Error: Incorrect State. CurrentState was %d, but should have been %d", CurrentState, 1);
+				if (MSPRegReset != 0)
+					$display("Error: MSPRegReset was %d, but should have been %d", MSPRegReset, 0);
+				if (RSPRegReset != 0)
+					$display("Error: RSPRegReset was %d, but should have been %d", RSPRegReset, 0);
+				if (PCRegReset != 0)
+					$display("Error: PCRegReset was %d, but should have been %d", PCRegReset, 0);
+					
+				if (CurrentState != 2)
+					$display("Error: Incorrect State. CurrentState was %d, but should have been %d", CurrentState, 2);
 					
 				$display("State 2 -> State 6");
 				CLKCount = CLKCount + 1;	
@@ -2023,8 +2414,15 @@ module ControlTest;
 				if (MemDst1 != 2'b01)
 					$display("Error: MemDst1 was %d, but should have been %d", MemDst1, 1);
 					
-				if (CurrentState != 5)
-					$display("Error: Incorrect State. CurrentState was %d, but should have been %d", CurrentState, 5);
+				if (MSPRegReset != 0)
+					$display("Error: MSPRegReset was %d, but should have been %d", MSPRegReset, 0);
+				if (RSPRegReset != 0)
+					$display("Error: RSPRegReset was %d, but should have been %d", RSPRegReset, 0);
+				if (PCRegReset != 0)
+					$display("Error: PCRegReset was %d, but should have been %d", PCRegReset, 0);
+					
+				if (CurrentState != 6)
+					$display("Error: Incorrect State. CurrentState was %d, but should have been %d", CurrentState, 6);
 					
 				$display("State 6 -> State 7");
 				CLKCount = CLKCount + 1;	
@@ -2063,10 +2461,17 @@ module ControlTest;
 				if (PCSource != 0)
 					$display("Error: PCSource was %d, but should have been %d", PCSource, 0);
 				
-				if (CurrentState != 6)
-					$display("Error: Incorrect State. CurrentState was %d, but should have been %d", CurrentState, 6);
+				if (MSPRegReset != 0)
+					$display("Error: MSPRegReset was %d, but should have been %d", MSPRegReset, 0);
+				if (RSPRegReset != 0)
+					$display("Error: RSPRegReset was %d, but should have been %d", RSPRegReset, 0);
+				if (PCRegReset != 0)
+					$display("Error: PCRegReset was %d, but should have been %d", PCRegReset, 0);
+					
+				if (CurrentState != 7)
+					$display("Error: Incorrect State. CurrentState was %d, but should have been %d", CurrentState, 7);
 				
-				$display("State 8  -> State 1");
+				$display("State 7  -> State 1");
 				op = 13;
 				$display("Test Stage 15: pop");
 				TestStage = 14;
@@ -2107,8 +2512,15 @@ module ControlTest;
 				if (MemDst2 != 2'b00)
 					$display("Error: MemDst2 was %d, but should have been %d", MemDst2, 0);
 					
-				if (CurrentState != 0)
-					$display("Error: Incorrect State. CurrentState was %d, but should have been %d", CurrentState, 0);
+				if (MSPRegReset != 0)
+					$display("Error: MSPRegReset was %d, but should have been %d", MSPRegReset, 0);
+				if (RSPRegReset != 0)
+					$display("Error: RSPRegReset was %d, but should have been %d", RSPRegReset, 0);
+				if (PCRegReset != 0)
+					$display("Error: PCRegReset was %d, but should have been %d", PCRegReset, 0);
+					
+				if (CurrentState != 1)
+					$display("Error: Incorrect State. CurrentState was %d, but should have been %d", CurrentState, 1);
 				
 				$display("State 1 -> State 2");
 				CLKCount = CLKCount + 1;
@@ -2141,8 +2553,15 @@ module ControlTest;
 				if (MSPop != 1)
 					$display("Error: MSPop was %d, but should have been %d", MSPop, 1);
 					
-				if (CurrentState != 1)
-					$display("Error: Incorrect State. CurrentState was %d, but should have been %d", CurrentState, 1);
+				if (MSPRegReset != 0)
+					$display("Error: MSPRegReset was %d, but should have been %d", MSPRegReset, 0);
+				if (RSPRegReset != 0)
+					$display("Error: RSPRegReset was %d, but should have been %d", RSPRegReset, 0);
+				if (PCRegReset != 0)
+					$display("Error: PCRegReset was %d, but should have been %d", PCRegReset, 0);
+					
+				if (CurrentState != 2)
+					$display("Error: Incorrect State. CurrentState was %d, but should have been %d", CurrentState, 2);
 					
 				$display("State 2 -> State 9");
 				CLKCount = CLKCount + 1;	
@@ -2175,8 +2594,15 @@ module ControlTest;
 				if (MemDst1 != 2'b01)
 					$display("Error: MemDst1 was %d, but should have been %d", MemDst1, 1);
 					
-				if (CurrentState != 8)
-					$display("Error: Incorrect State. CurrentState was %d, but should have been %d", CurrentState, 8);
+				if (MSPRegReset != 0)
+					$display("Error: MSPRegReset was %d, but should have been %d", MSPRegReset, 0);
+				if (RSPRegReset != 0)
+					$display("Error: RSPRegReset was %d, but should have been %d", RSPRegReset, 0);
+				if (PCRegReset != 0)
+					$display("Error: PCRegReset was %d, but should have been %d", PCRegReset, 0);
+					
+				if (CurrentState != 9)
+					$display("Error: Incorrect State. CurrentState was %d, but should have been %d", CurrentState, 9);
 					
 				$display("State 9 -> State 10");
 				CLKCount = CLKCount + 1;	
@@ -2213,8 +2639,15 @@ module ControlTest;
 				if (MemData != 2'b11)
 					$display("Error: MemData was %d, but should have been %d", MemData, 3);
 				
-				if (CurrentState != 9)
-					$display("Error: Incorrect State. CurrentState was %d, but should have been %d", CurrentState, 9);
+				if (MSPRegReset != 0)
+					$display("Error: MSPRegReset was %d, but should have been %d", MSPRegReset, 0);
+				if (RSPRegReset != 0)
+					$display("Error: RSPRegReset was %d, but should have been %d", RSPRegReset, 0);
+				if (PCRegReset != 0)
+					$display("Error: PCRegReset was %d, but should have been %d", PCRegReset, 0);
+					
+				if (CurrentState != 10)
+					$display("Error: Incorrect State. CurrentState was %d, but should have been %d", CurrentState, 10);
 				
 				$display("State 10  -> State 1");
 				op = 14;
@@ -2257,8 +2690,15 @@ module ControlTest;
 				if (MemDst2 != 2'b00)
 					$display("Error: MemDst2 was %d, but should have been %d", MemDst2, 0);
 					
-				if (CurrentState != 0)
-					$display("Error: Incorrect State. CurrentState was %d, but should have been %d", CurrentState, 0);
+				if (MSPRegReset != 0)
+					$display("Error: MSPRegReset was %d, but should have been %d", MSPRegReset, 0);
+				if (RSPRegReset != 0)
+					$display("Error: RSPRegReset was %d, but should have been %d", RSPRegReset, 0);
+				if (PCRegReset != 0)
+					$display("Error: PCRegReset was %d, but should have been %d", PCRegReset, 0);
+					
+				if (CurrentState != 1)
+					$display("Error: Incorrect State. CurrentState was %d, but should have been %d", CurrentState, 1);
 				
 				$display("State 1 -> State 21");
 				CLKCount = CLKCount + 1;
@@ -2291,8 +2731,15 @@ module ControlTest;
 				if (MemDst1 != 2'b10)
 					$display("Error: MemDst1 was %d, but should have been %d", MemDst1, 1);
 					
-				if (CurrentState != 20)
-					$display("Error: Incorrect State. CurrentState was %d, but should have been %d", CurrentState, 20);
+				if (MSPRegReset != 0)
+					$display("Error: MSPRegReset was %d, but should have been %d", MSPRegReset, 0);
+				if (RSPRegReset != 0)
+					$display("Error: RSPRegReset was %d, but should have been %d", RSPRegReset, 0);
+				if (PCRegReset != 0)
+					$display("Error: PCRegReset was %d, but should have been %d", PCRegReset, 0);
+					
+				if (CurrentState != 21)
+					$display("Error: Incorrect State. CurrentState was %d, but should have been %d", CurrentState, 21);
 					
 				$display("State 21 -> State 22");
 				CLKCount = CLKCount + 1;	
@@ -2327,8 +2774,15 @@ module ControlTest;
 				if (MemData != 2'b11)
 					$display("Error: MemData was %d, but should have been %d", MemData, 3);
 				
-				if (CurrentState != 21)
-					$display("Error: Incorrect State. CurrentState was %d, but should have been %d", CurrentState, 21);
+				if (MSPRegReset != 0)
+					$display("Error: MSPRegReset was %d, but should have been %d", MSPRegReset, 0);
+				if (RSPRegReset != 0)
+					$display("Error: RSPRegReset was %d, but should have been %d", RSPRegReset, 0);
+				if (PCRegReset != 0)
+					$display("Error: PCRegReset was %d, but should have been %d", PCRegReset, 0);
+					
+				if (CurrentState != 22)
+					$display("Error: Incorrect State. CurrentState was %d, but should have been %d", CurrentState, 22);
 				
 				$display("State 22  -> State 1");
 				op = 15;
@@ -2371,8 +2825,15 @@ module ControlTest;
 				if (MemDst2 != 2'b00)
 					$display("Error: MemDst2 was %d, but should have been %d", MemDst2, 0);
 					
-				if (CurrentState != 0)
-					$display("Error: Incorrect State. CurrentState was %d, but should have been %d", CurrentState, 0);
+				if (MSPRegReset != 0)
+					$display("Error: MSPRegReset was %d, but should have been %d", MSPRegReset, 0);
+				if (RSPRegReset != 0)
+					$display("Error: RSPRegReset was %d, but should have been %d", RSPRegReset, 0);
+				if (PCRegReset != 0)
+					$display("Error: PCRegReset was %d, but should have been %d", PCRegReset, 0);
+					
+				if (CurrentState != 1)
+					$display("Error: Incorrect State. CurrentState was %d, but should have been %d", CurrentState, 1);
 				
 				$display("State 1 -> State 23");
 				CLKCount = CLKCount + 1;
@@ -2405,8 +2866,15 @@ module ControlTest;
 				if (MSPop != 0)
 					$display("Error: MSPop was %d, but should have been %d", MSPop, 0);
 					
-				if (CurrentState != 22)
-					$display("Error: Incorrect State. CurrentState was %d, but should have been %d", CurrentState, 22);
+				if (MSPRegReset != 0)
+					$display("Error: MSPRegReset was %d, but should have been %d", MSPRegReset, 0);
+				if (RSPRegReset != 0)
+					$display("Error: RSPRegReset was %d, but should have been %d", RSPRegReset, 0);
+				if (PCRegReset != 0)
+					$display("Error: PCRegReset was %d, but should have been %d", PCRegReset, 0);
+					
+				if (CurrentState != 23)
+					$display("Error: Incorrect State. CurrentState was %d, but should have been %d", CurrentState, 23);
 					
 				$display("State 23 -> State 24");
 				CLKCount = CLKCount + 1;	
@@ -2441,8 +2909,15 @@ module ControlTest;
 				if (MemData != 2'b10)
 					$display("Error: MemData was %d, but should have been %d", MemData, 2);
 				
-				if (CurrentState != 23)
-					$display("Error: Incorrect State. CurrentState was %d, but should have been %d", CurrentState, 23);
+				if (MSPRegReset != 0)
+					$display("Error: MSPRegReset was %d, but should have been %d", MSPRegReset, 0);
+				if (RSPRegReset != 0)
+					$display("Error: RSPRegReset was %d, but should have been %d", RSPRegReset, 0);
+				if (PCRegReset != 0)
+					$display("Error: PCRegReset was %d, but should have been %d", PCRegReset, 0);
+					
+				if (CurrentState != 24)
+					$display("Error: Incorrect State. CurrentState was %d, but should have been %d", CurrentState, 24);
 				
 				$display("State 24  -> State 1");
 				$display("DONE");
