@@ -80,7 +80,7 @@ module ControlTest;
 		// Initialize Inputs
 		op = 0;
 		CLK = 0;
-		rst = 0;
+		rst = 1;
 		isZero = 0;
 		
 		TestStage = 0;
@@ -146,12 +146,12 @@ module ControlTest;
 			
 				
 			if (CLKCount == 3) begin
-				rst = 1;
+				rst = 0;
 				end
 				
 			if (CLKCount > 3) begin
 				op = 0;
-				rst = 1;
+				rst = 0;
 				$display("Test Stage 2: add");
 				TestStage = 1;
 				CLKCount = 0;

@@ -26,7 +26,7 @@ module Control (
 	output reg dir,
 	output reg mode,
 	output reg [2:0] ALUop,
-	output reg [4:0] CurrentState,
+	output reg [4:0] CurrentState = 5'b00000,
 	output reg [4:0] NextState
 );
 
@@ -58,12 +58,19 @@ module Control (
 					State24 = 5'b11000;
 
 	// Current State Assignment
-	always @(posedge clk or negedge rst) begin
-		if (rst == 0)
-			CurrentState <= State0;
-		else
+	always @(posedge clk) begin
+		if (rst != 1) begin
 			CurrentState <= NextState;
+			$display("Pls %d", CurrentState);
 		end
+	end
+	
+	always @(rst) begin
+		if(rst) begin
+			CurrentState <= State0;
+			$display("Reset");
+		end
+	end
 		
 	// Next State Logic
 	always @(CurrentState or op or posedge clk) begin

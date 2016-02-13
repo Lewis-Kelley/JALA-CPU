@@ -2,7 +2,6 @@
 
 module stage7FullIntegration(
 							 input CLK,
-							 input ControlCLK,
 							 
 							 // Stage 4 special control inputs/outputs
 							 input CtrlRst,
@@ -113,7 +112,7 @@ module stage7FullIntegration(
 
    stage4Integration four(
 					 .ShifterIn(ValAOut),
-					 .CLK(ControlCLK),
+					 .CLK(CLK),
 					 
 					 .CtrlRst(CtrlRst),
 					 .CurrentState(CurrentState),
