@@ -22,11 +22,11 @@ module stage4Integration(
 						 output 		   PCAdd,
 						 output 		   PCRegReset,
 
-						 output 		   MSPPop,
+						 output 		   MSPop,
 						 output 		   MSPWrite,
 						 output 		   MSPRegReset,
 
-						 output 		   RSPPop,
+						 output 		   RSPop,
 						 output 		   RSPWrite,
 						 output 		   RSPRegReset,
 
@@ -39,7 +39,7 @@ module stage4Integration(
 
 						 output [1:0] 	   MemDst1,
 						 output [1:0] 	   MemDst2,
-						 output [2:0] 	   MemData,
+						 output [1:0] 	   MemData,
 
 						 output 		   MemWrite1,
 						 output 		   MemWrite2,
@@ -57,7 +57,7 @@ module stage4Integration(
 
    shift16b shifter(
 					.in(ShifterIn),
-					.amt(ZeroExtOut),
+					.amt(IROut[4:0]),
 					.mode(ShifterMode),
 					.dir(ShifterDir),
 					.out(ShifterOut)
@@ -73,11 +73,11 @@ module stage4Integration(
 				.PCAdd(PCAdd),
 				.PCRegReset(PCRegReset),
 
-				.MSPop(MSPPop),
+				.MSPop(MSPop),
 				.MSPWrite(MSPWrite),
 				.MSPRegReset(MSPRegReset),
 
-				.RSPop(RSPPop),
+				.RSPop(RSPop),
 				.RSPWrite(RSWrite),
 				.RSPRegReset(RSPRegReset),
 
@@ -101,6 +101,8 @@ module stage4Integration(
 				.mode(ShifterMode),
 
 				.ALUop(ALUop),
+				
+				.isZero(isZero),
 
 				.CurrentState(CurrentState),
 				.NextState(NextState)

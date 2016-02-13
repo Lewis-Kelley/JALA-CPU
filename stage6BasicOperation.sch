@@ -32,8 +32,6 @@
         <signal name="ResSource" />
         <signal name="ResWrite" />
         <signal name="MemDst2(1:0)" />
-        <signal name="MemData(2:0)" />
-        <signal name="ALUop(3:0)" />
         <signal name="isZero" />
         <signal name="IROut(15:0)" />
         <signal name="PCOut(15:0)" />
@@ -41,6 +39,8 @@
         <signal name="MSPRegReset" />
         <signal name="RSPRegReset" />
         <signal name="PCRegReset" />
+        <signal name="ALUop(2:0)" />
+        <signal name="MemData(1:0)" />
         <port polarity="Output" name="ValAOut(15:0)" />
         <port polarity="Output" name="ValBOut(15:0)" />
         <port polarity="Input" name="CLK" />
@@ -66,8 +66,6 @@
         <port polarity="Input" name="ResSource" />
         <port polarity="Input" name="ResWrite" />
         <port polarity="Input" name="MemDst2(1:0)" />
-        <port polarity="Input" name="MemData(2:0)" />
-        <port polarity="Input" name="ALUop(3:0)" />
         <port polarity="Output" name="isZero" />
         <port polarity="Output" name="IROut(15:0)" />
         <port polarity="Output" name="PCOut(15:0)" />
@@ -75,8 +73,10 @@
         <port polarity="Input" name="MSPRegReset" />
         <port polarity="Input" name="RSPRegReset" />
         <port polarity="Input" name="PCRegReset" />
+        <port polarity="Input" name="ALUop(2:0)" />
+        <port polarity="Input" name="MemData(1:0)" />
         <blockdef name="stage3Integration">
-            <timestamp>2016-2-11T0:45:57</timestamp>
+            <timestamp>2016-2-13T17:18:37</timestamp>
             <rect width="320" x="64" y="-448" height="448" />
             <line x2="0" y1="-416" y2="-416" x1="64" />
             <line x2="0" y1="-352" y2="-352" x1="64" />
@@ -94,7 +94,7 @@
             <line x2="448" y1="-32" y2="-32" x1="384" />
         </blockdef>
         <blockdef name="stage5Integration">
-            <timestamp>2016-2-13T16:5:23</timestamp>
+            <timestamp>2016-2-13T17:24:53</timestamp>
             <line x2="0" y1="32" y2="32" x1="64" />
             <line x2="0" y1="96" y2="96" x1="64" />
             <line x2="0" y1="160" y2="160" x1="64" />
@@ -146,7 +146,7 @@
             <blockpin signalname="ShifterOut(15:0)" name="ShifterOut(15:0)" />
             <blockpin signalname="ValAOut(15:0)" name="ALUInA(15:0)" />
             <blockpin signalname="ValBOut(15:0)" name="ALUInB(15:0)" />
-            <blockpin signalname="ALUop(3:0)" name="ALUop(3:0)" />
+            <blockpin signalname="ALUop(2:0)" name="ALUop(2:0)" />
             <blockpin signalname="isZero" name="isZero" />
             <blockpin signalname="XLXN_3(15:0)" name="ResOut(15:0)" />
         </block>
@@ -154,11 +154,14 @@
             <blockpin signalname="CLK" name="CLK" />
             <blockpin signalname="MSPWrite" name="MSPWrite" />
             <blockpin signalname="MSPop" name="MSPPop" />
+            <blockpin signalname="MSPRegReset" name="MSPRegReset" />
             <blockpin signalname="RSPWrite" name="RSPWrite" />
             <blockpin signalname="RSPop" name="RSPPop" />
+            <blockpin signalname="RSPRegReset" name="RSPRegReset" />
             <blockpin signalname="PCWrite" name="PCWrite" />
             <blockpin signalname="PCSource" name="PCSource" />
             <blockpin signalname="PCAdd" name="PCAdd" />
+            <blockpin signalname="PCRegReset" name="PCRegReset" />
             <blockpin signalname="ValAWrite" name="ValAWrite" />
             <blockpin signalname="ValBWrite" name="ValBWrite" />
             <blockpin signalname="IRWrite" name="IRWrite" />
@@ -171,16 +174,13 @@
             <blockpin signalname="XLXN_3(15:0)" name="ResOut(15:0)" />
             <blockpin signalname="MemDst1(1:0)" name="MemDst1(1:0)" />
             <blockpin signalname="MemDst2(1:0)" name="MemDst2(1:0)" />
-            <blockpin signalname="MemData(2:0)" name="MemData(2:0)" />
+            <blockpin signalname="MemData(1:0)" name="MemData(1:0)" />
             <blockpin signalname="ValAOut(15:0)" name="ValAOut(15:0)" />
             <blockpin signalname="ValBOut(15:0)" name="ValBOut(15:0)" />
             <blockpin signalname="IROut(15:0)" name="IROut(15:0)" />
             <blockpin signalname="PCOut(15:0)" name="PCOut(15:0)" />
             <blockpin signalname="MSPOut(15:0)" name="MSPOut(15:0)" />
             <blockpin signalname="RSPOut(15:0)" name="RSPOut(15:0)" />
-            <blockpin signalname="MSPRegReset" name="MSPRegReset" />
-            <blockpin signalname="RSPRegReset" name="RSPRegReset" />
-            <blockpin signalname="PCRegReset" name="PCRegReset" />
         </block>
     </netlist>
     <sheet sheetnum="1" width="3520" height="2720">
@@ -338,7 +338,7 @@
             <wire x2="784" y1="1776" y2="1776" x1="704" />
             <wire x2="864" y1="1776" y2="1776" x1="784" />
         </branch>
-        <branch name="MemData(2:0)">
+        <branch name="MemData(1:0)">
             <attrtext style="alignment:SOFT-BCENTER;fontsize:28;fontname:Arial" attrname="Name" x="752" y="1840" type="branch" />
             <wire x2="752" y1="1840" y2="1840" x1="704" />
             <wire x2="864" y1="1840" y2="1840" x1="752" />
@@ -383,7 +383,7 @@
             <wire x2="2080" y1="1216" y2="1216" x1="2032" />
             <wire x2="2160" y1="1216" y2="1216" x1="2080" />
         </branch>
-        <branch name="ALUop(3:0)">
+        <branch name="ALUop(2:0)">
             <attrtext style="alignment:SOFT-BCENTER;fontsize:28;fontname:Arial" attrname="Name" x="2112" y="1408" type="branch" />
             <wire x2="2112" y1="1408" y2="1408" x1="2032" />
             <wire x2="2160" y1="1408" y2="1408" x1="2112" />
@@ -442,17 +442,17 @@
         <branch name="MemDst2(1:0)">
             <wire x2="384" y1="1296" y2="1296" x1="208" />
         </branch>
-        <branch name="MemData(2:0)">
+        <branch name="MemData(1:0)">
             <wire x2="384" y1="1360" y2="1360" x1="208" />
         </branch>
         <iomarker fontsize="28" x="208" y="1152" name="ResWrite" orien="R180" />
         <iomarker fontsize="28" x="208" y="1232" name="MemDst1(1:0)" orien="R180" />
         <iomarker fontsize="28" x="208" y="1296" name="MemDst2(1:0)" orien="R180" />
-        <iomarker fontsize="28" x="208" y="1360" name="MemData(2:0)" orien="R180" />
-        <branch name="ALUop(3:0)">
+        <iomarker fontsize="28" x="208" y="1360" name="MemData(1:0)" orien="R180" />
+        <branch name="ALUop(2:0)">
             <wire x2="384" y1="1424" y2="1424" x1="176" />
         </branch>
-        <iomarker fontsize="28" x="176" y="1424" name="ALUop(3:0)" orien="R180" />
+        <iomarker fontsize="28" x="176" y="1424" name="ALUop(2:0)" orien="R180" />
         <branch name="ShifterOut(15:0)">
             <wire x2="944" y1="240" y2="240" x1="672" />
         </branch>

@@ -33,7 +33,7 @@ module stage5Integration(
 
 						 input [1:0]   MemDst1,
 						 input [1:0]   MemDst2,
-						 input [2:0]   MemData,
+						 input [1:0]   MemData,
 
 						 // Register Outputs
 						 output [15:0] ValAOut,

@@ -25,7 +25,7 @@ module stage3Integration(
 						 //ALU inputs
 						 input [15:0]  ALUInA,
 						 input [15:0]  ALUInB,
-						 input [3:0]   ALUop,
+						 input [2:0]   ALUop,
 
 						 //Res Control
 						 input 		   ResSource,

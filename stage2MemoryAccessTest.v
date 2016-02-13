@@ -22,7 +22,7 @@ module stage2MemoryAccessTest();
 	reg ValAWrite;
    reg ValBWrite;
 	
-   reg [2:0] MemData;
+   reg [1:0] MemData;
    reg [1:0] MemDst1;
    reg [1:0] MemDst2;
 	
@@ -194,7 +194,7 @@ module stage2MemoryAccessTest();
 			
 			MemDst2 = 2;
 			MemWrite2 = 1;
-			MemData = 4;
+			MemData = 3;
 			
 			ValAWrite = 0;
 			ValBWrite = 0;
@@ -290,23 +290,26 @@ module stage2MemoryAccessTest();
 			ValBWrite = 1;
 			
 			testStage = 10;
+			
 			$display("Test Stage 7 (starting at %t)", $time);
 		end else if(testStage == 10) begin
 			if(ValB != 8) begin
 				$display("Error: ValB was %d, but should have been 8 at time %t", ValB, $time);
 			end
 			
+			$finish;
+			
 			// Test storing ValA to stack (at 543)
 			
-			MemDst2 = 0;
+			/*MemDst2 = 0;
 			MemWrite2 = 1;
 			MemData = 2;
 			
 			MemDst2FromMSP = 543;
 			
 			testStage = 11;
-			$display("Test Stage 8 (starting at %t)", $time);
-		end else if(testStage == 11) begin
+			$display("Test Stage 8 (starting at %t)", $time);*/
+		end /*else if(testStage == 11) begin
 			// Test storing ValA to stack (read the stored value back)
 			MemWrite2 = 0;
 			MemDst1 = 1;
@@ -321,7 +324,7 @@ module stage2MemoryAccessTest();
 			end
 			
 			$finish;
-		end
+		end*/
 	end
 	
 endmodule

@@ -1,16 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <symbol version="7" name="stage5Integration">
     <symboltype>BLOCK</symboltype>
-    <timestamp>2016-2-13T16:5:23</timestamp>
+    <timestamp>2016-2-13T17:24:53</timestamp>
     <attr value="stage5Integration" name="VeriModel" />
     <pin polarity="Input" x="0" y="-1312" name="CLK" />
     <pin polarity="Input" x="0" y="-1248" name="MSPWrite" />
     <pin polarity="Input" x="0" y="-1184" name="MSPPop" />
+    <pin polarity="Input" x="0" y="32" name="MSPRegReset" />
     <pin polarity="Input" x="0" y="-1120" name="RSPWrite" />
     <pin polarity="Input" x="0" y="-1056" name="RSPPop" />
+    <pin polarity="Input" x="0" y="96" name="RSPRegReset" />
     <pin polarity="Input" x="0" y="-992" name="PCWrite" />
     <pin polarity="Input" x="0" y="-928" name="PCSource" />
     <pin polarity="Input" x="0" y="-864" name="PCAdd" />
+    <pin polarity="Input" x="0" y="160" name="PCRegReset" />
     <pin polarity="Input" x="0" y="-800" name="ValAWrite" />
     <pin polarity="Input" x="0" y="-736" name="ValBWrite" />
     <pin polarity="Input" x="0" y="-672" name="IRWrite" />
@@ -23,26 +26,26 @@
     <pin polarity="Input" x="0" y="-224" name="ResOut(15:0)" />
     <pin polarity="Input" x="0" y="-160" name="MemDst1(1:0)" />
     <pin polarity="Input" x="0" y="-96" name="MemDst2(1:0)" />
-    <pin polarity="Input" x="0" y="-32" name="MemData(2:0)" />
+    <pin polarity="Input" x="0" y="-32" name="MemData(1:0)" />
     <pin polarity="Output" x="480" y="-1312" name="ValAOut(15:0)" />
     <pin polarity="Output" x="480" y="-1056" name="ValBOut(15:0)" />
     <pin polarity="Output" x="480" y="-800" name="IROut(15:0)" />
     <pin polarity="Output" x="480" y="-544" name="PCOut(15:0)" />
     <pin polarity="Output" x="480" y="-288" name="MSPOut(15:0)" />
     <pin polarity="Output" x="480" y="-32" name="RSPOut(15:0)" />
-    <pin polarity="Input" x="0" y="32" name="MSPRegReset" />
-    <pin polarity="Input" x="0" y="96" name="RSPRegReset" />
-    <pin polarity="Input" x="0" y="160" name="PCRegReset" />
     <graph>
         <attrtext style="alignment:BCENTER;fontsize:56;fontname:Arial" attrname="SymbolName" x="240" y="-1352" type="symbol" />
         <attrtext style="fontsize:24;fontname:Arial" attrname="PinName" x="72" y="-1312" type="pin CLK" />
         <attrtext style="fontsize:24;fontname:Arial" attrname="PinName" x="72" y="-1248" type="pin MSPWrite" />
         <attrtext style="fontsize:24;fontname:Arial" attrname="PinName" x="72" y="-1184" type="pin MSPPop" />
+        <attrtext style="fontsize:24;fontname:Arial" attrname="PinName" x="72" y="32" type="pin MSPRegReset" />
         <attrtext style="fontsize:24;fontname:Arial" attrname="PinName" x="72" y="-1120" type="pin RSPWrite" />
         <attrtext style="fontsize:24;fontname:Arial" attrname="PinName" x="72" y="-1056" type="pin RSPPop" />
+        <attrtext style="fontsize:24;fontname:Arial" attrname="PinName" x="72" y="96" type="pin RSPRegReset" />
         <attrtext style="fontsize:24;fontname:Arial" attrname="PinName" x="72" y="-992" type="pin PCWrite" />
         <attrtext style="fontsize:24;fontname:Arial" attrname="PinName" x="72" y="-928" type="pin PCSource" />
         <attrtext style="fontsize:24;fontname:Arial" attrname="PinName" x="72" y="-864" type="pin PCAdd" />
+        <attrtext style="fontsize:24;fontname:Arial" attrname="PinName" x="72" y="160" type="pin PCRegReset" />
         <attrtext style="fontsize:24;fontname:Arial" attrname="PinName" x="72" y="-800" type="pin ValAWrite" />
         <attrtext style="fontsize:24;fontname:Arial" attrname="PinName" x="72" y="-736" type="pin ValBWrite" />
         <attrtext style="fontsize:24;fontname:Arial" attrname="PinName" x="72" y="-672" type="pin IRWrite" />
@@ -55,18 +58,15 @@
         <attrtext style="fontsize:24;fontname:Arial" attrname="PinName" x="72" y="-224" type="pin ResOut(15:0)" />
         <attrtext style="fontsize:24;fontname:Arial" attrname="PinName" x="72" y="-160" type="pin MemDst1(1:0)" />
         <attrtext style="fontsize:24;fontname:Arial" attrname="PinName" x="72" y="-96" type="pin MemDst2(1:0)" />
-        <attrtext style="fontsize:24;fontname:Arial" attrname="PinName" x="72" y="-32" type="pin MemData(2:0)" />
+        <attrtext style="fontsize:24;fontname:Arial" attrname="PinName" x="72" y="-32" type="pin MemData(1:0)" />
         <attrtext style="alignment:RIGHT;fontsize:24;fontname:Arial" attrname="PinName" x="408" y="-1312" type="pin ValAOut(15:0)" />
         <attrtext style="alignment:RIGHT;fontsize:24;fontname:Arial" attrname="PinName" x="408" y="-1056" type="pin ValBOut(15:0)" />
         <attrtext style="alignment:RIGHT;fontsize:24;fontname:Arial" attrname="PinName" x="408" y="-800" type="pin IROut(15:0)" />
         <attrtext style="alignment:RIGHT;fontsize:24;fontname:Arial" attrname="PinName" x="408" y="-544" type="pin PCOut(15:0)" />
         <attrtext style="alignment:RIGHT;fontsize:24;fontname:Arial" attrname="PinName" x="408" y="-288" type="pin MSPOut(15:0)" />
         <attrtext style="alignment:RIGHT;fontsize:24;fontname:Arial" attrname="PinName" x="408" y="-32" type="pin RSPOut(15:0)" />
-        <attrtext style="fontsize:24;fontname:Arial" attrname="PinName" x="72" y="32" type="pin MSPRegReset" />
         <line x2="0" y1="32" y2="32" x1="64" />
-        <attrtext style="fontsize:24;fontname:Arial" attrname="PinName" x="72" y="96" type="pin RSPRegReset" />
         <line x2="0" y1="96" y2="96" x1="64" />
-        <attrtext style="fontsize:24;fontname:Arial" attrname="PinName" x="72" y="160" type="pin PCRegReset" />
         <line x2="0" y1="160" y2="160" x1="64" />
         <line x2="0" y1="-1312" y2="-1312" x1="64" />
         <line x2="0" y1="-1248" y2="-1248" x1="64" />

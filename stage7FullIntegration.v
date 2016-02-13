@@ -1,7 +1,12 @@
 `timescale 1ns / 1ps
 
 module stage7FullIntegration(
-							 input CLK
+							 input CLK,
+							 	// Stage 4 special control inputs/outputs
+							 output CtrlRst,
+							 input [4:0] CurrentState,
+							 input [4:0] NextState
+
 );
    // Control
    wire 		 MSPWrite;
@@ -32,14 +37,9 @@ module stage7FullIntegration(
    
    wire [1:0] 	 MemDst1;
    wire [1:0] 	 MemDst2;
-   wire [2:0] 	 MemData;
+   wire [1:0] 	 MemData;
    
-   wire [3:0] 	 ALUop;
-
-   // Stage 4 special control inputs/outputs
-   wire 		 CtrlRst;
-   wire [4:0] 	 CurrentState;
-   wire [4:0] 	 NextState;
+   wire [2:0] 	 ALUop;
 
    // Stage 6 Control Ouput
    wire 		 isZero;
@@ -57,7 +57,7 @@ module stage7FullIntegration(
    wire [15:0] 	 RSPOut;
    wire [15:0] 	 PCOut;
    wire [15:0] 	 ValAOut;
-   wire [15:0] 	 ValBOu;
+   wire [15:0] 	 ValBOut;
    
 
    stage6BasicOperation six(
@@ -112,6 +112,10 @@ module stage7FullIntegration(
    stage4Integration four(
 					 .ShifterIn(ValAOut),
 					 .CLK(CLK),
+					 
+					 .CtrlRst(CtrlRst),
+					 .CurrentState(CurrentState),
+					 .NextState(NextState),
 
 					 .ValAWrite(ValAWrite),
 					 .ValBWrite(ValBWrite),
@@ -145,6 +149,8 @@ module stage7FullIntegration(
 					 .ALUop(ALUop),
 
 					 .isZero(isZero),
+					 
+					 .IROut(IROut),
 
 					 .SignExtOut(SignExtOut),
 					 .ZeroExtOut(ZeroExtOut),
