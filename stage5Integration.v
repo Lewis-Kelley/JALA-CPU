@@ -11,9 +11,11 @@ module stage5Integration(
 
 						 input 		   MSPWrite,
 						 input 		   MSPPop,
+						 input 		   MSPRegReset,
 
 						 input 		   RSPWrite,
 						 input 		   RSPPop,
+						 input 		   RSPRegReset,
 
 						 input 		   PCWrite,
 						 input 		   PCSource,
@@ -57,14 +59,16 @@ module stage5Integration(
 							.RegWrite(MSPWrite),
 							.Op(MSPPop),
 							.CLK(CLK),
-							.RegOut(MSPOut)
+							.RegOut(MSPOut),
+							.RegReset(MSPRegReset)
 							);
 
-   stage1MSPIncrementer rsp(
+   stage1RSPIncrementer rsp(
 							.RegWrite(RSPWrite),
-							.Op(~RSPPop), //Note the inversion since RS grows down
+							.Op(RSPPop),
 							.CLK(CLK),
-							.RegOut(RSPOut)
+							.RegOut(RSPOut),
+							.RegReset(RSPRegReset)
 							);
 
    stage2MemoryAccess mem(
