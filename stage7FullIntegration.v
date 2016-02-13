@@ -6,13 +6,16 @@ module stage7FullIntegration(
    // Control
    wire 		 MSPWrite;
    wire 		 MSPop;
+	wire 		 MSPRegReset;
    
    wire 		 RSPWrite;
    wire 		 RSPop;
+	wire 		 RSPRegReset;
    
    wire 		 PCWrite;
    wire 		 PCSource;
    wire 		 PCAdd;
+	wire 		 PCRegReset;
    
    wire 		 ValAWrite;
    wire 		 ValBWrite;
@@ -62,13 +65,16 @@ module stage7FullIntegration(
 
 						.MSPWrite(MSPWrite),
 						.MSPop(MSPop),
+						.MSPRegReset(MSPRegReset),
 
 						.RSPWrite(RSPWrite),
 						.RSPop(RSPop),
+						.RSPRegReset(RSPRegReset),
 
 						.PCWrite(PCWrite),
 						.PCSource(PCSource),
 						.PCAdd(PCAdd),
+						.PCRegReset(PCRegReset),
 
 						.ValAWrite(ValAWrite),
 						.ValBWrite(ValBWrite),
@@ -110,6 +116,19 @@ module stage7FullIntegration(
 					 .ValAWrite(ValAWrite),
 					 .ValBWrite(ValBWrite),
 					 .IRWrite(IRWrite),
+					 
+					 .MSPWrite(MSPWrite),
+					 .MSPop(MSPop),
+					 .MSPRegReset(MSPRegReset),
+
+					 .RSPWrite(RSPWrite),
+					 .RSPop(RSPop),
+					 .RSPRegReset(RSPRegReset),
+
+					 .PCWrite(PCWrite),
+					 .PCSource(PCSource),
+					 .PCAdd(PCAdd),
+					 .PCRegReset(PCRegReset),
 
 					 .MemRead1(MemRead1),
 					 .MemRead2(MemRead2),
@@ -122,6 +141,8 @@ module stage7FullIntegration(
 					 .MemDst1(MemDst1),
 					 .MemDst2(MemDst2),
 					 .MemData(MemData),
+					 
+					 .ALUop(ALUop),
 
 					 .isZero(isZero),
 

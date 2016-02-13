@@ -20,12 +20,15 @@ module stage4Integration(
 						 output 		   PCSource,
 						 output 		   PCWrite,
 						 output 		   PCAdd,
+						 output 		   PCRegReset,
 
 						 output 		   MSPPop,
 						 output 		   MSPWrite,
+						 output 		   MSPRegReset,
 
 						 output 		   RSPPop,
 						 output 		   RSPWrite,
+						 output 		   RSPRegReset,
 
 						 output 		   IRWrite,
 						 output 		   ValAWrite,
@@ -68,12 +71,15 @@ module stage4Integration(
 				.PCSource(PCSource),
 				.PCWrite(PCWrite),
 				.PCAdd(PCAdd),
+				.PCRegReset(PCRegReset),
 
 				.MSPop(MSPPop),
 				.MSPWrite(MSPWrite),
+				.MSPRegReset(MSPRegReset),
 
 				.RSPop(RSPPop),
 				.RSPWrite(RSWrite),
+				.RSPRegReset(RSPRegReset),
 
 				.IRWrite(IRWrite),
 				.ValAWrite(ValAWrite),

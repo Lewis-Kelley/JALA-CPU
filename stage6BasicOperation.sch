@@ -38,6 +38,9 @@
         <signal name="IROut(15:0)" />
         <signal name="PCOut(15:0)" />
         <signal name="MSPOut(15:0)" />
+        <signal name="MSPRegReset" />
+        <signal name="RSPRegReset" />
+        <signal name="PCRegReset" />
         <port polarity="Output" name="ValAOut(15:0)" />
         <port polarity="Output" name="ValBOut(15:0)" />
         <port polarity="Input" name="CLK" />
@@ -69,6 +72,9 @@
         <port polarity="Output" name="IROut(15:0)" />
         <port polarity="Output" name="PCOut(15:0)" />
         <port polarity="Output" name="MSPOut(15:0)" />
+        <port polarity="Input" name="MSPRegReset" />
+        <port polarity="Input" name="RSPRegReset" />
+        <port polarity="Input" name="PCRegReset" />
         <blockdef name="stage3Integration">
             <timestamp>2016-2-11T0:45:57</timestamp>
             <rect width="320" x="64" y="-448" height="448" />
@@ -88,8 +94,10 @@
             <line x2="448" y1="-32" y2="-32" x1="384" />
         </blockdef>
         <blockdef name="stage5Integration">
-            <timestamp>2016-2-11T0:46:3</timestamp>
-            <rect width="352" x="64" y="-1344" height="1344" />
+            <timestamp>2016-2-13T16:5:23</timestamp>
+            <line x2="0" y1="32" y2="32" x1="64" />
+            <line x2="0" y1="96" y2="96" x1="64" />
+            <line x2="0" y1="160" y2="160" x1="64" />
             <line x2="0" y1="-1312" y2="-1312" x1="64" />
             <line x2="0" y1="-1248" y2="-1248" x1="64" />
             <line x2="0" y1="-1184" y2="-1184" x1="64" />
@@ -129,6 +137,7 @@
             <line x2="480" y1="-288" y2="-288" x1="416" />
             <rect width="64" x="416" y="-44" height="24" />
             <line x2="480" y1="-32" y2="-32" x1="416" />
+            <rect width="352" x="64" y="-1344" height="1536" />
         </blockdef>
         <block symbolname="stage3Integration" name="XLXI_1">
             <blockpin signalname="CLK" name="CLK" />
@@ -169,6 +178,9 @@
             <blockpin signalname="PCOut(15:0)" name="PCOut(15:0)" />
             <blockpin signalname="MSPOut(15:0)" name="MSPOut(15:0)" />
             <blockpin signalname="RSPOut(15:0)" name="RSPOut(15:0)" />
+            <blockpin signalname="MSPRegReset" name="MSPRegReset" />
+            <blockpin signalname="RSPRegReset" name="RSPRegReset" />
+            <blockpin signalname="PCRegReset" name="PCRegReset" />
         </block>
     </netlist>
     <sheet sheetnum="1" width="3520" height="2720">
@@ -475,5 +487,32 @@
         </branch>
         <iomarker fontsize="28" x="2176" y="336" name="ValAOut(15:0)" orien="R0" />
         <iomarker fontsize="28" x="2176" y="400" name="ValBOut(15:0)" orien="R0" />
+        <branch name="MSPRegReset">
+            <attrtext style="alignment:SOFT-BCENTER;fontsize:28;fontname:Arial" attrname="Name" x="816" y="1904" type="branch" />
+            <wire x2="816" y1="1904" y2="1904" x1="704" />
+            <wire x2="864" y1="1904" y2="1904" x1="816" />
+        </branch>
+        <branch name="RSPRegReset">
+            <attrtext style="alignment:SOFT-BCENTER;fontsize:28;fontname:Arial" attrname="Name" x="784" y="1968" type="branch" />
+            <wire x2="784" y1="1968" y2="1968" x1="704" />
+            <wire x2="864" y1="1968" y2="1968" x1="784" />
+        </branch>
+        <branch name="PCRegReset">
+            <attrtext style="alignment:SOFT-BCENTER;fontsize:28;fontname:Arial" attrname="Name" x="816" y="2032" type="branch" />
+            <wire x2="816" y1="2032" y2="2032" x1="704" />
+            <wire x2="864" y1="2032" y2="2032" x1="816" />
+        </branch>
+        <branch name="MSPRegReset">
+            <wire x2="384" y1="1648" y2="1648" x1="192" />
+        </branch>
+        <branch name="RSPRegReset">
+            <wire x2="384" y1="1712" y2="1712" x1="192" />
+        </branch>
+        <branch name="PCRegReset">
+            <wire x2="384" y1="1776" y2="1776" x1="192" />
+        </branch>
+        <iomarker fontsize="28" x="192" y="1648" name="MSPRegReset" orien="R180" />
+        <iomarker fontsize="28" x="192" y="1712" name="RSPRegReset" orien="R180" />
+        <iomarker fontsize="28" x="192" y="1776" name="PCRegReset" orien="R180" />
     </sheet>
 </drawing>

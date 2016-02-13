@@ -1,11 +1,11 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <report-views version="2.0" >
  <header>
-  <DateModified>2016-02-13T10:27:50</DateModified>
+  <DateModified>2016-02-13T10:58:20</DateModified>
   <ModuleName>stage7FullIntegration</ModuleName>
   <SummaryTimeStamp>Unknown</SummaryTimeStamp>
   <SavedFilePath>/home/user/csse232/JALA-CPU/iseconfig/stage7FullIntegration.xreport</SavedFilePath>
-  <ImplementationReportsDirectory>/home/user/csse232/JALA-CPU/work</ImplementationReportsDirectory>
+  <ImplementationReportsDirectory>/home/user/csse232/JALA-CPU/work/</ImplementationReportsDirectory>
   <DateInitialized>2016-02-13T10:27:50</DateInitialized>
   <EnableMessageFiltering>false</EnableMessageFiltering>
  </header>

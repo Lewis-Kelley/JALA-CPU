@@ -20,7 +20,14 @@
         <signal name="PC(15:0)" />
         <signal name="v" />
         <signal name="XLXN_10(15:0)" />
-        <signal name="XLXN_11(15:0)" />
+        <signal name="XLXN_13(15:0)" />
+        <signal name="XLXN_14(15:0)" />
+        <signal name="XLXN_19(15:0)" />
+        <signal name="XLXN_20(15:0)" />
+        <signal name="XLXN_21(15:0)" />
+        <signal name="g,g,v,g,v,g,g,g,g,g,g,g,g,g,g,g" />
+        <signal name="RegReset" />
+        <signal name="g,g,RegReset" />
         <port polarity="Input" name="PCSourceFromValA(15:0)" />
         <port polarity="Input" name="PCAddFromSE(15:0)" />
         <port polarity="Input" name="PCWrite" />
@@ -28,6 +35,7 @@
         <port polarity="Input" name="PCAdd" />
         <port polarity="Input" name="PCSource" />
         <port polarity="Output" name="PC(15:0)" />
+        <port polarity="Input" name="RegReset" />
         <blockdef name="reg16">
             <timestamp>2016-2-6T20:12:26</timestamp>
             <rect width="256" x="64" y="-192" height="192" />
@@ -88,12 +96,6 @@
             <line x2="64" y1="0" y2="-32" x1="64" />
             <line x2="32" y1="-64" y2="-64" x1="96" />
         </blockdef>
-        <block symbolname="reg16" name="XLXI_1">
-            <blockpin signalname="XLXN_11(15:0)" name="I(15:0)" />
-            <blockpin signalname="PCWrite" name="Write" />
-            <blockpin signalname="CLK" name="CLK" />
-            <blockpin signalname="PC(15:0)" name="O(15:0)" />
-        </block>
         <block symbolname="mux16b8" name="XLXI_2">
             <blockpin signalname="XLXN_10(15:0)" name="A(15:0)" />
             <blockpin signalname="PCSourceFromValA(15:0)" name="B(15:0)" />
@@ -104,7 +106,7 @@
             <blockpin name="G(15:0)" />
             <blockpin name="H(15:0)" />
             <blockpin signalname="g,g,PCSource" name="S(2:0)" />
-            <blockpin signalname="XLXN_11(15:0)" name="O(15:0)" />
+            <blockpin signalname="XLXN_20(15:0)" name="O(15:0)" />
         </block>
         <block symbolname="mux16b8" name="XLXI_4">
             <blockpin signalname="g,g,g,g,g,g,g,g,g,g,g,g,g,g,g,v" name="A(15:0)" />
@@ -124,18 +126,32 @@
         <block symbolname="vcc" name="XLXI_7">
             <blockpin signalname="v" name="P" />
         </block>
+        <block symbolname="reg16" name="XLXI_1">
+            <blockpin signalname="XLXN_21(15:0)" name="I(15:0)" />
+            <blockpin signalname="PCWrite" name="Write" />
+            <blockpin signalname="CLK" name="CLK" />
+            <blockpin signalname="PC(15:0)" name="O(15:0)" />
+        </block>
         <block symbolname="adder16b" name="XLXI_8">
             <blockpin signalname="g" name="op" />
             <blockpin signalname="XLXN_4(15:0)" name="in_a(15:0)" />
             <blockpin signalname="PC(15:0)" name="in_b(15:0)" />
             <blockpin signalname="XLXN_10(15:0)" name="o(15:0)" />
         </block>
+        <block symbolname="mux16b8" name="XLXI_11">
+            <blockpin signalname="XLXN_20(15:0)" name="A(15:0)" />
+            <blockpin signalname="g,g,v,g,v,g,g,g,g,g,g,g,g,g,g,g" name="B(15:0)" />
+            <blockpin name="C(15:0)" />
+            <blockpin name="D(15:0)" />
+            <blockpin name="E(15:0)" />
+            <blockpin name="F(15:0)" />
+            <blockpin name="G(15:0)" />
+            <blockpin name="H(15:0)" />
+            <blockpin signalname="g,g,RegReset" name="S(2:0)" />
+            <blockpin signalname="XLXN_21(15:0)" name="O(15:0)" />
+        </block>
     </netlist>
     <sheet sheetnum="1" width="3520" height="2720">
-        <instance x="1088" y="1312" name="XLXI_1" orien="R0">
-        </instance>
-        <instance x="384" y="1696" name="XLXI_2" orien="R0">
-        </instance>
         <instance x="384" y="1008" name="XLXI_4" orien="R0">
         </instance>
         <branch name="PCAddFromSE(15:0)">
@@ -153,23 +169,13 @@
         <iomarker fontsize="28" x="336" y="2064" name="PCSourceFromValA(15:0)" orien="R180" />
         <branch name="PCSourceFromValA(15:0)">
             <attrtext style="alignment:SOFT-BCENTER;fontsize:28;fontname:Arial" attrname="Name" x="224" y="1216" type="branch" />
-            <wire x2="224" y1="1216" y2="1216" x1="208" />
-            <wire x2="384" y1="1216" y2="1216" x1="224" />
+            <wire x2="224" y1="1216" y2="1216" x1="64" />
+            <wire x2="288" y1="1216" y2="1216" x1="224" />
         </branch>
         <branch name="g,g,g,g,g,g,g,g,g,g,g,g,g,g,g,v">
             <attrtext style="alignment:SOFT-BCENTER;fontsize:28;fontname:Arial" attrname="Name" x="256" y="464" type="branch" />
             <wire x2="256" y1="464" y2="464" x1="208" />
             <wire x2="384" y1="464" y2="464" x1="256" />
-        </branch>
-        <branch name="PCWrite">
-            <attrtext style="alignment:SOFT-BCENTER;fontsize:28;fontname:Arial" attrname="Name" x="1024" y="1216" type="branch" />
-            <wire x2="1024" y1="1216" y2="1216" x1="992" />
-            <wire x2="1088" y1="1216" y2="1216" x1="1024" />
-        </branch>
-        <branch name="CLK">
-            <attrtext style="alignment:SOFT-BCENTER;fontsize:28;fontname:Arial" attrname="Name" x="1024" y="1280" type="branch" />
-            <wire x2="1024" y1="1280" y2="1280" x1="992" />
-            <wire x2="1088" y1="1280" y2="1280" x1="1024" />
         </branch>
         <branch name="CLK">
             <wire x2="528" y1="2208" y2="2208" x1="304" />
@@ -194,8 +200,8 @@
         <iomarker fontsize="28" x="1216" y="2144" name="PCSource" orien="R180" />
         <branch name="g,g,PCSource">
             <attrtext style="alignment:SOFT-BCENTER;fontsize:28;fontname:Arial" attrname="Name" x="272" y="1664" type="branch" />
-            <wire x2="272" y1="1664" y2="1664" x1="208" />
-            <wire x2="384" y1="1664" y2="1664" x1="272" />
+            <wire x2="272" y1="1664" y2="1664" x1="64" />
+            <wire x2="288" y1="1664" y2="1664" x1="272" />
         </branch>
         <branch name="PC(15:0)">
             <wire x2="1984" y1="1984" y2="1984" x1="1792" />
@@ -215,35 +221,68 @@
             <wire x2="1968" y1="2256" y2="2256" x1="1888" />
             <wire x2="1968" y1="2192" y2="2256" x1="1968" />
         </branch>
-        <branch name="PC(15:0)">
-            <attrtext style="alignment:SOFT-BCENTER;fontsize:28;fontname:Arial" attrname="Name" x="1728" y="1152" type="branch" />
-            <wire x2="1536" y1="1152" y2="1152" x1="1472" />
-            <wire x2="1728" y1="1152" y2="1152" x1="1536" />
-            <wire x2="1760" y1="1152" y2="1152" x1="1728" />
-            <wire x2="1536" y1="912" y2="1152" x1="1536" />
-            <wire x2="1616" y1="912" y2="912" x1="1536" />
-        </branch>
         <branch name="XLXN_4(15:0)">
-            <wire x2="1184" y1="464" y2="464" x1="768" />
-            <wire x2="1184" y1="464" y2="848" x1="1184" />
-            <wire x2="1616" y1="848" y2="848" x1="1184" />
+            <wire x2="784" y1="464" y2="464" x1="768" />
+            <wire x2="784" y1="464" y2="848" x1="784" />
+            <wire x2="1936" y1="848" y2="848" x1="784" />
+        </branch>
+        <branch name="XLXN_10(15:0)">
+            <wire x2="16" y1="320" y2="1152" x1="16" />
+            <wire x2="288" y1="1152" y2="1152" x1="16" />
+            <wire x2="2400" y1="320" y2="320" x1="16" />
+            <wire x2="2400" y1="320" y2="976" x1="2400" />
+            <wire x2="2400" y1="976" y2="976" x1="2320" />
+        </branch>
+        <instance x="288" y="1696" name="XLXI_2" orien="R0">
+        </instance>
+        <instance x="1408" y="1312" name="XLXI_1" orien="R0">
+        </instance>
+        <branch name="PCWrite">
+            <attrtext style="alignment:SOFT-BCENTER;fontsize:28;fontname:Arial" attrname="Name" x="1344" y="1216" type="branch" />
+            <wire x2="1344" y1="1216" y2="1216" x1="1312" />
+            <wire x2="1408" y1="1216" y2="1216" x1="1344" />
+        </branch>
+        <branch name="CLK">
+            <attrtext style="alignment:SOFT-BCENTER;fontsize:28;fontname:Arial" attrname="Name" x="1344" y="1280" type="branch" />
+            <wire x2="1344" y1="1280" y2="1280" x1="1312" />
+            <wire x2="1408" y1="1280" y2="1280" x1="1344" />
+        </branch>
+        <branch name="PC(15:0)">
+            <attrtext style="alignment:SOFT-BCENTER;fontsize:28;fontname:Arial" attrname="Name" x="2048" y="1152" type="branch" />
+            <wire x2="1856" y1="1152" y2="1152" x1="1792" />
+            <wire x2="2048" y1="1152" y2="1152" x1="1856" />
+            <wire x2="2080" y1="1152" y2="1152" x1="2048" />
+            <wire x2="1856" y1="912" y2="1152" x1="1856" />
+            <wire x2="1936" y1="912" y2="912" x1="1856" />
         </branch>
         <branch name="g">
-            <attrtext style="alignment:SOFT-BCENTER;fontsize:28;fontname:Arial" attrname="Name" x="1568" y="784" type="branch" />
-            <wire x2="1568" y1="784" y2="784" x1="1520" />
-            <wire x2="1616" y1="784" y2="784" x1="1568" />
+            <attrtext style="alignment:SOFT-BCENTER;fontsize:28;fontname:Arial" attrname="Name" x="1888" y="784" type="branch" />
+            <wire x2="1888" y1="784" y2="784" x1="1840" />
+            <wire x2="1936" y1="784" y2="784" x1="1888" />
         </branch>
-        <instance x="1616" y="944" name="XLXI_8" orien="R0">
+        <instance x="1936" y="944" name="XLXI_8" orien="R0">
         </instance>
-        <branch name="XLXN_10(15:0)">
-            <wire x2="32" y1="80" y2="1152" x1="32" />
-            <wire x2="384" y1="1152" y2="1152" x1="32" />
-            <wire x2="2080" y1="80" y2="80" x1="32" />
-            <wire x2="2080" y1="80" y2="976" x1="2080" />
-            <wire x2="2080" y1="976" y2="976" x1="2000" />
+        <instance x="816" y="1696" name="XLXI_11" orien="R0">
+        </instance>
+        <branch name="XLXN_20(15:0)">
+            <wire x2="816" y1="1152" y2="1152" x1="672" />
         </branch>
-        <branch name="XLXN_11(15:0)">
-            <wire x2="1088" y1="1152" y2="1152" x1="768" />
+        <branch name="XLXN_21(15:0)">
+            <wire x2="1408" y1="1152" y2="1152" x1="1200" />
         </branch>
+        <branch name="g,g,RegReset">
+            <attrtext style="alignment:SOFT-BCENTER;fontsize:28;fontname:Arial" attrname="Name" x="768" y="1664" type="branch" />
+            <wire x2="768" y1="1664" y2="1664" x1="688" />
+            <wire x2="816" y1="1664" y2="1664" x1="768" />
+        </branch>
+        <branch name="g,g,v,g,v,g,g,g,g,g,g,g,g,g,g,g">
+            <attrtext style="alignment:SOFT-BCENTER;fontsize:28;fontname:Arial" attrname="Name" x="736" y="1216" type="branch" />
+            <wire x2="736" y1="1216" y2="1216" x1="704" />
+            <wire x2="816" y1="1216" y2="1216" x1="736" />
+        </branch>
+        <branch name="RegReset">
+            <wire x2="1424" y1="2208" y2="2208" x1="1216" />
+        </branch>
+        <iomarker fontsize="28" x="1216" y="2208" name="RegReset" orien="R180" />
     </sheet>
 </drawing>

@@ -20,6 +20,7 @@ module stage5Integration(
 						 input 		   PCWrite,
 						 input 		   PCSource,
 						 input 		   PCAdd,
+						 input 		   PCRegReset,
 
 						 input 		   ValAWrite,
 						 input 		   ValBWrite,
@@ -52,7 +53,8 @@ module stage5Integration(
 							 .CLK(CLK),
 							 .PCWrite(PCWrite),
 							 .PCSource(PCSource),
-							 .PCAdd(PCAdd)
+							 .PCAdd(PCAdd),
+							 .RegReset(PCRegReset)
 							 );
 
    stage1MSPIncrementer msp(

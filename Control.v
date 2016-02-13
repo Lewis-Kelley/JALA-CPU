@@ -4,6 +4,7 @@ module Control (
 	output reg PCSource,
 	output reg PCWrite,
 	output reg PCAdd,
+	output reg PCRegReset,
 	output reg MSPop,
 	output reg MSPWrite,
 	output reg MSPRegReset,
