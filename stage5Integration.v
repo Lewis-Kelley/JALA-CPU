@@ -10,11 +10,11 @@ module stage5Integration(
 						 input 		   CLK,
 
 						 input 		   MSPWrite,
-						 input 		   MSPPop,
+						 input 		   MSPop,
 						 input 		   MSPRegReset,
 
 						 input 		   RSPWrite,
-						 input 		   RSPPop,
+						 input 		   RSPop,
 						 input 		   RSPRegReset,
 
 						 input 		   PCWrite,
@@ -59,7 +59,7 @@ module stage5Integration(
 
    stage1MSPIncrementer msp(
 							.RegWrite(MSPWrite),
-							.Op(MSPPop),
+							.Op(MSPop),
 							.CLK(CLK),
 							.RegOut(MSPOut),
 							.RegReset(MSPRegReset)
@@ -67,7 +67,7 @@ module stage5Integration(
 
    stage1RSPIncrementer rsp(
 							.RegWrite(RSPWrite),
-							.Op(RSPPop),
+							.Op(RSPop),
 							.CLK(CLK),
 							.RegOut(RSPOut),
 							.RegReset(RSPRegReset)

@@ -22,7 +22,7 @@ module stage5IntegrationTest;
    reg 		  MemWrite2;
    reg [1:0]  MemDst1;
    reg [1:0]  MemDst2;
-   reg [2:0]  MemData;
+   reg [1:0]  MemData;
 
    // Outputs
    wire [15:0] ValAOut;

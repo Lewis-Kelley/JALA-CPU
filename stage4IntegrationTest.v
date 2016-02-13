@@ -105,6 +105,7 @@ module stage4IntegrationTest;
 	  IROut = 0;
 	  isZero = 0;
 	  CLK = 0;
+	  CtrlRst = 0;
 	  ShifterIn = 0;
       errors = 0;
       trials = 0;
