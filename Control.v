@@ -61,14 +61,12 @@ module Control (
 	always @(posedge clk) begin
 		if (rst != 1) begin
 			CurrentState <= NextState;
-			$display("Pls %d", CurrentState);
 		end
 	end
 	
 	always @(rst) begin
 		if(rst) begin
 			CurrentState <= State0;
-			$display("Reset");
 		end
 	end
 		

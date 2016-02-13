@@ -9,19 +9,26 @@ module BasicTest;
 	wire [15:0] PC;
 	wire [15:0] MSP;
 	wire [15:0] RSP;
+	wire [15:0] IR;
 	wire [15:0] ValA;
 	wire [15:0] ValB;
+	wire [15:0] Res;
+	
+	wire [15:0] MemA;
+	wire [15:0] MemB;
 	
 	// Inputs
 	reg CtrlRst;
 	
 	reg CLK;
+	reg MemCLK;
 	
-	reg CLKCount;
+	reg [1:0] CLKCount;
 
 	// Instantiate the Unit Under Test (UUT)
 	stage7FullIntegration uut (
 		.CLK(CLK),
+		.MemCLK(MemCLK),
 		
 		.CtrlRst(CtrlRst),
 		.CurrentState(CurrentState),
@@ -30,12 +37,17 @@ module BasicTest;
 		.PCOut(PC),
 		.MSPOut(MSP),
 		.RSPOut(RSP),
+		.IROut(IR),
 		.ValAOut(ValA),
-		.ValBOut(ValB)
+		.ValBOut(ValB),
+		.ResOut(Res),
+		
+		.MemAOut(MemA),
+		.MemBOut(MemB)
 	);
 
 	// use this if your design contains sequential logic
-   parameter   PERIOD = 40;
+   parameter   PERIOD = 20;
    parameter   real DUTY_CYCLE = 0.5;
    parameter   OFFSET = 10;
    	
@@ -49,15 +61,27 @@ module BasicTest;
 	end
 	
 	initial begin
+		MemCLK = 0;
+		#OFFSET;
+		forever begin
+			#(PERIOD/2-(PERIOD/2*DUTY_CYCLE)) MemCLK = ~MemCLK;
+			#(PERIOD/2*DUTY_CYCLE);
+		end
+	end
+	
+	initial begin
 		CtrlRst = 1;
+		
+		CLKCount = 0;
 	end
 	
 	always @(posedge CLK) begin: TestCLK
 		if(CLKCount < 3) begin
 			CLKCount = CLKCount + 1;
 			disable TestCLK;
-		end else
-			CtrlRst = 0;
+		end
+		
+		CtrlRst = 0;
 	end
       
 endmodule

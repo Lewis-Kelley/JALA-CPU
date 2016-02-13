@@ -2,6 +2,7 @@
 
 module stage7FullIntegration(
 							 input CLK,
+							 input MemCLK,
 							 
 							 // Stage 4 special control inputs/outputs
 							 input CtrlRst,
@@ -12,8 +13,13 @@ module stage7FullIntegration(
 							 output [15:0] MSPOut,
 							 output [15:0] RSPOut,
 							 output [15:0] PCOut,
+							 output [15:0] IROut,
+							 output [15:0] ResOut,
 							 output [15:0] ValAOut,
-							 output [15:0] ValBOut
+							 output [15:0] ValBOut,
+							 
+							 output [15:0] MemAOut,
+							 output [15:0] MemBOut
 
 
 );
@@ -57,12 +63,10 @@ module stage7FullIntegration(
    wire [15:0] 	 SignExtOut;
    wire [15:0] 	 ZeroExtOut;
    wire [15:0] 	 ShifterOut;
-   
-   // Stage 6 Outputs
-   wire [15:0] 	 IROut;   
 
    stage6BasicOperation six(
 						.CLK(CLK),
+						.MemCLK(MemCLK),
 
 						.MSPWrite(MSPWrite),
 						.MSPop(MSPop),
@@ -100,14 +104,17 @@ module stage7FullIntegration(
 						.SignExtOut(SignExtOut),
 						.ZeroExtOut(ZeroExtOut),
 						.ShifterOut(ShifterOut),
-
-						.IROut(IROut),
 						
 						.MSPOut(MSPOut),
 						.RSPOut(RSPOut),
 						.PCOut(PCOut),
+						.IROut(IROut),
+						.ResOut(ResOut),
 						.ValAOut(ValAOut),
-						.ValBOut(ValBOut)
+						.ValBOut(ValBOut),
+						
+						.MemAOut(MemAOut),
+						.MemBOut(MemBOut)
 						);
 
    stage4Integration four(

@@ -2,7 +2,7 @@
 
 `timescale 1ns / 1ps
 
-module stage1MSPIncrementer_stage1MSPIncrementer_sch_tb();
+module stage1MSPIncrementerTest();
 
 // Inputs
    reg RegWrite;

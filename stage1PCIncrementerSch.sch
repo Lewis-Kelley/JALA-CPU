@@ -20,12 +20,9 @@
         <signal name="PC(15:0)" />
         <signal name="v" />
         <signal name="XLXN_10(15:0)" />
-        <signal name="XLXN_13(15:0)" />
-        <signal name="XLXN_14(15:0)" />
-        <signal name="XLXN_19(15:0)" />
         <signal name="XLXN_20(15:0)" />
         <signal name="XLXN_21(15:0)" />
-        <signal name="g,g,v,g,v,g,g,g,g,g,g,g,g,g,g,g" />
+        <signal name="g,g,v,g,g,v,v,v,v,v,v,v,v,v,v,v" />
         <signal name="RegReset" />
         <signal name="g,g,RegReset" />
         <port polarity="Input" name="PCSourceFromValA(15:0)" />
@@ -140,7 +137,7 @@
         </block>
         <block symbolname="mux16b8" name="XLXI_11">
             <blockpin signalname="XLXN_20(15:0)" name="A(15:0)" />
-            <blockpin signalname="g,g,v,g,v,g,g,g,g,g,g,g,g,g,g,g" name="B(15:0)" />
+            <blockpin signalname="g,g,v,g,g,v,v,v,v,v,v,v,v,v,v,v" name="B(15:0)" />
             <blockpin name="C(15:0)" />
             <blockpin name="D(15:0)" />
             <blockpin name="E(15:0)" />
@@ -275,7 +272,7 @@
             <wire x2="768" y1="1664" y2="1664" x1="688" />
             <wire x2="816" y1="1664" y2="1664" x1="768" />
         </branch>
-        <branch name="g,g,v,g,v,g,g,g,g,g,g,g,g,g,g,g">
+        <branch name="g,g,v,g,g,v,v,v,v,v,v,v,v,v,v,v">
             <attrtext style="alignment:SOFT-BCENTER;fontsize:28;fontname:Arial" attrname="Name" x="736" y="1216" type="branch" />
             <wire x2="736" y1="1216" y2="1216" x1="704" />
             <wire x2="816" y1="1216" y2="1216" x1="736" />

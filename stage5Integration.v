@@ -8,6 +8,7 @@ module stage5Integration(
 
 						 //Control Inputs
 						 input 		   CLK,
+						 input 			MemCLK,
 
 						 input 		   MSPWrite,
 						 input 		   MSPop,
@@ -43,7 +44,10 @@ module stage5Integration(
 						 // Optional Register Outputs
 						 output [15:0] PCOut,
 						 output [15:0] MSPOut,
-						 output [15:0] RSPOut
+						 output [15:0] RSPOut,
+						 
+						 output [15:0] MemAOut,
+						 output [15:0] MemBOut
     );
 
    stage1PCIncrementerSch pc(
@@ -99,13 +103,18 @@ module stage5Integration(
 						  .ValA(ValAOut),
 						  .ValB(ValBOut),
 						  .IR(IROut),
+						  
+						  // Optional outputs
+						  .MemAOut(MemAOut),
+						  .MemBOut(MemBOut),
 
 						  //Register control
 						  .ValAWrite(ValAWrite),
 						  .ValBWrite(ValBWrite),
 						  .IRWrite(IRWrite),
 
-						  .CLK(CLK)
+						  .CLK(CLK),
+						  .MemCLK(MemCLK)
 						  );
 
 
