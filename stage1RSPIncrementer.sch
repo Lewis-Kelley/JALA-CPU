@@ -17,6 +17,7 @@
         <signal name="XLXN_31(15:0)" />
         <signal name="g,g,v,g,v,g,g,g,g,g,g,g,g,g,g,g" />
         <signal name="RegReset" />
+        <signal name="g,g,RegReset" />
         <port polarity="Input" name="RegWrite" />
         <port polarity="Input" name="Op" />
         <port polarity="Input" name="CLK" />
@@ -109,7 +110,7 @@
             <blockpin name="F(15:0)" />
             <blockpin name="G(15:0)" />
             <blockpin name="H(15:0)" />
-            <blockpin signalname="RegReset" name="S(2:0)" />
+            <blockpin signalname="g,g,RegReset" name="S(2:0)" />
             <blockpin signalname="XLXN_30(15:0)" name="O(15:0)" />
         </block>
     </netlist>
@@ -194,7 +195,7 @@
             <wire x2="256" y1="1056" y2="1056" x1="224" />
             <wire x2="400" y1="1056" y2="1056" x1="256" />
         </branch>
-        <branch name="RegReset">
+        <branch name="g,g,RegReset">
             <attrtext style="alignment:SOFT-BCENTER;fontsize:28;fontname:Arial" attrname="Name" x="256" y="1504" type="branch" />
             <wire x2="256" y1="1504" y2="1504" x1="224" />
             <wire x2="400" y1="1504" y2="1504" x1="256" />
