@@ -1,6 +1,7 @@
 module Control (
 	input [3:0] op,
 	input	clk, rst, isZero,
+	input [15:0] PC,
 	output reg PCSource,
 	output reg PCWrite,
 	output reg PCAdd,
@@ -30,6 +31,9 @@ module Control (
 	output reg [4:0] NextState
 );
 
+	reg [15:0] maxInstructions;
+	reg [15:0] instructionCount;
+
 	// State Encoding
 	parameter 	State0  = 5'b00000, 
 					State1  = 5'b00001, 
@@ -57,7 +61,11 @@ module Control (
 					State23 = 5'b10111,
 					State24 = 5'b11000,
 					StateLoad = 5'b11111;
-
+	
+	initial begin
+		instructionCount = 0;
+	end
+	
 	// Current State Assignment
 	always @(posedge clk) begin
 		if (rst != 1) begin
@@ -80,6 +88,15 @@ module Control (
 			
 			StateLoad: begin
 				NextState <= State1;
+				
+				$display((PC - 10240));
+				
+				if(PC > 10240 && (PC - 10240) > maxInstructions+1) begin
+					$display("Halting execution on instruction %d, with %d instructions executed", (PC - 10240), instructionCount);
+					$finish;
+				end
+				
+				instructionCount = instructionCount + 1;
 			end
 		
 			State1:	begin

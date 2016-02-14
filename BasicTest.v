@@ -24,6 +24,9 @@ module BasicTest;
 	reg MemCLK;
 	
 	reg [1:0] CLKCount;
+	integer file;
+	reg [18*8:1] string;
+	integer lineCount;
 
 	// Instantiate the Unit Under Test (UUT)
 	stage7FullIntegration uut (
@@ -73,6 +76,25 @@ module BasicTest;
 		CtrlRst = 1;
 		
 		CLKCount = 0;
+			
+		file = $fopen("../ipcore_dir/blockmem20480b.mif", "r");
+		if(file == 0) begin
+			$display("File was null");
+			$finish;
+		end
+		
+		lineCount = 0;
+		
+		while($fgets(string, file)) begin
+			lineCount = lineCount + 1;
+		end
+				
+		$display("The file had %d lines, and %d instructions", lineCount, lineCount - 10239);
+		
+		$fclose(file);
+		
+		// Set max instructions on Control
+		uut.four.ctrl.maxInstructions = lineCount - 10239;
 	end
 	
 	always @(posedge CLK) begin: TestCLK

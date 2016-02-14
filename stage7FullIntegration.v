@@ -9,10 +9,11 @@ module stage7FullIntegration(
 							 output [4:0] CurrentState,
 							 output [4:0] NextState,
 							 
+							 output [15:0] PCOut,
+							 
 							 // Stage 6 Optional Outputs
 							 output [15:0] MSPOut,
 							 output [15:0] RSPOut,
-							 output [15:0] PCOut,
 							 output [15:0] IROut,
 							 output [15:0] ResOut,
 							 output [15:0] ValAOut,
@@ -118,6 +119,8 @@ module stage7FullIntegration(
    stage4Integration four(
 					 .ShifterIn(ValAOut),
 					 .CLK(CLK),
+					 
+					 .PC(PCOut),
 					 
 					 .CtrlRst(CtrlRst),
 					 .CurrentState(CurrentState),

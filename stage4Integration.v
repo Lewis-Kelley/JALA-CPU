@@ -5,6 +5,8 @@ module stage4Integration(
 						 input 			   isZero,
 						 input 			   CLK,
 						 input 			   CtrlRst,
+						 
+						 input [15:0]		PC,
 
 						 //Shifter inputs
 						 input [15:0] 	   ShifterIn,
@@ -67,6 +69,8 @@ module stage4Integration(
 				.op(IROut[15:12]),
 				.clk(CLK),
 				.rst(CtrlRst),
+				
+				.PC(PC),
 
 				.PCSource(PCSource),
 				.PCWrite(PCWrite),
