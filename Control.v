@@ -91,7 +91,7 @@ module Control (
 			StateLoad: begin
 				NextState <= State1;
 								
-				if(PC > 10240 && (PC - 10240) > maxInstructions-2) begin
+				if(PC > 10240 && (PC - 10240) > maxInstructions-1) begin
 					$display("Halting execution on instruction %d, with %d instructions executed", (PC - 10240) + 1, instructionCount);
 					$finish;
 				end
@@ -445,7 +445,7 @@ module Control (
 				RSPRegReset <= 0;
 				PCRegReset <= 0;
 				
-				MSPop <= 0;
+				MSPop <= 1;
 				ALUop <= 3'b100;
 				PCAdd <= 1;
 				PCSource <= 0;
@@ -468,7 +468,7 @@ module Control (
 				RSPRegReset <= 0;
 				PCRegReset <= 0;
 				
-				MSPop <= 0;
+				MSPop <= 1;
 				ALUop <= 3'b100;
 				PCAdd <= 1;
 				PCSource <= 0;
