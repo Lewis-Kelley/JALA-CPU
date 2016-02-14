@@ -82,7 +82,7 @@ module stage4Integration(
 				.MSPRegReset(MSPRegReset),
 
 				.RSPop(RSPop),
-				.RSPWrite(RSWrite),
+				.RSPWrite(RSPWrite),
 				.RSPRegReset(RSPRegReset),
 
 				.IRWrite(IRWrite),
