@@ -33,6 +33,7 @@ module Control (
 
 	reg [15:0] maxInstructions;
 	reg [15:0] instructionCount;
+	reg exitedLoad; 
 
 	// State Encoding
 	parameter 	State0  = 5'b00000, 
@@ -64,6 +65,7 @@ module Control (
 	
 	initial begin
 		instructionCount = 0;
+		exitedLoad = 1;
 	end
 	
 	// Current State Assignment
@@ -88,18 +90,21 @@ module Control (
 			
 			StateLoad: begin
 				NextState <= State1;
-				
-				$display((PC - 10240));
-				
-				if(PC > 10240 && (PC - 10240) > maxInstructions+1) begin
-					$display("Halting execution on instruction %d, with %d instructions executed", (PC - 10240), instructionCount);
+								
+				if(PC > 10240 && (PC - 10240) > maxInstructions-2) begin
+					$display("Halting execution on instruction %d, with %d instructions executed", (PC - 10240) + 1, instructionCount);
 					$finish;
 				end
 				
-				instructionCount = instructionCount + 1;
+				if(exitedLoad) begin
+					instructionCount = instructionCount + 1;
+					exitedLoad = 0;
+				end
 			end
 		
 			State1:	begin
+				exitedLoad = 1;
+				
 				//R-type, beq, bne, pop
 				if (((!op[3]&&!op[2])||(!op[3]&&!op[1]&&!op[0]))||(op[3]&&((!op[2]&&op[1]&&op[0])||(op[2]&&!op[1]))))
 					NextState <= State2;
@@ -424,7 +429,7 @@ module Control (
 				end
 				
 			State7: begin
-				PCWrite <= !isZero;
+				PCWrite <= isZero;
 				MSPWrite <= 1;
 				RSPWrite <= 0;
 				IRWrite <= 0;
@@ -447,7 +452,7 @@ module Control (
 				end
 			
 			State8: begin
-				PCWrite <= isZero;
+				PCWrite <= !isZero;
 				MSPWrite <= 1;
 				RSPWrite <= 0;
 				IRWrite <= 0;

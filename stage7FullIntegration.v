@@ -20,7 +20,10 @@ module stage7FullIntegration(
 							 output [15:0] ValBOut,
 							 
 							 output [15:0] MemAOut,
-							 output [15:0] MemBOut
+							 output [15:0] MemBOut,
+							 
+							 // Stage 6 Control Ouput
+							 output isZero
 );
    // Control
    wire 		 MSPWrite;
@@ -55,8 +58,6 @@ module stage7FullIntegration(
    
    wire [2:0] 	 ALUop;
 
-   // Stage 6 Control Ouput
-   wire 		 isZero;
 
    // Stage 6 Inputs
    wire [15:0] 	 SignExtOut;

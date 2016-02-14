@@ -17,6 +17,8 @@ module BasicTest;
 	wire [15:0] MemA;
 	wire [15:0] MemB;
 	
+	wire isZero;
+	
 	// Inputs
 	reg CtrlRst;
 	
@@ -46,7 +48,9 @@ module BasicTest;
 		.ResOut(Res),
 		
 		.MemAOut(MemA),
-		.MemBOut(MemB)
+		.MemBOut(MemB),
+		
+		.isZero(isZero)
 	);
 
 	// use this if your design contains sequential logic
