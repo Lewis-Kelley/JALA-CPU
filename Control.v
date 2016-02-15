@@ -1,5 +1,6 @@
 module Control (
 	input [3:0] op,
+	input [11:0] imm,
 	input	clk, rst, isZero,
 	input [15:0] PC,
 	output reg PCSource,
@@ -33,7 +34,9 @@ module Control (
 
 	reg [15:0] maxInstructions;
 	reg [15:0] instructionCount;
-	reg exitedLoad; 
+	reg exitedLoad;
+	
+	reg endProgram;
 
 	// State Encoding
 	parameter 	State0  = 5'b00000, 
@@ -66,23 +69,21 @@ module Control (
 	initial begin
 		instructionCount = 0;
 		exitedLoad = 1;
+		
+		endProgram = 0;
 	end
 	
 	// Current State Assignment
 	always @(posedge clk) begin
-		if (rst != 1) begin
+		if (rst || endProgram) begin
+			CurrentState <= State0;
+		end else begin
 			CurrentState <= NextState;
 		end
 	end
 	
-	always @(rst) begin
-		if(rst) begin
-			CurrentState <= State0;
-		end
-	end
-		
 	// Next State Logic
-	always @(CurrentState or op or posedge clk) begin
+	always @(CurrentState or op) begin
 		case (CurrentState)
 			State0:	begin
 				NextState <= StateLoad;
@@ -91,10 +92,10 @@ module Control (
 			StateLoad: begin
 				NextState <= State1;
 								
-				if(PC > 10240 && (PC - 10240) > maxInstructions-1) begin
+				/*if(PC > 10240 && (PC - 10240) > maxInstructions-1) begin
 					$display("Halting execution on instruction %d, with %d instructions executed", (PC - 10240) + 1, instructionCount);
 					$finish;
-				end
+				end*/
 				
 				if(exitedLoad) begin
 					instructionCount = instructionCount + 1;
@@ -106,8 +107,16 @@ module Control (
 				exitedLoad = 1;
 				
 				//R-type, beq, bne, pop
-				if (((!op[3]&&!op[2])||(!op[3]&&!op[1]&&!op[0]))||(op[3]&&((!op[2]&&op[1]&&op[0])||(op[2]&&!op[1]))))
+				if (((!op[3]&&!op[2])||(!op[3]&&!op[1]&&!op[0]))||(op[3]&&((!op[2]&&op[1]&&op[0])||(op[2]&&!op[1])))) begin
 					NextState <= State2;
+					
+					if(op[3] && op[2] && !op[1] && !op[0] && imm == 12'b111111111111) begin
+						$display("Halting execution on instruction %d, with %d instructions executed", (PC - 10240) + 1, instructionCount);
+						NextState <= State0;
+						endProgram = 1;
+						//$finish;
+					end
+				end
 					
 				//sll
 				else if (op[3]&&!op[2]&&!op[1]&&!op[0])
@@ -620,8 +629,8 @@ module Control (
 				RSPRegReset <= 0;
 				PCRegReset <= 0;
 
-				MSPop = 1;
-				RSPop = 1;
+				MSPop <= 1;
+				RSPop <= 1;
 				end
 
 			State16: begin

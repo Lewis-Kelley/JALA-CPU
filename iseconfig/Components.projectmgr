@@ -41,17 +41,19 @@
          <ClosedNode>/stage5IntegrationTest |home|user|csse232|JALA-CPU|stage5IntegrationTest.v/uut - stage5Integration/rsp - stage1RSPIncrementer</ClosedNode>
          <ClosedNode>/stage6BasicOperation |home|user|csse232|JALA-CPU|stage6BasicOperation.sch</ClosedNode>
          <ClosedNode>/stage7FullIntegration |home|user|csse232|JALA-CPU|stage7FullIntegration.sch</ClosedNode>
+         <ClosedNode>/stage7FullIntegration |home|user|csse232|JALA-CPU|stage7FullIntegration.v/four - stage4Integration</ClosedNode>
+         <ClosedNode>/stage7FullIntegration |home|user|csse232|JALA-CPU|stage7FullIntegration.v/six - stage6BasicOperation</ClosedNode>
          <ClosedNode>/stage7FullIntegration |home|user|csse232|JALA-CPU|stage7FullIntegration.v/six - stage6BasicOperation/XLXI_1 - stage3Integration</ClosedNode>
          <ClosedNode>/stage7FullIntegration |home|user|csse232|JALA-CPU|stage7FullIntegration.v/six - stage6BasicOperation/XLXI_2 - stage5Integration</ClosedNode>
       </ClosedNodes>
       <SelectedItems>
-         <SelectedItem>uut - stage5Integration (/home/user/csse232/JALA-CPU/stage5Integration.v)</SelectedItem>
+         <SelectedItem>stage7FullIntegration (/home/user/csse232/JALA-CPU/stage7FullIntegration.v)</SelectedItem>
       </SelectedItems>
-      <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
+      <ScrollbarPosition orientation="vertical" >7</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
       <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000001000000000000000000000000000000000202000000010000000100000064000001f6000000020000000000000000000000000200000064ffffffff000000810000000300000002000001f60000000100000003000000000000000100000003</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >true</UserChangedColumnWidths>
-      <CurrentItem>uut - stage5Integration (/home/user/csse232/JALA-CPU/stage5Integration.v)</CurrentItem>
+      <CurrentItem>stage7FullIntegration (/home/user/csse232/JALA-CPU/stage7FullIntegration.v)</CurrentItem>
    </ItemView>
    <ItemView engineview="SynthesisOnly" sourcetype="" guiview="Process" >
       <ClosedNodes>
@@ -110,6 +112,7 @@
    <ItemView engineview="BehavioralSim" guiview="Source" compilemode="AutoCompile" >
       <ClosedNodes>
          <ClosedNodesVersion>2</ClosedNodesVersion>
+         <ClosedNode>/BasicTest |home|user|csse232|JALA-CPU|BasicTest.v</ClosedNode>
          <ClosedNode>/BasicTest |home|user|csse232|JALA-CPU|BasicTest.v/uut - stage7FullIntegration/six - stage6BasicOperation/XLXI_2 - stage5Integration/mem - stage2MemoryAccess</ClosedNode>
          <ClosedNode>/BasicTest |home|user|csse232|JALA-CPU|BasicTest.v/uut - stage7FullIntegration/six - stage6BasicOperation/XLXI_2 - stage5Integration/msp - stage1MSPIncrementer</ClosedNode>
          <ClosedNode>/BasicTest |home|user|csse232|JALA-CPU|BasicTest.v/uut - stage7FullIntegration/six - stage6BasicOperation/XLXI_2 - stage5Integration/pc - stage1PCIncrementerSch</ClosedNode>
@@ -138,6 +141,7 @@
          <ClosedNode>/stage3IntegrationTest |home|user|csse232|JALA-CPU|stage3IntegrationTest.v/uut - stage3Integration</ClosedNode>
          <ClosedNode>/stage4IntegrationTest |home|user|csse232|JALA-CPU|stage4IntegrationTest.v</ClosedNode>
          <ClosedNode>/stage4IntegrationTest |home|user|csse232|JALA-CPU|stage4IntegrationTest.v/uut - stage4Integration</ClosedNode>
+         <ClosedNode>/stage5IntegrationTest |home|user|csse232|JALA-CPU|stage5IntegrationTest.v</ClosedNode>
          <ClosedNode>/stage5IntegrationTest |home|user|csse232|JALA-CPU|stage5IntegrationTest.v/uut - stage5Integration</ClosedNode>
          <ClosedNode>/stage6BasicOperationTest |home|user|csse232|JALA-CPU|stage6BasicOperationTest.v</ClosedNode>
          <ClosedNode>/stage6BasicOperationTest |home|user|csse232|JALA-CPU|stage6BasicOperationTest.v/UUT - stage6BasicOperation/XLXI_2 - stage5Integration</ClosedNode>
@@ -157,9 +161,9 @@
       <SelectedItems>
          <SelectedItem>BasicTest (/home/user/csse232/JALA-CPU/BasicTest.v)</SelectedItem>
       </SelectedItems>
-      <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
+      <ScrollbarPosition orientation="vertical" >4</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
-      <ViewHeaderState orientation="horizontal" >000000ff0000000000000001000000010000000000000000000000000000000002020000000100000001000000640000021e000000020000000000000000000000000200000064ffffffff0000008100000003000000020000021e0000000100000003000000000000000100000003</ViewHeaderState>
+      <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000001000000000000000000000000000000000202000000010000000100000064000001be000000020000000000000000000000000200000064ffffffff000000810000000300000002000001be0000000100000003000000000000000100000003</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >true</UserChangedColumnWidths>
       <CurrentItem>BasicTest (/home/user/csse232/JALA-CPU/BasicTest.v)</CurrentItem>
    </ItemView>
@@ -204,7 +208,7 @@
       <CurrentItem/>
    </ItemView>
    <SourceProcessView>000000ff00000000000000020000014c0000011d01000000060100000002</SourceProcessView>
-   <CurrentView>Behavioral Simulation</CurrentView>
+   <CurrentView>Implementation</CurrentView>
    <ItemView engineview="BehavioralSim" sourcetype="DESUT_VERILOG" guiview="Process" >
       <ClosedNodes>
          <ClosedNodesVersion>1</ClosedNodesVersion>
@@ -223,13 +227,13 @@
          <ClosedNodesVersion>1</ClosedNodesVersion>
       </ClosedNodes>
       <SelectedItems>
-         <SelectedItem>Create Schematic Symbol</SelectedItem>
+         <SelectedItem>Synthesize - XST</SelectedItem>
       </SelectedItems>
       <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
-      <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000100000000000000000000000000000000000000000000000177000000010000000100000000000000000000000064ffffffff000000810000000000000001000001770000000100000000</ViewHeaderState>
+      <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000100000000000000000000000000000000000000000000000168000000010000000100000000000000000000000064ffffffff000000810000000000000001000001680000000100000000</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
-      <CurrentItem>Create Schematic Symbol</CurrentItem>
+      <CurrentItem>Synthesize - XST</CurrentItem>
    </ItemView>
    <ItemView engineview="BehavioralSim" sourcetype="DESUT_XCO" guiview="Process" >
       <ClosedNodes>

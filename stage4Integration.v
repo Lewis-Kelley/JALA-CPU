@@ -67,6 +67,7 @@ module stage4Integration(
 
    Control ctrl(
 				.op(IROut[15:12]),
+				.imm(IROut[11:0]),
 				.clk(CLK),
 				.rst(CtrlRst),
 				
