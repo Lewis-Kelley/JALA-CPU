@@ -54,7 +54,7 @@ module BasicTest;
 	);
 
 	// use this if your design contains sequential logic
-   parameter   PERIOD = 20;
+   parameter   PERIOD = 11;
    parameter   real DUTY_CYCLE = 0.5;
    parameter   OFFSET = 10;
    	
