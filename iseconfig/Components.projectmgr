@@ -32,6 +32,7 @@
          <ClosedNode>/stage1PCIcrementer C:|Users|kelleyld|XiLinx Projects|JALA-CPU|stage1PCIcrementer.v</ClosedNode>
          <ClosedNode>/stage1PCIncrementerSch |home|user|csse232|JALA-CPU|stage1PCIncrementerSch.sch</ClosedNode>
          <ClosedNode>/stage3IntegrationTest C:|Users|kelleyld|XiLinx Projects|JALA-CPU|stage3IntegrationTest.v</ClosedNode>
+         <ClosedNode>/stage3IntegrationTest |home|user|csse232|JALA-CPU|stage3IntegrationTest.v/uut - stage3Integration</ClosedNode>
          <ClosedNode>/stage4Integration C:|Users|kelleyld|XiLinx Projects|JALA-CPU|stage4Integration.v</ClosedNode>
          <ClosedNode>/stage5IntegrationTest C:|Users|kelleyld|XiLinx Projects|JALA-CPU|stage5IntegrationTest.v</ClosedNode>
          <ClosedNode>/stage5IntegrationTest |home|user|csse232|JALA-CPU|stage5IntegrationTest.v/uut - stage5Integration/mem - stage2MemoryAccess</ClosedNode>
@@ -48,7 +49,7 @@
       <SelectedItems>
          <SelectedItem>stage7FullIntegration (/home/user/csse232/JALA-CPU/stage7FullIntegration.v)</SelectedItem>
       </SelectedItems>
-      <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
+      <ScrollbarPosition orientation="vertical" >7</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
       <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000001000000000000000000000000000000000202000000010000000100000064000001f6000000020000000000000000000000000200000064ffffffff000000810000000300000002000001f60000000100000003000000000000000100000003</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >true</UserChangedColumnWidths>
@@ -158,13 +159,13 @@
          <ClosedNode>/stage7FullIntegrationTest |home|user|csse232|JALA-CPU|stage7FullIntegrationTest.v/uut - stage7FullIntegration/six - stage6BasicOperation/XLXI_2 - stage5Integration/pc - stage1PCIncrementerSch</ClosedNode>
       </ClosedNodes>
       <SelectedItems>
-         <SelectedItem>shift16btest (/home/user/csse232/JALA-CPU/shift16btest.v)</SelectedItem>
+         <SelectedItem>BasicTest (/home/user/csse232/JALA-CPU/BasicTest.v)</SelectedItem>
       </SelectedItems>
-      <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
+      <ScrollbarPosition orientation="vertical" >4</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
       <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000001000000000000000000000000000000000202000000010000000100000064000001be000000020000000000000000000000000200000064ffffffff000000810000000300000002000001be0000000100000003000000000000000100000003</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >true</UserChangedColumnWidths>
-      <CurrentItem>shift16btest (/home/user/csse232/JALA-CPU/shift16btest.v)</CurrentItem>
+      <CurrentItem>BasicTest (/home/user/csse232/JALA-CPU/BasicTest.v)</CurrentItem>
    </ItemView>
    <ItemView engineview="BehavioralSim" sourcetype="" guiview="Process" >
       <ClosedNodes>
@@ -172,26 +173,26 @@
          <ClosedNode>Design Utilities</ClosedNode>
       </ClosedNodes>
       <SelectedItems>
-         <SelectedItem></SelectedItem>
+         <SelectedItem/>
       </SelectedItems>
       <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
       <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000100000000000000000000000000000000000000000000000177000000010000000100000000000000000000000064ffffffff000000810000000000000001000001770000000100000000</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
-      <CurrentItem></CurrentItem>
+      <CurrentItem/>
    </ItemView>
    <ItemView engineview="BehavioralSim" sourcetype="DESUT_SCHEMATIC" guiview="Process" >
       <ClosedNodes>
          <ClosedNodesVersion>1</ClosedNodesVersion>
       </ClosedNodes>
       <SelectedItems>
-         <SelectedItem></SelectedItem>
+         <SelectedItem/>
       </SelectedItems>
       <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
       <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000100000000000000000000000000000000000000000000000177000000010000000100000000000000000000000064ffffffff000000810000000000000001000001770000000100000000</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
-      <CurrentItem></CurrentItem>
+      <CurrentItem/>
    </ItemView>
    <ItemView engineview="SynthesisOnly" sourcetype="DESUT_XCO" guiview="Process" >
       <ClosedNodes>
@@ -207,7 +208,7 @@
       <CurrentItem/>
    </ItemView>
    <SourceProcessView>000000ff00000000000000020000014c0000011d01000000060100000002</SourceProcessView>
-   <CurrentView>Behavioral Simulation</CurrentView>
+   <CurrentView>Implementation</CurrentView>
    <ItemView engineview="BehavioralSim" sourcetype="DESUT_VERILOG" guiview="Process" >
       <ClosedNodes>
          <ClosedNodesVersion>1</ClosedNodesVersion>
@@ -224,16 +225,15 @@
    <ItemView engineview="SynthesisOnly" sourcetype="DESUT_VERILOG" guiview="Process" >
       <ClosedNodes>
          <ClosedNodesVersion>1</ClosedNodesVersion>
-         <ClosedNode>Design Utilities</ClosedNode>
       </ClosedNodes>
       <SelectedItems>
-         <SelectedItem></SelectedItem>
+         <SelectedItem>Synthesize - XST</SelectedItem>
       </SelectedItems>
       <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
       <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000100000000000000000000000000000000000000000000000168000000010000000100000000000000000000000064ffffffff000000810000000000000001000001680000000100000000</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
-      <CurrentItem></CurrentItem>
+      <CurrentItem>Synthesize - XST</CurrentItem>
    </ItemView>
    <ItemView engineview="BehavioralSim" sourcetype="DESUT_XCO" guiview="Process" >
       <ClosedNodes>
