@@ -44,6 +44,7 @@
         <signal name="MemBOut(15:0)" />
         <signal name="MemAOut(15:0)" />
         <signal name="RSPWrite" />
+        <signal name="MemData(2:0)" />
         <port polarity="Output" name="ValAOut(15:0)" />
         <port polarity="Output" name="ValBOut(15:0)" />
         <port polarity="Output" name="ResOut(15:0)" />
@@ -82,6 +83,7 @@
         <port polarity="Output" name="MemBOut(15:0)" />
         <port polarity="Output" name="MemAOut(15:0)" />
         <port polarity="Input" name="RSPWrite" />
+        <port polarity="Input" name="MemData(2:0)" />
         <blockdef name="stage3Integration">
             <timestamp>2016-2-13T17:18:37</timestamp>
             <rect width="320" x="64" y="-448" height="448" />
@@ -328,13 +330,13 @@
         <branch name="MemDst2(1:0)">
             <wire x2="384" y1="1296" y2="1296" x1="208" />
         </branch>
-        <branch name="MemData(1:0)">
+        <branch name="MemData(2:0)">
             <wire x2="384" y1="1360" y2="1360" x1="208" />
         </branch>
         <iomarker fontsize="28" x="208" y="1152" name="ResWrite" orien="R180" />
         <iomarker fontsize="28" x="208" y="1232" name="MemDst1(1:0)" orien="R180" />
         <iomarker fontsize="28" x="208" y="1296" name="MemDst2(1:0)" orien="R180" />
-        <iomarker fontsize="28" x="208" y="1360" name="MemData(1:0)" orien="R180" />
+        <iomarker fontsize="28" x="208" y="1360" name="MemData(2:0)" orien="R180" />
         <branch name="ALUop(2:0)">
             <wire x2="384" y1="1424" y2="1424" x1="176" />
         </branch>

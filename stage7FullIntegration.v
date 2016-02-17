@@ -54,7 +54,7 @@ module stage7FullIntegration(
    
    wire [1:0] 	 MemDst1;
    wire [1:0] 	 MemDst2;
-   wire [1:0] 	 MemData;
+   wire [2:0] 	 MemData;
    
    wire [2:0] 	 ALUop;
 

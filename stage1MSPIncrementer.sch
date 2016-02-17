@@ -15,7 +15,7 @@
         <signal name="g,g,g,g,g,g,g,g,g,g,g,g,g,g,g,v" />
         <signal name="XLXN_30(15:0)" />
         <signal name="XLXN_31(15:0)" />
-        <signal name="g,g,g,g,g,g,g,g,g,g,v,g,v,g,g,g" />
+        <signal name="g,g,g,g,g,g,g,g,g,g,v,g,v,g,g,v" />
         <signal name="RegReset" />
         <signal name="g,g,RegReset" />
         <port polarity="Input" name="RegWrite" />
@@ -103,7 +103,7 @@
         </block>
         <block symbolname="mux16b8" name="XLXI_8">
             <blockpin signalname="XLXN_31(15:0)" name="A(15:0)" />
-            <blockpin signalname="g,g,g,g,g,g,g,g,g,g,v,g,v,g,g,g" name="B(15:0)" />
+            <blockpin signalname="g,g,g,g,g,g,g,g,g,g,v,g,v,g,g,v" name="B(15:0)" />
             <blockpin name="C(15:0)" />
             <blockpin name="D(15:0)" />
             <blockpin name="E(15:0)" />
@@ -190,7 +190,7 @@
         </branch>
         <instance x="400" y="1536" name="XLXI_8" orien="R0">
         </instance>
-        <branch name="g,g,g,g,g,g,g,g,g,g,v,g,v,g,g,g">
+        <branch name="g,g,g,g,g,g,g,g,g,g,v,g,v,g,g,v">
             <attrtext style="alignment:SOFT-BCENTER;fontsize:28;fontname:Arial" attrname="Name" x="256" y="1056" type="branch" />
             <wire x2="256" y1="1056" y2="1056" x1="224" />
             <wire x2="400" y1="1056" y2="1056" x1="256" />

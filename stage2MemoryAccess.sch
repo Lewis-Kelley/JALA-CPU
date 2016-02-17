@@ -31,16 +31,16 @@
         <signal name="MemDst2Out(15:0)" />
         <signal name="MemDst2Out(14:0)" />
         <signal name="g" />
-        <signal name="g,MemData(1:0)" />
         <signal name="MemBOut(15:0)" />
         <signal name="MemAOut(15:0)" />
         <signal name="MemDst1(1:0)" />
         <signal name="MemDst2(1:0)" />
-        <signal name="MemData(1:0)" />
+        <signal name="MemData(2:0)" />
         <signal name="MemCLK" />
-        <signal name="MemBIn(15:0)">
-        </signal>
-        <signal name="XLXN_37" />
+        <signal name="MemBIn(15:0)" />
+        <signal name="switch(3:0)" />
+        <signal name="g,g,g,switch(3),g,g,g,switch(2),g,g,g,switch(1),g,g,g,switch(0)" />
+        <signal name="g,g,g,g,g,g,g,g,g,g,v,g,v,g,g,g" />
         <port polarity="Input" name="MemRead2" />
         <port polarity="Output" name="ValB(15:0)" />
         <port polarity="Output" name="ValA(15:0)" />
@@ -63,8 +63,9 @@
         <port polarity="Output" name="MemAOut(15:0)" />
         <port polarity="Input" name="MemDst1(1:0)" />
         <port polarity="Input" name="MemDst2(1:0)" />
-        <port polarity="Input" name="MemData(1:0)" />
+        <port polarity="Input" name="MemData(2:0)" />
         <port polarity="Input" name="MemCLK" />
+        <port polarity="Input" name="switch(3:0)" />
         <blockdef name="reg16">
             <timestamp>2016-2-6T20:12:26</timestamp>
             <rect width="256" x="64" y="-192" height="192" />
@@ -140,7 +141,7 @@
             <blockpin signalname="MemDst2FromMSP(15:0)" name="A(15:0)" />
             <blockpin signalname="MemDst2FromRSP(15:0)" name="B(15:0)" />
             <blockpin signalname="ValA(15:0)" name="C(15:0)" />
-            <blockpin name="D(15:0)" />
+            <blockpin signalname="g,g,g,g,g,g,g,g,g,g,v,g,v,g,g,g" name="D(15:0)" />
             <blockpin name="E(15:0)" />
             <blockpin name="F(15:0)" />
             <blockpin name="G(15:0)" />
@@ -153,11 +154,11 @@
             <blockpin signalname="MemDataFromRes(15:0)" name="B(15:0)" />
             <blockpin signalname="MemDataFromZEImm(15:0)" name="C(15:0)" />
             <blockpin signalname="ValB(15:0)" name="D(15:0)" />
-            <blockpin name="E(15:0)" />
+            <blockpin signalname="g,g,g,switch(3),g,g,g,switch(2),g,g,g,switch(1),g,g,g,switch(0)" name="E(15:0)" />
             <blockpin name="F(15:0)" />
             <blockpin name="G(15:0)" />
             <blockpin name="H(15:0)" />
-            <blockpin signalname="g,MemData(1:0)" name="S(2:0)" />
+            <blockpin signalname="MemData(2:0)" name="S(2:0)" />
             <blockpin signalname="MemBIn(15:0)" name="O(15:0)" />
         </block>
         <block symbolname="reg16" name="XLXI_2">
@@ -347,7 +348,7 @@
             <wire x2="784" y1="1584" y2="1584" x1="736" />
             <wire x2="864" y1="1584" y2="1584" x1="784" />
         </branch>
-        <branch name="g,MemData(1:0)">
+        <branch name="MemData(2:0)">
             <attrtext style="alignment:SOFT-BCENTER;fontsize:28;fontname:Arial" attrname="Name" x="784" y="2224" type="branch" />
             <wire x2="784" y1="2224" y2="2224" x1="752" />
             <wire x2="864" y1="2224" y2="2224" x1="784" />
@@ -483,7 +484,7 @@
         <branch name="MemDst2(1:0)">
             <wire x2="2192" y1="112" y2="112" x1="2000" />
         </branch>
-        <branch name="MemData(1:0)">
+        <branch name="MemData(2:0)">
             <wire x2="2192" y1="192" y2="192" x1="2000" />
         </branch>
         <iomarker fontsize="28" x="1520" y="48" name="MemWrite1" orien="R180" />
@@ -496,7 +497,7 @@
         <iomarker fontsize="28" x="1776" y="448" name="CLK" orien="R180" />
         <iomarker fontsize="28" x="2000" y="48" name="MemDst1(1:0)" orien="R180" />
         <iomarker fontsize="28" x="2000" y="112" name="MemDst2(1:0)" orien="R180" />
-        <iomarker fontsize="28" x="2000" y="192" name="MemData(1:0)" orien="R180" />
+        <iomarker fontsize="28" x="2000" y="192" name="MemData(2:0)" orien="R180" />
         <branch name="MemCLK">
             <wire x2="1968" y1="496" y2="496" x1="1776" />
         </branch>
@@ -506,6 +507,19 @@
             <wire x2="1456" y1="1712" y2="1712" x1="1344" />
             <wire x2="1632" y1="976" y2="976" x1="1456" />
             <wire x2="1456" y1="976" y2="1712" x1="1456" />
+        </branch>
+        <iomarker fontsize="28" x="192" y="2160" name="switch(3:0)" orien="R180" />
+        <branch name="switch(3:0)">
+            <wire x2="240" y1="2160" y2="2160" x1="192" />
+        </branch>
+        <branch name="g,g,g,switch(3),g,g,g,switch(2),g,g,g,switch(1),g,g,g,switch(0)">
+            <attrtext style="alignment:SOFT-BCENTER;fontsize:28;fontname:Arial" attrname="Name" x="736" y="1968" type="branch" />
+            <wire x2="736" y1="1968" y2="1968" x1="720" />
+            <wire x2="864" y1="1968" y2="1968" x1="736" />
+        </branch>
+        <branch name="g,g,g,g,g,g,g,g,g,g,v,g,v,g,g,g">
+            <attrtext style="alignment:SOFT-RIGHT;fontsize:28;fontname:Arial" attrname="Name" x="720" y="1264" type="branch" />
+            <wire x2="864" y1="1264" y2="1264" x1="720" />
         </branch>
     </sheet>
 </drawing>
