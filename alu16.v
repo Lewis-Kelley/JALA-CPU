@@ -37,7 +37,7 @@ module alu16(
 	  else if(op == 3) //slt
 		r = in_a > in_b;
 	  else if(op == 4) //sub
-		r = in_a - in_b;
+		r = in_b - in_a;
 
 	  isZero = ~(r[0] | r[1] | r[2] | r[3] | r[4] | r[5] | r[6] | r[7] | r[8] | r[9] | r[10] | r[11] | r[12] | r[13] | r[14] | r[15]);
    end
