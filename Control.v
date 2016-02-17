@@ -3,6 +3,7 @@ module Control (
 	input [11:0] imm,
 	input	clk, rst, isZero,
 	input [15:0] PC,
+	input run,
 	output reg PCSource,
 	output reg PCWrite,
 	output reg PCAdd,
@@ -25,6 +26,7 @@ module Control (
 	output reg MemWrite2,
 	output reg MemRead1,
 	output reg MemRead2,
+	output reg DisplayRegWrite,
 	output reg dir,
 	output reg mode,
 	output reg [2:0] ALUop,
@@ -32,7 +34,6 @@ module Control (
 	output reg [4:0] NextState
 );
 
-	reg [15:0] maxInstructions;
 	reg [15:0] instructionCount;
 	reg exitedLoad;
 	
@@ -64,6 +65,9 @@ module Control (
 					State22 = 5'b10110,
 					State23 = 5'b10111,
 					State24 = 5'b11000,
+					StateInput = 5'b11100,
+					StateDisplay = 5'b11101,
+					StateEnd = 5'b11110,
 					StateLoad = 5'b11111;
 	
 	initial begin
@@ -74,9 +78,12 @@ module Control (
 	end
 	
 	// Current State Assignment
-	always @(posedge clk) begin
-		if (rst || endProgram) begin
+	always @(posedge clk or rst) begin
+		if (rst) begin
 			CurrentState <= State0;
+		end else if(endProgram) begin
+			CurrentState <= StateDisplay;
+			endProgram = 0;
 		end else begin
 			CurrentState <= NextState;
 		end
@@ -86,6 +93,14 @@ module Control (
 	always @(CurrentState or op) begin
 		case (CurrentState)
 			State0:	begin
+				if (run) begin
+					NextState <= StateInput;
+				end else begin
+					NextState <= State0;
+				end
+			end
+			
+			StateInput: begin
 				NextState <= StateLoad;
 			end
 			
@@ -249,6 +264,14 @@ module Control (
 				NextState <= StateLoad;
 				end
 				
+			StateDisplay: begin
+				NextState <= StateEnd;
+				end
+				
+			StateEnd: begin
+				NextState <= StateEnd;
+				end
+				
 			default:
 				NextState <= CurrentState;
 		endcase
@@ -269,10 +292,29 @@ module Control (
 				MemWrite2 <= 0;
 				MemRead1 <= 0;
 				MemRead2 <= 0;
+				DisplayRegWrite <= 0;
 				
 				MSPRegReset <= 1;
 				RSPRegReset <= 1;
 				PCRegReset <= 1;
+			end
+			
+			StateInput: begin
+				PCWrite <= 0;
+				MSPWrite <= 0;
+				RSPWrite <= 0;
+				IRWrite <= 0;
+				ValAWrite <= 0;
+				ValBWrite <= 0;
+				ResWrite <= 0;
+				MemWrite1 <= 0;
+				MemWrite2 <= 1;
+				MemRead1 <= 0;
+				MemRead2 <= 1;
+				DisplayRegWrite <= 0;
+				
+				MemDst2 <= 2'b11;
+				MemData <= 3'b100;
 			end
 			
 			StateLoad: begin
@@ -287,6 +329,7 @@ module Control (
 				MemWrite2 <= 0;
 				MemRead1 <= 1;
 				MemRead2 <= 1;
+				DisplayRegWrite <= 0;
 				
 				MSPRegReset <= 0;
 				RSPRegReset <= 0;
@@ -310,6 +353,7 @@ module Control (
 				MemWrite2 <= 0;
 				MemRead1 <= 0;
 				MemRead2 <= 0;
+				DisplayRegWrite <= 0;
 				
 				MSPRegReset <= 0;
 				RSPRegReset <= 0;
@@ -333,6 +377,7 @@ module Control (
 				MemWrite2 <= 0;
 				MemRead1 <= 0;
 				MemRead2 <= 0;
+				DisplayRegWrite <= 0;
 				
 				MSPRegReset <= 0;
 				RSPRegReset <= 0;
@@ -353,6 +398,7 @@ module Control (
 				MemWrite2 <= 0;
 				MemRead1 <= 1;
 				MemRead2 <= 0;
+				DisplayRegWrite <= 0;
 				
 				MSPRegReset <= 0;
 				RSPRegReset <= 0;
@@ -373,6 +419,7 @@ module Control (
 				MemWrite2 <= 0;
 				MemRead1 <= 0;
 				MemRead2 <= 0;
+				DisplayRegWrite <= 0;
 				
 				MSPRegReset <= 0;
 				RSPRegReset <= 0;
@@ -408,13 +455,14 @@ module Control (
 				MemWrite2 <= 1;
 				MemRead1 <= 0;
 				MemRead2 <= 1;
+				DisplayRegWrite <= 0;
 				
 				MSPRegReset <= 0;
 				RSPRegReset <= 0;
 				PCRegReset <= 0;
 				
 				MemDst2 <= 2'b00;
-				MemData <= 2'b01;
+				MemData <= 3'b001;
 				end
 				
 			State6: begin
@@ -429,6 +477,7 @@ module Control (
 				MemWrite2 <= 0;
 				MemRead1 <= 1;
 				MemRead2 <= 0;
+				DisplayRegWrite <= 0;
 				
 				MSPRegReset <= 0;
 				RSPRegReset <= 0;
@@ -449,6 +498,7 @@ module Control (
 				MemWrite2 <= 0;
 				MemRead1 <= 0;
 				MemRead2 <= 0;
+				DisplayRegWrite <= 0;
 				
 				MSPRegReset <= 0;
 				RSPRegReset <= 0;
@@ -472,6 +522,7 @@ module Control (
 				MemWrite2 <= 0;
 				MemRead1 <= 0;
 				MemRead2 <= 0;
+				DisplayRegWrite <= 0;
 				
 				MSPRegReset <= 0;
 				RSPRegReset <= 0;
@@ -495,6 +546,7 @@ module Control (
 				MemWrite2 <= 0;
 				MemRead1 <= 1;
 				MemRead2 <= 0;
+				DisplayRegWrite <= 0;
 				
 				MSPRegReset <= 0;
 				RSPRegReset <= 0;
@@ -515,13 +567,14 @@ module Control (
 				MemWrite2 <= 1;
 				MemRead1 <= 0;
 				MemRead2 <= 1;
+				DisplayRegWrite <= 0;
 				
 				MSPRegReset <= 0;
 				RSPRegReset <= 0;
 				PCRegReset <= 0;
 				
 				MemDst2 <= 2'b10;
-				MemData <= 2'b11;
+				MemData <= 3'b011;
 				MSPop <= 1;
 				end
 				
@@ -537,6 +590,7 @@ module Control (
 				MemWrite2 <= 0;
 				MemRead1 <= 0;
 				MemRead2 <= 0;
+				DisplayRegWrite <= 0;
 				
 				MSPRegReset <= 0;
 				RSPRegReset <= 0;
@@ -559,6 +613,7 @@ module Control (
 				MemWrite2 <= 0;
 				MemRead1 <= 0;
 				MemRead2 <= 0;
+				DisplayRegWrite <= 0;
 				
 				MSPRegReset <= 0;
 				RSPRegReset <= 0;
@@ -581,6 +636,7 @@ module Control (
 				MemWrite2 <= 0;
 				MemRead1 <= 0;
 				MemRead2 <= 0;
+				DisplayRegWrite <= 0;
 				
 				MSPRegReset <= 0;
 				RSPRegReset <= 0;
@@ -603,13 +659,14 @@ module Control (
 				MemWrite2 <= 1;
 				MemRead1 <= 0;
 				MemRead2 <= 1;
+				DisplayRegWrite <= 0;
 				
 				MSPRegReset <= 0;
 				RSPRegReset <= 0;
 				PCRegReset <= 0;
 
 				MemDst2 <= 2'b00;
-				MemData <= 2'b01;
+				MemData <= 3'b001;
 				end
 
 			State15: begin
@@ -624,6 +681,7 @@ module Control (
 				MemWrite2 <= 0;
 				MemRead1 <= 0;
 				MemRead2 <= 0;
+				DisplayRegWrite <= 0;
 				
 				MSPRegReset <= 0;
 				RSPRegReset <= 0;
@@ -645,13 +703,14 @@ module Control (
 				MemWrite2 <= 1;
 				MemRead1 <= 0;
 				MemRead2 <= 1;
+				DisplayRegWrite <= 0;
 				
 				MSPRegReset <= 0;
 				RSPRegReset <= 0;
 				PCRegReset <= 0;
 
 				MemDst2 <= 2'b01;
-				MemData <= 2'b00;
+				MemData <= 3'b000;
 				end
 
 			State17: begin
@@ -666,6 +725,7 @@ module Control (
 				MemWrite2 <= 0;
 				MemRead1 <= 0;
 				MemRead2 <= 1;
+				DisplayRegWrite <= 0;
 				
 				MSPRegReset <= 0;
 				RSPRegReset <= 0;
@@ -686,6 +746,7 @@ module Control (
 				MemWrite2 <= 0;
 				MemRead1 <= 0;
 				MemRead2 <= 0;
+				DisplayRegWrite <= 0;
 				
 				MSPRegReset <= 0;
 				RSPRegReset <= 0;
@@ -706,6 +767,7 @@ module Control (
 				MemWrite2 <= 0;
 				MemRead1 <= 0;
 				MemRead2 <= 0;
+				DisplayRegWrite <= 0;
 				
 				MSPRegReset <= 0;
 				RSPRegReset <= 0;
@@ -726,6 +788,7 @@ module Control (
 				MemWrite2 <= 0;
 				MemRead1 <= 0;
 				MemRead2 <= 0;
+				DisplayRegWrite <= 0;
 				
 				MSPRegReset <= 0;
 				RSPRegReset <= 0;
@@ -747,6 +810,7 @@ module Control (
 				MemWrite2 <= 0;
 				MemRead1 <= 1;
 				MemRead2 <= 0;
+				DisplayRegWrite <= 0;
 				
 				MSPRegReset <= 0;
 				RSPRegReset <= 0;
@@ -767,13 +831,14 @@ module Control (
 				MemWrite2 <= 1;
 				MemRead1 <= 0;
 				MemRead2 <= 1;
+				DisplayRegWrite <= 0;
 				
 				MSPRegReset <= 0;
 				RSPRegReset <= 0;
 				PCRegReset <= 0;
 
 				MemDst2 <= 2'b00;
-				MemData <= 2'b11;
+				MemData <= 3'b011;
 				end
 
 			State23: begin
@@ -788,6 +853,7 @@ module Control (
 				MemWrite2 <= 0;
 				MemRead1 <= 0;
 				MemRead2 <= 0;
+				DisplayRegWrite <= 0;
 				
 				MSPRegReset <= 0;
 				RSPRegReset <= 0;
@@ -808,15 +874,56 @@ module Control (
 				MemWrite2 <= 1;
 				MemRead1 <= 0;
 				MemRead2 <= 1;
+				DisplayRegWrite <= 0;
 				
 				MSPRegReset <= 0;
 				RSPRegReset <= 0;
 				PCRegReset <= 0;
 
 				MemDst2 <= 2'b00;
-				MemData <= 2'b10;
+				MemData <= 3'b010;
 				end
-
+				
+			StateDisplay: begin
+				PCWrite <= 0;
+				MSPWrite <= 0;
+				RSPWrite <= 0;
+				IRWrite <= 0;
+				ValAWrite <= 0;
+				ValBWrite <= 0;
+				ResWrite <= 0;
+				MemWrite1 <= 0;
+				MemWrite2 <= 0;
+				MemRead1 <= 1;
+				MemRead2 <= 0;
+				DisplayRegWrite <= 1;
+				
+				MSPRegReset <= 0;
+				RSPRegReset <= 0;
+				PCRegReset <= 0;
+				
+				MemDst1 <= 01;
+			end
+			
+			StateEnd: begin
+				PCWrite <= 0;
+				MSPWrite <= 0;
+				RSPWrite <= 0;
+				IRWrite <= 0;
+				ValAWrite <= 0;
+				ValBWrite <= 0;
+				ResWrite <= 0;
+				MemWrite1 <= 0;
+				MemWrite2 <= 0;
+				MemRead1 <= 0;
+				MemRead2 <= 0;
+				DisplayRegWrite <= 0;
+				
+				MSPRegReset <= 0;
+				RSPRegReset <= 0;
+				PCRegReset <= 0;
+			end
+			
 		endcase
 	end
 endmodule
