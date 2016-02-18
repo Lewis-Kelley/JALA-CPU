@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <symbol version="7" name="stage5Integration">
     <symboltype>BLOCK</symboltype>
-    <timestamp>2016-2-13T22:55:57</timestamp>
+    <timestamp>2016-2-18T2:52:38</timestamp>
     <attr value="stage5Integration" name="VeriModel" />
     <pin polarity="Input" x="0" y="-1312" name="CLK" />
     <pin polarity="Input" x="0" y="352" name="MemCLK" />
@@ -18,16 +18,26 @@
     <pin polarity="Input" x="0" y="-800" name="ValAWrite" />
     <pin polarity="Input" x="0" y="-736" name="ValBWrite" />
     <pin polarity="Input" x="0" y="-672" name="IRWrite" />
+    <pin polarity="Input" x="0" y="544" name="displayWrite" />
     <pin polarity="Input" x="0" y="-608" name="MemRead1" />
     <pin polarity="Input" x="0" y="-544" name="MemRead2" />
     <pin polarity="Input" x="0" y="-480" name="MemWrite1" />
     <pin polarity="Input" x="0" y="-416" name="MemWrite2" />
+    <pin polarity="Input" x="0" y="608" name="RESET" />
     <pin polarity="Input" x="0" y="-352" name="SignExtOut(15:0)" />
     <pin polarity="Input" x="0" y="-288" name="ZeroExtOut(15:0)" />
     <pin polarity="Input" x="0" y="-224" name="ResOut(15:0)" />
     <pin polarity="Input" x="0" y="-160" name="MemDst1(1:0)" />
     <pin polarity="Input" x="0" y="-96" name="MemDst2(1:0)" />
-    <pin polarity="Input" x="0" y="-32" name="MemData(1:0)" />
+    <pin polarity="Input" x="0" y="-32" name="MemData(2:0)" />
+    <pin polarity="Input" x="0" y="992" name="switches(3:0)" />
+    <pin polarity="Output" x="480" y="544" name="sf_ce" />
+    <pin polarity="Output" x="480" y="864" name="sf_oe" />
+    <pin polarity="Output" x="480" y="928" name="sf_we" />
+    <pin polarity="Output" x="480" y="608" name="lcd_rw" />
+    <pin polarity="Output" x="480" y="672" name="lcd_rs" />
+    <pin polarity="Output" x="480" y="736" name="lcd_E" />
+    <pin polarity="Output" x="480" y="800" name="led7" />
     <pin polarity="Output" x="480" y="-1312" name="ValAOut(15:0)" />
     <pin polarity="Output" x="480" y="-1056" name="ValBOut(15:0)" />
     <pin polarity="Output" x="480" y="-800" name="IROut(15:0)" />
@@ -36,6 +46,7 @@
     <pin polarity="Output" x="480" y="-32" name="RSPOut(15:0)" />
     <pin polarity="Output" x="480" y="416" name="MemAOut(15:0)" />
     <pin polarity="Output" x="480" y="480" name="MemBOut(15:0)" />
+    <pin polarity="Output" x="480" y="1120" name="lcd_D(3:0)" />
     <graph>
         <attrtext style="alignment:BCENTER;fontsize:56;fontname:Arial" attrname="SymbolName" x="240" y="-1352" type="symbol" />
         <attrtext style="fontsize:24;fontname:Arial" attrname="PinName" x="72" y="-1312" type="pin CLK" />
@@ -53,16 +64,26 @@
         <attrtext style="fontsize:24;fontname:Arial" attrname="PinName" x="72" y="-800" type="pin ValAWrite" />
         <attrtext style="fontsize:24;fontname:Arial" attrname="PinName" x="72" y="-736" type="pin ValBWrite" />
         <attrtext style="fontsize:24;fontname:Arial" attrname="PinName" x="72" y="-672" type="pin IRWrite" />
+        <attrtext style="fontsize:24;fontname:Arial" attrname="PinName" x="72" y="544" type="pin displayWrite" />
         <attrtext style="fontsize:24;fontname:Arial" attrname="PinName" x="72" y="-608" type="pin MemRead1" />
         <attrtext style="fontsize:24;fontname:Arial" attrname="PinName" x="72" y="-544" type="pin MemRead2" />
         <attrtext style="fontsize:24;fontname:Arial" attrname="PinName" x="72" y="-480" type="pin MemWrite1" />
         <attrtext style="fontsize:24;fontname:Arial" attrname="PinName" x="72" y="-416" type="pin MemWrite2" />
+        <attrtext style="fontsize:24;fontname:Arial" attrname="PinName" x="72" y="608" type="pin RESET" />
         <attrtext style="fontsize:24;fontname:Arial" attrname="PinName" x="72" y="-352" type="pin SignExtOut(15:0)" />
         <attrtext style="fontsize:24;fontname:Arial" attrname="PinName" x="72" y="-288" type="pin ZeroExtOut(15:0)" />
         <attrtext style="fontsize:24;fontname:Arial" attrname="PinName" x="72" y="-224" type="pin ResOut(15:0)" />
         <attrtext style="fontsize:24;fontname:Arial" attrname="PinName" x="72" y="-160" type="pin MemDst1(1:0)" />
         <attrtext style="fontsize:24;fontname:Arial" attrname="PinName" x="72" y="-96" type="pin MemDst2(1:0)" />
-        <attrtext style="fontsize:24;fontname:Arial" attrname="PinName" x="72" y="-32" type="pin MemData(1:0)" />
+        <attrtext style="fontsize:24;fontname:Arial" attrname="PinName" x="72" y="-32" type="pin MemData(2:0)" />
+        <attrtext style="fontsize:24;fontname:Arial" attrname="PinName" x="72" y="992" type="pin switches(3:0)" />
+        <attrtext style="alignment:RIGHT;fontsize:24;fontname:Arial" attrname="PinName" x="408" y="544" type="pin sf_ce" />
+        <attrtext style="alignment:RIGHT;fontsize:24;fontname:Arial" attrname="PinName" x="408" y="864" type="pin sf_oe" />
+        <attrtext style="alignment:RIGHT;fontsize:24;fontname:Arial" attrname="PinName" x="408" y="928" type="pin sf_we" />
+        <attrtext style="alignment:RIGHT;fontsize:24;fontname:Arial" attrname="PinName" x="408" y="608" type="pin lcd_rw" />
+        <attrtext style="alignment:RIGHT;fontsize:24;fontname:Arial" attrname="PinName" x="408" y="672" type="pin lcd_rs" />
+        <attrtext style="alignment:RIGHT;fontsize:24;fontname:Arial" attrname="PinName" x="408" y="736" type="pin lcd_E" />
+        <attrtext style="alignment:RIGHT;fontsize:24;fontname:Arial" attrname="PinName" x="408" y="800" type="pin led7" />
         <attrtext style="alignment:RIGHT;fontsize:24;fontname:Arial" attrname="PinName" x="408" y="-1312" type="pin ValAOut(15:0)" />
         <attrtext style="alignment:RIGHT;fontsize:24;fontname:Arial" attrname="PinName" x="408" y="-1056" type="pin ValBOut(15:0)" />
         <attrtext style="alignment:RIGHT;fontsize:24;fontname:Arial" attrname="PinName" x="408" y="-800" type="pin IROut(15:0)" />
@@ -71,6 +92,20 @@
         <attrtext style="alignment:RIGHT;fontsize:24;fontname:Arial" attrname="PinName" x="408" y="-32" type="pin RSPOut(15:0)" />
         <attrtext style="alignment:RIGHT;fontsize:24;fontname:Arial" attrname="PinName" x="408" y="416" type="pin MemAOut(15:0)" />
         <attrtext style="alignment:RIGHT;fontsize:24;fontname:Arial" attrname="PinName" x="408" y="480" type="pin MemBOut(15:0)" />
+        <attrtext style="alignment:RIGHT;fontsize:24;fontname:Arial" attrname="PinName" x="408" y="1120" type="pin lcd_D(3:0)" />
+        <rect width="64" x="416" y="1108" height="24" />
+        <line x2="480" y1="1120" y2="1120" x1="416" />
+        <rect width="64" x="0" y="980" height="24" />
+        <line x2="0" y1="992" y2="992" x1="64" />
+        <line x2="480" y1="864" y2="864" x1="416" />
+        <line x2="480" y1="928" y2="928" x1="416" />
+        <line x2="0" y1="544" y2="544" x1="64" />
+        <line x2="0" y1="608" y2="608" x1="64" />
+        <line x2="480" y1="544" y2="544" x1="416" />
+        <line x2="480" y1="608" y2="608" x1="416" />
+        <line x2="480" y1="672" y2="672" x1="416" />
+        <line x2="480" y1="736" y2="736" x1="416" />
+        <line x2="480" y1="800" y2="800" x1="416" />
         <rect width="64" x="416" y="404" height="24" />
         <line x2="480" y1="416" y2="416" x1="416" />
         <rect width="64" x="416" y="468" height="24" />
@@ -118,6 +153,6 @@
         <line x2="480" y1="-288" y2="-288" x1="416" />
         <rect width="64" x="416" y="-44" height="24" />
         <line x2="480" y1="-32" y2="-32" x1="416" />
-        <rect width="352" x="64" y="-1344" height="1920" />
+        <rect width="352" x="64" y="-1344" height="2560" />
     </graph>
 </symbol>

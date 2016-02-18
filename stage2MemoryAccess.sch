@@ -38,9 +38,19 @@
         <signal name="MemData(2:0)" />
         <signal name="MemCLK" />
         <signal name="MemBIn(15:0)" />
-        <signal name="switch(3:0)" />
-        <signal name="g,g,g,switch(3),g,g,g,switch(2),g,g,g,switch(1),g,g,g,switch(0)" />
+        <signal name="g,g,g,switches(3),g,g,g,switches(2),g,g,g,switches(1),g,g,g,switches(0)" />
         <signal name="g,g,g,g,g,g,g,g,g,g,v,g,v,g,g,g" />
+        <signal name="RESET" />
+        <signal name="sf_ce" />
+        <signal name="lcd_rw" />
+        <signal name="lcd_rs" />
+        <signal name="lcd_E" />
+        <signal name="led7" />
+        <signal name="sf_oe" />
+        <signal name="sf_we" />
+        <signal name="displayWrite" />
+        <signal name="switches(3:0)" />
+        <signal name="lcd_D(3:0)" />
         <port polarity="Input" name="MemRead2" />
         <port polarity="Output" name="ValB(15:0)" />
         <port polarity="Output" name="ValA(15:0)" />
@@ -65,7 +75,17 @@
         <port polarity="Input" name="MemDst2(1:0)" />
         <port polarity="Input" name="MemData(2:0)" />
         <port polarity="Input" name="MemCLK" />
-        <port polarity="Input" name="switch(3:0)" />
+        <port polarity="Input" name="RESET" />
+        <port polarity="Output" name="sf_ce" />
+        <port polarity="Output" name="lcd_rw" />
+        <port polarity="Output" name="lcd_rs" />
+        <port polarity="Output" name="lcd_E" />
+        <port polarity="Output" name="led7" />
+        <port polarity="Output" name="sf_oe" />
+        <port polarity="Output" name="sf_we" />
+        <port polarity="Input" name="displayWrite" />
+        <port polarity="Input" name="switches(3:0)" />
+        <port polarity="Input" name="lcd_D(3:0)" />
         <blockdef name="reg16">
             <timestamp>2016-2-6T20:12:26</timestamp>
             <rect width="256" x="64" y="-192" height="192" />
@@ -125,6 +145,24 @@
             <line x2="544" y1="80" y2="80" style="linewidth:W" x1="576" />
             <line x2="544" y1="368" y2="368" style="linewidth:W" x1="576" />
         </blockdef>
+        <blockdef name="stage0LCDIntegration">
+            <timestamp>2016-2-18T2:51:35</timestamp>
+            <rect width="64" x="320" y="340" height="24" />
+            <line x2="384" y1="352" y2="352" x1="320" />
+            <line x2="0" y1="224" y2="224" x1="64" />
+            <rect width="64" x="0" y="148" height="24" />
+            <line x2="0" y1="160" y2="160" x1="64" />
+            <line x2="384" y1="32" y2="32" x1="320" />
+            <line x2="384" y1="96" y2="96" x1="320" />
+            <line x2="0" y1="-128" y2="-128" x1="64" />
+            <line x2="0" y1="-48" y2="-48" x1="64" />
+            <line x2="384" y1="-288" y2="-288" x1="320" />
+            <line x2="384" y1="-224" y2="-224" x1="320" />
+            <line x2="384" y1="-160" y2="-160" x1="320" />
+            <line x2="384" y1="-96" y2="-96" x1="320" />
+            <line x2="384" y1="-32" y2="-32" x1="320" />
+            <rect width="256" x="64" y="-320" height="704" />
+        </blockdef>
         <block symbolname="mux16b8" name="XLXI_9">
             <blockpin signalname="MemDst1FromPC(15:0)" name="A(15:0)" />
             <blockpin signalname="MemDst1FromMSP(15:0)" name="B(15:0)" />
@@ -154,7 +192,7 @@
             <blockpin signalname="MemDataFromRes(15:0)" name="B(15:0)" />
             <blockpin signalname="MemDataFromZEImm(15:0)" name="C(15:0)" />
             <blockpin signalname="ValB(15:0)" name="D(15:0)" />
-            <blockpin signalname="g,g,g,switch(3),g,g,g,switch(2),g,g,g,switch(1),g,g,g,switch(0)" name="E(15:0)" />
+            <blockpin signalname="g,g,g,switches(3),g,g,g,switches(2),g,g,g,switches(1),g,g,g,switches(0)" name="E(15:0)" />
             <blockpin name="F(15:0)" />
             <blockpin name="G(15:0)" />
             <blockpin name="H(15:0)" />
@@ -198,6 +236,20 @@
             <blockpin signalname="MemCLK" name="clkb" />
             <blockpin signalname="MemAOut(15:0)" name="douta(15:0)" />
             <blockpin signalname="MemBOut(15:0)" name="doutb(15:0)" />
+        </block>
+        <block symbolname="stage0LCDIntegration" name="XLXI_19">
+            <blockpin signalname="displayWrite" name="displayWrite" />
+            <blockpin signalname="CLK" name="clk" />
+            <blockpin signalname="RESET" name="RESET" />
+            <blockpin signalname="MemAOut(15:0)" name="dout1(15:0)" />
+            <blockpin signalname="sf_ce" name="sf_ce" />
+            <blockpin signalname="sf_oe" name="sf_oe" />
+            <blockpin signalname="sf_we" name="sf_we" />
+            <blockpin signalname="lcd_rw" name="lcd_rw" />
+            <blockpin signalname="lcd_rs" name="lcd_rs" />
+            <blockpin signalname="lcd_E" name="lcd_E" />
+            <blockpin signalname="led7" name="led7" />
+            <blockpin signalname="lcd_D(3:0)" name="lcd_D(3:0)" />
         </block>
     </netlist>
     <sheet sheetnum="1" width="3520" height="2720">
@@ -397,12 +449,11 @@
             <wire x2="3360" y1="224" y2="224" x1="3280" />
             <wire x2="3216" y1="224" y2="2464" x1="3216" />
         </branch>
-        <instance x="2608" y="2176" name="XLXI_17" orien="R0" />
         <branch name="g">
-            <attrtext style="alignment:SOFT-BCENTER;fontsize:28;fontname:Arial" attrname="Name" x="2528" y="1872" type="branch" />
-            <wire x2="2528" y1="1872" y2="1872" x1="2400" />
-            <wire x2="2672" y1="1872" y2="1872" x1="2528" />
-            <wire x2="2672" y1="1872" y2="2048" x1="2672" />
+            <attrtext style="alignment:SOFT-BCENTER;fontsize:28;fontname:Arial" attrname="Name" x="2528" y="2032" type="branch" />
+            <wire x2="2528" y1="2032" y2="2032" x1="2400" />
+            <wire x2="2672" y1="2032" y2="2032" x1="2528" />
+            <wire x2="2672" y1="2032" y2="2048" x1="2672" />
         </branch>
         <branch name="MemCLK">
             <attrtext style="alignment:SOFT-BCENTER;fontsize:28;fontname:Arial" attrname="Name" x="1520" y="1136" type="branch" />
@@ -503,16 +554,11 @@
         </branch>
         <iomarker fontsize="28" x="1776" y="496" name="MemCLK" orien="R180" />
         <branch name="MemBIn(15:0)">
-            <wire x2="1344" y1="1712" y2="1712" x1="1248" />
-            <wire x2="1456" y1="1712" y2="1712" x1="1344" />
+            <wire x2="1456" y1="1712" y2="1712" x1="1248" />
             <wire x2="1632" y1="976" y2="976" x1="1456" />
             <wire x2="1456" y1="976" y2="1712" x1="1456" />
         </branch>
-        <iomarker fontsize="28" x="192" y="2160" name="switch(3:0)" orien="R180" />
-        <branch name="switch(3:0)">
-            <wire x2="240" y1="2160" y2="2160" x1="192" />
-        </branch>
-        <branch name="g,g,g,switch(3),g,g,g,switch(2),g,g,g,switch(1),g,g,g,switch(0)">
+        <branch name="g,g,g,switches(3),g,g,g,switches(2),g,g,g,switches(1),g,g,g,switches(0)">
             <attrtext style="alignment:SOFT-BCENTER;fontsize:28;fontname:Arial" attrname="Name" x="736" y="1968" type="branch" />
             <wire x2="736" y1="1968" y2="1968" x1="720" />
             <wire x2="864" y1="1968" y2="1968" x1="736" />
@@ -521,5 +567,61 @@
             <attrtext style="alignment:SOFT-RIGHT;fontsize:28;fontname:Arial" attrname="Name" x="720" y="1264" type="branch" />
             <wire x2="864" y1="1264" y2="1264" x1="720" />
         </branch>
+        <instance x="2528" y="1552" name="XLXI_19" orien="R0">
+        </instance>
+        <branch name="CLK">
+            <attrtext style="alignment:SOFT-BCENTER;fontsize:28;fontname:Arial" attrname="Name" x="2496" y="1424" type="branch" />
+            <wire x2="2496" y1="1424" y2="1424" x1="2480" />
+            <wire x2="2528" y1="1424" y2="1424" x1="2496" />
+        </branch>
+        <branch name="RESET">
+            <wire x2="2528" y1="1504" y2="1504" x1="2480" />
+        </branch>
+        <iomarker fontsize="28" x="2480" y="1504" name="RESET" orien="R180" />
+        <branch name="sf_ce">
+            <wire x2="2928" y1="1264" y2="1264" x1="2912" />
+        </branch>
+        <branch name="lcd_rw">
+            <wire x2="2928" y1="1328" y2="1328" x1="2912" />
+        </branch>
+        <branch name="lcd_rs">
+            <wire x2="2928" y1="1392" y2="1392" x1="2912" />
+        </branch>
+        <branch name="lcd_E">
+            <wire x2="2928" y1="1456" y2="1456" x1="2912" />
+        </branch>
+        <branch name="led7">
+            <wire x2="2928" y1="1520" y2="1520" x1="2912" />
+        </branch>
+        <iomarker fontsize="28" x="2928" y="1264" name="sf_ce" orien="R0" />
+        <iomarker fontsize="28" x="2928" y="1328" name="lcd_rw" orien="R0" />
+        <iomarker fontsize="28" x="2928" y="1392" name="lcd_rs" orien="R0" />
+        <iomarker fontsize="28" x="2928" y="1456" name="lcd_E" orien="R0" />
+        <iomarker fontsize="28" x="2928" y="1520" name="led7" orien="R0" />
+        <branch name="sf_oe">
+            <wire x2="2944" y1="1584" y2="1584" x1="2912" />
+        </branch>
+        <iomarker fontsize="28" x="2944" y="1584" name="sf_oe" orien="R0" />
+        <branch name="sf_we">
+            <wire x2="2944" y1="1648" y2="1648" x1="2912" />
+        </branch>
+        <iomarker fontsize="28" x="2944" y="1648" name="sf_we" orien="R0" />
+        <branch name="MemAOut(15:0)">
+            <attrtext style="alignment:SOFT-RIGHT;fontsize:28;fontname:Arial" attrname="Name" x="2480" y="1712" type="branch" />
+            <wire x2="2528" y1="1712" y2="1712" x1="2480" />
+        </branch>
+        <branch name="displayWrite">
+            <wire x2="2528" y1="1776" y2="1776" x1="2512" />
+        </branch>
+        <iomarker fontsize="28" x="2512" y="1776" name="displayWrite" orien="R180" />
+        <branch name="switches(3:0)">
+            <wire x2="256" y1="2112" y2="2112" x1="240" />
+        </branch>
+        <iomarker fontsize="28" x="240" y="2112" name="switches(3:0)" orien="R180" />
+        <branch name="lcd_D(3:0)">
+            <wire x2="2944" y1="1904" y2="1904" x1="2912" />
+        </branch>
+        <iomarker fontsize="28" x="2944" y="1904" name="lcd_D(3:0)" orien="R0" />
+        <instance x="2608" y="2176" name="XLXI_17" orien="R0" />
     </sheet>
 </drawing>

@@ -1,44 +1,46 @@
 module Control (
-	input [3:0] op,
-	input [11:0] imm,
-	input	clk, rst, isZero,
-	input [15:0] PC,
-	input run,
-	output reg PCSource,
-	output reg PCWrite,
-	output reg PCAdd,
-	output reg PCRegReset,
-	output reg MSPop,
-	output reg MSPWrite,
-	output reg MSPRegReset,
-	output reg RSPop,
-	output reg RSPWrite,
-	output reg RSPRegReset,
-	output reg IRWrite,
-	output reg ValAWrite,
-	output reg ValBWrite,
-	output reg ResSource,
-	output reg ResWrite,
+	input [3:0]      op,
+	input [11:0]     imm,
+	input            clk, 
+	input            rst,
+	input            isZero,
+	input [15:0]     PC,
+	input            run,
+	output reg       PCSource,
+	output reg       PCWrite,
+	output reg       PCAdd,
+	output reg       PCRegReset,
+	output reg       MSPop,
+	output reg       MSPWrite,
+	output reg       MSPRegReset,
+	output reg       RSPop,
+	output reg       RSPWrite,
+	output reg       RSPRegReset,
+	output reg       IRWrite,
+	output reg       ValAWrite,
+	output reg       ValBWrite,
+	output reg       ResSource,
+	output reg       ResWrite,
 	output reg [1:0] MemDst1,
 	output reg [1:0] MemDst2,
-	output reg [1:0] MemData,
-	output reg MemWrite1,
-	output reg MemWrite2,
-	output reg MemRead1,
-	output reg MemRead2,
-	output reg DisplayRegWrite,
-	output reg dir,
-	output reg mode,
+	output reg [2:0] MemData,
+	output reg       MemWrite1,
+	output reg       MemWrite2,
+	output reg       MemRead1,
+	output reg       MemRead2,
+	output reg       DisplayRegWrite,
+	output reg       dir,
+	output reg       mode,
 	output reg [2:0] ALUop,
 	output reg [4:0] CurrentState = 5'b00000,
-	output reg [4:0] NextState
+	output reg [4:0] NextState,
+
+	output reg       endProgram
 );
 
 	reg [15:0] instructionCount;
 	reg exitedLoad;
 	
-	reg endProgram;
-
 	// State Encoding
 	parameter 	State0  = 5'b00000, 
 					State1  = 5'b00001, 
@@ -74,23 +76,20 @@ module Control (
 		instructionCount = 0;
 		exitedLoad = 1;
 		
-		endProgram = 0;
+		endProgram <= 0;
 	end
 	
 	// Current State Assignment
-	always @(posedge clk or rst) begin
+	always @(posedge rst or posedge clk) begin
 		if (rst) begin
 			CurrentState <= State0;
-		end else if(endProgram) begin
-			CurrentState <= StateDisplay;
-			endProgram = 0;
 		end else begin
 			CurrentState <= NextState;
 		end
 	end
 	
 	// Next State Logic
-	always @(CurrentState or op) begin
+	always @(CurrentState or op or run) begin
 		case (CurrentState)
 			State0:	begin
 				if (run) begin
@@ -127,8 +126,8 @@ module Control (
 					
 					if(op[3] && op[2] && !op[1] && !op[0] && imm == 12'b111111111111) begin
 						$display("Halting execution on instruction %d, with %d instructions executed", (PC - 10240) + 1, instructionCount);
-						NextState <= State0;
-						endProgram = 1;
+						NextState <= StateDisplay;
+						endProgram <= 1;
 						//$finish;
 					end
 				end

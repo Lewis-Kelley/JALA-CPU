@@ -1,57 +1,60 @@
 `timescale 1ns / 1ps
 
 module stage4Integration(
-						 input [15:0] 	   IROut,
-						 input 			   isZero,
-						 input 			   CLK,
-						 input 			   CtrlRst,
+						 input [15:0]      IROut,
+						 input             isZero,
+						 input             CLK,
+						 input             CtrlRst,
+						 input             run,
 						 
-						 input [15:0]		PC,
+						 input [15:0]      PC,
 
 						 //Shifter inputs
-						 input [15:0] 	   ShifterIn,
+						 input [15:0]      ShifterIn,
 
 						 //Valued outputs
-						 output [15:0] 	   ShifterOut,
+						 output [15:0]     ShifterOut,
 						 output reg [15:0] ZeroExtOut,
 						 output reg [15:0] SignExtOut,
 
 						 //***************
 						 //Control outputs
 						 //***************
-						 output 		   PCSource,
-						 output 		   PCWrite,
-						 output 		   PCAdd,
-						 output 		   PCRegReset,
+						 output            PCSource,
+						 output            PCWrite,
+						 output            PCAdd,
+						 output            PCRegReset,
 
-						 output 		   MSPop,
-						 output 		   MSPWrite,
-						 output 		   MSPRegReset,
+						 output            MSPop,
+						 output            MSPWrite,
+						 output            MSPRegReset,
 
-						 output 		   RSPop,
-						 output 		   RSPWrite,
-						 output 		   RSPRegReset,
+						 output            RSPop,
+						 output            RSPWrite,
+						 output            RSPRegReset,
 
-						 output 		   IRWrite,
-						 output 		   ValAWrite,
-						 output 		   ValBWrite,
+						 output            IRWrite,
+						 output            ValAWrite,
+						 output            ValBWrite,
+                         output            displayWrite, 
 
-						 output 		   ResSource,
-						 output 		   ResWrite,
+						 output            ResSource,
+						 output            ResWrite,
 
-						 output [1:0] 	   MemDst1,
-						 output [1:0] 	   MemDst2,
-						 output [1:0] 	   MemData,
+						 output [1:0]      MemDst1,
+						 output [1:0]      MemDst2,
+						 output [1:0]      MemData,
 
-						 output 		   MemWrite1,
-						 output 		   MemWrite2,
-						 output 		   MemRead1,
-						 output 		   MemRead2,
+						 output            MemWrite1,
+						 output            MemWrite2,
+						 output            MemRead1,
+						 output            MemRead2,
 
-						 output [2:0] 	   ALUop,
+						 output [2:0]      ALUop,
 
-						 output [4:0] CurrentState,
-						 output [4:0] NextState
+						 output [4:0]      CurrentState,
+						 output [4:0]      NextState,
+                         output            endProgram           
 						 );
 
    wire 							   ShifterDir,
@@ -70,6 +73,7 @@ module stage4Integration(
 				.imm(IROut[11:0]),
 				.clk(CLK),
 				.rst(CtrlRst),
+				.run(run),
 				
 				.PC(PC),
 
@@ -89,6 +93,7 @@ module stage4Integration(
 				.IRWrite(IRWrite),
 				.ValAWrite(ValAWrite),
 				.ValBWrite(ValBWrite),
+                .DisplayRegWrite(displayWrite),
 
 				.ResSource(ResSource),
 				.ResWrite(ResWrite),
@@ -110,7 +115,9 @@ module stage4Integration(
 				.isZero(isZero),
 
 				.CurrentState(CurrentState),
-				.NextState(NextState)
+				.NextState(NextState),
+
+                .endProgram(endProgram)
 				);
 
    always @ (*) begin

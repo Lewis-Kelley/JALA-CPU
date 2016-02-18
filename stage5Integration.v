@@ -7,34 +7,48 @@ module stage5Integration(
 						 input [15:0]  ResOut,
 
 						 //Control Inputs
-						 input 		   CLK,
-						 input 			MemCLK,
+						 input         CLK,
+						 input         MemCLK,
 
-						 input 		   MSPWrite,
-						 input 		   MSPop,
-						 input 		   MSPRegReset,
+						 input         MSPWrite,
+						 input         MSPop,
+						 input         MSPRegReset,
 
-						 input 		   RSPWrite,
-						 input 		   RSPop,
-						 input 		   RSPRegReset,
+						 input         RSPWrite,
+						 input         RSPop,
+						 input         RSPRegReset,
 
-						 input 		   PCWrite,
-						 input 		   PCSource,
-						 input 		   PCAdd,
-						 input 		   PCRegReset,
+						 input         PCWrite,
+						 input         PCSource,
+						 input         PCAdd,
+						 input         PCRegReset,
 
-						 input 		   ValAWrite,
-						 input 		   ValBWrite,
-						 input 		   IRWrite,
+						 input         ValAWrite,
+						 input         ValBWrite,
+						 input         IRWrite,
+						 input         displayWrite,
 
-						 input 		   MemRead1,
-						 input 		   MemRead2,
-						 input 		   MemWrite1,
-						 input 		   MemWrite2,
+						 input         MemRead1,
+						 input         MemRead2,
+						 input         MemWrite1,
+						 input         MemWrite2,
 
 						 input [1:0]   MemDst1,
 						 input [1:0]   MemDst2,
 						 input [2:0]   MemData,
+
+                         input [3:0]   switches, 
+						 
+						 // lcd IO
+						 input         RESET,
+						 output        sf_ce,
+						 output        sf_oe,
+						 output        sf_we,
+						 output        lcd_rw,
+						 output        lcd_rs,
+						 output        lcd_E,
+						 output [3:0]  lcd_D,
+						 output        led7,
 
 						 // Register Outputs
 						 output [15:0] ValAOut,
@@ -112,9 +126,22 @@ module stage5Integration(
 						  .ValAWrite(ValAWrite),
 						  .ValBWrite(ValBWrite),
 						  .IRWrite(IRWrite),
+						  .displayWrite(displayWrite),
 
+							//Display inputs/outputs
 						  .CLK(CLK),
-						  .MemCLK(MemCLK)
+						  .MemCLK(MemCLK),
+						  .RESET(RESET),
+						  .sf_ce(sf_ce),
+						  .sf_oe(sf_oe),
+						  .sf_we(sf_we),
+						  .lcd_rw(lcd_rw),
+						  .lcd_rs(lcd_rs),
+						  .lcd_E(lcd_E),
+						  .lcd_D(lcd_D),
+						  .led7(led7),
+
+                          .switches(switches)
 						  );
 
 

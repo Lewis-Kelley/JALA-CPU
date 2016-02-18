@@ -39,12 +39,22 @@
         <signal name="RSPRegReset" />
         <signal name="PCRegReset" />
         <signal name="ALUop(2:0)" />
-        <signal name="MemData(1:0)" />
         <signal name="MemCLK" />
         <signal name="MemBOut(15:0)" />
         <signal name="MemAOut(15:0)" />
         <signal name="RSPWrite" />
         <signal name="MemData(2:0)" />
+        <signal name="sf_we" />
+        <signal name="sf_oe" />
+        <signal name="led7" />
+        <signal name="lcd_E" />
+        <signal name="lcd_rs" />
+        <signal name="lcd_rw" />
+        <signal name="sf_ce" />
+        <signal name="displayWrite" />
+        <signal name="RESET" />
+        <signal name="switches(3:0)" />
+        <signal name="lcd_D(3:0)" />
         <port polarity="Output" name="ValAOut(15:0)" />
         <port polarity="Output" name="ValBOut(15:0)" />
         <port polarity="Output" name="ResOut(15:0)" />
@@ -78,12 +88,22 @@
         <port polarity="Input" name="RSPRegReset" />
         <port polarity="Input" name="PCRegReset" />
         <port polarity="Input" name="ALUop(2:0)" />
-        <port polarity="Input" name="MemData(1:0)" />
         <port polarity="Input" name="MemCLK" />
         <port polarity="Output" name="MemBOut(15:0)" />
         <port polarity="Output" name="MemAOut(15:0)" />
         <port polarity="Input" name="RSPWrite" />
         <port polarity="Input" name="MemData(2:0)" />
+        <port polarity="Output" name="sf_we" />
+        <port polarity="Output" name="sf_oe" />
+        <port polarity="Output" name="led7" />
+        <port polarity="Output" name="lcd_E" />
+        <port polarity="Output" name="lcd_rs" />
+        <port polarity="Output" name="lcd_rw" />
+        <port polarity="Output" name="sf_ce" />
+        <port polarity="Input" name="displayWrite" />
+        <port polarity="Input" name="RESET" />
+        <port polarity="Input" name="switches(3:0)" />
+        <port polarity="Output" name="lcd_D(3:0)" />
         <blockdef name="stage3Integration">
             <timestamp>2016-2-13T17:18:37</timestamp>
             <rect width="320" x="64" y="-448" height="448" />
@@ -103,7 +123,20 @@
             <line x2="448" y1="-32" y2="-32" x1="384" />
         </blockdef>
         <blockdef name="stage5Integration">
-            <timestamp>2016-2-13T22:55:57</timestamp>
+            <timestamp>2016-2-18T2:52:38</timestamp>
+            <rect width="64" x="416" y="1108" height="24" />
+            <line x2="480" y1="1120" y2="1120" x1="416" />
+            <rect width="64" x="0" y="980" height="24" />
+            <line x2="0" y1="992" y2="992" x1="64" />
+            <line x2="480" y1="864" y2="864" x1="416" />
+            <line x2="480" y1="928" y2="928" x1="416" />
+            <line x2="0" y1="544" y2="544" x1="64" />
+            <line x2="0" y1="608" y2="608" x1="64" />
+            <line x2="480" y1="544" y2="544" x1="416" />
+            <line x2="480" y1="608" y2="608" x1="416" />
+            <line x2="480" y1="672" y2="672" x1="416" />
+            <line x2="480" y1="736" y2="736" x1="416" />
+            <line x2="480" y1="800" y2="800" x1="416" />
             <rect width="64" x="416" y="404" height="24" />
             <line x2="480" y1="416" y2="416" x1="416" />
             <rect width="64" x="416" y="468" height="24" />
@@ -151,7 +184,7 @@
             <line x2="480" y1="-288" y2="-288" x1="416" />
             <rect width="64" x="416" y="-44" height="24" />
             <line x2="480" y1="-32" y2="-32" x1="416" />
-            <rect width="352" x="64" y="-1344" height="1920" />
+            <rect width="352" x="64" y="-1344" height="2560" />
         </blockdef>
         <block symbolname="stage3Integration" name="XLXI_1">
             <blockpin signalname="CLK" name="CLK" />
@@ -180,16 +213,26 @@
             <blockpin signalname="ValAWrite" name="ValAWrite" />
             <blockpin signalname="ValBWrite" name="ValBWrite" />
             <blockpin signalname="IRWrite" name="IRWrite" />
+            <blockpin signalname="displayWrite" name="displayWrite" />
             <blockpin signalname="MemRead1" name="MemRead1" />
             <blockpin signalname="MemRead2" name="MemRead2" />
             <blockpin signalname="MemWrite1" name="MemWrite1" />
             <blockpin signalname="MemWrite2" name="MemWrite2" />
+            <blockpin signalname="RESET" name="RESET" />
             <blockpin signalname="SignExtOut(15:0)" name="SignExtOut(15:0)" />
             <blockpin signalname="ZeroExtOut(15:0)" name="ZeroExtOut(15:0)" />
             <blockpin signalname="ResOut(15:0)" name="ResOut(15:0)" />
             <blockpin signalname="MemDst1(1:0)" name="MemDst1(1:0)" />
             <blockpin signalname="MemDst2(1:0)" name="MemDst2(1:0)" />
-            <blockpin signalname="MemData(1:0)" name="MemData(1:0)" />
+            <blockpin signalname="MemData(2:0)" name="MemData(2:0)" />
+            <blockpin signalname="switches(3:0)" name="switches(3:0)" />
+            <blockpin signalname="sf_ce" name="sf_ce" />
+            <blockpin signalname="sf_oe" name="sf_oe" />
+            <blockpin signalname="sf_we" name="sf_we" />
+            <blockpin signalname="lcd_rw" name="lcd_rw" />
+            <blockpin signalname="lcd_rs" name="lcd_rs" />
+            <blockpin signalname="lcd_E" name="lcd_E" />
+            <blockpin signalname="led7" name="led7" />
             <blockpin signalname="ValAOut(15:0)" name="ValAOut(15:0)" />
             <blockpin signalname="ValBOut(15:0)" name="ValBOut(15:0)" />
             <blockpin signalname="IROut(15:0)" name="IROut(15:0)" />
@@ -198,6 +241,7 @@
             <blockpin signalname="RSPOut(15:0)" name="RSPOut(15:0)" />
             <blockpin signalname="MemAOut(15:0)" name="MemAOut(15:0)" />
             <blockpin signalname="MemBOut(15:0)" name="MemBOut(15:0)" />
+            <blockpin signalname="lcd_D(3:0)" name="lcd_D(3:0)" />
         </block>
     </netlist>
     <sheet sheetnum="1" width="3520" height="2720">
@@ -231,26 +275,6 @@
         </branch>
         <branch name="ValBWrite">
             <wire x2="384" y1="672" y2="672" x1="208" />
-        </branch>
-        <branch name="IROut(15:0)">
-            <attrtext style="alignment:SOFT-BCENTER;fontsize:28;fontname:Arial" attrname="Name" x="1440" y="1072" type="branch" />
-            <wire x2="1440" y1="1072" y2="1072" x1="1344" />
-            <wire x2="1504" y1="1072" y2="1072" x1="1440" />
-        </branch>
-        <branch name="PCOut(15:0)">
-            <attrtext style="alignment:SOFT-BCENTER;fontsize:28;fontname:Arial" attrname="Name" x="1456" y="1328" type="branch" />
-            <wire x2="1456" y1="1328" y2="1328" x1="1344" />
-            <wire x2="1504" y1="1328" y2="1328" x1="1456" />
-        </branch>
-        <branch name="MSPOut(15:0)">
-            <attrtext style="alignment:SOFT-BCENTER;fontsize:28;fontname:Arial" attrname="Name" x="1456" y="1584" type="branch" />
-            <wire x2="1456" y1="1584" y2="1584" x1="1344" />
-            <wire x2="1504" y1="1584" y2="1584" x1="1456" />
-        </branch>
-        <branch name="RSPOut(15:0)">
-            <attrtext style="alignment:SOFT-BCENTER;fontsize:28;fontname:Arial" attrname="Name" x="1440" y="1840" type="branch" />
-            <wire x2="1440" y1="1840" y2="1840" x1="1344" />
-            <wire x2="1488" y1="1840" y2="1840" x1="1440" />
         </branch>
         <branch name="CLK">
             <attrtext style="alignment:SOFT-BCENTER;fontsize:28;fontname:Arial" attrname="Name" x="2128" y="1024" type="branch" />
@@ -319,10 +343,7 @@
             <wire x2="384" y1="1152" y2="1152" x1="208" />
         </branch>
         <branch name="SignExtOut(15:0)">
-            <wire x2="944" y1="112" y2="112" x1="672" />
-        </branch>
-        <branch name="ZeroExtOut(15:0)">
-            <wire x2="944" y1="176" y2="176" x1="672" />
+            <wire x2="720" y1="112" y2="112" x1="672" />
         </branch>
         <branch name="MemDst1(1:0)">
             <wire x2="384" y1="1232" y2="1232" x1="208" />
@@ -342,17 +363,16 @@
         </branch>
         <iomarker fontsize="28" x="176" y="1424" name="ALUop(2:0)" orien="R180" />
         <branch name="ShifterOut(15:0)">
-            <wire x2="944" y1="240" y2="240" x1="672" />
+            <wire x2="720" y1="240" y2="240" x1="672" />
         </branch>
         <iomarker fontsize="28" x="672" y="112" name="SignExtOut(15:0)" orien="R180" />
-        <iomarker fontsize="28" x="672" y="176" name="ZeroExtOut(15:0)" orien="R180" />
         <iomarker fontsize="28" x="672" y="240" name="ShifterOut(15:0)" orien="R180" />
         <branch name="isZero">
             <wire x2="384" y1="1568" y2="1568" x1="192" />
         </branch>
         <iomarker fontsize="28" x="384" y="1568" name="isZero" orien="R0" />
         <branch name="IROut(15:0)">
-            <wire x2="1392" y1="112" y2="112" x1="1136" />
+            <wire x2="1392" y1="112" y2="112" x1="1360" />
         </branch>
         <iomarker fontsize="28" x="1392" y="112" name="IROut(15:0)" orien="R0" />
         <branch name="PCOut(15:0)">
@@ -387,153 +407,10 @@
         <iomarker fontsize="28" x="192" y="1648" name="MSPRegReset" orien="R180" />
         <iomarker fontsize="28" x="192" y="1712" name="RSPRegReset" orien="R180" />
         <iomarker fontsize="28" x="192" y="1776" name="PCRegReset" orien="R180" />
-        <branch name="PCRegReset">
-            <attrtext style="alignment:SOFT-BCENTER;fontsize:28;fontname:Arial" attrname="Name" x="816" y="2032" type="branch" />
-            <wire x2="816" y1="2032" y2="2032" x1="704" />
-            <wire x2="864" y1="2032" y2="2032" x1="816" />
-        </branch>
-        <branch name="ValBWrite">
-            <attrtext style="alignment:SOFT-BCENTER;fontsize:28;fontname:Arial" attrname="Name" x="784" y="1136" type="branch" />
-            <wire x2="784" y1="1136" y2="1136" x1="704" />
-            <wire x2="864" y1="1136" y2="1136" x1="784" />
-        </branch>
-        <branch name="ValAWrite">
-            <attrtext style="alignment:SOFT-BCENTER;fontsize:28;fontname:Arial" attrname="Name" x="784" y="1072" type="branch" />
-            <wire x2="784" y1="1072" y2="1072" x1="704" />
-            <wire x2="864" y1="1072" y2="1072" x1="784" />
-        </branch>
-        <branch name="PCSource">
-            <attrtext style="alignment:SOFT-BCENTER;fontsize:28;fontname:Arial" attrname="Name" x="800" y="944" type="branch" />
-            <wire x2="800" y1="944" y2="944" x1="704" />
-            <wire x2="864" y1="944" y2="944" x1="800" />
-        </branch>
-        <branch name="PCWrite">
-            <attrtext style="alignment:SOFT-BCENTER;fontsize:28;fontname:Arial" attrname="Name" x="800" y="880" type="branch" />
-            <wire x2="800" y1="880" y2="880" x1="704" />
-            <wire x2="864" y1="880" y2="880" x1="800" />
-        </branch>
-        <branch name="MSPop">
-            <attrtext style="alignment:SOFT-BCENTER;fontsize:28;fontname:Arial" attrname="Name" x="816" y="2096" type="branch" />
-            <wire x2="816" y1="2096" y2="2096" x1="704" />
-            <wire x2="864" y1="2096" y2="2096" x1="816" />
-        </branch>
-        <branch name="ValBOut(15:0)">
-            <attrtext style="alignment:SOFT-BCENTER;fontsize:28;fontname:Arial" attrname="Name" x="1824" y="816" type="branch" />
-            <wire x2="1728" y1="816" y2="816" x1="1344" />
-            <wire x2="1728" y1="816" y2="1344" x1="1728" />
-            <wire x2="2160" y1="1344" y2="1344" x1="1728" />
-            <wire x2="1824" y1="816" y2="816" x1="1728" />
-            <wire x2="1936" y1="816" y2="816" x1="1824" />
-        </branch>
-        <branch name="ValAOut(15:0)">
-            <attrtext style="alignment:SOFT-BCENTER;fontsize:28;fontname:Arial" attrname="Name" x="1856" y="560" type="branch" />
-            <wire x2="1744" y1="560" y2="560" x1="1344" />
-            <wire x2="1744" y1="560" y2="1280" x1="1744" />
-            <wire x2="2160" y1="1280" y2="1280" x1="1744" />
-            <wire x2="1856" y1="560" y2="560" x1="1744" />
-            <wire x2="1936" y1="560" y2="560" x1="1856" />
-        </branch>
-        <branch name="RSPop">
-            <attrtext style="alignment:SOFT-BCENTER;fontsize:28;fontname:Arial" attrname="Name" x="816" y="2160" type="branch" />
-            <wire x2="816" y1="2160" y2="2160" x1="704" />
-            <wire x2="864" y1="2160" y2="2160" x1="816" />
-        </branch>
-        <branch name="RSPRegReset">
-            <attrtext style="alignment:SOFT-BCENTER;fontsize:28;fontname:Arial" attrname="Name" x="784" y="1968" type="branch" />
-            <wire x2="784" y1="1968" y2="1968" x1="704" />
-            <wire x2="864" y1="1968" y2="1968" x1="784" />
-        </branch>
-        <branch name="MSPRegReset">
-            <attrtext style="alignment:SOFT-BCENTER;fontsize:28;fontname:Arial" attrname="Name" x="816" y="1904" type="branch" />
-            <wire x2="816" y1="1904" y2="1904" x1="704" />
-            <wire x2="864" y1="1904" y2="1904" x1="816" />
-        </branch>
-        <branch name="MemData(1:0)">
-            <attrtext style="alignment:SOFT-BCENTER;fontsize:28;fontname:Arial" attrname="Name" x="752" y="1840" type="branch" />
-            <wire x2="752" y1="1840" y2="1840" x1="704" />
-            <wire x2="864" y1="1840" y2="1840" x1="752" />
-        </branch>
-        <branch name="MemDst2(1:0)">
-            <attrtext style="alignment:SOFT-BCENTER;fontsize:28;fontname:Arial" attrname="Name" x="784" y="1776" type="branch" />
-            <wire x2="784" y1="1776" y2="1776" x1="704" />
-            <wire x2="864" y1="1776" y2="1776" x1="784" />
-        </branch>
-        <branch name="MemDst1(1:0)">
-            <attrtext style="alignment:SOFT-BCENTER;fontsize:28;fontname:Arial" attrname="Name" x="768" y="1712" type="branch" />
-            <wire x2="768" y1="1712" y2="1712" x1="704" />
-            <wire x2="864" y1="1712" y2="1712" x1="768" />
-        </branch>
-        <branch name="ResOut(15:0)">
-            <attrtext style="alignment:SOFT-BCENTER;fontsize:28;fontname:Arial" attrname="Name" x="2752" y="1408" type="branch" />
-            <wire x2="864" y1="1648" y2="1648" x1="432" />
-            <wire x2="432" y1="1648" y2="2544" x1="432" />
-            <wire x2="2672" y1="2544" y2="2544" x1="432" />
-            <wire x2="2672" y1="1408" y2="1408" x1="2608" />
-            <wire x2="2752" y1="1408" y2="1408" x1="2672" />
-            <wire x2="2800" y1="1408" y2="1408" x1="2752" />
-            <wire x2="2672" y1="1408" y2="2544" x1="2672" />
-        </branch>
-        <branch name="ZeroExtOut(15:0)">
-            <attrtext style="alignment:SOFT-BCENTER;fontsize:28;fontname:Arial" attrname="Name" x="752" y="1584" type="branch" />
-            <wire x2="752" y1="1584" y2="1584" x1="704" />
-            <wire x2="864" y1="1584" y2="1584" x1="752" />
-        </branch>
-        <branch name="SignExtOut(15:0)">
-            <attrtext style="alignment:SOFT-BCENTER;fontsize:28;fontname:Arial" attrname="Name" x="800" y="1520" type="branch" />
-            <wire x2="800" y1="1520" y2="1520" x1="704" />
-            <wire x2="864" y1="1520" y2="1520" x1="800" />
-        </branch>
-        <branch name="MemWrite2">
-            <attrtext style="alignment:SOFT-BCENTER;fontsize:28;fontname:Arial" attrname="Name" x="784" y="1456" type="branch" />
-            <wire x2="784" y1="1456" y2="1456" x1="704" />
-            <wire x2="864" y1="1456" y2="1456" x1="784" />
-        </branch>
-        <branch name="MemWrite1">
-            <attrtext style="alignment:SOFT-BCENTER;fontsize:28;fontname:Arial" attrname="Name" x="800" y="1392" type="branch" />
-            <wire x2="800" y1="1392" y2="1392" x1="704" />
-            <wire x2="864" y1="1392" y2="1392" x1="800" />
-        </branch>
-        <branch name="MemRead2">
-            <attrtext style="alignment:SOFT-BCENTER;fontsize:28;fontname:Arial" attrname="Name" x="784" y="1328" type="branch" />
-            <wire x2="784" y1="1328" y2="1328" x1="704" />
-            <wire x2="864" y1="1328" y2="1328" x1="784" />
-        </branch>
-        <branch name="MemRead1">
-            <attrtext style="alignment:SOFT-BCENTER;fontsize:28;fontname:Arial" attrname="Name" x="800" y="1264" type="branch" />
-            <wire x2="800" y1="1264" y2="1264" x1="704" />
-            <wire x2="864" y1="1264" y2="1264" x1="800" />
-        </branch>
-        <branch name="IRWrite">
-            <attrtext style="alignment:SOFT-BCENTER;fontsize:28;fontname:Arial" attrname="Name" x="784" y="1200" type="branch" />
-            <wire x2="784" y1="1200" y2="1200" x1="704" />
-            <wire x2="864" y1="1200" y2="1200" x1="784" />
-        </branch>
-        <branch name="PCAdd">
-            <attrtext style="alignment:SOFT-BCENTER;fontsize:28;fontname:Arial" attrname="Name" x="800" y="1008" type="branch" />
-            <wire x2="800" y1="1008" y2="1008" x1="704" />
-            <wire x2="864" y1="1008" y2="1008" x1="800" />
-        </branch>
-        <branch name="MSPWrite">
-            <attrtext style="alignment:SOFT-BCENTER;fontsize:28;fontname:Arial" attrname="Name" x="816" y="624" type="branch" />
-            <wire x2="816" y1="624" y2="624" x1="704" />
-            <wire x2="864" y1="624" y2="624" x1="816" />
-        </branch>
-        <branch name="CLK">
-            <attrtext style="alignment:SOFT-BCENTER;fontsize:28;fontname:Arial" attrname="Name" x="800" y="560" type="branch" />
-            <wire x2="800" y1="560" y2="560" x1="704" />
-            <wire x2="864" y1="560" y2="560" x1="800" />
-        </branch>
-        <instance x="864" y="1872" name="XLXI_2" orien="R0">
-        </instance>
         <branch name="ResOut(15:0)">
             <wire x2="2176" y1="464" y2="464" x1="1872" />
         </branch>
         <iomarker fontsize="28" x="2176" y="464" name="ResOut(15:0)" orien="R0" />
-        <branch name="MemCLK">
-            <attrtext style="alignment:SOFT-BCENTER;fontsize:28;fontname:Arial" attrname="Name" x="752" y="2224" type="branch" />
-            <wire x2="752" y1="2224" y2="2224" x1="704" />
-            <wire x2="864" y1="2224" y2="2224" x1="752" />
-        </branch>
         <branch name="MemCLK">
             <wire x2="384" y1="48" y2="48" x1="224" />
         </branch>
@@ -546,24 +423,206 @@
         </branch>
         <iomarker fontsize="28" x="2896" y="96" name="MemAOut(15:0)" orien="R0" />
         <iomarker fontsize="28" x="2896" y="176" name="MemBOut(15:0)" orien="R0" />
-        <branch name="MemBOut(15:0)">
-            <attrtext style="alignment:SOFT-BCENTER;fontsize:28;fontname:Arial" attrname="Name" x="1440" y="2352" type="branch" />
-            <wire x2="1440" y1="2352" y2="2352" x1="1344" />
-            <wire x2="1552" y1="2352" y2="2352" x1="1440" />
-        </branch>
-        <branch name="MemAOut(15:0)">
-            <attrtext style="alignment:SOFT-BCENTER;fontsize:28;fontname:Arial" attrname="Name" x="1440" y="2288" type="branch" />
-            <wire x2="1440" y1="2288" y2="2288" x1="1344" />
-            <wire x2="1552" y1="2288" y2="2288" x1="1440" />
-        </branch>
         <branch name="RSPWrite">
             <wire x2="384" y1="288" y2="288" x1="192" />
         </branch>
-        <branch name="RSPWrite">
-            <attrtext style="alignment:SOFT-BCENTER;fontsize:28;fontname:Arial" attrname="Name" x="784" y="752" type="branch" />
-            <wire x2="784" y1="752" y2="752" x1="704" />
-            <wire x2="864" y1="752" y2="752" x1="784" />
-        </branch>
         <iomarker fontsize="28" x="192" y="288" name="RSPWrite" orien="R180" />
+        <branch name="ResOut(15:0)">
+            <attrtext style="alignment:SOFT-BCENTER;fontsize:28;fontname:Arial" attrname="Name" x="2752" y="1408" type="branch" />
+            <wire x2="2752" y1="1408" y2="1408" x1="2608" />
+            <wire x2="2800" y1="1408" y2="1408" x1="2752" />
+        </branch>
+        <branch name="ValBOut(15:0)">
+            <attrtext style="alignment:SOFT-BCENTER;fontsize:28;fontname:Arial" attrname="Name" x="1824" y="816" type="branch" />
+            <wire x2="1728" y1="432" y2="432" x1="1344" />
+            <wire x2="1728" y1="432" y2="816" x1="1728" />
+            <wire x2="1728" y1="816" y2="1344" x1="1728" />
+            <wire x2="2160" y1="1344" y2="1344" x1="1728" />
+            <wire x2="1824" y1="816" y2="816" x1="1728" />
+            <wire x2="1936" y1="816" y2="816" x1="1824" />
+        </branch>
+        <branch name="ValAOut(15:0)">
+            <attrtext style="alignment:SOFT-BCENTER;fontsize:28;fontname:Arial" attrname="Name" x="1856" y="560" type="branch" />
+            <wire x2="1744" y1="176" y2="176" x1="1344" />
+            <wire x2="1744" y1="176" y2="560" x1="1744" />
+            <wire x2="1744" y1="560" y2="1280" x1="1744" />
+            <wire x2="2160" y1="1280" y2="1280" x1="1744" />
+            <wire x2="1856" y1="560" y2="560" x1="1744" />
+            <wire x2="1936" y1="560" y2="560" x1="1856" />
+        </branch>
+        <branch name="ZeroExtOut(15:0)">
+            <wire x2="720" y1="176" y2="176" x1="672" />
+        </branch>
+        <iomarker fontsize="28" x="672" y="176" name="ZeroExtOut(15:0)" orien="R180" />
+        <instance x="864" y="1488" name="XLXI_2" orien="R0">
+        </instance>
+        <branch name="sf_we">
+            <wire x2="1360" y1="2416" y2="2416" x1="1344" />
+        </branch>
+        <branch name="sf_oe">
+            <wire x2="1360" y1="2352" y2="2352" x1="1344" />
+        </branch>
+        <branch name="led7">
+            <wire x2="1360" y1="2288" y2="2288" x1="1344" />
+        </branch>
+        <branch name="lcd_E">
+            <wire x2="1360" y1="2224" y2="2224" x1="1344" />
+        </branch>
+        <branch name="lcd_rs">
+            <wire x2="1360" y1="2160" y2="2160" x1="1344" />
+        </branch>
+        <branch name="lcd_rw">
+            <wire x2="1360" y1="2096" y2="2096" x1="1344" />
+        </branch>
+        <branch name="sf_ce">
+            <wire x2="1360" y1="2032" y2="2032" x1="1344" />
+        </branch>
+        <branch name="MemBOut(15:0)">
+            <wire x2="1360" y1="1968" y2="1968" x1="1344" />
+        </branch>
+        <branch name="MemAOut(15:0)">
+            <wire x2="1360" y1="1904" y2="1904" x1="1344" />
+        </branch>
+        <branch name="RSPOut(15:0)">
+            <attrtext style="alignment:SOFT-LEFT;fontsize:28;fontname:Arial" attrname="Name" x="1360" y="1456" type="branch" />
+            <wire x2="1360" y1="1456" y2="1456" x1="1344" />
+        </branch>
+        <branch name="MSPOut(15:0)">
+            <attrtext style="alignment:SOFT-LEFT;fontsize:28;fontname:Arial" attrname="Name" x="1360" y="1200" type="branch" />
+            <wire x2="1360" y1="1200" y2="1200" x1="1344" />
+        </branch>
+        <branch name="PCOut(15:0)">
+            <attrtext style="alignment:SOFT-LEFT;fontsize:28;fontname:Arial" attrname="Name" x="1360" y="944" type="branch" />
+            <wire x2="1360" y1="944" y2="944" x1="1344" />
+        </branch>
+        <branch name="IROut(15:0)">
+            <attrtext style="alignment:SOFT-LEFT;fontsize:28;fontname:Arial" attrname="Name" x="1360" y="688" type="branch" />
+            <wire x2="1360" y1="688" y2="688" x1="1344" />
+        </branch>
+        <branch name="CLK">
+            <attrtext style="alignment:SOFT-RIGHT;fontsize:28;fontname:Arial" attrname="Name" x="848" y="176" type="branch" />
+            <wire x2="864" y1="176" y2="176" x1="848" />
+        </branch>
+        <branch name="MSPWrite">
+            <attrtext style="alignment:SOFT-RIGHT;fontsize:28;fontname:Arial" attrname="Name" x="848" y="240" type="branch" />
+            <wire x2="864" y1="240" y2="240" x1="848" />
+        </branch>
+        <branch name="RSPWrite">
+            <attrtext style="alignment:SOFT-RIGHT;fontsize:28;fontname:Arial" attrname="Name" x="848" y="368" type="branch" />
+            <wire x2="864" y1="368" y2="368" x1="848" />
+        </branch>
+        <branch name="PCWrite">
+            <attrtext style="alignment:SOFT-RIGHT;fontsize:28;fontname:Arial" attrname="Name" x="848" y="496" type="branch" />
+            <wire x2="864" y1="496" y2="496" x1="848" />
+        </branch>
+        <branch name="PCSource">
+            <attrtext style="alignment:SOFT-RIGHT;fontsize:28;fontname:Arial" attrname="Name" x="848" y="560" type="branch" />
+            <wire x2="864" y1="560" y2="560" x1="848" />
+        </branch>
+        <branch name="PCAdd">
+            <attrtext style="alignment:SOFT-RIGHT;fontsize:28;fontname:Arial" attrname="Name" x="848" y="624" type="branch" />
+            <wire x2="864" y1="624" y2="624" x1="848" />
+        </branch>
+        <branch name="ValAWrite">
+            <attrtext style="alignment:SOFT-RIGHT;fontsize:28;fontname:Arial" attrname="Name" x="848" y="688" type="branch" />
+            <wire x2="864" y1="688" y2="688" x1="848" />
+        </branch>
+        <branch name="ValBWrite">
+            <attrtext style="alignment:SOFT-RIGHT;fontsize:28;fontname:Arial" attrname="Name" x="848" y="752" type="branch" />
+            <wire x2="864" y1="752" y2="752" x1="848" />
+        </branch>
+        <branch name="IRWrite">
+            <attrtext style="alignment:SOFT-RIGHT;fontsize:28;fontname:Arial" attrname="Name" x="848" y="816" type="branch" />
+            <wire x2="864" y1="816" y2="816" x1="848" />
+        </branch>
+        <branch name="MemRead1">
+            <attrtext style="alignment:SOFT-RIGHT;fontsize:28;fontname:Arial" attrname="Name" x="848" y="880" type="branch" />
+            <wire x2="864" y1="880" y2="880" x1="848" />
+        </branch>
+        <branch name="MemRead2">
+            <attrtext style="alignment:SOFT-RIGHT;fontsize:28;fontname:Arial" attrname="Name" x="848" y="944" type="branch" />
+            <wire x2="864" y1="944" y2="944" x1="848" />
+        </branch>
+        <branch name="MemWrite1">
+            <attrtext style="alignment:SOFT-RIGHT;fontsize:28;fontname:Arial" attrname="Name" x="848" y="1008" type="branch" />
+            <wire x2="864" y1="1008" y2="1008" x1="848" />
+        </branch>
+        <branch name="MemWrite2">
+            <attrtext style="alignment:SOFT-RIGHT;fontsize:28;fontname:Arial" attrname="Name" x="848" y="1072" type="branch" />
+            <wire x2="864" y1="1072" y2="1072" x1="848" />
+        </branch>
+        <branch name="SignExtOut(15:0)">
+            <attrtext style="alignment:SOFT-RIGHT;fontsize:28;fontname:Arial" attrname="Name" x="848" y="1136" type="branch" />
+            <wire x2="864" y1="1136" y2="1136" x1="848" />
+        </branch>
+        <branch name="ZeroExtOut(15:0)">
+            <attrtext style="alignment:SOFT-RIGHT;fontsize:28;fontname:Arial" attrname="Name" x="848" y="1200" type="branch" />
+            <wire x2="864" y1="1200" y2="1200" x1="848" />
+        </branch>
+        <branch name="ResOut(15:0)">
+            <attrtext style="alignment:SOFT-RIGHT;fontsize:28;fontname:Arial" attrname="Name" x="848" y="1264" type="branch" />
+            <wire x2="864" y1="1264" y2="1264" x1="848" />
+        </branch>
+        <branch name="MemDst1(1:0)">
+            <attrtext style="alignment:SOFT-RIGHT;fontsize:28;fontname:Arial" attrname="Name" x="848" y="1328" type="branch" />
+            <wire x2="864" y1="1328" y2="1328" x1="848" />
+        </branch>
+        <branch name="MemDst2(1:0)">
+            <attrtext style="alignment:SOFT-RIGHT;fontsize:28;fontname:Arial" attrname="Name" x="848" y="1392" type="branch" />
+            <wire x2="864" y1="1392" y2="1392" x1="848" />
+        </branch>
+        <branch name="MemData(2:0)">
+            <attrtext style="alignment:SOFT-RIGHT;fontsize:28;fontname:Arial" attrname="Name" x="848" y="1456" type="branch" />
+            <wire x2="864" y1="1456" y2="1456" x1="848" />
+        </branch>
+        <branch name="MSPRegReset">
+            <attrtext style="alignment:SOFT-RIGHT;fontsize:28;fontname:Arial" attrname="Name" x="848" y="1520" type="branch" />
+            <wire x2="864" y1="1520" y2="1520" x1="848" />
+        </branch>
+        <branch name="RSPRegReset">
+            <attrtext style="alignment:SOFT-RIGHT;fontsize:28;fontname:Arial" attrname="Name" x="848" y="1584" type="branch" />
+            <wire x2="864" y1="1584" y2="1584" x1="848" />
+        </branch>
+        <branch name="PCRegReset">
+            <attrtext style="alignment:SOFT-RIGHT;fontsize:28;fontname:Arial" attrname="Name" x="848" y="1648" type="branch" />
+            <wire x2="864" y1="1648" y2="1648" x1="848" />
+        </branch>
+        <branch name="MSPop">
+            <attrtext style="alignment:SOFT-RIGHT;fontsize:28;fontname:Arial" attrname="Name" x="848" y="1712" type="branch" />
+            <wire x2="864" y1="1712" y2="1712" x1="848" />
+        </branch>
+        <branch name="RSPop">
+            <attrtext style="alignment:SOFT-RIGHT;fontsize:28;fontname:Arial" attrname="Name" x="848" y="1776" type="branch" />
+            <wire x2="864" y1="1776" y2="1776" x1="848" />
+        </branch>
+        <branch name="MemCLK">
+            <attrtext style="alignment:SOFT-RIGHT;fontsize:28;fontname:Arial" attrname="Name" x="848" y="1840" type="branch" />
+            <wire x2="864" y1="1840" y2="1840" x1="848" />
+        </branch>
+        <branch name="displayWrite">
+            <wire x2="864" y1="2032" y2="2032" x1="848" />
+        </branch>
+        <branch name="RESET">
+            <wire x2="864" y1="2096" y2="2096" x1="848" />
+        </branch>
+        <branch name="switches(3:0)">
+            <wire x2="864" y1="2480" y2="2480" x1="848" />
+        </branch>
+        <iomarker fontsize="28" x="848" y="2480" name="switches(3:0)" orien="R180" />
+        <iomarker fontsize="28" x="848" y="2096" name="RESET" orien="R180" />
+        <iomarker fontsize="28" x="848" y="2032" name="displayWrite" orien="R180" />
+        <iomarker fontsize="28" x="1360" y="2416" name="sf_we" orien="R0" />
+        <iomarker fontsize="28" x="1360" y="2352" name="sf_oe" orien="R0" />
+        <iomarker fontsize="28" x="1360" y="2288" name="led7" orien="R0" />
+        <iomarker fontsize="28" x="1360" y="2224" name="lcd_E" orien="R0" />
+        <iomarker fontsize="28" x="1360" y="2160" name="lcd_rs" orien="R0" />
+        <iomarker fontsize="28" x="1360" y="2096" name="lcd_rw" orien="R0" />
+        <iomarker fontsize="28" x="1360" y="2032" name="sf_ce" orien="R0" />
+        <iomarker fontsize="28" x="1360" y="1968" name="MemBOut(15:0)" orien="R0" />
+        <iomarker fontsize="28" x="1360" y="1904" name="MemAOut(15:0)" orien="R0" />
+        <branch name="lcd_D(3:0)">
+            <wire x2="1360" y1="2608" y2="2608" x1="1344" />
+        </branch>
+        <iomarker fontsize="28" x="1360" y="2608" name="lcd_D(3:0)" orien="R0" />
     </sheet>
 </drawing>
