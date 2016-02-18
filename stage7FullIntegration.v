@@ -221,22 +221,24 @@ module stage7FullIntegration(
    //    $display("Starting");
    //    MemCLK = 0;
    // end
+
+   always @ (posedge clk) begin
+      led4 = 1;
+   end
    
+   always @ (negedge clk) begin
+      led5 = 1;
+   end
 
    always @ (clk) begin
-      MemCLK = ~MemCLK;
+      MemCLK = 0;
       #10;
-      MemCLK = ~MemCLK;
+      MemCLK = 1;
    end
    
 
    always @ (endProgram) begin
       led6 = endProgram;
-   end
-   
-   always @ (s_button or w_button) begin
-      led4 = s_button;
-      led5 = w_button;
    end
 
    always @ (switch0 or switch1 or switch2 or switch3) begin

@@ -38,8 +38,9 @@ module Control (
 	output reg       endProgram
 );
 
-	reg [15:0] instructionCount;
-	reg exitedLoad;
+   reg [15:0]        instructionCount;
+   reg               exitedLoad;
+	reg					isRunning;
 	
 	// State Encoding
 	parameter 	State0  = 5'b00000, 
@@ -75,24 +76,27 @@ module Control (
 	initial begin
 		instructionCount = 0;
 		exitedLoad = 1;
-		
+		isRunning <= 0;
 		endProgram <= 0;
 	end
 	
 	// Current State Assignment
-	always @(posedge rst or posedge clk) begin
-		if (rst) begin
-			CurrentState <= State0;
-		end else begin
-			CurrentState <= NextState;
-		end
+	always @(posedge rst or posedge clk or posedge run) begin
+	   if (rst) begin
+		  CurrentState <= State0;
+		  isRunning <= 0;
+		end else if (run) begin
+			isRunning <= 1;
+	   end else begin
+		  CurrentState <= NextState;
+	   end
 	end
 	
 	// Next State Logic
-	always @(CurrentState or op or run) begin
+	always @(CurrentState or op or isRunning) begin
 		case (CurrentState)
 			State0:	begin
-				if (run) begin
+				if (isRunning) begin
 					NextState <= StateInput;
 				end else begin
 					NextState <= State0;
