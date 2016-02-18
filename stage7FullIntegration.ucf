@@ -1,0 +1,76 @@
+# Constraints for reference design 'lcd_driver'.
+#
+# Revision C of the Spartan-3E Starter Kit.
+#
+# Period constraint for 50MHz operation
+#
+NET "clk" PERIOD = 20.0ns HIGH 50%;
+#
+# soldered 50MHz Clock.
+# 
+NET "clk" LOC = "C9" | IOSTANDARD = LVTTL;
+#
+#
+# Simple LEDs 
+# Require only 3.5mA. 
+#
+NET "led0" LOC = "F12" | IOSTANDARD = LVTTL | SLEW = SLOW | DRIVE = 8;
+NET "led1" LOC = "E12" | IOSTANDARD = LVTTL | SLEW = SLOW | DRIVE = 8;
+NET "led2" LOC = "E11" | IOSTANDARD = LVTTL | SLEW = SLOW | DRIVE = 8;
+NET "led3" LOC = "F11" | IOSTANDARD = LVTTL | SLEW = SLOW | DRIVE = 8;
+NET "led4" LOC = "C11" | IOSTANDARD = LVTTL | SLEW = SLOW | DRIVE = 8;
+NET "led5" LOC = "D11" | IOSTANDARD = LVTTL | SLEW = SLOW | DRIVE = 8;
+NET "led6" LOC = "E9"  | IOSTANDARD = LVTTL | SLEW = SLOW | DRIVE = 8;
+NET "led7" LOC = "F9"  | IOSTANDARD = LVTTL | SLEW = SLOW | DRIVE = 8;
+#
+#
+# LCD display
+# Very slow so can use lowest drive strength. 
+#
+NET "lcd_rs"   LOC = "L18" | IOSTANDARD = LVTTL | SLEW = SLOW | DRIVE = 2;
+NET "lcd_rw"   LOC = "L17" | IOSTANDARD = LVTTL | SLEW = SLOW | DRIVE = 2;
+NET "lcd_E"    LOC = "M18" | IOSTANDARD = LVTTL | SLEW = SLOW | DRIVE = 2;
+#NET "lcd_D<0>" LOC = "R15" | IOSTANDARD = LVTTL | SLEW = SLOW | DRIVE = 2;
+#NET "lcd_D<1>" LOC = "R16" | IOSTANDARD = LVTTL | SLEW = SLOW | DRIVE = 2;
+#NET "lcd_D<2>" LOC = "P17" | IOSTANDARD = LVTTL | SLEW = SLOW | DRIVE = 2;
+#NET "lcd_D<3>" LOC = "M15" | IOSTANDARD = LVTTL | SLEW = SLOW | DRIVE = 2;
+#
+# Strata Flash (need to disable to use LCD display) 
+#
+NET "sf_oe" LOC = "C18" | IOSTANDARD = LVTTL | SLEW = SLOW | DRIVE = 2;
+NET "sf_ce" LOC = "D16" | IOSTANDARD = LVTTL | SLEW = SLOW | DRIVE = 2;
+NET "sf_we" LOC = "D17" | IOSTANDARD = LVTTL | SLEW = SLOW | DRIVE = 2;
+#
+#
+# Simple switches 
+#   Pull UP resistors used to stop floating condition during switching. 
+#
+NET "switch0" LOC = "L13" | IOSTANDARD = LVTTL | PULLUP;
+NET "switch1" LOC = "L14" | IOSTANDARD = LVTTL | PULLUP;
+NET "switch2" LOC = "H18" | IOSTANDARD = LVTTL | PULLUP;
+#NET "writeOutput" LOC = "H18" | IOSTANDARD = LVTTL | PULLUP;
+NET "switch3" LOC = "N17" | IOSTANDARD = LVTTL | PULLUP;
+#NET "RESET" LOC = "N17" | IOSTANDARD = LVTTL | PULLUP;
+#
+#
+# Press buttons 
+#   Must have pull DOWN resistors to provide Low when not pressed.
+#
+#NET "RESET" LOC = "V4"  | IOSTANDARD = LVTTL | PULLDOWN;
+#NET "btn_east"  LOC = "H13" | IOSTANDARD = LVTTL | PULLDOWN;
+#NET "writeOutput" LOC = "K17" | IOSTANDARD = LVTTL | PULLDOWN;
+#NET "btn_west"  LOC = "D18" | IOSTANDARD = LVTTL | PULLDOWN;
+NET "s_button" LOC = "K17" | IOSTANDARD = LVTTL | PULLDOWN ;
+NET "w_button"  LOC = "D18" | IOSTANDARD = LVTTL | PULLDOWN ;
+#
+# Rotary encoder. 
+#   Rotation contacts require pull UP resistors to provide High level.
+#   Press contact requires pull DOWN resistor to provide Low when not pressed..
+#
+#NET "rotary_a"     LOC = "K18" | IOSTANDARD = LVTTL | PULLUP;
+#NET "rotary_b"     LOC = "G18" | IOSTANDARD = LVTTL | PULLUP;
+#NET "rotary_press" LOC = "V16" | IOSTANDARD = LVTTL | PULLDOWN;
+#
+#
+# End of File
+#

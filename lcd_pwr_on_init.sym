@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<symbol version="7" name="lcd_pwr_on_init">
+    <symboltype>BLOCK</symboltype>
+    <timestamp>2010-10-2T12:56:17</timestamp>
+    <attr value="lcd_pwr_on_init" name="VeriModel" />
+    <pin polarity="Input" x="0" y="-480" name="CLK" />
+    <pin polarity="Input" x="0" y="-416" name="RESET" />
+    <pin polarity="Input" x="0" y="-352" name="wait240ns" />
+    <pin polarity="Input" x="0" y="-288" name="wait40us" />
+    <pin polarity="Input" x="0" y="-224" name="wait100us" />
+    <pin polarity="Input" x="0" y="-160" name="wait4ms" />
+    <pin polarity="Input" x="0" y="-96" name="wait15ms" />
+    <pin polarity="Input" x="0" y="-32" name="doPwrOnInit" />
+    <pin polarity="Output" x="432" y="-32" name="dataOut(3:0)" />
+    <pin polarity="Output" x="432" y="-480" name="resetCount" />
+    <pin polarity="Output" x="432" y="-368" name="doCount" />
+    <pin polarity="Output" x="432" y="-256" name="lcdEnable" />
+    <pin polarity="Output" x="432" y="-144" name="initDone" />
+    <graph>
+        <rect width="304" x="64" y="-512" height="512" />
+        <attrtext style="fontsize:24;fontname:Arial" attrname="PinName" x="72" y="-480" type="pin CLK" />
+        <line x2="0" y1="-480" y2="-480" x1="64" />
+        <attrtext style="fontsize:24;fontname:Arial" attrname="PinName" x="72" y="-416" type="pin RESET" />
+        <line x2="0" y1="-416" y2="-416" x1="64" />
+        <attrtext style="fontsize:24;fontname:Arial" attrname="PinName" x="72" y="-352" type="pin wait240ns" />
+        <line x2="0" y1="-352" y2="-352" x1="64" />
+        <attrtext style="fontsize:24;fontname:Arial" attrname="PinName" x="72" y="-288" type="pin wait40us" />
+        <line x2="0" y1="-288" y2="-288" x1="64" />
+        <attrtext style="fontsize:24;fontname:Arial" attrname="PinName" x="72" y="-224" type="pin wait100us" />
+        <line x2="0" y1="-224" y2="-224" x1="64" />
+        <attrtext style="fontsize:24;fontname:Arial" attrname="PinName" x="72" y="-160" type="pin wait4ms" />
+        <line x2="0" y1="-160" y2="-160" x1="64" />
+        <attrtext style="fontsize:24;fontname:Arial" attrname="PinName" x="72" y="-96" type="pin wait15ms" />
+        <line x2="0" y1="-96" y2="-96" x1="64" />
+        <attrtext style="fontsize:24;fontname:Arial" attrname="PinName" x="72" y="-32" type="pin doPwrOnInit" />
+        <line x2="0" y1="-32" y2="-32" x1="64" />
+        <attrtext style="alignment:RIGHT;fontsize:24;fontname:Arial" attrname="PinName" x="360" y="-32" type="pin dataOut(3:0)" />
+        <rect width="64" x="368" y="-44" height="24" />
+        <line x2="432" y1="-32" y2="-32" x1="368" />
+        <attrtext style="alignment:RIGHT;fontsize:24;fontname:Arial" attrname="PinName" x="360" y="-480" type="pin resetCount" />
+        <line x2="432" y1="-480" y2="-480" x1="368" />
+        <attrtext style="alignment:RIGHT;fontsize:24;fontname:Arial" attrname="PinName" x="360" y="-368" type="pin doCount" />
+        <line x2="432" y1="-368" y2="-368" x1="368" />
+        <attrtext style="alignment:RIGHT;fontsize:24;fontname:Arial" attrname="PinName" x="360" y="-256" type="pin lcdEnable" />
+        <line x2="432" y1="-256" y2="-256" x1="368" />
+        <attrtext style="alignment:RIGHT;fontsize:24;fontname:Arial" attrname="PinName" x="360" y="-144" type="pin initDone" />
+        <line x2="432" y1="-144" y2="-144" x1="368" />
+        <attrtext style="alignment:BCENTER;fontsize:56;fontname:Arial" attrname="SymbolName" x="216" y="-520" type="symbol" />
+    </graph>
+</symbol>
