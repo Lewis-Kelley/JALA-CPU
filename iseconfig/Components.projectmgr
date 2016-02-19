@@ -39,7 +39,7 @@
          <ClosedNode>/stage3IntegrationTest C:|Users|kelleyld|XiLinx Projects|JALA-CPU|stage3IntegrationTest.v</ClosedNode>
          <ClosedNode>/stage4Integration C:|Users|kelleyld|XiLinx Projects|JALA-CPU|stage4Integration.v</ClosedNode>
          <ClosedNode>/stage5IntegrationTest C:|Users|kelleyld|XiLinx Projects|JALA-CPU-fpga|stage5IntegrationTest.v</ClosedNode>
-         <ClosedNode>/stage5IntegrationTest C:|Users|kelleyld|XiLinx Projects|JALA-CPU|stage5IntegrationTest.v/uut - stage5Integration/mem - stage2MemoryAccess</ClosedNode>
+         <ClosedNode>/stage5IntegrationTest C:|Users|kelleyld|XiLinx Projects|JALA-CPU|stage5IntegrationTest.v/uut - stage5Integration/mem - stage2MemoryAccess/XLXI_19 - stage0LCDIntegration</ClosedNode>
          <ClosedNode>/stage5IntegrationTest C:|Users|kelleyld|XiLinx Projects|JALA-CPU|stage5IntegrationTest.v/uut - stage5Integration/msp - stage1MSPIncrementer</ClosedNode>
          <ClosedNode>/stage5IntegrationTest C:|Users|kelleyld|XiLinx Projects|JALA-CPU|stage5IntegrationTest.v/uut - stage5Integration/pc - stage1PCIncrementerSch</ClosedNode>
          <ClosedNode>/stage5IntegrationTest C:|Users|kelleyld|XiLinx Projects|JALA-CPU|stage5IntegrationTest.v/uut - stage5Integration/rsp - stage1RSPIncrementer</ClosedNode>
@@ -50,6 +50,7 @@
          <ClosedNode>/stage5IntegrationTest |home|user|csse232|JALA-CPU|stage5IntegrationTest.v/uut - stage5Integration/rsp - stage1RSPIncrementer</ClosedNode>
          <ClosedNode>/stage6BasicOperation |home|user|csse232|JALA-CPU|stage6BasicOperation.sch</ClosedNode>
          <ClosedNode>/stage7FullIntegration C:|Users|kelleyld|XiLinx Projects|JALA-CPU|stage7FullIntegration.v/six - stage6BasicOperation/XLXI_1 - stage3Integration</ClosedNode>
+         <ClosedNode>/stage7FullIntegration C:|Users|kelleyld|XiLinx Projects|JALA-CPU|stage7FullIntegration.v/six - stage6BasicOperation/XLXI_2 - stage5Integration</ClosedNode>
          <ClosedNode>/stage7FullIntegration C:|Users|kelleyld|XiLinx Projects|JALA-CPU|stage7FullIntegration.v/six - stage6BasicOperation/XLXI_2 - stage5Integration/mem - stage2MemoryAccess</ClosedNode>
          <ClosedNode>/stage7FullIntegration C:|Users|kelleyld|XiLinx Projects|JALA-CPU|stage7FullIntegration.v/six - stage6BasicOperation/XLXI_2 - stage5Integration/msp - stage1MSPIncrementer</ClosedNode>
          <ClosedNode>/stage7FullIntegration C:|Users|kelleyld|XiLinx Projects|JALA-CPU|stage7FullIntegration.v/six - stage6BasicOperation/XLXI_2 - stage5Integration/pc - stage1PCIncrementerSch</ClosedNode>
@@ -59,13 +60,13 @@
          <ClosedNode>/stage7FullIntegration |home|user|csse232|JALA-CPU|stage7FullIntegration.v/six - stage6BasicOperation/XLXI_2 - stage5Integration</ClosedNode>
       </ClosedNodes>
       <SelectedItems>
-         <SelectedItem>stage7FullIntegration (C:/Users/kelleyld/XiLinx Projects/JALA-CPU-fpga/stage7FullIntegration.v)</SelectedItem>
+         <SelectedItem>stage7FullIntegration (C:/Users/kelleyld/XiLinx Projects/JALA-CPU/stage7FullIntegration.v)</SelectedItem>
       </SelectedItems>
-      <ScrollbarPosition orientation="vertical" >1</ScrollbarPosition>
+      <ScrollbarPosition orientation="vertical" >17</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
-      <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000100000000000000000000000000000000020200000001000000010000006400000233000000020000000000000000000000000200000064ffffffff000000810000000300000002000002330000000100000003000000000000000100000003</ViewHeaderState>
+      <ViewHeaderState orientation="horizontal" >000000ff0000000000000001000000010000000000000000000000000000000002020000000100000001000000640000021f000000020000000000000000000000000200000064ffffffff0000008100000003000000020000021f0000000100000003000000000000000100000003</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >true</UserChangedColumnWidths>
-      <CurrentItem>stage7FullIntegration (C:/Users/kelleyld/XiLinx Projects/JALA-CPU-fpga/stage7FullIntegration.v)</CurrentItem>
+      <CurrentItem>stage7FullIntegration (C:/Users/kelleyld/XiLinx Projects/JALA-CPU/stage7FullIntegration.v)</CurrentItem>
    </ItemView>
    <ItemView engineview="SynthesisOnly" sourcetype="" guiview="Process" >
       <ClosedNodes>
@@ -73,13 +74,13 @@
          <ClosedNode>Design Utilities/Compile HDL Simulation Libraries</ClosedNode>
       </ClosedNodes>
       <SelectedItems>
-         <SelectedItem/>
+         <SelectedItem></SelectedItem>
       </SelectedItems>
       <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
       <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000100000000000000000000000000000000000000000000000204000000010000000100000000000000000000000064ffffffff000000810000000000000001000002040000000100000000</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
-      <CurrentItem/>
+      <CurrentItem></CurrentItem>
    </ItemView>
    <ItemView guiview="File" >
       <ClosedNodes>
@@ -88,9 +89,9 @@
       <SelectedItems>
          <SelectedItem>Control.v</SelectedItem>
       </SelectedItems>
-      <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
+      <ScrollbarPosition orientation="vertical" >1</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
-      <ViewHeaderState orientation="horizontal" >000000ff0000000000000001000000000000000001000000000000000000000000000000000000038e000000040101000100000000000000000000000064ffffffff000000810000000000000004000000bd0000000100000000000000290000000100000000000000840000000100000000000002240000000100000000</ViewHeaderState>
+      <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000000000000010000000000000000000000000000000000000264000000040101000100000000000000000000000064ffffffff000000810000000000000004000000bd0000000100000000000000bf0000000100000000000000840000000100000000000000640000000100000000</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
       <CurrentItem>Control.v</CurrentItem>
    </ItemView>
@@ -115,19 +116,25 @@
          <ClosedNode>User Constraints</ClosedNode>
       </ClosedNodes>
       <SelectedItems>
-         <SelectedItem/>
+         <SelectedItem></SelectedItem>
       </SelectedItems>
       <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
       <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000100000000000000000000000000000000000000000000000204000000010000000100000000000000000000000064ffffffff000000810000000000000001000002040000000100000000</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
-      <CurrentItem/>
+      <CurrentItem></CurrentItem>
    </ItemView>
    <ItemView engineview="BehavioralSim" guiview="Source" compilemode="AutoCompile" >
       <ClosedNodes>
          <ClosedNodesVersion>2</ClosedNodesVersion>
          <ClosedNode>/BasicTest C:|Users|kelleyld|XiLinx Projects|JALA-CPU-fpga|BasicTest.v</ClosedNode>
          <ClosedNode>/BasicTest C:|Users|kelleyld|XiLinx Projects|JALA-CPU|BasicTest.v</ClosedNode>
+         <ClosedNode>/BasicTest C:|Users|kelleyld|XiLinx Projects|JALA-CPU|BasicTest.v/uut - stage7FullIntegration/four - stage4Integration</ClosedNode>
+         <ClosedNode>/BasicTest C:|Users|kelleyld|XiLinx Projects|JALA-CPU|BasicTest.v/uut - stage7FullIntegration/six - stage6BasicOperation/XLXI_1 - stage3Integration</ClosedNode>
+         <ClosedNode>/BasicTest C:|Users|kelleyld|XiLinx Projects|JALA-CPU|BasicTest.v/uut - stage7FullIntegration/six - stage6BasicOperation/XLXI_2 - stage5Integration/mem - stage2MemoryAccess/XLXI_19 - stage0LCDIntegration</ClosedNode>
+         <ClosedNode>/BasicTest C:|Users|kelleyld|XiLinx Projects|JALA-CPU|BasicTest.v/uut - stage7FullIntegration/six - stage6BasicOperation/XLXI_2 - stage5Integration/msp - stage1MSPIncrementer</ClosedNode>
+         <ClosedNode>/BasicTest C:|Users|kelleyld|XiLinx Projects|JALA-CPU|BasicTest.v/uut - stage7FullIntegration/six - stage6BasicOperation/XLXI_2 - stage5Integration/pc - stage1PCIncrementerSch</ClosedNode>
+         <ClosedNode>/BasicTest C:|Users|kelleyld|XiLinx Projects|JALA-CPU|BasicTest.v/uut - stage7FullIntegration/six - stage6BasicOperation/XLXI_2 - stage5Integration/rsp - stage1RSPIncrementer</ClosedNode>
          <ClosedNode>/BasicTest |home|user|csse232|JALA-CPU|BasicTest.v/uut - stage7FullIntegration/four - stage4Integration</ClosedNode>
          <ClosedNode>/BasicTest |home|user|csse232|JALA-CPU|BasicTest.v/uut - stage7FullIntegration/six - stage6BasicOperation/XLXI_2 - stage5Integration</ClosedNode>
          <ClosedNode>/BasicTest |home|user|csse232|JALA-CPU|BasicTest.v/uut - stage7FullIntegration/six - stage6BasicOperation/XLXI_2 - stage5Integration/mem - stage2MemoryAccess</ClosedNode>
@@ -137,6 +144,7 @@
          <ClosedNode>/ClockExtenderTest C:|Users|kelleyld|XiLinx Projects|JALA-CPU-fpga|ClockExtenderTest.v</ClosedNode>
          <ClosedNode>/ClockExtenderTest C:|Users|kelleyld|XiLinx Projects|JALA-CPU|ClockExtenderTest.v</ClosedNode>
          <ClosedNode>/ClockExtenderTest |home|user|csse232|JALA-CPU|ClockExtenderTest.v</ClosedNode>
+         <ClosedNode>/CompleteTest C:|Users|kelleyld|XiLinx Projects|JALA-CPU|CompleteTest.v</ClosedNode>
          <ClosedNode>/ControlTest C:|Users|kelleyld|XiLinx Projects|JALA-CPU|ControlTest.v</ClosedNode>
          <ClosedNode>/ControlTest |home|user|csse232|JALA-CPU|ControlTest.v</ClosedNode>
          <ClosedNode>/adder16btest C:|Users|kelleyld|XiLinx Projects|JALA-CPU|adder16btest.v</ClosedNode>
@@ -192,13 +200,13 @@
          <ClosedNode>/stage7FullIntegrationTest |home|user|csse232|JALA-CPU|stage7FullIntegrationTest.v/uut - stage7FullIntegration/six - stage6BasicOperation/XLXI_2 - stage5Integration/pc - stage1PCIncrementerSch</ClosedNode>
       </ClosedNodes>
       <SelectedItems>
-         <SelectedItem>CompleteTest (C:/Users/kelleyld/XiLinx Projects/JALA-CPU-fpga/CompleteTest.v)</SelectedItem>
+         <SelectedItem>CompleteTest (C:/Users/kelleyld/XiLinx Projects/JALA-CPU/CompleteTest.v)</SelectedItem>
       </SelectedItems>
       <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
-      <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000100000000000000000000000000000000020200000001000000010000006400000247000000020000000000000000000000000200000064ffffffff000000810000000300000002000002470000000100000003000000000000000100000003</ViewHeaderState>
+      <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000001000000000000000000000000000000000202000000010000000100000064000001be000000020000000000000000000000000200000064ffffffff000000810000000300000002000001be0000000100000003000000000000000100000003</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >true</UserChangedColumnWidths>
-      <CurrentItem>CompleteTest (C:/Users/kelleyld/XiLinx Projects/JALA-CPU-fpga/CompleteTest.v)</CurrentItem>
+      <CurrentItem>CompleteTest (C:/Users/kelleyld/XiLinx Projects/JALA-CPU/CompleteTest.v)</CurrentItem>
    </ItemView>
    <ItemView engineview="BehavioralSim" sourcetype="" guiview="Process" >
       <ClosedNodes>
@@ -206,13 +214,13 @@
          <ClosedNode>Design Utilities</ClosedNode>
       </ClosedNodes>
       <SelectedItems>
-         <SelectedItem></SelectedItem>
+         <SelectedItem/>
       </SelectedItems>
       <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
       <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000100000000000000000000000000000000000000000000000204000000010000000100000000000000000000000064ffffffff000000810000000000000001000002040000000100000000</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
-      <CurrentItem></CurrentItem>
+      <CurrentItem/>
    </ItemView>
    <ItemView engineview="BehavioralSim" sourcetype="DESUT_SCHEMATIC" guiview="Process" >
       <ClosedNodes>
@@ -265,25 +273,25 @@
          <ClosedNode>User Constraints</ClosedNode>
       </ClosedNodes>
       <SelectedItems>
-         <SelectedItem>Design Summary/Reports</SelectedItem>
+         <SelectedItem></SelectedItem>
       </SelectedItems>
       <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
       <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000001000000000000000000000000000000000000000000000001ef000000010000000100000000000000000000000064ffffffff000000810000000000000001000001ef0000000100000000</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
-      <CurrentItem>Design Summary/Reports</CurrentItem>
+      <CurrentItem></CurrentItem>
    </ItemView>
    <ItemView engineview="BehavioralSim" sourcetype="DESUT_XCO" guiview="Process" >
       <ClosedNodes>
          <ClosedNodesVersion>1</ClosedNodesVersion>
       </ClosedNodes>
       <SelectedItems>
-         <SelectedItem/>
+         <SelectedItem></SelectedItem>
       </SelectedItems>
       <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
-      <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000100000000000000000000000000000000000000000000000177000000010000000100000000000000000000000064ffffffff000000810000000000000001000001770000000100000000</ViewHeaderState>
+      <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000100000000000000000000000000000000000000000000000204000000010000000100000000000000000000000064ffffffff000000810000000000000001000002040000000100000000</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
-      <CurrentItem/>
+      <CurrentItem></CurrentItem>
    </ItemView>
 </Project>

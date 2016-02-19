@@ -43,7 +43,7 @@ module stage4Integration(
 
 						 output [1:0]      MemDst1,
 						 output [1:0]      MemDst2,
-						 output [1:0]      MemData,
+						 output [2:0]      MemData,
 
 						 output            MemWrite1,
 						 output            MemWrite2,

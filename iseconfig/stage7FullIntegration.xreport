@@ -1,10 +1,10 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <report-views version="2.0" >
  <header>
-  <ImplementationReportsDirectory>C:/Users/kelleyld/XiLinx Projects/JALA-CPU-fpga/work\</ImplementationReportsDirectory>
+  <ImplementationReportsDirectory>C:/Users/kelleyld/XiLinx Projects/JALA-CPU/work\</ImplementationReportsDirectory>
   <ModuleName>stage7FullIntegration</ModuleName>
-  <DateModified>2016-02-18T11:10:22</DateModified>
-  <SavedFilePath>C:/Users/kelleyld/XiLinx Projects/JALA-CPU-fpga/iseconfig/stage7FullIntegration.xreport</SavedFilePath>
+  <DateModified>2016-02-18T22:09:21</DateModified>
+  <SavedFilePath>C:/Users/kelleyld/XiLinx Projects/JALA-CPU/iseconfig/stage7FullIntegration.xreport</SavedFilePath>
   <DateInitialized>2016-02-18T07:33:52</DateInitialized>
   <EnableMessageFiltering>false</EnableMessageFiltering>
   <SummaryTimeStamp>2016-02-18T07:35:39</SummaryTimeStamp>

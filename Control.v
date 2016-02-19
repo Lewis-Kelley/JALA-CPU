@@ -300,6 +300,8 @@ module Control (
 				MSPRegReset <= 1;
 				RSPRegReset <= 1;
 				PCRegReset <= 1;
+
+				MemData <= 3'b100;
 			end
 			
 			StateInput: begin

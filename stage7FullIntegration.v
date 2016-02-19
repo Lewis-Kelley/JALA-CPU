@@ -155,7 +155,7 @@ module stage7FullIntegration(
 						    .lcd_D(lcd_D),
 						    .led7(led7),
 
-                            .switches({switch0,switch1,switch2,switch3})
+                            .switches({switch3,switch2,switch1,switch0})
 						);
 
    stage4Integration four(

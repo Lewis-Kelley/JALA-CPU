@@ -94,6 +94,10 @@ module CompleteTest;
    initial begin
       s_button = 0;
 	  w_button = 1; //Trigger the reset
+	  switch0 = 0;
+	  switch1 = 0;
+	  switch2 = 1;
+	  switch3 = 0;
 	  
 	  CLKCount = 0;
 	  

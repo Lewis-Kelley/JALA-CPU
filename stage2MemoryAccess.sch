@@ -51,6 +51,8 @@
         <signal name="displayWrite" />
         <signal name="switches(3:0)" />
         <signal name="lcd_D(3:0)" />
+        <signal name="XLXN_1(15:0)" />
+        <signal name="v" />
         <port polarity="Input" name="MemRead2" />
         <port polarity="Output" name="ValB(15:0)" />
         <port polarity="Output" name="ValA(15:0)" />
@@ -163,6 +165,12 @@
             <line x2="384" y1="-32" y2="-32" x1="320" />
             <rect width="256" x="64" y="-320" height="704" />
         </blockdef>
+        <blockdef name="vcc">
+            <timestamp>2000-1-1T10:10:10</timestamp>
+            <line x2="64" y1="-32" y2="-64" x1="64" />
+            <line x2="64" y1="0" y2="-32" x1="64" />
+            <line x2="32" y1="-64" y2="-64" x1="96" />
+        </blockdef>
         <block symbolname="mux16b8" name="XLXI_9">
             <blockpin signalname="MemDst1FromPC(15:0)" name="A(15:0)" />
             <blockpin signalname="MemDst1FromMSP(15:0)" name="B(15:0)" />
@@ -180,7 +188,7 @@
             <blockpin signalname="MemDst2FromRSP(15:0)" name="B(15:0)" />
             <blockpin signalname="ValA(15:0)" name="C(15:0)" />
             <blockpin signalname="g,g,g,g,g,g,g,g,g,g,v,g,v,g,g,g" name="D(15:0)" />
-            <blockpin name="E(15:0)" />
+            <blockpin signalname="g,g,g,g,g,g,g,g,g,g,v,g,v,g,g,g" name="E(15:0)" />
             <blockpin name="F(15:0)" />
             <blockpin name="G(15:0)" />
             <blockpin name="H(15:0)" />
@@ -220,9 +228,6 @@
         <block symbolname="gnd" name="XLXI_16">
             <blockpin signalname="g" name="G" />
         </block>
-        <block symbolname="gnd" name="XLXI_17">
-            <blockpin signalname="g" name="G" />
-        </block>
         <block symbolname="blockmem20480b" name="XLXI_18">
             <blockpin signalname="MemDst1Out(14:0)" name="addra(14:0)" />
             <blockpin name="dina(15:0)" />
@@ -250,6 +255,9 @@
             <blockpin signalname="lcd_E" name="lcd_E" />
             <blockpin signalname="led7" name="led7" />
             <blockpin signalname="lcd_D(3:0)" name="lcd_D(3:0)" />
+        </block>
+        <block symbolname="vcc" name="XLXI_20">
+            <blockpin signalname="v" name="P" />
         </block>
     </netlist>
     <sheet sheetnum="1" width="3520" height="2720">
@@ -449,12 +457,6 @@
             <wire x2="3360" y1="224" y2="224" x1="3280" />
             <wire x2="3216" y1="224" y2="2464" x1="3216" />
         </branch>
-        <branch name="g">
-            <attrtext style="alignment:SOFT-BCENTER;fontsize:28;fontname:Arial" attrname="Name" x="2528" y="2032" type="branch" />
-            <wire x2="2528" y1="2032" y2="2032" x1="2400" />
-            <wire x2="2672" y1="2032" y2="2032" x1="2528" />
-            <wire x2="2672" y1="2032" y2="2048" x1="2672" />
-        </branch>
         <branch name="MemCLK">
             <attrtext style="alignment:SOFT-BCENTER;fontsize:28;fontname:Arial" attrname="Name" x="1520" y="1136" type="branch" />
             <wire x2="1520" y1="1136" y2="1136" x1="1472" />
@@ -565,7 +567,10 @@
         </branch>
         <branch name="g,g,g,g,g,g,g,g,g,g,v,g,v,g,g,g">
             <attrtext style="alignment:SOFT-RIGHT;fontsize:28;fontname:Arial" attrname="Name" x="720" y="1264" type="branch" />
-            <wire x2="864" y1="1264" y2="1264" x1="720" />
+            <wire x2="736" y1="1264" y2="1264" x1="720" />
+            <wire x2="864" y1="1264" y2="1264" x1="736" />
+            <wire x2="736" y1="1264" y2="1328" x1="736" />
+            <wire x2="864" y1="1328" y2="1328" x1="736" />
         </branch>
         <instance x="2528" y="1552" name="XLXI_19" orien="R0">
         </instance>
@@ -622,6 +627,11 @@
             <wire x2="2944" y1="1904" y2="1904" x1="2912" />
         </branch>
         <iomarker fontsize="28" x="2944" y="1904" name="lcd_D(3:0)" orien="R0" />
-        <instance x="2608" y="2176" name="XLXI_17" orien="R0" />
+        <instance x="2384" y="2128" name="XLXI_20" orien="R0" />
+        <branch name="v">
+            <attrtext style="alignment:SOFT-TVCENTER;fontsize:28;fontname:Arial" attrname="Name" x="2448" y="2160" type="branch" />
+            <wire x2="2448" y1="2128" y2="2160" x1="2448" />
+            <wire x2="2448" y1="2160" y2="2176" x1="2448" />
+        </branch>
     </sheet>
 </drawing>
