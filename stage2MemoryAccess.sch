@@ -38,7 +38,7 @@
         <signal name="MemData(2:0)" />
         <signal name="MemCLK" />
         <signal name="MemBIn(15:0)" />
-        <signal name="g,g,g,switches(3),g,g,g,switches(2),g,g,g,switches(1),g,g,g,switches(0)" />
+        <signal name="g,g,g,switches(3),g,g,v,switches(2),v,g,v,switches(1),g,g,g,switches(0)" />
         <signal name="g,g,g,g,g,g,g,g,g,g,v,g,v,g,g,g" />
         <signal name="RESET" />
         <signal name="sf_ce" />
@@ -51,7 +51,6 @@
         <signal name="displayWrite" />
         <signal name="switches(3:0)" />
         <signal name="lcd_D(3:0)" />
-        <signal name="XLXN_1(15:0)" />
         <signal name="v" />
         <port polarity="Input" name="MemRead2" />
         <port polarity="Output" name="ValB(15:0)" />
@@ -200,7 +199,7 @@
             <blockpin signalname="MemDataFromRes(15:0)" name="B(15:0)" />
             <blockpin signalname="MemDataFromZEImm(15:0)" name="C(15:0)" />
             <blockpin signalname="ValB(15:0)" name="D(15:0)" />
-            <blockpin signalname="g,g,g,switches(3),g,g,g,switches(2),g,g,g,switches(1),g,g,g,switches(0)" name="E(15:0)" />
+            <blockpin signalname="g,g,g,switches(3),g,g,v,switches(2),v,g,v,switches(1),g,g,g,switches(0)" name="E(15:0)" />
             <blockpin name="F(15:0)" />
             <blockpin name="G(15:0)" />
             <blockpin name="H(15:0)" />
@@ -560,7 +559,7 @@
             <wire x2="1632" y1="976" y2="976" x1="1456" />
             <wire x2="1456" y1="976" y2="1712" x1="1456" />
         </branch>
-        <branch name="g,g,g,switches(3),g,g,g,switches(2),g,g,g,switches(1),g,g,g,switches(0)">
+        <branch name="g,g,g,switches(3),g,g,v,switches(2),v,g,v,switches(1),g,g,g,switches(0)">
             <attrtext style="alignment:SOFT-BCENTER;fontsize:28;fontname:Arial" attrname="Name" x="736" y="1968" type="branch" />
             <wire x2="736" y1="1968" y2="1968" x1="720" />
             <wire x2="864" y1="1968" y2="1968" x1="736" />

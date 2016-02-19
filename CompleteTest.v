@@ -95,27 +95,27 @@ module CompleteTest;
       s_button = 0;
 	  w_button = 1; //Trigger the reset
 	  switch0 = 0;
-	  switch1 = 0;
+	  switch1 = 1;
 	  switch2 = 1;
-	  switch3 = 0;
+	  switch3 = 1;
 	  
 	  CLKCount = 0;
 	  
-	  file = $fopen("../ipcore_dir/blockmem20480b.mif", "r");
-	  if(file == 0) begin
-		 $display("File was null");
-		 $finish;
-	  end
+	  // file = $fopen("../ipcore_dir/blockmem20480b.mif", "r");
+	  // if(file == 0) begin
+	  //    $display("File was null");
+	  //    $finish;
+	  // end
 	  
-	  lineCount = 0;
+	  // lineCount = 0;
 	  
-	  while($fgets(string, file)) begin
-		 lineCount = lineCount + 1;
-	  end
+	  // while($fgets(string, file)) begin
+	  //    lineCount = lineCount + 1;
+	  // end
 	  
-	  $display("The file had %d lines, and %d instructions", lineCount, lineCount - 10239);
+	  // $display("The file had %d lines, and %d instructions", lineCount, lineCount - 10239);
 	  
-	  $fclose(file);
+	  // $fclose(file);
 	  
       #100;
 

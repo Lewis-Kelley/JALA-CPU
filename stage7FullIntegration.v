@@ -34,6 +34,7 @@ module stage7FullIntegration(
 							 output       isZero
 );
    reg                                    MemCLK = 1'b 0;
+   reg [32:0]                             clkCt = 32'h 00000000;
    
    // Control
    wire                                    MSPWrite;
@@ -223,11 +224,20 @@ module stage7FullIntegration(
    // end
 
    always @ (posedge clk) begin
-      led4 = 1;
+      clkCt = clkCt + 1;
+      // if (clkCt % 1024 == 0) begin
+      led0 = clkCt[27];
+      led1 = clkCt[28];
+      led2 = clkCt[29];
+      led3 = clkCt[30];
+      led4 = clkCt[31];
+      // end 
    end
    
    always @ (negedge clk) begin
       led5 = 1;
+      #10;
+      led5 = 0;
    end
 
    always @ (clk) begin
@@ -235,18 +245,17 @@ module stage7FullIntegration(
       #10;
       MemCLK = 1;
    end
-   
 
    always @ (endProgram) begin
       led6 = endProgram;
    end
 
-   always @ (switch0 or switch1 or switch2 or switch3) begin
-      led0 = switch0;
-      led1 = switch1;
-      led2 = switch2;
-      led3 = switch3;
-   end
+   // always @ (switch0 or switch1 or switch2 or switch3) begin
+   //    led0 = switch0;
+   //    led1 = switch1;
+   //    led2 = switch2;
+   //    led3 = switch3;
+   // end
    
    
 endmodule

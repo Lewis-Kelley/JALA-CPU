@@ -43,35 +43,36 @@ module Control (
 	reg					isRunning;
 	
 	// State Encoding
-	parameter 	State0  = 5'b00000, 
-					State1  = 5'b00001, 
-					State2  = 5'b00010,
-					State3  = 5'b00011,
-					State4  = 5'b00100,
-					State5  = 5'b00101,
-					State6  = 5'b00110,
-					State7  = 5'b00111,
-					State8  = 5'b01000,
-					State9  = 5'b01001,
-					State10 = 5'b01010,
-					State11 = 5'b01011,
-					State12 = 5'b01100,
-					State13 = 5'b01101,
-					State14 = 5'b01110,
-					State15 = 5'b01111,
-					State16 = 5'b10000,
-					State17 = 5'b10001,
-					State18 = 5'b10010,
-					State19 = 5'b10011,
-					State20 = 5'b10100,
-					State21 = 5'b10101,
-					State22 = 5'b10110,
-					State23 = 5'b10111,
-					State24 = 5'b11000,
-					StateInput = 5'b11100,
-					StateDisplay = 5'b11101,
-					StateEnd = 5'b11110,
-					StateLoad = 5'b11111;
+   parameter 
+     State0  = 5'b00000, 
+	 State1  = 5'b00001, 
+	 State2  = 5'b00010,
+	 State3  = 5'b00011,
+	 State4  = 5'b00100,
+	 State5  = 5'b00101,
+	 State6  = 5'b00110,
+	 State7  = 5'b00111,
+	 State8  = 5'b01000,
+	 State9  = 5'b01001,
+	 State10 = 5'b01010,
+	 State11 = 5'b01011,
+	 State12 = 5'b01100,
+	 State13 = 5'b01101,
+	 State14 = 5'b01110,
+	 State15 = 5'b01111,
+	 State16 = 5'b10000,
+	 State17 = 5'b10001,
+	 State18 = 5'b10010,
+	 State19 = 5'b10011,
+	 State20 = 5'b10100,
+	 State21 = 5'b10101,
+	 State22 = 5'b10110,
+	 State23 = 5'b10111,
+	 State24 = 5'b11000,
+	 StateInput = 5'b11100,
+	 StateDisplay = 5'b11101,
+	 StateEnd = 5'b11110,
+	 StateLoad = 5'b11111;
 	
 	initial begin
 		instructionCount = 0;
@@ -81,7 +82,7 @@ module Control (
 	end
 	
 	// Current State Assignment
-	always @(posedge rst or posedge clk or posedge run) begin
+	always @(posedge rst or posedge clk) begin// or posedge run) begin
 	   if (rst) begin
 		  CurrentState <= State0;
 		  isRunning <= 0;
